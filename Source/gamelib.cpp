@@ -1,4 +1,4 @@
-/*
+﻿/*
  * gamelib.cpp: 本檔案儲存支援遊戲相關的class的implementation
  * Copyright (C) 2002-2012 Woei-Kae Chen <wkc@csie.ntut.edu.tw>
  *
