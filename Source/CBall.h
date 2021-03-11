@@ -1,31 +1,31 @@
-namespace game_framework {
+ï»¿namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
-	// ³o­Óclass´£¨ÑÂ¶°é°éªº²y
-	// ¬İÀ´´N¥i¥H§ï¼g¦¨¦Û¤vªºµ{¦¡¤F
+	// é€™å€‹classæä¾›ç¹åœˆåœˆçš„çƒ
+	// çœ‹æ‡‚å°±å¯ä»¥æ”¹å¯«æˆè‡ªå·±çš„ç¨‹å¼äº†
 	/////////////////////////////////////////////////////////////////////////////
 
 	class CBall
 	{
 	public:
 		CBall();
-		bool HitEraser(CEraser *eraser);						// ¬O§_¸I¨ìÀ¿¤l
-		bool IsAlive();											// ¬O§_¬¡µÛ
-		void LoadBitmap();										// ¸ü¤J¹Ï§Î
-		void OnMove();											// ²¾°Ê
-		void OnShow();											// ±N¹Ï§Î¶K¨ìµe­±
-		void SetXY(int nx, int ny);								// ³]©w¶ê¤ßªº®y¼Ğ
-		void SetIsAlive(bool alive);							// ³]©w¬O§_¬¡µÛ
-		void SetDelay(int d);									// ³]©w±ÛÂàªº³t«×
+		bool HitEraser(CEraser *eraser);						// æ˜¯å¦ç¢°åˆ°æ“¦å­
+		bool IsAlive();											// æ˜¯å¦æ´»è‘—
+		void LoadBitmap();										// è¼‰å…¥åœ–å½¢
+		void OnMove();											// ç§»å‹•
+		void OnShow();											// å°‡åœ–å½¢è²¼åˆ°ç•«é¢
+		void SetXY(int nx, int ny);								// è¨­å®šåœ“å¿ƒçš„åº§æ¨™
+		void SetIsAlive(bool alive);							// è¨­å®šæ˜¯å¦æ´»è‘—
+		void SetDelay(int d);									// è¨­å®šæ—‹è½‰çš„é€Ÿåº¦
 	protected:
-		CMovingBitmap bmp;			// ²yªº¹Ï
-		CMovingBitmap bmp_center;	// ¶ê¤ßªº¹Ï			
-		int x, y;					// ¶ê¤ßªº®y¼Ğ
-		int dx, dy;					// ²y¶ZÂ÷¶ê¤ßªº¦ì²¾¶q
-		int index;					// ²yªº¡u¨¤«×¡v¡A0-17ªí¥Ü0-360«×
-		int delay_counter;			// ½Õ¾ã±ÛÂà³t«×ªº­p¼Æ¾¹
-		int delay;					// ±ÛÂàªº³t«×
-		bool is_alive;				// ¬O§_¬¡µÛ
+		CMovingBitmap bmp;			// çƒçš„åœ–
+		CMovingBitmap bmp_center;	// åœ“å¿ƒçš„åœ–			
+		int x, y;					// åœ“å¿ƒçš„åº§æ¨™
+		int dx, dy;					// çƒè·é›¢åœ“å¿ƒçš„ä½ç§»é‡
+		int index;					// çƒçš„ã€Œè§’åº¦ã€ï¼Œ0-17è¡¨ç¤º0-360åº¦
+		int delay_counter;			// èª¿æ•´æ—‹è½‰é€Ÿåº¦çš„è¨ˆæ•¸å™¨
+		int delay;					// æ—‹è½‰çš„é€Ÿåº¦
+		bool is_alive;				// æ˜¯å¦æ´»è‘—
 	private:
-		bool HitRectangle(int tx1, int ty1, int tx2, int ty2);	// ¬O§_¸I¨ì°Ñ¼Æ½d³òªº¯x§Î
+		bool HitRectangle(int tx1, int ty1, int tx2, int ty2);	// æ˜¯å¦ç¢°åˆ°åƒæ•¸ç¯„åœçš„çŸ©å½¢
 	};
 }

@@ -1,5 +1,5 @@
-/*
- * gamelibTest.cpp: ¥»ÀÉ®×Àx¹Cunit testªºtest cases
+ï»¿/*
+ * gamelibTest.cpp: æœ¬æª”æ¡ˆå„²éŠunit testçš„test cases
  * Copyright (C) 2002-2008 Woei-Kae Chen <wkc@csie.ntut.edu.tw>
  *
  * This file is part of game, a free game development framework for windows.

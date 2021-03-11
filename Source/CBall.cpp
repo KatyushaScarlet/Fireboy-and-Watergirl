@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -20,19 +20,19 @@ namespace game_framework {
 
 	bool CBall::HitEraser(CEraser *eraser)
 	{
-		// ÀË´úÀ¿¤l©Òºc¦¨ªº¯x§Î¬O§_¸I¨ì²y
+		// æª¢æ¸¬æ“¦å­æ‰€æ§‹æˆçš„çŸ©å½¢æ˜¯å¦ç¢°åˆ°çƒ
 		return HitRectangle(eraser->GetX1(), eraser->GetY1(),
 			eraser->GetX2(), eraser->GetY2());
 	}
 
 	bool CBall::HitRectangle(int tx1, int ty1, int tx2, int ty2)
 	{
-		int x1 = x + dx;				// ²yªº¥ª¤W¨¤x®y¼Ð
-		int y1 = y + dy;				// ²yªº¥ª¤W¨¤y®y¼Ð
-		int x2 = x1 + bmp.Width();	// ²yªº¥k¤U¨¤x®y¼Ð
-		int y2 = y1 + bmp.Height();	// ²yªº¥k¤U¨¤y®y¼Ð
+		int x1 = x + dx;				// çƒçš„å·¦ä¸Šè§’xåº§æ¨™
+		int y1 = y + dy;				// çƒçš„å·¦ä¸Šè§’yåº§æ¨™
+		int x2 = x1 + bmp.Width();	// çƒçš„å³ä¸‹è§’xåº§æ¨™
+		int y2 = y1 + bmp.Height();	// çƒçš„å³ä¸‹è§’yåº§æ¨™
 									//
-									// ÀË´ú²yªº¯x§Î»P°Ñ¼Æ¯x§Î¬O§_¦³¥æ¶°
+									// æª¢æ¸¬çƒçš„çŸ©å½¢èˆ‡åƒæ•¸çŸ©å½¢æ˜¯å¦æœ‰äº¤é›†
 									//
 		return (tx2 >= x1 && tx1 <= x2 && ty2 >= y1 && ty1 <= y2);
 	}
@@ -44,8 +44,8 @@ namespace game_framework {
 
 	void CBall::LoadBitmap()
 	{
-		bmp.LoadBitmap(IDB_BALL, RGB(0, 0, 0));			// ¸ü¤J²yªº¹Ï§Î
-		bmp_center.LoadBitmap(IDB_CENTER, RGB(0, 0, 0));	// ¸ü¤J²y¶ê¤ßªº¹Ï§Î
+		bmp.LoadBitmap(IDB_BALL, RGB(0, 0, 0));			// è¼‰å…¥çƒçš„åœ–å½¢
+		bmp_center.LoadBitmap(IDB_CENTER, RGB(0, 0, 0));	// è¼‰å…¥çƒåœ“å¿ƒçš„åœ–å½¢
 	}
 
 	void CBall::OnMove()
@@ -56,7 +56,7 @@ namespace game_framework {
 		if (delay_counter < 0) {
 			delay_counter = delay;
 			//
-			// ­pºâ²y¦V¹ï©ó¶ê¤ßªº¦ì²¾¶qdx, dy
+			// è¨ˆç®—çƒå‘å°æ–¼åœ“å¿ƒçš„ä½ç§»é‡dx, dy
 			//
 			const int STEPS = 18;
 			static const int DIFFX[] = { 35, 32, 26, 17, 6, -6, -17, -26, -32, -34, -32, -26, -17, -6, 6, 17, 26, 32, };

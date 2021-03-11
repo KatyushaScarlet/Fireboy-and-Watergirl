@@ -1,4 +1,4 @@
-/*
+﻿/*
  * MainFrm.h : interface of the CMainFrame class
  * Copyright (C) 2002-2008 Woei-Kae Chen <wkc@csie.ntut.edu.tw>
  *

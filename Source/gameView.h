@@ -1,4 +1,4 @@
-/*
+﻿/*
  * gameView.h : interface of the CGameView class
  * Copyright (C) 2002-2008 Woei-Kae Chen <wkc@csie.ntut.edu.tw>
  *

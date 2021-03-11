@@ -1,22 +1,22 @@
-namespace game_framework {
+ï»¿namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
-	// ³o­Óclass´£¨Ñ·|¤@ª½¼u¸õªº²y
-	// ¬İÀ´´N¥i¥H§ï¼g¦¨¦Û¤vªºµ{¦¡¤F
+	// é€™å€‹classæä¾›æœƒä¸€ç›´å½ˆè·³çš„çƒ
+	// çœ‹æ‡‚å°±å¯ä»¥æ”¹å¯«æˆè‡ªå·±çš„ç¨‹å¼äº†
 	/////////////////////////////////////////////////////////////////////////////
 
 	class CBouncingBall
 	{
 	public:
 		CBouncingBall();
-		void LoadBitmap();		// ¸ü¤J¹Ï§Î
-		void OnMove();			// ²¾°Ê
-		void OnShow();			// ±N¹Ï§Î¶K¨ìµe­±
+		void LoadBitmap();		// è¼‰å…¥åœ–å½¢
+		void OnMove();			// ç§»å‹•
+		void OnShow();			// å°‡åœ–å½¢è²¼åˆ°ç•«é¢
 	private:
-		int x, y;				// ¹Ï§Î®y¼Ğ
-		int floor;				// ¦aªOªºY®y¼Ğ
-		bool rising;			// trueªí¤W¤É¡Bfalseªí¤U­°
-		int initial_velocity;	// ªì©l³t«×
-		int velocity;			// ¥Ø«eªº³t«×(ÂI/¦¸)
-		CAnimation animation;	// §Q¥Î°Êµe§@¹Ï§Î
+		int x, y;				// åœ–å½¢åº§æ¨™
+		int floor;				// åœ°æ¿çš„Yåº§æ¨™
+		bool rising;			// trueè¡¨ä¸Šå‡ã€falseè¡¨ä¸‹é™
+		int initial_velocity;	// åˆå§‹é€Ÿåº¦
+		int velocity;			// ç›®å‰çš„é€Ÿåº¦(é»/æ¬¡)
+		CAnimation animation;	// åˆ©ç”¨å‹•ç•«ä½œåœ–å½¢
 	};
 }

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * gameView.cpp : implementation of the CGameView class
  * Copyright (C) 2002-2012 Woei-Kae Chen <wkc@csie.ntut.edu.tw>
  *
