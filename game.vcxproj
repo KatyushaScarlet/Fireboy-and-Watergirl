@@ -313,7 +313,7 @@
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
     <ClInclude Include="Source\gameView.h" />
-    <ClInclude Include="Source\Items.h" />
+    <ClInclude Include="Source\Item.h" />
     <ClInclude Include="Source\MapLevel1.h" />
     <ClInclude Include="Source\MapLevel2.h" />
     <ClInclude Include="Source\MainFrm.h" />

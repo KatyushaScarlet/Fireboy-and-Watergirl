@@ -102,9 +102,11 @@ namespace game_framework {
 		CEraser			eraser;		// 拍子
 		CInteger		hits_left;	// 剩下的撞擊數
 		CBouncingBall   bball;		// 反覆彈跳的球
-		/////////////////////////////////////////
+		///////////////////////////////////////////////
 		int				map_now_level;//游戏目前关卡，0~9
 		vector<Map*>	maps;		//游戏地图
+		Player*			player_boy;	//boy
+		Player*			player_girl;//girl
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

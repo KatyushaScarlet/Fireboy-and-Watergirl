@@ -58,8 +58,8 @@ namespace game_framework {
 
 		void LoadBitmap()
 		{
-			background.LoadBitmap("..\\RES\\background.bmp");
-			wall.LoadBitmap("..\\RES\\wall.bmp");
+			background.LoadBitmap("RES\\background.bmp");
+			wall.LoadBitmap("RES\\wall.bmp");
 		};
 
 		void OnShow()

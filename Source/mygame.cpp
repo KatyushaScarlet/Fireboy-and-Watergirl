@@ -192,17 +192,21 @@ void CGameStateOver::OnShow()
 CGameStateRun::CGameStateRun(CGame *g)
 : CGameState(g), NUMBALLS(28)
 {
+	//初始化对象
+	// 
 	//ball = new CBall [NUMBALLS];
 	maps.push_back(new MapLevel1());
 }
 
 CGameStateRun::~CGameStateRun()
 {
-	delete [] ball;
+	//delete [] ball;
 }
 
 void CGameStateRun::OnBeginState()
 {
+	//重新开始游戏
+	// 
 	//const int BALL_GAP = 90;
 	//const int BALL_XY_OFFSET = 45;
 	//const int BALL_PER_ROW = 7;
@@ -278,6 +282,9 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
+	//载入资料
+	// 
+	// 
 	////
 	//// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
 	////     等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
@@ -310,9 +317,8 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	////
 	//// 此OnInit動作會接到CGameStaterOver::OnInit()，所以進度還沒到100%
 	////
-	ShowInitProgress(10);
 
-	for each (Map* map in maps)
+	for each (Map * map in maps)
 	{
 		map->LoadBitmapA();
 	}

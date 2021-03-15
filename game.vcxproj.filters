@@ -20,6 +20,9 @@
     <Filter Include="MyGame\Level">
       <UniqueIdentifier>{79c7f76f-ee42-4d18-a059-2a2cbb67c941}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MyGame\Player">
+      <UniqueIdentifier>{57911480-9c74-4182-9f49-c5ac93dd9716}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Res\ball.bmp">
@@ -181,9 +184,6 @@
     <ClInclude Include="Source\Pool.h">
       <Filter>MyGame\Item</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Player.h">
-      <Filter>MyGame\Item</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Door.h">
       <Filter>MyGame\Item</Filter>
     </ClInclude>
@@ -205,8 +205,11 @@
     <ClInclude Include="Source\MapLevel2.h">
       <Filter>MyGame\Level</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Items.h">
+    <ClInclude Include="Source\Item.h">
       <Filter>MyGame\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Player.h">
+      <Filter>MyGame\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
