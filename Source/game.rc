@@ -1,4 +1,4 @@
-﻿// Microsoft Visual C++ generated resource script.
+// Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
 
@@ -13,27 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// 中文(简体，中国) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
-LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
-#pragma code_page(936)
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Bitmap
-//
-
-IDB_BACKGROUND_INGAME   BITMAP                  "E:\\OneDrive\\学习\\物件導向程式設計實習\\Fireboy-and-Watergirl\\RES\\background.bmp"
-
-IDB_WALL                BITMAP                  "E:\\OneDrive\\学习\\物件導向程式設計實習\\Fireboy-and-Watergirl\\RES\\wall.bmp"
-
-#endif    // 中文(简体，中国) resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
-// 中文(繁体，中国台湾) resources
+// Chinese (Traditional, Taiwan) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -83,47 +63,26 @@ END
 //
 
 IDB_BALL                BITMAP                  "..\\res\\ball.bmp"
-
 IDB_ERASER1             BITMAP                  "..\\res\\eraser1.bmp"
-
 IDB_BACKGROUND          BITMAP                  "..\\res\\ntutcsie.bmp"
-
 IDB_CORNER              BITMAP                  "..\\res\\corner.bmp"
-
 IDB_0                   BITMAP                  "..\\res\\bmp0.bmp"
-
 IDB_1                   BITMAP                  "..\\res\\bmp1.bmp"
-
 IDB_2                   BITMAP                  "..\\res\\bmp2.bmp"
-
 IDB_3                   BITMAP                  "..\\res\\bmp3.bmp"
-
 IDB_4                   BITMAP                  "..\\res\\bmp4.bmp"
-
 IDB_5                   BITMAP                  "..\\res\\bmp5.bmp"
-
 IDB_6                   BITMAP                  "..\\res\\bmp6.bmp"
-
 IDB_7                   BITMAP                  "..\\res\\bmp7.bmp"
-
 IDB_8                   BITMAP                  "..\\res\\bmp8.bmp"
-
 IDB_9                   BITMAP                  "..\\res\\bmp9.bmp"
-
 IDB_MINUS               BITMAP                  "..\\res\\bmp10.bmp"
-
 IDB_CENTER              BITMAP                  "..\\res\\center.bmp"
-
 IDB_ERASER2             BITMAP                  "..\\res\\eraser2.bmp"
-
 IDB_ERASER3             BITMAP                  "..\\res\\eraser3.bmp"
-
 IDB_CONTINUE            BITMAP                  "..\\res\\continue.bmp"
-
 IDB_HELP                BITMAP                  "..\\res\\help.bmp"
-
 IDB_LOADING             BITMAP                  "..\\res\\loading.bmp"
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -131,13 +90,12 @@ IDB_LOADING             BITMAP                  "..\\res\\loading.bmp"
 //
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
-
-#endif    // 中文(繁体，中国台湾) resources
+#endif    // Chinese (Traditional, Taiwan) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// 英语(美国) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -150,7 +108,6 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 
 IDR_MAINFRAME           BITMAP                  "..\\res\\Toolbar.bmp"
 
-
 /////////////////////////////////////////////////////////////////////////////
 //
 // Icon
@@ -159,9 +116,7 @@ IDR_MAINFRAME           BITMAP                  "..\\res\\Toolbar.bmp"
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "..\\res\\game.ico"
-
 IDR_GAMETYPE            ICON                    "..\\res\\gameDoc.ico"
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -435,7 +390,7 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // 英语(美国) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
