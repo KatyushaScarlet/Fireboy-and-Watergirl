@@ -1,4 +1,4 @@
-// Microsoft Visual C++ generated resource script.
+ï»¿// Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
 
@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// ÖĞÎÄ(¼òÌå£¬ÖĞ¹ú) resources
+// ä¸­æ–‡(ç®€ä½“ï¼Œä¸­å›½) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
@@ -24,16 +24,16 @@ LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
 // Bitmap
 //
 
-IDB_BACKGROUND_INGAME   BITMAP                  "E:\\OneDrive\\Ñ§Ï°\\Îï¼şŒ§Ïò³ÌÊ½ÔOÓ‹ŒÁ•\\Fireboy-and-Watergirl\\RES\\background.bmp"
+IDB_BACKGROUND_INGAME   BITMAP                  "E:\\OneDrive\\å­¦ä¹ \\ç‰©ä»¶å°å‘ç¨‹å¼è¨­è¨ˆå¯¦ç¿’\\Fireboy-and-Watergirl\\RES\\background.bmp"
 
-IDB_WALL                BITMAP                  "E:\\OneDrive\\Ñ§Ï°\\Îï¼şŒ§Ïò³ÌÊ½ÔOÓ‹ŒÁ•\\Fireboy-and-Watergirl\\RES\\wall.bmp"
+IDB_WALL                BITMAP                  "E:\\OneDrive\\å­¦ä¹ \\ç‰©ä»¶å°å‘ç¨‹å¼è¨­è¨ˆå¯¦ç¿’\\Fireboy-and-Watergirl\\RES\\wall.bmp"
 
-#endif    // ÖĞÎÄ(¼òÌå£¬ÖĞ¹ú) resources
+#endif    // ä¸­æ–‡(ç®€ä½“ï¼Œä¸­å›½) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// ÖĞÎÄ(·±Ìå£¬ÖĞ¹úÌ¨Íå) resources
+// ä¸­æ–‡(ç¹ä½“ï¼Œä¸­å›½å°æ¹¾) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -132,12 +132,12 @@ IDB_LOADING             BITMAP                  "..\\res\\loading.bmp"
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // ÖĞÎÄ(·±Ìå£¬ÖĞ¹úÌ¨Íå) resources
+#endif    // ä¸­æ–‡(ç¹ä½“ï¼Œä¸­å›½å°æ¹¾) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// Ó¢Óï(ÃÀ¹ú) resources
+// è‹±è¯­(ç¾å›½) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -435,7 +435,7 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // Ó¢Óï(ÃÀ¹ú) resources
+#endif    // è‹±è¯­(ç¾å›½) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

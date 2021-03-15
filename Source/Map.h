@@ -1,4 +1,4 @@
-#define MAP_SIZE_WIDTH 40
+ï»¿#define MAP_SIZE_WIDTH 40
 #define MAP_SIZE_HEIGHT 30
 #define MAP_GIRD_PIXEL 32
 
@@ -14,7 +14,7 @@ namespace game_framework
 		~Map();
 	private:
 		int				map[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH];
-		CMovingBitmap	background_ingame;	//±³¾°Í¼
-		CMovingBitmap	wall;				//Ç½±Ú
+		CMovingBitmap	background_ingame;	//èƒŒæ™¯å›¾
+		CMovingBitmap	wall;				//å¢™å£
 	};
 }

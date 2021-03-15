@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -31,10 +31,10 @@ namespace game_framework
 
 	void Map::OnShow()
 	{
-		//äÖÈ¾±³¾°Í¼
+		//æ¸²æŸ“èƒŒæ™¯å›¾
 		background_ingame.SetTopLeft(0, 0);
 		background_ingame.ShowBitmap();
-		//äÖÈ¾Ç½±Ú
+		//æ¸²æŸ“å¢™å£
 		for (size_t i = 0; i < MAP_SIZE_HEIGHT; i++)
 		{
 			for (size_t j = 0; j < MAP_SIZE_WIDTH; j++)
