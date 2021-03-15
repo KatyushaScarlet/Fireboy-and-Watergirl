@@ -37,10 +37,11 @@
  *      2. Replace the demonstration of animation as a new bouncing ball.
  *      3. Use ShowInitProgress(percent) to display loading progress.
 */
-
 #include "CEraser.h"
 #include "CBall.h"
 #include "CBouncingBall.h"
+
+#include "Map.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -101,6 +102,9 @@ namespace game_framework {
 		CEraser			eraser;		// 拍子
 		CInteger		hits_left;	// 剩下的撞擊數
 		CBouncingBall   bball;		// 反覆彈跳的球
+		/////////////////////////////////////////
+		int				map_now_level;//游戏目前关卡，0~9
+		vector<Map*>	maps;		//游戏地图
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

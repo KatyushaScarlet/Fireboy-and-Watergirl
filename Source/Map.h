@@ -22,8 +22,9 @@ namespace game_framework {
 		virtual void OnShow() = 0;//显示
 		virtual void OnMove() = 0;//移动
 		virtual void Interact() = 0;//与各种物件交互
-	private:
-		int	map[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH];//地图数据
+
+	protected:
+		int	map_array[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH];//地图数据
 		CMovingBitmap	background;//背景
 		CMovingBitmap	wall;//墙面
 
