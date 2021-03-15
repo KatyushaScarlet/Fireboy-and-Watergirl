@@ -14,6 +14,12 @@
     <Filter Include="MyGame">
       <UniqueIdentifier>{0c798913-b7d2-4e26-8241-0f83266cd626}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MyGame\Item">
+      <UniqueIdentifier>{3c580971-aea7-4cb9-becd-42547081f054}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MyGame\Level">
+      <UniqueIdentifier>{79c7f76f-ee42-4d18-a059-2a2cbb67c941}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Res\ball.bmp">
@@ -95,6 +101,7 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="packages.config" />
+    <None Include="Source\game.aps" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\audio.cpp">
@@ -167,6 +174,36 @@
     </ClInclude>
     <ClInclude Include="Source\CBouncingBall.h">
       <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Switch.h">
+      <Filter>MyGame\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Pool.h">
+      <Filter>MyGame\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Player.h">
+      <Filter>MyGame\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Door.h">
+      <Filter>MyGame\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Diamond.h">
+      <Filter>MyGame\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MovingBox.h">
+      <Filter>MyGame\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MovingWall.h">
+      <Filter>MyGame\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Map.h">
+      <Filter>MyGame\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Level1.h">
+      <Filter>MyGame\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Level2.h">
+      <Filter>MyGame\Level</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
