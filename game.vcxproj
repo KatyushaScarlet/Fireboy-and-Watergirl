@@ -304,8 +304,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Level1.h" />
-    <ClInclude Include="Level2.h" />
     <ClInclude Include="Source\audio.h" />
     <ClInclude Include="Source\CBall.h" />
     <ClInclude Include="Source\CBouncingBall.h" />
@@ -315,6 +313,9 @@
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
     <ClInclude Include="Source\gameView.h" />
+    <ClInclude Include="Source\Items.h" />
+    <ClInclude Include="Source\MapLevel1.h" />
+    <ClInclude Include="Source\MapLevel2.h" />
     <ClInclude Include="Source\MainFrm.h" />
     <ClInclude Include="Source\Map.h" />
     <ClInclude Include="Source\MovingBox.h" />
