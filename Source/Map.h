@@ -9,7 +9,6 @@
 #include "Door.h"
 #include "MovingBox.h"
 #include "MovingWall.h"
-#include "Player.h"
 #include "Pool.h"
 #include "Switch.h"
 
@@ -32,7 +31,6 @@ namespace game_framework {
 		vector<Door*>	doors;//门
 		vector<MovingBox*>	moving_boxs;//可活动箱子
 		vector<MovingWall*>	moving_walls;//可活动箱子
-		vector<Player*>		players;//玩家
 		vector<Pool*>		pools;//水池
 		vector<Switch*>		switchs;//开关
 	};
