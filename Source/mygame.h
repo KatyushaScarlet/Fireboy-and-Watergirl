@@ -71,6 +71,7 @@ namespace game_framework {
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
 		CMovingBitmap logo;								// csie的logo
+		CMovingBitmap background;						// 冰火人開始背景
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
