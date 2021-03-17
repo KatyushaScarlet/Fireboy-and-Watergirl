@@ -201,6 +201,10 @@ CGameStateRun::CGameStateRun(CGame *g)
 CGameStateRun::~CGameStateRun()
 {
 	//delete [] ball;
+	for each (Map * map in maps)
+	{
+		delete map;
+	}
 }
 
 void CGameStateRun::OnBeginState()
