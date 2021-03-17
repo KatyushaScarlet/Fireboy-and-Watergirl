@@ -5,6 +5,7 @@
 #define MAP_GIRD_PIXEL 32
 
 #include "gamelib.h"
+#include "Item.h"
 #include "Diamond.h"
 #include "Door.h"
 #include "MovingBox.h"
@@ -16,7 +17,33 @@ namespace game_framework {
 	class Map
 	{
 	public:
-		virtual ~Map() {};
+		virtual ~Map() 
+		{
+			for each (Diamond * item in diamonds)
+			{
+				delete item;
+			}
+			for each (Door * item in doors)
+			{
+				delete item;
+			}
+			for each (MovingBox * item in moving_boxs)
+			{
+				delete item;
+			}
+			for each (MovingWall * item in moving_walls)
+			{
+				delete item;
+			}
+			for each (Pool * item in pools)
+			{
+				delete item;
+			}
+			for each (Switch * item in switchs)
+			{
+				delete item;
+			}
+		};
 		virtual void LoadBitmap() = 0;
 		virtual void OnShow() = 0;//显示
 		virtual void OnMove() = 0;//移动

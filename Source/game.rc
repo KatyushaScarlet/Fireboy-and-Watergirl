@@ -104,9 +104,9 @@ IDB_HELP                BITMAP                  "..\\res\\help.bmp"
 
 IDB_LOADING             BITMAP                  "..\\res\\loading.bmp"
 
-IDB_LOADINGNEW          BITMAP                  "C:\\Users\\user\\Documents\\Fireboy-and-Watergirl\\RES\\loadingnew.bmp"
+IDB_LOADINGNEW          BITMAP                  "..\\RES\\loadingnew.bmp"
 
-IDB_STARTB              BITMAP                  "C:\\Users\\user\\Documents\\Fireboy-and-Watergirl\\RES\\TempleHall.bmp"
+IDB_STARTB              BITMAP                  "..\\RES\\TempleHall.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
