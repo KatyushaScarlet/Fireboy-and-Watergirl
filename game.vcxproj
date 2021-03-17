@@ -337,6 +337,8 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="RES\background.bmp" />
+    <Image Include="RES\loadingnew.bmp" />
+    <Image Include="RES\TempleHall.bmp" />
     <Image Include="RES\wall.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

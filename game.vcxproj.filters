@@ -224,5 +224,11 @@
     <Image Include="RES\wall.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\loadingnew.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\TempleHall.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
