@@ -5,6 +5,7 @@
 #define PLAYER_GIRD_PIXEL 32
 
 #include "gamelib.h"
+#include "Map.h"
 
 namespace game_framework {
 
@@ -19,7 +20,7 @@ namespace game_framework {
 		int  GetY2();			//右下角 y 坐标
 		void Initialize();		//设定为初始值
 		void LoadBitmap();		//载入图形
-		void OnMove(Map* m);	//移动
+		void OnMove(Map* map);	//移动
 		void OnShow(Map* map);	//显示
 		void SetTopLeft(int top, int left);
 	private:

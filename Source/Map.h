@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #define MAP_SIZE_WIDTH 40
 #define MAP_SIZE_HEIGHT 30
@@ -9,7 +9,6 @@
 #include "Door.h"
 #include "MovingBox.h"
 #include "MovingWall.h"
-#include "Player.h"
 #include "Pool.h"
 #include "Switch.h"
 
@@ -19,21 +18,20 @@ namespace game_framework {
 	public:
 		virtual ~Map() {};
 		virtual void LoadBitmap() = 0;
-		virtual void OnShow() = 0;//ÏÔÊ¾
-		virtual void OnMove() = 0;//ÒÆ¶¯
-		virtual void Interact() = 0;//Óë¸÷ÖÖÎï¼ş½»»¥
+		virtual void OnShow() = 0;//æ˜¾ç¤º
+		virtual void OnMove() = 0;//ç§»åŠ¨
+		virtual void Interact() = 0;//ä¸å„ç§ç‰©ä»¶äº¤äº’
 
 	protected:
-		int	map_array[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH];//µØÍ¼Êı¾İ
-		CMovingBitmap	background;//±³¾°
-		CMovingBitmap	wall;//Ç½Ãæ
+		int	map_array[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH];//åœ°å›¾æ•°æ®
+		CMovingBitmap	background;//èƒŒæ™¯
+		CMovingBitmap	wall;//å¢™é¢
 
-		vector<Diamond*>	diamonds;//×êÊ¯
-		vector<Door*>	doors;//ÃÅ
-		vector<MovingBox*>	moving_boxs;//¿É»î¶¯Ïä×Ó
-		vector<MovingWall*>	moving_walls;//¿É»î¶¯Ïä×Ó
-		vector<Player*>		players;//Íæ¼Ò
-		vector<Pool*>		pools;//Ë®³Ø
-		vector<Switch*>		switchs;//¿ª¹Ø
+		vector<Diamond*>	diamonds;//é’»çŸ³
+		vector<Door*>	doors;//é—¨
+		vector<MovingBox*>	moving_boxs;//å¯æ´»åŠ¨ç®±å­
+		vector<MovingWall*>	moving_walls;//å¯æ´»åŠ¨ç®±å­
+		vector<Pool*>		pools;//æ°´æ± 
+		vector<Switch*>		switchs;//å¼€å…³
 	};
 }

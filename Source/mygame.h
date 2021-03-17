@@ -42,6 +42,7 @@
 #include "CBouncingBall.h"
 
 #include "Map.h"
+#include "Player.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
