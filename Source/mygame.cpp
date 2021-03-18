@@ -331,36 +331,66 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//map_now_level = 0;
 }
 
+	const char KEY_LEFT = 37;
+	const char KEY_UP = 38;
+	const char KEY_RIGHT = 39;
+	const char KEY_DOWN = 40;
+	const char KEY_W = 87;
+	const char KEY_A = 65;
+	const char KEY_S = 83;
+	const char KEY_D = 68;
+
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	const char KEY_LEFT  = 0x25; // keyboard左箭頭
-	const char KEY_UP    = 0x26; // keyboard上箭頭
-	const char KEY_RIGHT = 0x27; // keyboard右箭頭
-	const char KEY_DOWN  = 0x28; // keyboard下箭頭
-	if (nChar == KEY_LEFT)
-		eraser.SetMovingLeft(true);
-	if (nChar == KEY_RIGHT)
-		eraser.SetMovingRight(true);
-	if (nChar == KEY_UP)
-		eraser.SetMovingUp(true);
-	if (nChar == KEY_DOWN)
-		eraser.SetMovingDown(true);
+	//const char KEY_LEFT = 0x25; // keyboard左箭頭
+	//const char KEY_UP = 0x26; // keyboard上箭頭
+	//const char KEY_RIGHT = 0x27; // keyboard右箭頭
+	//const char KEY_DOWN = 0x28; // keyboard下箭頭
+	//if (nChar == KEY_LEFT)
+	//	eraser.SetMovingLeft(true);
+	//if (nChar == KEY_RIGHT)
+	//	eraser.SetMovingRight(true);
+	//if (nChar == KEY_UP)
+	//	eraser.SetMovingUp(true);
+	//if (nChar == KEY_DOWN)
+	//	eraser.SetMovingDown(true);
+	switch (nChar)
+	{
+	case KEY_UP:
+		break;
+	case KEY_LEFT:
+		break;
+	case KEY_DOWN:
+		break;
+	case KEY_RIGHT:
+		break;
+	case KEY_W:
+		break;
+	case KEY_A:
+		break;
+	case KEY_S:
+		break;
+	case KEY_D:
+		break;
+	default:
+		break;
+	}
 }
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	const char KEY_LEFT  = 0x25; // keyboard左箭頭
-	const char KEY_UP    = 0x26; // keyboard上箭頭
-	const char KEY_RIGHT = 0x27; // keyboard右箭頭
-	const char KEY_DOWN  = 0x28; // keyboard下箭頭
-	if (nChar == KEY_LEFT)
-		eraser.SetMovingLeft(false);
-	if (nChar == KEY_RIGHT)
-		eraser.SetMovingRight(false);
-	if (nChar == KEY_UP)
-		eraser.SetMovingUp(false);
-	if (nChar == KEY_DOWN)
-		eraser.SetMovingDown(false);
+	//const char KEY_LEFT  = 0x25; // keyboard左箭頭
+	//const char KEY_UP    = 0x26; // keyboard上箭頭
+	//const char KEY_RIGHT = 0x27; // keyboard右箭頭
+	//const char KEY_DOWN  = 0x28; // keyboard下箭頭
+	//if (nChar == KEY_LEFT)
+	//	eraser.SetMovingLeft(false);
+	//if (nChar == KEY_RIGHT)
+	//	eraser.SetMovingRight(false);
+	//if (nChar == KEY_UP)
+	//	eraser.SetMovingUp(false);
+	//if (nChar == KEY_DOWN)
+	//	eraser.SetMovingDown(false);
 }
 
 void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
