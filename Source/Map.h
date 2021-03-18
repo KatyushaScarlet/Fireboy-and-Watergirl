@@ -77,8 +77,11 @@ namespace game_framework {
 
 		void OnMove()//移动
 		{
-
+			boy->OnMove();
+			girl->OnMove();
 		}
+
+		void KeyDown(int key);//按下按键
 
 		~Map()
 		{
