@@ -258,6 +258,8 @@
     <None Include="Source\game.aps" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Map.cpp" />
+    <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\audio.cpp" />
     <ClCompile Include="Source\CBall.cpp" />
     <ClCompile Include="Source\CBouncingBall.cpp" />
