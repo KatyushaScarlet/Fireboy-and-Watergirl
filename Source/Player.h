@@ -88,6 +88,5 @@ namespace game_framework {
 		bool is_visible;			// 是否可见
 		//bool is_alive;				// 是否活着
 		CMovingBitmap bitmap;		// 静止图像
-
 	};
 }

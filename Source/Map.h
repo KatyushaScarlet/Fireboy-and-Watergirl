@@ -16,6 +16,23 @@
 #include "Player.h"
 
 namespace game_framework {
+
+	enum KEY_DOWN_STATES
+	{
+		KEY_DOWN_STATES_UP,
+		KEY_DOWN_STATES_DOWN,
+		KEY_DOWN_STATES_RIGHT,
+		KEY_DOWN_STATES_LEFT
+	};
+
+	enum KEY_UP_STATES
+	{
+		KEY_UP_STATES_UP,
+		KEY_UP_STATES_DOWN,
+		KEY_UP_STATES_RIGHT,
+		KEY_UP_STATES_LEFT
+	};
+
 	class Map
 	{
 	public:
@@ -23,7 +40,7 @@ namespace game_framework {
 		{
 			InitMapLevel(0);
 		}
-		void LoadBitmap()//加载图片
+		void LoadBitmapMap()//加载图片
 		{
 			background.LoadBitmap("RES\\background.bmp");
 			wall.LoadBitmap("RES\\wall.bmp");
