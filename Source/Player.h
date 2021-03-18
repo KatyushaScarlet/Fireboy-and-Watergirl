@@ -7,8 +7,6 @@
 
 namespace game_framework {
 
-	class Map;
-
 	enum PLAYER_STATES_VERTICAL  
 	{
 		PLAYER_STATES_VERTICAL_STATIC,
@@ -29,7 +27,6 @@ namespace game_framework {
 		Player(bool boy)
 		{
 			is_boy = boy;
-			//Initialize();
 			x = 0;
 			y = 0;
 			moving_vertical = PLAYER_STATES_VERTICAL_STATIC;
@@ -70,7 +67,7 @@ namespace game_framework {
 				}
 				break;
 			case PLAYER_STATES_VERTICAL_MOVE_DOWN://下降状态
-				if (false)//如果下方可通行
+				if (true)//如果下方可通行
 				{
 					y += velocity;
 					velocity++;
@@ -125,7 +122,7 @@ namespace game_framework {
 		}
 		int  GetY2()
 		{
-			return y + PLAYER_GIRD_PIXEL;
+			return y + 2 * PLAYER_GIRD_PIXEL;
 		}
 		void SetTopLeft(int top, int left)// 设定左上角坐标
 		{
