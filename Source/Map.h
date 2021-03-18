@@ -55,7 +55,7 @@ namespace game_framework {
 			}
 			//加载玩家
 			boy->OnShow();
-			//girl->OnShow();
+			girl->OnShow();
 		};
 
 		void OnMove()//移动
@@ -133,11 +133,13 @@ namespace game_framework {
 						boy->SetTopLeft(j * MAP_GIRD_PIXEL, i * MAP_GIRD_PIXEL);
 						//boy->LoadBitmap();
 						//boy->Initialize();
+						break;
 					case 101:
 						girl = new Player(false);
 						girl->SetTopLeft(j * MAP_GIRD_PIXEL, i * MAP_GIRD_PIXEL);
 						//girl->LoadBitmap();
 						//girl->Initialize();
+						break;
 					default:
 						break;
 					}

@@ -1,7 +1,5 @@
 #pragma once
 
-#define	PLAYER_SIZE_WIDTH 1
-#define PLAYER_SIZE_HEIGHT 1
 #define PLAYER_GIRD_PIXEL 32
 
 #include "gamelib.h"
@@ -64,7 +62,7 @@ namespace game_framework {
 		{
 			if (is_visible)
 			{
-				bitmap.SetTopLeft(x1, y1);
+				bitmap.SetTopLeft(x1, y1 - PLAYER_GIRD_PIXEL);
 				bitmap.ShowBitmap();
 			}
 		};
