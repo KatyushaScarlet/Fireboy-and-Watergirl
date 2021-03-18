@@ -7,15 +7,6 @@
 
 namespace game_framework {
 
-	enum DIRECTIONS
-	{
-		DIRECTION_NONE,
-		DIRECTION_UP,
-		DIRECTION_DOWN,
-		DIRECTION_RIGHT,
-		DIRECTION_LEFT
-	};
-
 	class Player
 	{
 	public:

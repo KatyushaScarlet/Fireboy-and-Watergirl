@@ -346,5 +346,13 @@ private:
 	CGameState		*gameStateTable[3];	// 遊戲狀態物件的pointer
 	static CGame	instance;			// 遊戲唯一的instance
 };
-
+/////////////////////////////////////////////////////////////////////////////
+enum DIRECTIONS
+{
+	DIRECTION_NONE,
+	DIRECTION_UP,
+	DIRECTION_DOWN,
+	DIRECTION_RIGHT,
+	DIRECTION_LEFT
+};
 }
