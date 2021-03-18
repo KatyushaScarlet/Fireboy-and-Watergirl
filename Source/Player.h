@@ -28,30 +28,35 @@ namespace game_framework {
 		Player(bool boy)
 		{
 			is_boy = boy;
-			Initialize();
-		};
-		~Player()
-		{
-
-		};
-		void Initialize()		//初始化
-		{
+			//Initialize();
 			x1 = 0;
 			y1 = 0;
 			initial_velocity = 0;
 			velocity = 0;
 			is_visible = true;
-			LoadBitmap();
 		};
-		void LoadBitmap()		//载入图形
+		~Player()
+		{
+
+		};
+		//void Initialize()		//初始化
+		//{
+		//	x1 = 0;
+		//	y1 = 0;
+		//	initial_velocity = 0;
+		//	velocity = 0;
+		//	is_visible = true;
+		//	LoadBitmap();
+		//};
+		void LoadBitmapPlayer()		//载入图形
 		{
 			if (is_boy)
 			{
-				bitmap.LoadBitmapA("RES\\player\\boy_static.bmp");
+				bitmap.LoadBitmapA("RES\\player\\boy_static.bmp",RGB(255,255,255));
 			}
 			else
 			{
-				bitmap.LoadBitmapA("RES\\player\\girl_static.bmp");
+				bitmap.LoadBitmapA("RES\\player\\girl_static.bmp",RGB(255, 255, 255));
 			}
 		};
 		void OnMove();	//移动

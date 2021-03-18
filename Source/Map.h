@@ -27,6 +27,9 @@ namespace game_framework {
 		{
 			background.LoadBitmap("RES\\background.bmp");
 			wall.LoadBitmap("RES\\wall.bmp");
+			boy->LoadBitmapPlayer();
+			girl->LoadBitmapPlayer();
+
 		};
 		void OnShow()//显示
 		{
@@ -128,11 +131,13 @@ namespace game_framework {
 					case 100:
 						boy = new Player(true);
 						boy->SetTopLeft(i * MAP_GIRD_PIXEL, j * MAP_GIRD_PIXEL);
-						boy->Initialize();
+						//boy->LoadBitmap();
+						//boy->Initialize();
 					case 101:
 						girl = new Player(false);
 						girl->SetTopLeft(i * MAP_GIRD_PIXEL, j * MAP_GIRD_PIXEL);
-						girl->Initialize();
+						//girl->LoadBitmap();
+						//girl->Initialize();
 					default:
 						break;
 					}
@@ -151,7 +156,7 @@ namespace game_framework {
 		Player* girl;
 
 		vector<Diamond*>	diamonds;//钻石
-		vector<Door*>	doors;//门
+		vector<Door*>		doors;//门
 		vector<MovingBox*>	moving_boxs;//可活动箱子
 		vector<MovingWall*>	moving_walls;//可活动箱子
 		vector<Pool*>		pools;//水池
