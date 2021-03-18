@@ -325,7 +325,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	////
 
 	map->LoadBitmapA();
-	map->InitMapLevel(0);
+	//map->InitMapLevel(0);
 
 	////从第一关开始
 	//map_now_level = 0;
