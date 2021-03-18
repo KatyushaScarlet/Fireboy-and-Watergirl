@@ -224,5 +224,11 @@
     <Image Include="RES\TempleHall.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\player\boy_static.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_static.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

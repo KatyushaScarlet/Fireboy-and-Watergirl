@@ -4,10 +4,17 @@ namespace game_framework {
 	class Item
 	{
 	public:
-		virtual ~Item() {};
-		virtual void LoadBitmap() = 0;
-		virtual void OnShow() = 0;//显示
-		virtual void OnMove() = 0;//移动
-		virtual void Interact() = 0;//与其他物件交互
+		~Item() {};
+		void LoadBitmap();
+		void OnShow();//显示
+		void OnMove();//移动
+		void Interact();//与其他物件交互
+		int  GetX1();			//左上角 x 坐标
+		int  GetY1();			//左上角 y 坐标
+		int  GetX2();			//右下角 x 坐标
+		int  GetY2();			//右下角 y 坐标
+	protected:
+		int x1, y1, x2, y2;//左上角坐标
+
 	};
 }

@@ -13,6 +13,8 @@
 #include "Pool.h"
 #include "Switch.h"
 
+#include "Player.h"
+
 namespace game_framework {
 	class Map
 	{
@@ -58,6 +60,7 @@ namespace game_framework {
 
 		void InitMapLevel(int level)//初始化地图数据 0~9
 		{
+			now_level = level;
 			DestroyResources();
 
 			int map_level_0[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH] = {
@@ -115,6 +118,9 @@ namespace game_framework {
 		CMovingBitmap	background;//背景
 		CMovingBitmap	wall;//墙面
 
+		Player* boy;
+		Player* girl;
+
 		vector<Diamond*>	diamonds;//钻石
 		vector<Door*>	doors;//门
 		vector<MovingBox*>	moving_boxs;//可活动箱子
@@ -122,8 +128,13 @@ namespace game_framework {
 		vector<Pool*>		pools;//水池
 		vector<Switch*>		switchs;//开关
 
+
+
 		void DestroyResources()
 		{
+			delete boy;
+			delete girl;
+
 			for each (Diamond * item in diamonds)
 			{
 				delete item;

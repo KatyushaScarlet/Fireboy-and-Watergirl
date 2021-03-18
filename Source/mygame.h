@@ -42,7 +42,6 @@
 #include "CBouncingBall.h"
 
 #include "Map.h"
-#include "Player.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -109,7 +108,7 @@ namespace game_framework {
 		//vector<Map*>	maps;		//游戏地图
 		//Player*			player_boy;	//boy
 		//Player*			player_girl;//girl
-		Map					*map;//地图逻辑
+		Map				*map;//地图逻辑
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

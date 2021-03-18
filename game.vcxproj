@@ -336,6 +336,8 @@
   <ItemGroup>
     <Image Include="RES\background.bmp" />
     <Image Include="RES\loadingnew.bmp" />
+    <Image Include="RES\player\boy_static.bmp" />
+    <Image Include="RES\player\girl_static.bmp" />
     <Image Include="RES\TempleHall.bmp" />
     <Image Include="RES\wall.bmp" />
   </ItemGroup>
