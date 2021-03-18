@@ -71,7 +71,7 @@ namespace game_framework {
 				x -= PLAYER_STEP_PIXEL;
 				break;
 			case PLAYER_STATES_HORIZONTAL_MOVE_RIGHT:
-				y += PLAYER_GIRD_PIXEL;
+				x += PLAYER_GIRD_PIXEL;
 				break;
 			case PLAYER_STATES_HORIZONTAL_STATIC:
 				break;
