@@ -7,18 +7,13 @@
 
 namespace game_framework {
 
-	enum PLAYER_STATES_VERTICAL  
+	enum DIRECTIONS
 	{
-		PLAYER_STATES_VERTICAL_STATIC,
-		PLAYER_STATES_VERTICAL_MOVE_UP,
-		PLAYER_STATES_VERTICAL_MOVE_DOWN
-	};
-
-	enum PLAYER_STATES_HORIZONTAL
-	{
-		PLAYER_STATES_HORIZONTAL_STATIC,
-		PLAYER_STATES_HORIZONTAL_MOVE_LEFT,
-		PLAYER_STATES_HORIZONTAL_MOVE_RIGHT
+		DIRECTION_NONE,
+		DIRECTION_UP,
+		DIRECTION_DOWN,
+		DIRECTION_RIGHT,
+		DIRECTION_LEFT
 	};
 
 	class Player
@@ -29,8 +24,8 @@ namespace game_framework {
 			is_boy = boy;
 			x = 0;
 			y = 0;
-			moving_vertical = PLAYER_STATES_VERTICAL_STATIC;
-			moving_horizontal = PLAYER_STATES_HORIZONTAL_STATIC;
+			moving_vertical = DIRECTION_NONE;
+			moving_horizontal = DIRECTION_NONE;
 			initial_velocity = 10;
 			velocity = 0;
 			is_visible = true;
@@ -50,13 +45,11 @@ namespace game_framework {
 				bitmap.LoadBitmapA("RES\\player\\girl_static.bmp", RGB(255, 255, 255));
 			}
 		};
-		void OnMove(Map* map)//移动
+		void OnMove()//移动
 		{
-			bool can_move = map->PlayerCanMove(x, y, 0);
-
 			switch (moving_vertical)//垂直移动
 			{
-			case PLAYER_STATES_VERTICAL_MOVE_UP://上升状态
+			case DIRECTION_UP://上升状态
 				if (velocity > 0)
 				{
 					y -= velocity;//当速度>0时上升
@@ -64,11 +57,11 @@ namespace game_framework {
 				}
 				else
 				{
-					moving_vertical = PLAYER_STATES_VERTICAL_MOVE_DOWN;//当速度<=0时，垂直方向变为下降
+					moving_vertical = DIRECTION_DOWN;//当速度<=0时，垂直方向变为下降
 					velocity = 1;
 				}
 				break;
-			case PLAYER_STATES_VERTICAL_MOVE_DOWN://下降状态
+			case DIRECTION_DOWN://下降状态
 				if (true)//如果下方可通行
 				{
 					y += velocity;
@@ -76,11 +69,11 @@ namespace game_framework {
 				}
 				else
 				{
-					moving_vertical = PLAYER_STATES_VERTICAL_STATIC;//当下方不可通行时，垂直方向变成静止
+					moving_vertical = DIRECTION_NONE;//当下方不可通行时，垂直方向变成静止
 					velocity = initial_velocity;//加速度变为初始值
 				}
 				break;
-			case PLAYER_STATES_VERTICAL_STATIC:
+			case DIRECTION_NONE:
 				break;
 			default:
 				break;
@@ -88,13 +81,13 @@ namespace game_framework {
 
 			switch (moving_horizontal)//水平移动
 			{
-			case PLAYER_STATES_HORIZONTAL_MOVE_LEFT:
+			case DIRECTION_LEFT:
 				x -= PLAYER_STEP_PIXEL;
 				break;
-			case PLAYER_STATES_HORIZONTAL_MOVE_RIGHT:
+			case DIRECTION_RIGHT:
 				x += PLAYER_STEP_PIXEL;
 				break;
-			case PLAYER_STATES_HORIZONTAL_STATIC:
+			case DIRECTION_NONE:
 				break;
 			default:
 				break;

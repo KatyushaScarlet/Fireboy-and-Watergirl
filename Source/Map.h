@@ -17,13 +17,6 @@
 
 namespace game_framework {
 
-	enum KEY_VALUE
-	{
-		DIRECTION_UP,
-		DIRECTION_DOWN,
-		DIRECTION_RIGHT,
-		DIRECTION_LEFT
-	};
 
 	class Map
 	{
@@ -76,8 +69,8 @@ namespace game_framework {
 
 		void OnMove()//移动
 		{
-			boy->OnMove(this);
-			girl->OnMove(this);
+			boy->OnMove();
+			girl->OnMove();
 		}
 
 		void KeyDown(int key_value,bool is_boy)//按下方向
@@ -95,19 +88,24 @@ namespace game_framework {
 			switch (key_value)
 			{
 			case DIRECTION_UP:
+				if (player_ptr->GetVerticalState() == DIRECTION_NONE)
+				{
+					//TODO: if can move
+					player_ptr->SetHorizontalState(DIRECTION_UP);
+				}
 				break;
 			case DIRECTION_DOWN:
 				break;
 			case DIRECTION_LEFT:
-				if (player_ptr->GetHorizontalState() == PLAYER_STATES_HORIZONTAL_STATIC)
+				if (player_ptr->GetHorizontalState() == DIRECTION_NONE)
 				{
-					player_ptr->SetHorizontalState(PLAYER_STATES_HORIZONTAL_MOVE_LEFT);
+					player_ptr->SetHorizontalState(DIRECTION_LEFT);
 				}
 				break;
 			case DIRECTION_RIGHT:
-				if (player_ptr->GetHorizontalState() == PLAYER_STATES_HORIZONTAL_STATIC)
+				if (player_ptr->GetHorizontalState() == DIRECTION_NONE)
 				{
-					player_ptr->SetHorizontalState(PLAYER_STATES_HORIZONTAL_MOVE_RIGHT);
+					player_ptr->SetHorizontalState(DIRECTION_RIGHT);
 				}
 				break;
 			default:
@@ -140,15 +138,15 @@ namespace game_framework {
 			case DIRECTION_DOWN:
 				break;
 			case DIRECTION_LEFT:
-				if (player_ptr->GetHorizontalState() == PLAYER_STATES_HORIZONTAL_MOVE_LEFT)
+				if (player_ptr->GetHorizontalState() == DIRECTION_LEFT)
 				{
-					player_ptr->SetHorizontalState(PLAYER_STATES_HORIZONTAL_STATIC);
+					player_ptr->SetHorizontalState(DIRECTION_NONE);
 				}
 				break;
 			case DIRECTION_RIGHT:
-				if (player_ptr->GetHorizontalState() ==  PLAYER_STATES_HORIZONTAL_MOVE_RIGHT)
+				if (player_ptr->GetHorizontalState() ==  DIRECTION_RIGHT)
 				{
-					player_ptr->SetHorizontalState(PLAYER_STATES_HORIZONTAL_STATIC);
+					player_ptr->SetHorizontalState(DIRECTION_NONE);
 				}
 				break;
 			default:
