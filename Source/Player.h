@@ -9,12 +9,18 @@
 
 namespace game_framework {
 
-	enum PLAYER_STATES {
-		PLAYER_STATES_STATIC,
-		PLAYER_STATES_MOVE_LEFT,
-		PLAYER_STATES_MOVE_RIGHT,
-		PLAYER_STATES_MOVE_UP,
-		PLAYER_STATES_MOVE_DOWN,
+	enum PLAYER_STATES_VERTICAL  
+	{
+		PLAYER_STATES_VERTICAL_STATIC,
+		PLAYER_STATES_VERTICAL_MOVE_UP,
+		PLAYER_STATES_VERTICAL_MOVE_DOWN
+	};
+
+	enum PLAYER_STATES_HORIZONTAL
+	{
+		PLAYER_STATES_HORIZONTAL_STATIC,
+		PLAYER_STATES_HORIZONTAL_MOVE_LEFT,
+		PLAYER_STATES_HORIZONTAL_MOVE_RIGHT,
 	};
 
 	class Player
@@ -28,18 +34,17 @@ namespace game_framework {
 		void OnShow(Map* map);	//显示
 		int  GetX1();			//左上角 x 坐标
 		int  GetY1();			//左上角 y 坐标
-		//int  GetX2();			//右下角 x 坐标
-		//int  GetY2();			//右下角 y 坐标
-		void SetTopLeft(int top, int left);// 设定左上角座标
-		void SetXY(int nx, int ny);		// 设定左上角坐标
-		void SetMovingState(int player_state);	// 设定移动的状态
+		int  GetX2();			//右下角 x 坐标
+		int  GetY2();			//右下角 y 坐标
+		void SetXY(int x, int y);		// 设定左上角坐标
+		void SetPlayerState(int vertical,int horizontal);	// 设定移动的状态
+		bool HitRectangle(int tx1, int ty1, int tx2, int ty2);//碰撞检测
 	private:
 		int  x, y;			//左上角坐标
 		int  initial_velocity;	// 初始速度
 		int  velocity;			// 目前的速度(pixel/frame)
-		bool HitRectangle(int tx1, int ty1, int tx2, int ty2);//碰撞检测
 		bool is_boy;				// 是否是男孩（火）
-		int getMovingState;			// 获取移动的状态
+		int moving_state;			// 获取移动的状态
 		bool isInvicible;			// 是否可见
 		bool isAlive;				// 是否活着
 		CAnimation animation;		// 动画

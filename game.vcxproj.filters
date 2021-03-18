@@ -199,12 +199,6 @@
     <ClInclude Include="Source\Map.h">
       <Filter>MyGame\Level</Filter>
     </ClInclude>
-    <ClInclude Include="Source\MapLevel1.h">
-      <Filter>MyGame\Level</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\MapLevel2.h">
-      <Filter>MyGame\Level</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Item.h">
       <Filter>MyGame\Item</Filter>
     </ClInclude>

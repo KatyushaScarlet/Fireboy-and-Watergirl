@@ -196,16 +196,19 @@ CGameStateRun::CGameStateRun(CGame *g)
 	//初始化对象
 	// 
 	//ball = new CBall [NUMBALLS];
-	maps.push_back(new MapLevel1());
+	//maps.push_back(new MapLevel1());
+	map = new Map();
+
 }
 
 CGameStateRun::~CGameStateRun()
 {
 	//delete [] ball;
-	for each (Map * map in maps)
-	{
-		delete map;
-	}
+	//for each (Map * map in maps)
+	//{
+	//	delete map;
+	//}
+	delete map;
 }
 
 void CGameStateRun::OnBeginState()
@@ -237,7 +240,7 @@ void CGameStateRun::OnBeginState()
 	//CAudio::Instance()->Play(AUDIO_NTUT, true);			// 撥放 MIDI
 
 	//从第一关开始
-	map_now_level = 0;
+	//map_now_level = 0;
 }
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
@@ -323,13 +326,11 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//// 此OnInit動作會接到CGameStaterOver::OnInit()，所以進度還沒到100%
 	////
 
-	for each (Map * map in maps)
-	{
-		map->LoadBitmapA();
-	}
+	map->LoadBitmapA();
+	map->InitMapLevel(0);
 
-	//从第一关开始
-	map_now_level = 0;
+	////从第一关开始
+	//map_now_level = 0;
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -414,6 +415,7 @@ void CGameStateRun::OnShow()
 	//corner.SetTopLeft(SIZE_X-corner.Width(), SIZE_Y-corner.Height());
 	//corner.ShowBitmap();
 
-	maps[map_now_level]->OnShow();
+	//maps[map_now_level]->OnShow();
+	map->OnShow();
 }
 }
