@@ -19,10 +19,10 @@ namespace game_framework {
 
 	enum KEY_VALUE
 	{
-		KEY_VALUE_UP,
-		KEY_VALUE_DOWN,
-		KEY_VALUE_RIGHT,
-		KEY_VALUE_LEFT
+		DIRECTION_UP,
+		DIRECTION_DOWN,
+		DIRECTION_RIGHT,
+		DIRECTION_LEFT
 	};
 
 	class Map
@@ -65,6 +65,13 @@ namespace game_framework {
 			//加载玩家
 			boy->OnShow();
 			girl->OnShow();
+			//输出玩家坐标
+			int* top = new int();
+			int* left = new int();
+			Position2ArrayIndex(boy->GetX1(), boy->GetY1(), top, left);
+			TRACE("boy: top=%d,left=%d\n", *top, *left);
+			Position2ArrayIndex(girl->GetX1(), girl->GetY1(), top, left);
+			TRACE("girl: top=%d,left=%d\n", *top, *left);
 		};
 
 		void OnMove()//移动
@@ -87,17 +94,17 @@ namespace game_framework {
 
 			switch (key_value)
 			{
-			case KEY_VALUE_UP:
+			case DIRECTION_UP:
 				break;
-			case KEY_VALUE_DOWN:
+			case DIRECTION_DOWN:
 				break;
-			case KEY_VALUE_LEFT:
+			case DIRECTION_LEFT:
 				if (player_ptr->GetHorizontalState() == PLAYER_STATES_HORIZONTAL_STATIC)
 				{
 					player_ptr->SetHorizontalState(PLAYER_STATES_HORIZONTAL_MOVE_LEFT);
 				}
 				break;
-			case KEY_VALUE_RIGHT:
+			case DIRECTION_RIGHT:
 				if (player_ptr->GetHorizontalState() == PLAYER_STATES_HORIZONTAL_STATIC)
 				{
 					player_ptr->SetHorizontalState(PLAYER_STATES_HORIZONTAL_MOVE_RIGHT);
@@ -106,6 +113,12 @@ namespace game_framework {
 			default:
 				break;
 			}
+		}
+
+		void Position2ArrayIndex(int x, int y, int* top, int* left)
+		{
+			*top = (int)y / MAP_GIRD_PIXEL;
+			*left = (int)x / MAP_GIRD_PIXEL;
 		}
 
 		void KeyUp(int key_value, bool is_boy)//松开方向
@@ -122,21 +135,42 @@ namespace game_framework {
 
 			switch (key_value)
 			{
-			case KEY_VALUE_UP:
+			case DIRECTION_UP:
 				break;
-			case KEY_VALUE_DOWN:
+			case DIRECTION_DOWN:
 				break;
-			case KEY_VALUE_LEFT:
+			case DIRECTION_LEFT:
 				if (player_ptr->GetHorizontalState() == PLAYER_STATES_HORIZONTAL_MOVE_LEFT)
 				{
 					player_ptr->SetHorizontalState(PLAYER_STATES_HORIZONTAL_STATIC);
 				}
 				break;
-			case KEY_VALUE_RIGHT:
+			case DIRECTION_RIGHT:
 				if (player_ptr->GetHorizontalState() ==  PLAYER_STATES_HORIZONTAL_MOVE_RIGHT)
 				{
 					player_ptr->SetHorizontalState(PLAYER_STATES_HORIZONTAL_STATIC);
 				}
+				break;
+			default:
+				break;
+			}
+		}
+
+		bool CanMove(int direction)//判定是否能移动
+		{
+			switch (direction)
+			{
+			case DIRECTION_UP:
+
+				break;
+			case DIRECTION_DOWN:
+
+				break;
+			case DIRECTION_LEFT:
+
+				break;
+			case DIRECTION_RIGHT:
+
 				break;
 			default:
 				break;

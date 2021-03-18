@@ -88,12 +88,25 @@ namespace game_framework {
 				bitmap.SetTopLeft(x, y - PLAYER_GIRD_PIXEL);
 				bitmap.ShowBitmap();
 			}
+
 		};
 
-		int  GetX1();//左上角 x 坐标
-		int  GetY1();//左上角 y 坐标
-		int  GetX2();//右下角 x 坐标
-		int  GetY2();//右下角 y 坐标
+		int  GetX1()
+		{
+			return x;
+		}
+		int  GetY1()
+		{
+			return y;
+		}
+		int  GetX2()
+		{
+			return x + PLAYER_GIRD_PIXEL;
+		}
+		int  GetY2()
+		{
+			return y + PLAYER_GIRD_PIXEL;
+		}
 		void SetTopLeft(int top, int left)// 设定左上角坐标
 		{
 			x = left;

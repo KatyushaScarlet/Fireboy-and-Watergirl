@@ -358,28 +358,28 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	switch (nChar)
 	{
 	case KEY_UP:
-		map->KeyDown(KEY_VALUE_UP, true);
+		map->KeyDown(DIRECTION_UP, true);
 		break;
 	case KEY_LEFT:
-		map->KeyDown(KEY_VALUE_LEFT, true);
+		map->KeyDown(DIRECTION_LEFT, true);
 		break;
 	case KEY_DOWN:
-		map->KeyDown(KEY_VALUE_DOWN, true);
+		map->KeyDown(DIRECTION_DOWN, true);
 		break;
 	case KEY_RIGHT:
-		map->KeyDown(KEY_VALUE_RIGHT, true);
+		map->KeyDown(DIRECTION_RIGHT, true);
 		break;
 	case KEY_W:
-		map->KeyDown(KEY_VALUE_UP, false);
+		map->KeyDown(DIRECTION_UP, false);
 		break;
 	case KEY_A:
-		map->KeyDown(KEY_VALUE_LEFT, false);
+		map->KeyDown(DIRECTION_LEFT, false);
 		break;
 	case KEY_S:
-		map->KeyDown(KEY_VALUE_DOWN, false);
+		map->KeyDown(DIRECTION_DOWN, false);
 		break;
 	case KEY_D:
-		map->KeyDown(KEY_VALUE_RIGHT, false);
+		map->KeyDown(DIRECTION_RIGHT, false);
 		break;
 	default:
 		break;
@@ -403,28 +403,28 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	switch (nChar)
 	{
 	case KEY_UP:
-		map->KeyUp(KEY_VALUE_UP, true);
+		map->KeyUp(DIRECTION_UP, true);
 		break;
 	case KEY_LEFT:
-		map->KeyUp(KEY_VALUE_LEFT, true);
+		map->KeyUp(DIRECTION_LEFT, true);
 		break;
 	case KEY_DOWN:
-		map->KeyUp(KEY_VALUE_DOWN, true);
+		map->KeyUp(DIRECTION_DOWN, true);
 		break;
 	case KEY_RIGHT:
-		map->KeyUp(KEY_VALUE_RIGHT, true);
+		map->KeyUp(DIRECTION_RIGHT, true);
 		break;
 	case KEY_W:
-		map->KeyUp(KEY_VALUE_UP, false);
+		map->KeyUp(DIRECTION_UP, false);
 		break;
 	case KEY_A:
-		map->KeyUp(KEY_VALUE_LEFT, false);
+		map->KeyUp(DIRECTION_LEFT, false);
 		break;
 	case KEY_S:
-		map->KeyUp(KEY_VALUE_DOWN, false);
+		map->KeyUp(DIRECTION_DOWN, false);
 		break;
 	case KEY_D:
-		map->KeyUp(KEY_VALUE_RIGHT, false);
+		map->KeyUp(DIRECTION_RIGHT, false);
 		break;
 	default:
 		break;
