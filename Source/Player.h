@@ -52,11 +52,11 @@ namespace game_framework {
 		{
 			if (is_boy)
 			{
-				bitmap.LoadBitmapA("RES\\player\\boy_static.bmp",RGB(255,255,255));
+				bitmap.LoadBitmapA("RES\\player\\boy_static.bmp", RGB(255, 255, 255));
 			}
 			else
 			{
-				bitmap.LoadBitmapA("RES\\player\\girl_static.bmp",RGB(255, 255, 255));
+				bitmap.LoadBitmapA("RES\\player\\girl_static.bmp", RGB(255, 255, 255));
 			}
 		};
 		void OnMove();	//ÒÆ¶¯
