@@ -76,8 +76,8 @@ namespace game_framework {
 
 		void OnMove()//移动
 		{
-			boy->OnMove();
-			girl->OnMove();
+			boy->OnMove(this);
+			girl->OnMove(this);
 		}
 
 		void KeyDown(int key_value,bool is_boy)//按下方向
@@ -155,8 +155,7 @@ namespace game_framework {
 				break;
 			}
 		}
-
-		//typedef bool (*CALLBACK) (int);
+		
 		bool PlayerCanMove(int x,int y,int direction)//判定是否能移动
 		{
 			switch (direction)

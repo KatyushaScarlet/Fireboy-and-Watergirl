@@ -50,8 +50,10 @@ namespace game_framework {
 				bitmap.LoadBitmapA("RES\\player\\girl_static.bmp", RGB(255, 255, 255));
 			}
 		};
-		void OnMove()//移动
+		void OnMove(Map* map)//移动
 		{
+			bool can_move = map->PlayerCanMove(x, y, 0);
+
 			switch (moving_vertical)//垂直移动
 			{
 			case PLAYER_STATES_VERTICAL_MOVE_UP://上升状态
@@ -98,6 +100,7 @@ namespace game_framework {
 				break;
 			}
 		}
+
 		void OnShow()//显示
 		{
 			bitmap.SetTopLeft(x, y);
