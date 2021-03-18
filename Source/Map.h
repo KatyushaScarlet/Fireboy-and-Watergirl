@@ -65,13 +65,13 @@ namespace game_framework {
 			//加载玩家
 			boy->OnShow();
 			girl->OnShow();
-			//输出玩家坐标
-			int* top = new int();
-			int* left = new int();
-			Position2ArrayIndex(boy->GetX1(), boy->GetY1(), top, left);
-			TRACE("boy: top=%d,left=%d\n", *top, *left);
-			Position2ArrayIndex(girl->GetX1(), girl->GetY1(), top, left);
-			TRACE("girl: top=%d,left=%d\n", *top, *left);
+			////输出玩家坐标
+			//int* top = new int();
+			//int* left = new int();
+			//Position2ArrayIndex(boy->GetX1(), boy->GetY1(), top, left);
+			//TRACE("boy: top=%d,left=%d\n", *top, *left);
+			//Position2ArrayIndex(girl->GetX1(), girl->GetY1(), top, left);
+			//TRACE("girl: top=%d,left=%d\n", *top, *left);
 		};
 
 		void OnMove()//移动
@@ -156,7 +156,8 @@ namespace game_framework {
 			}
 		}
 
-		bool CanMove(int direction)//判定是否能移动
+		//typedef bool (*CALLBACK) (int);
+		bool PlayerCanMove(int x,int y,int direction)//判定是否能移动
 		{
 			switch (direction)
 			{

@@ -7,6 +7,8 @@
 
 namespace game_framework {
 
+	class Map;
+
 	enum PLAYER_STATES_VERTICAL  
 	{
 		PLAYER_STATES_VERTICAL_STATIC,
@@ -32,7 +34,7 @@ namespace game_framework {
 			y = 0;
 			moving_vertical = PLAYER_STATES_VERTICAL_STATIC;
 			moving_horizontal = PLAYER_STATES_HORIZONTAL_STATIC;
-			initial_velocity = 0;
+			initial_velocity = 10;
 			velocity = 0;
 			is_visible = true;
 		};
@@ -55,11 +57,29 @@ namespace game_framework {
 		{
 			switch (moving_vertical)//垂直移动
 			{
-			case PLAYER_STATES_VERTICAL_MOVE_UP:
-				y -= PLAYER_STEP_PIXEL;
+			case PLAYER_STATES_VERTICAL_MOVE_UP://上升状态
+				if (velocity > 0)
+				{
+					y -= velocity;//当速度>0时上升
+					velocity--;
+				}
+				else
+				{
+					moving_vertical = PLAYER_STATES_VERTICAL_MOVE_DOWN;//当速度<=0时，垂直方向变为下降
+					velocity = 1;
+				}
 				break;
-			case PLAYER_STATES_VERTICAL_MOVE_DOWN:
-				y += PLAYER_STEP_PIXEL;
+			case PLAYER_STATES_VERTICAL_MOVE_DOWN://下降状态
+				if (false)//如果下方可通行
+				{
+					y += velocity;
+					velocity++;
+				}
+				else
+				{
+					moving_vertical = PLAYER_STATES_VERTICAL_STATIC;//当下方不可通行时，垂直方向变成静止
+					velocity = initial_velocity;//加速度变为初始值
+				}
 				break;
 			case PLAYER_STATES_VERTICAL_STATIC:
 				break;
@@ -83,9 +103,9 @@ namespace game_framework {
 		}
 		void OnShow()//显示
 		{
+			bitmap.SetTopLeft(x, y);
 			if (is_visible)
 			{
-				bitmap.SetTopLeft(x, y - PLAYER_GIRD_PIXEL);
 				bitmap.ShowBitmap();
 			}
 
@@ -110,7 +130,7 @@ namespace game_framework {
 		void SetTopLeft(int top, int left)// 设定左上角坐标
 		{
 			x = left;
-			y = top;
+			y = top - MAP_GIRD_PIXEL;//人物为2格高
 		}
 		void SetVerticalState(int state)//设定垂直状态
 		{
