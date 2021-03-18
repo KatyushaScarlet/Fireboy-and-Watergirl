@@ -17,20 +17,12 @@
 
 namespace game_framework {
 
-	enum KEY_DOWN_STATES
+	enum KEY_VALUE
 	{
-		KEY_DOWN_STATES_UP,
-		KEY_DOWN_STATES_DOWN,
-		KEY_DOWN_STATES_RIGHT,
-		KEY_DOWN_STATES_LEFT
-	};
-
-	enum KEY_UP_STATES
-	{
-		KEY_UP_STATES_UP,
-		KEY_UP_STATES_DOWN,
-		KEY_UP_STATES_RIGHT,
-		KEY_UP_STATES_LEFT
+		KEY_VALUE_UP,
+		KEY_VALUE_DOWN,
+		KEY_VALUE_RIGHT,
+		KEY_VALUE_LEFT
 	};
 
 	class Map
@@ -81,14 +73,74 @@ namespace game_framework {
 			girl->OnMove();
 		}
 
-		void KeyDown(int direction,bool boy)//按下方向
+		void KeyDown(int key_value,bool is_boy)//按下方向
 		{
-		
+			Player* player_ptr;
+			if (is_boy)
+			{
+				player_ptr = boy;
+			}
+			else
+			{
+				player_ptr = girl;
+			}
+
+			switch (key_value)
+			{
+			case KEY_VALUE_UP:
+				break;
+			case KEY_VALUE_DOWN:
+				break;
+			case KEY_VALUE_LEFT:
+				if (player_ptr->GetHorizontalState() == PLAYER_STATES_HORIZONTAL_STATIC)
+				{
+					player_ptr->SetHorizontalState(PLAYER_STATES_HORIZONTAL_MOVE_LEFT);
+				}
+				break;
+			case KEY_VALUE_RIGHT:
+				if (player_ptr->GetHorizontalState() == PLAYER_STATES_HORIZONTAL_STATIC)
+				{
+					player_ptr->SetHorizontalState(PLAYER_STATES_HORIZONTAL_MOVE_RIGHT);
+				}
+				break;
+			default:
+				break;
+			}
 		}
 
-		void KeyUp(int direction, bool boy)//松开方向
+		void KeyUp(int key_value, bool is_boy)//松开方向
 		{
+			Player* player_ptr;
+			if (is_boy)
+			{
+				player_ptr = boy;
+			}
+			else
+			{
+				player_ptr = girl;
+			}
 
+			switch (key_value)
+			{
+			case KEY_VALUE_UP:
+				break;
+			case KEY_VALUE_DOWN:
+				break;
+			case KEY_VALUE_LEFT:
+				if (player_ptr->GetHorizontalState() == PLAYER_STATES_HORIZONTAL_MOVE_LEFT)
+				{
+					player_ptr->SetHorizontalState(PLAYER_STATES_HORIZONTAL_STATIC);
+				}
+				break;
+			case KEY_VALUE_RIGHT:
+				if (player_ptr->GetHorizontalState() ==  PLAYER_STATES_HORIZONTAL_MOVE_RIGHT)
+				{
+					player_ptr->SetHorizontalState(PLAYER_STATES_HORIZONTAL_STATIC);
+				}
+				break;
+			default:
+				break;
+			}
 		}
 
 		~Map()

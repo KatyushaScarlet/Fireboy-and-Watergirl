@@ -284,6 +284,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	//// 移動彈跳的球
 	////
 	//bball.OnMove();
+	map->OnMove();
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
@@ -357,28 +358,28 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	switch (nChar)
 	{
 	case KEY_UP:
-		map->KeyDown(KEY_UP_STATES_UP, true);
+		map->KeyDown(KEY_VALUE_UP, true);
 		break;
 	case KEY_LEFT:
-		map->KeyDown(KEY_UP_STATES_LEFT, true);
+		map->KeyDown(KEY_VALUE_LEFT, true);
 		break;
 	case KEY_DOWN:
-		map->KeyDown(KEY_UP_STATES_DOWN, true);
+		map->KeyDown(KEY_VALUE_DOWN, true);
 		break;
 	case KEY_RIGHT:
-		map->KeyDown(KEY_UP_STATES_RIGHT, true);
+		map->KeyDown(KEY_VALUE_RIGHT, true);
 		break;
 	case KEY_W:
-		map->KeyDown(KEY_UP_STATES_UP, false);
+		map->KeyDown(KEY_VALUE_UP, false);
 		break;
 	case KEY_A:
-		map->KeyDown(KEY_UP_STATES_LEFT, false);
+		map->KeyDown(KEY_VALUE_LEFT, false);
 		break;
 	case KEY_S:
-		map->KeyDown(KEY_UP_STATES_DOWN, false);
+		map->KeyDown(KEY_VALUE_DOWN, false);
 		break;
 	case KEY_D:
-		map->KeyDown(KEY_UP_STATES_RIGHT, false);
+		map->KeyDown(KEY_VALUE_RIGHT, false);
 		break;
 	default:
 		break;
@@ -402,28 +403,28 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	switch (nChar)
 	{
 	case KEY_UP:
-		map->KeyDown(KEY_UP_STATES_UP, true);
+		map->KeyUp(KEY_VALUE_UP, true);
 		break;
 	case KEY_LEFT:
-		map->KeyDown(KEY_UP_STATES_LEFT, true);
+		map->KeyUp(KEY_VALUE_LEFT, true);
 		break;
 	case KEY_DOWN:
-		map->KeyDown(KEY_UP_STATES_DOWN, true);
+		map->KeyUp(KEY_VALUE_DOWN, true);
 		break;
 	case KEY_RIGHT:
-		map->KeyDown(KEY_UP_STATES_RIGHT, true);
+		map->KeyUp(KEY_VALUE_RIGHT, true);
 		break;
 	case KEY_W:
-		map->KeyDown(KEY_UP_STATES_UP, false);
+		map->KeyUp(KEY_VALUE_UP, false);
 		break;
 	case KEY_A:
-		map->KeyDown(KEY_UP_STATES_LEFT, false);
+		map->KeyUp(KEY_VALUE_LEFT, false);
 		break;
 	case KEY_S:
-		map->KeyDown(KEY_UP_STATES_DOWN, false);
+		map->KeyUp(KEY_VALUE_DOWN, false);
 		break;
 	case KEY_D:
-		map->KeyDown(KEY_UP_STATES_RIGHT, false);
+		map->KeyUp(KEY_VALUE_RIGHT, false);
 		break;
 	default:
 		break;
