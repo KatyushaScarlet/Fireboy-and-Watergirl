@@ -81,7 +81,15 @@ namespace game_framework {
 			girl->OnMove();
 		}
 
-		void KeyDown(int key);//按下按键
+		void KeyDown(int direction,bool boy)//按下方向
+		{
+		
+		}
+
+		void KeyUp(int direction, bool boy)//松开方向
+		{
+
+		}
 
 		~Map()
 		{

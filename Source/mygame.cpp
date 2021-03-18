@@ -357,20 +357,28 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	switch (nChar)
 	{
 	case KEY_UP:
+		map->KeyDown(KEY_UP_STATES_UP, true);
 		break;
 	case KEY_LEFT:
+		map->KeyDown(KEY_UP_STATES_LEFT, true);
 		break;
 	case KEY_DOWN:
+		map->KeyDown(KEY_UP_STATES_DOWN, true);
 		break;
 	case KEY_RIGHT:
+		map->KeyDown(KEY_UP_STATES_RIGHT, true);
 		break;
 	case KEY_W:
+		map->KeyDown(KEY_UP_STATES_UP, false);
 		break;
 	case KEY_A:
+		map->KeyDown(KEY_UP_STATES_LEFT, false);
 		break;
 	case KEY_S:
+		map->KeyDown(KEY_UP_STATES_DOWN, false);
 		break;
 	case KEY_D:
+		map->KeyDown(KEY_UP_STATES_RIGHT, false);
 		break;
 	default:
 		break;
@@ -391,6 +399,35 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	//	eraser.SetMovingUp(false);
 	//if (nChar == KEY_DOWN)
 	//	eraser.SetMovingDown(false);
+	switch (nChar)
+	{
+	case KEY_UP:
+		map->KeyDown(KEY_UP_STATES_UP, true);
+		break;
+	case KEY_LEFT:
+		map->KeyDown(KEY_UP_STATES_LEFT, true);
+		break;
+	case KEY_DOWN:
+		map->KeyDown(KEY_UP_STATES_DOWN, true);
+		break;
+	case KEY_RIGHT:
+		map->KeyDown(KEY_UP_STATES_RIGHT, true);
+		break;
+	case KEY_W:
+		map->KeyDown(KEY_UP_STATES_UP, false);
+		break;
+	case KEY_A:
+		map->KeyDown(KEY_UP_STATES_LEFT, false);
+		break;
+	case KEY_S:
+		map->KeyDown(KEY_UP_STATES_DOWN, false);
+		break;
+	case KEY_D:
+		map->KeyDown(KEY_UP_STATES_RIGHT, false);
+		break;
+	default:
+		break;
+	}
 }
 
 void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
