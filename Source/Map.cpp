@@ -11,7 +11,7 @@ namespace game_framework {
 	{
 		InitMapLevel(0);
 	}
-	void Map::LoadBitmapMap()//¼ÓÔØÍ¼Æ¬
+	void Map::LoadBitmapMap()//åŠ è½½å›¾ç‰‡
 	{
 		background.LoadBitmap("RES\\background.bmp");
 		wall.LoadBitmap("RES\\wall.bmp");
@@ -19,12 +19,12 @@ namespace game_framework {
 		girl->LoadBitmapPlayer();
 
 	};
-	void Map::OnShow()//ÏÔÊ¾
+	void Map::OnShow()//æ˜¾ç¤º
 	{
-		//¼ÓÔØ±³¾°
+		//åŠ è½½èƒŒæ™¯
 		background.SetTopLeft(0, 0);
 		background.ShowBitmap();
-		//¼ÓÔØÇ½±Ú
+		//åŠ è½½å¢™å£
 		for (size_t i = 0; i < MAP_SIZE_HEIGHT; i++)
 		{
 			for (size_t j = 0; j < MAP_SIZE_WIDTH; j++)
@@ -41,10 +41,10 @@ namespace game_framework {
 				}
 			}
 		}
-		//¼ÓÔØÍæ¼Ò
+		//åŠ è½½ç©å®¶
 		boy->OnShow();
 		girl->OnShow();
-		////Êä³öÍæ¼Ò×ø±ê
+		////è¾“å‡ºç©å®¶åæ ‡
 		//int* top = new int();
 		//int* left = new int();
 		//Position2ArrayIndex(boy->GetX1(), boy->GetY1(), top, left);
@@ -53,13 +53,13 @@ namespace game_framework {
 		//TRACE("girl: top=%d,left=%d\n", *top, *left);
 	};
 
-	void Map::OnMove()//ÒÆ¶¯
+	void Map::OnMove()//ç§»åŠ¨
 	{
 		boy->OnMove(this);
 		girl->OnMove(this);
 	}
 
-	void Map::KeyDown(int key_value, bool is_boy)//°´ÏÂ·½Ïò
+	void Map::KeyDown(int key_value, bool is_boy)//æŒ‰ä¸‹æ–¹å‘
 	{
 		Player* player_ptr;
 		if (is_boy)
@@ -105,7 +105,7 @@ namespace game_framework {
 		*left = (int)x / MAP_GIRD_PIXEL;
 	}
 
-	void Map::KeyUp(int key_value, bool is_boy)//ËÉ¿ª·½Ïò
+	void Map::KeyUp(int key_value, bool is_boy)//æ¾å¼€æ–¹å‘
 	{
 		Player* player_ptr;
 		if (is_boy)
@@ -140,7 +140,7 @@ namespace game_framework {
 		}
 	}
 
-	bool Map::PlayerCanMove(int top, int left, int direction)//ÅĞ¶¨ÊÇ·ñÄÜÒÆ¶¯
+	bool Map::PlayerCanMove(int top, int left, int direction)//åˆ¤å®šæ˜¯å¦èƒ½ç§»åŠ¨
 	{
 
 		switch (direction)
@@ -152,7 +152,7 @@ namespace game_framework {
 			return true;
 			break;
 		case DIRECTION_LEFT:
-			if (map_array[top][left] != 1)
+			if (map_array[top][left - 1] != 1)
 			{
 				return true;
 			}
@@ -162,7 +162,7 @@ namespace game_framework {
 			}
 			break;
 		case DIRECTION_RIGHT:
-			if (map_array[top][left] != 1)
+			if (map_array[top][left + 1] != 1)
 			{
 				return true;
 			}
@@ -181,7 +181,7 @@ namespace game_framework {
 		Map::DestroyResources();
 	};
 
-	void Map::InitMapLevel(int level)//³õÊ¼»¯µØÍ¼Êı¾İ 0~9
+	void Map::InitMapLevel(int level)//åˆå§‹åŒ–åœ°å›¾æ•°æ® 0~9
 	{
 		now_level = level;
 		//DestroyResources();
@@ -218,7 +218,7 @@ namespace game_framework {
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
 			{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
 		};
-		//µØÍ¼¸³Öµ
+		//åœ°å›¾èµ‹å€¼
 		switch (level)
 		{
 		case 0:
@@ -234,7 +234,7 @@ namespace game_framework {
 			break;
 		}
 
-		//¼ÓÔØÎï¼ş
+		//åŠ è½½ç‰©ä»¶
 		for (size_t i = 0; i < MAP_SIZE_HEIGHT; i++)
 		{
 			for (size_t j = 0; j < MAP_SIZE_WIDTH; j++)

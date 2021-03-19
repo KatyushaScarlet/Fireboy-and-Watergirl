@@ -27,7 +27,7 @@ namespace game_framework {
 	{
 
 	};
-	void Player::LoadBitmapPlayer()//ÔØÈëÍ¼ĞÎ
+	void Player::LoadBitmapPlayer()//è½½å…¥å›¾å½¢
 	{
 		if (is_boy)
 		{
@@ -38,34 +38,39 @@ namespace game_framework {
 			bitmap.LoadBitmapA("RES\\player\\girl_static.bmp", RGB(255, 255, 255));
 		}
 	};
-	void Player::OnMove(Map *map)//ÒÆ¶¯
+	void Player::OnMove(Map *map)//ç§»åŠ¨
 	{
 		bool can_move = false;
 
-		switch (moving_vertical)//´¹Ö±ÒÆ¶¯
+		int* top = new int();
+		int* left = new int();
+
+		map->Position2ArrayIndex(x, y, top, left);
+
+		switch (moving_vertical)//å‚ç›´ç§»åŠ¨
 		{
-		case DIRECTION_UP://ÉÏÉı×´Ì¬
+		case DIRECTION_UP://ä¸Šå‡çŠ¶æ€
 			if (velocity > 0)
 			{
-				y -= velocity;//µ±ËÙ¶È>0Ê±ÉÏÉı
+				y -= velocity;//å½“é€Ÿåº¦>0æ—¶ä¸Šå‡
 				velocity--;
 			}
 			else
 			{
-				moving_vertical = DIRECTION_DOWN;//µ±ËÙ¶È<=0Ê±£¬´¹Ö±·½Ïò±äÎªÏÂ½µ
+				moving_vertical = DIRECTION_DOWN;//å½“é€Ÿåº¦<=0æ—¶ï¼Œå‚ç›´æ–¹å‘å˜ä¸ºä¸‹é™
 				velocity = 1;
 			}
 			break;
-		case DIRECTION_DOWN://ÏÂ½µ×´Ì¬
-			if (true)//Èç¹ûÏÂ·½¿ÉÍ¨ĞĞ
+		case DIRECTION_DOWN://ä¸‹é™çŠ¶æ€
+			if (true)//å¦‚æœä¸‹æ–¹å¯é€šè¡Œ
 			{
 				y += velocity;
 				velocity++;
 			}
 			else
 			{
-				moving_vertical = DIRECTION_NONE;//µ±ÏÂ·½²»¿ÉÍ¨ĞĞÊ±£¬´¹Ö±·½Ïò±ä³É¾²Ö¹
-				velocity = initial_velocity;//¼ÓËÙ¶È±äÎª³õÊ¼Öµ
+				moving_vertical = DIRECTION_NONE;//å½“ä¸‹æ–¹ä¸å¯é€šè¡Œæ—¶ï¼Œå‚ç›´æ–¹å‘å˜æˆé™æ­¢
+				velocity = initial_velocity;//åŠ é€Ÿåº¦å˜ä¸ºåˆå§‹å€¼
 			}
 			break;
 		case DIRECTION_NONE:
@@ -74,7 +79,7 @@ namespace game_framework {
 			break;
 		}
 
-		switch (moving_horizontal)//Ë®Æ½ÒÆ¶¯
+		switch (moving_horizontal)//æ°´å¹³ç§»åŠ¨
 		{
 		case DIRECTION_LEFT:
 			can_move = map->PlayerCanMove(GetCenterX(), GetCenterY(), DIRECTION_LEFT);
@@ -96,7 +101,7 @@ namespace game_framework {
 		}
 	}
 
-	void Player::OnShow()//ÏÔÊ¾
+	void Player::OnShow()//æ˜¾ç¤º
 	{
 		bitmap.SetTopLeft(x, y);
 		if (is_visible)
@@ -132,28 +137,28 @@ namespace game_framework {
 	{
 		return y + PLAYER_GIRD_PIXEL;
 	}
-	void Player::SetTopLeft(int top, int left)// Éè¶¨×óÉÏ½Ç×ø±ê
+	void Player::SetTopLeft(int top, int left)// è®¾å®šå·¦ä¸Šè§’åæ ‡
 	{
 		x = left;
 		y = top - PLAYER_GIRD_PIXEL;
 	}
-	void Player::SetVerticalState(int state)//Éè¶¨´¹Ö±×´Ì¬
+	void Player::SetVerticalState(int state)//è®¾å®šå‚ç›´çŠ¶æ€
 	{
 		moving_vertical = state;
 	}
-	void Player::SetHorizontalState(int state)//Éè¶¨Ë®Æ½×´Ì¬
+	void Player::SetHorizontalState(int state)//è®¾å®šæ°´å¹³çŠ¶æ€
 	{
 		moving_horizontal = state;
 	}
-	int Player::GetVerticalState()//»ñÈ¡´¹Ö±×´Ì¬
+	int Player::GetVerticalState()//è·å–å‚ç›´çŠ¶æ€
 	{
 		return moving_vertical;
 	}
-	int Player::GetHorizontalState()//»ñÈ¡Ë®Æ½×´Ì¬
+	int Player::GetHorizontalState()//è·å–æ°´å¹³çŠ¶æ€
 	{
 		return moving_horizontal;
 	}
 	bool Player::HitRectangle(int tx1, int ty1, int tx2, int ty2) {
 		return false;
-	}//Åö×²¼ì²â
+	}//ç¢°æ’æ£€æµ‹
 };
