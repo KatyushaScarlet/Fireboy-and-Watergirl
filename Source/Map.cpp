@@ -99,11 +99,11 @@ namespace game_framework {
 		}
 	}
 
-	void Map::Position2ArrayIndex(int x, int y, int* top, int* left)
-	{
-		*top = (int)y / MAP_GIRD_PIXEL;
-		*left = (int)x / MAP_GIRD_PIXEL;
-	}
+	//void Map::Position2ArrayIndex(int x, int y, int* top, int* left)
+	//{
+	//	*top = (int)y / MAP_GIRD_PIXEL;
+	//	*left = (int)x / MAP_GIRD_PIXEL;
+	//}
 
 	void Map::KeyUp(int key_value, bool is_boy)//松开方向
 	{
@@ -142,10 +142,10 @@ namespace game_framework {
 
 	bool  Map::PlayerCanMove(int x, int y, int direction)//判定是否能移动
 	{
-		int* top = new int();
-		int* left = new int();
+		//Position2ArrayIndex(x, y, top, left);
 
-		Position2ArrayIndex(x, y, top, left);
+		int top = y / MAP_GIRD_PIXEL;
+		int left = x / MAP_GIRD_PIXEL;
 
 		switch (direction)
 		{
@@ -156,11 +156,19 @@ namespace game_framework {
 			return true;
 			break;
 		case DIRECTION_LEFT:
-			return true;
+			TRACE("top=%d,left=%d\n", top, left);
+			if (map_array[top][left] != 1)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 			break;
 		case DIRECTION_RIGHT:
-			TRACE("gx:%d,gy:%d\n", *top, *left);
-			if (map_array[*top][*left] == 0)
+			TRACE("top=%d,left=%d\n", top, left);
+			if (map_array[top][left] != 1)
 			{
 				return true;
 			}
@@ -207,12 +215,12 @@ namespace game_framework {
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0},
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
-			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,0},
-			{1,0,101,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
+			{1,0,101,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,0},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0},
-			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0},
 			{1,0,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0},
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
 			{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
 		};

@@ -38,9 +38,10 @@ namespace game_framework {
 			bitmap.LoadBitmapA("RES\\player\\girl_static.bmp", RGB(255, 255, 255));
 		}
 	};
-	void Player::OnMove(Map *m)//移动
+	void Player::OnMove(Map *map)//移动
 	{
-		
+		bool can_move = false;
+
 		switch (moving_vertical)//垂直移动
 		{
 		case DIRECTION_UP://上升状态
@@ -75,11 +76,15 @@ namespace game_framework {
 
 		switch (moving_horizontal)//水平移动
 		{
+
 		case DIRECTION_LEFT:
-			x -= PLAYER_STEP_PIXEL;
+			can_move = map->PlayerCanMove(GetX1(), GetY1(), DIRECTION_LEFT);
+			if (can_move) {
+				x -= PLAYER_STEP_PIXEL;
+			}
 			break;
 		case DIRECTION_RIGHT:{
-			bool can_move = m->PlayerCanMove(GetX2(), GetY2(), DIRECTION_RIGHT);
+			can_move = map->PlayerCanMove(GetX1(), GetY1(), DIRECTION_RIGHT);
 			if (can_move) {
 				x += PLAYER_STEP_PIXEL;
 			}
@@ -109,7 +114,7 @@ namespace game_framework {
 	}
 	int Player::GetY1()
 	{
-		return y;
+		return y + PLAYER_GIRD_PIXEL;
 	}
 	int  Player::GetX2()
 	{
@@ -117,12 +122,12 @@ namespace game_framework {
 	}
 	int Player::GetY2()
 	{
-		return y + PLAYER_GIRD_PIXEL;
+		return y + PLAYER_GIRD_PIXEL + PLAYER_GIRD_PIXEL;
 	}
 	void Player::SetTopLeft(int top, int left)// 设定左上角坐标
 	{
 		x = left;
-		y = top - PLAYER_GIRD_PIXEL;
+		y = top;
 	}
 	void Player::SetVerticalState(int state)//设定垂直状态
 	{
