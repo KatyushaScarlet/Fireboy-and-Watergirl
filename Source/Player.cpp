@@ -46,7 +46,7 @@ namespace game_framework {
 		{
 			//上升状态
 			TRACE("up\n");
-			can_move = map->PlayerCanMove(GetX1(), GetY1() - PLAYER_GIRD_PIXEL, DIRECTION_UP);
+			can_move = (map->PlayerCanMove(GetX1(), GetY1() - PLAYER_GIRD_PIXEL, DIRECTION_UP)&& map->PlayerCanMove(GetX2(), GetY1() - PLAYER_GIRD_PIXEL, DIRECTION_UP));//判断上方与右上
 			if (can_move && velocity > 0)//如果上方可通行，垂直速度大于0
 			{
 				y -= velocity;
@@ -62,7 +62,7 @@ namespace game_framework {
 		{
 			//如果非上升状态，始终判断是否下落
 			TRACE("down\n");
-			can_move = (map->PlayerCanMove(GetX1(), GetY2(), DIRECTION_DOWN) && map->PlayerCanMove(GetX2(), GetY2(), DIRECTION_DOWN));
+			can_move = (map->PlayerCanMove(GetX1(), GetY2(), DIRECTION_DOWN) && map->PlayerCanMove(GetX2(), GetY2(), DIRECTION_DOWN));//判断下方与右下
 			if (can_move)//如果下方可通行
 			{
 				y += velocity;
@@ -78,53 +78,6 @@ namespace game_framework {
 				velocity = initial_velocity;//加速度变为初始值
 			}
 		}
-
-
-		//switch (moving_vertical)//垂直移动
-		//{
-		//case DIRECTION_UP://上升状态
-		//	TRACE("up\n");
-		//	can_move = map->PlayerCanMove(GetX1(), GetY1() - PLAYER_GIRD_PIXEL, DIRECTION_UP);
-		//	if (can_move && velocity > 0)//如果上方可通行
-		//	{
-		//		y -= velocity;
-		//		velocity--;
-
-		//		//if (velocity > 0)//当速度>0时上升
-		//		//{
-		//		//	y -= velocity;
-		//		//	velocity--;
-		//		//}
-		//	}
-		//	else
-		//	{
-		//		moving_vertical = DIRECTION_DOWN;//当速度<=0时，垂直方向变为下降
-		//		velocity = 1;
-		//	}
-		//	break;
-		//case DIRECTION_DOWN://下降状态
-		//	TRACE("down\n");
-		//	can_move = map->PlayerCanMove(GetX1(), GetY2(), DIRECTION_DOWN);
-		//	if (can_move)//如果下方可通行
-		//	{
-		//		y += velocity;
-		//		if (velocity < 10)//防止下落速度过大
-		//		{
-		//			velocity++;
-		//		}
-
-		//	}
-		//	else
-		//	{
-		//		moving_vertical = DIRECTION_NONE;//当下方不可通行时，垂直方向变成静止
-		//		velocity = initial_velocity;//加速度变为初始值
-		//	}
-		//	break;
-		//case DIRECTION_NONE:
-		//	break;
-		//default:
-		//	break;
-		//}
 
 		switch (moving_horizontal)//水平移动
 		{
