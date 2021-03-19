@@ -77,7 +77,7 @@ namespace game_framework {
 			if (player_ptr->GetVerticalState() == DIRECTION_NONE)
 			{
 				//TODO: if can move
-				player_ptr->SetHorizontalState(DIRECTION_UP);
+				player_ptr->SetVerticalState(DIRECTION_UP);
 			}
 			break;
 		case DIRECTION_DOWN:
@@ -147,39 +147,48 @@ namespace game_framework {
 		int top = y / MAP_GIRD_PIXEL;
 		int left = x / MAP_GIRD_PIXEL;
 
-		switch (direction)
+		//TRACE("top=%d,left=%d\n", top, left);
+		if (map_array[top][left] != 1)
 		{
-		case DIRECTION_UP:
 			return true;
-			break;
-		case DIRECTION_DOWN:
-			return true;
-			break;
-		case DIRECTION_LEFT:
-			TRACE("top=%d,left=%d\n", top, left);
-			if (map_array[top][left] != 1)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-			break;
-		case DIRECTION_RIGHT:
-			TRACE("top=%d,left=%d\n", top, left);
-			if (map_array[top][left] != 1)
-			{
-				return true;
-			}
-			else 
-			{
-				return false;
-			}
-		default:
-			
-			break;
 		}
+		else
+		{
+			return false;
+		}
+		//switch (direction)
+		//{
+		//case DIRECTION_UP:
+		//	return true;
+		//	break;
+		//case DIRECTION_DOWN:
+		//	return true;
+		//	break;
+		//case DIRECTION_LEFT:
+		//	TRACE("top=%d,left=%d\n", top, left);
+		//	if (map_array[top][left] != 1)
+		//	{
+		//		return true;
+		//	}
+		//	else
+		//	{
+		//		return false;
+		//	}
+		//	break;
+		//case DIRECTION_RIGHT:
+		//	TRACE("top=%d,left=%d\n", top, left);
+		//	if (map_array[top][left] != 1)
+		//	{
+		//		return true;
+		//	}
+		//	else 
+		//	{
+		//		return false;
+		//	}
+		//default:
+		//	
+		//	break;
+		//}
 	}
 
 	Map::~Map()
