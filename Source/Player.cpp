@@ -9,7 +9,7 @@
 
 #define PLAYER_GIRD_PIXEL 32
 #define PLAYER_STEP_PIXEL 4
-
+#define MOVE_OFFSET 2
 namespace game_framework {
 	class Map;
 	Player::Player(bool boy)
@@ -38,7 +38,7 @@ namespace game_framework {
 			bitmap.LoadBitmapA("RES\\player\\girl_static.bmp", RGB(255, 255, 255));
 		}
 	};
-	void Player::OnMove(Map *map)//ÒÆ¶¯
+	void Player::OnMove(Map* map)//ÒÆ¶¯
 	{
 		bool can_move = false;
 
@@ -78,17 +78,17 @@ namespace game_framework {
 		{
 
 		case DIRECTION_LEFT:
-			can_move = map->PlayerCanMove(GetX1(), GetY1(), DIRECTION_LEFT);
+			can_move = map->PlayerCanMove(GetX1() + MOVE_OFFSET - PLAYER_STEP_PIXEL, GetY1(), DIRECTION_LEFT);
 			if (can_move) {
 				x -= PLAYER_STEP_PIXEL;
 			}
 			break;
-		case DIRECTION_RIGHT:{
-			can_move = map->PlayerCanMove(GetX1(), GetY1(), DIRECTION_RIGHT);
+		case DIRECTION_RIGHT: {
+			can_move = map->PlayerCanMove(GetX2() - MOVE_OFFSET + PLAYER_STEP_PIXEL, GetY1(), DIRECTION_RIGHT);
 			if (can_move) {
 				x += PLAYER_STEP_PIXEL;
 			}
-			
+
 			break;
 		}
 		case DIRECTION_NONE:
