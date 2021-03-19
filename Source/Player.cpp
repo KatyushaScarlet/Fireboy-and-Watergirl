@@ -79,7 +79,7 @@ namespace game_framework {
 			x -= PLAYER_STEP_PIXEL;
 			break;
 		case DIRECTION_RIGHT:{
-			bool can_move = m->PlayerCanMove(GetX2(), GetY1(), DIRECTION_RIGHT);
+			bool can_move = m->PlayerCanMove(GetX2(), GetY2(), DIRECTION_RIGHT);
 			if (can_move) {
 				x += PLAYER_STEP_PIXEL;
 			}
@@ -117,12 +117,12 @@ namespace game_framework {
 	}
 	int Player::GetY2()
 	{
-		return y + 2 * PLAYER_GIRD_PIXEL;
+		return y + PLAYER_GIRD_PIXEL;
 	}
 	void Player::SetTopLeft(int top, int left)// 设定左上角坐标
 	{
 		x = left;
-		y = top - PLAYER_GIRD_PIXEL;//人物为2格高
+		y = top - PLAYER_GIRD_PIXEL;
 	}
 	void Player::SetVerticalState(int state)//设定垂直状态
 	{
