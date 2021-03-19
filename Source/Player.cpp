@@ -77,13 +77,13 @@ namespace game_framework {
 		switch (moving_horizontal)//Ë®Æ½ÒÆ¶¯
 		{
 		case DIRECTION_LEFT:
-			can_move = map->PlayerCanMove(GetX1(), GetY1(), DIRECTION_LEFT);
+			can_move = map->PlayerCanMove(GetCenterX(), GetCenterY(), DIRECTION_LEFT);
 			if (can_move) {
 				x -= PLAYER_STEP_PIXEL;
 			}
 			break;
 		case DIRECTION_RIGHT:{
-			can_move = map->PlayerCanMove(GetX2(), GetY2(), DIRECTION_RIGHT);
+			can_move = map->PlayerCanMove(GetCenterX(), GetCenterY(), DIRECTION_RIGHT);
 			if (can_move) {
 				x += PLAYER_STEP_PIXEL;
 			}
@@ -104,7 +104,17 @@ namespace game_framework {
 			bitmap.ShowBitmap();
 		}
 
-	};
+	}
+	int Player::GetCenterX()
+	{
+	
+		return x+PLAYER_GIRD_PIXEL/2;
+	}
+	int Player::GetCenterY()
+	{
+		return y + PLAYER_GIRD_PIXEL / 2;
+	}
+	;
 
 	int  Player::GetX1()
 	{
