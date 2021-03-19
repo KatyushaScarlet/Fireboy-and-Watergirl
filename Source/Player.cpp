@@ -62,7 +62,7 @@ namespace game_framework {
 		{
 			//如果非上升状态，始终判断是否下落
 			TRACE("down\n");
-			can_move = map->PlayerCanMove(GetX1(), GetY2(), DIRECTION_DOWN);
+			can_move = (map->PlayerCanMove(GetX1(), GetY2(), DIRECTION_DOWN) && map->PlayerCanMove(GetX2(), GetY2(), DIRECTION_DOWN));
 			if (can_move)//如果下方可通行
 			{
 				y += velocity;
