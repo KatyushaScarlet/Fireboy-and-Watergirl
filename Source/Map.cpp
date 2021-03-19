@@ -156,10 +156,16 @@ namespace game_framework {
 			return true;
 			break;
 		case DIRECTION_LEFT:
-			return true;
+			if (map_array[*top][*left] == 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 			break;
 		case DIRECTION_RIGHT:
-			TRACE("gx:%d,gy:%d\n", *top, *left);
 			if (map_array[*top][*left] == 0)
 			{
 				return true;
