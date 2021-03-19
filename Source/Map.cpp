@@ -140,12 +140,8 @@ namespace game_framework {
 		}
 	}
 
-	bool  Map::PlayerCanMove(int x, int y, int direction)//判定是否能移动
+	bool Map::PlayerCanMove(int top, int left, int direction)//判定是否能移动
 	{
-		int* top = new int();
-		int* left = new int();
-
-		Position2ArrayIndex(x, y, top, left);
 
 		switch (direction)
 		{
@@ -156,7 +152,7 @@ namespace game_framework {
 			return true;
 			break;
 		case DIRECTION_LEFT:
-			if (map_array[*top][*left] == 0)
+			if (map_array[top][left - 1] != 1)
 			{
 				return true;
 			}
@@ -166,7 +162,7 @@ namespace game_framework {
 			}
 			break;
 		case DIRECTION_RIGHT:
-			if (map_array[*top][*left] == 0)
+			if (map_array[top][left + 1] != 1)
 			{
 				return true;
 			}

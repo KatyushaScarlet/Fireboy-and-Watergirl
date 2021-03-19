@@ -42,6 +42,11 @@ namespace game_framework {
 	{
 		bool can_move = false;
 
+		int* top = new int();
+		int* left = new int();
+
+		map->Position2ArrayIndex(x, y, top, left);
+
 		switch (moving_vertical)//垂直移动
 		{
 		case DIRECTION_UP://上升状态
@@ -77,13 +82,15 @@ namespace game_framework {
 		switch (moving_horizontal)//水平移动
 		{
 		case DIRECTION_LEFT:
-			can_move = map->PlayerCanMove(GetX1(), GetY1(), DIRECTION_LEFT);
+			TRACE("x=%d,y=%d,top=%d,left=%d\n", x, y, *top, *left);
+			can_move = map->PlayerCanMove(*top, *left, DIRECTION_LEFT);
 			if (can_move) {
 				x -= PLAYER_STEP_PIXEL;
 			}
 			break;
 		case DIRECTION_RIGHT:{
-			can_move = map->PlayerCanMove(GetX2(), GetY2(), DIRECTION_RIGHT);
+			TRACE("x=%d,y=%d,top=%d,left=%d\n", x, y, *top, *left);
+			can_move = map->PlayerCanMove(*top, *left, DIRECTION_RIGHT);
 			if (can_move) {
 				x += PLAYER_STEP_PIXEL;
 			}
