@@ -28,7 +28,7 @@ namespace game_framework {
 	private:
 		int now_level;//目前的关卡
 		int	map_array[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH];//地图数据
-
+		int gx, gy;
 		CMovingBitmap	background;//背景
 		CMovingBitmap	wall;//墙面
 

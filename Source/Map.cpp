@@ -142,6 +142,8 @@ namespace game_framework {
 
 	bool  Map::PlayerCanMove(int x, int y, int direction)//判定是否能移动
 	{
+		gx = x / MAP_GIRD_PIXEL;
+		gy = y / MAP_GIRD_PIXEL;
 		switch (direction)
 		{
 		case DIRECTION_UP:
@@ -154,10 +156,17 @@ namespace game_framework {
 			return true;
 			break;
 		case DIRECTION_RIGHT:
-			return true;
+			TRACE("gx:%d,gy:%d\n", gx, gy);
+			if (map_array[gy][gx] == 0 && x <= 1248 && x >= 0 && y <= 928 && y >= 0) {
+				return true;
+			}
+			else {
+				return false;
+			}// 砞﹚1  
 			break;
+		
 		default:
-			return false;
+			
 			break;
 		}
 	}

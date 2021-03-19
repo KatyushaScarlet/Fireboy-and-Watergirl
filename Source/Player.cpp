@@ -40,7 +40,7 @@ namespace game_framework {
 	};
 	void Player::OnMove(Map *m)//移动
 	{
-		bool can_move = m->PlayerCanMove(x, y, 0);
+		
 		switch (moving_vertical)//垂直移动
 		{
 		case DIRECTION_UP://上升状态
@@ -78,9 +78,14 @@ namespace game_framework {
 		case DIRECTION_LEFT:
 			x -= PLAYER_STEP_PIXEL;
 			break;
-		case DIRECTION_RIGHT:
-			x += PLAYER_STEP_PIXEL;
+		case DIRECTION_RIGHT:{
+			bool can_move = m->PlayerCanMove(GetX2(), GetY1(), DIRECTION_RIGHT);
+			if (can_move) {
+				x += PLAYER_STEP_PIXEL;
+			}
+			
 			break;
+		}
 		case DIRECTION_NONE:
 			break;
 		default:
