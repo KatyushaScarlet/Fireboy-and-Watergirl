@@ -146,6 +146,12 @@
     <ClCompile Include="Source\Map.cpp">
       <Filter>MyGame\Map</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Item.cpp">
+      <Filter>MyGame\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Wall.cpp">
+      <Filter>MyGame\Item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">

@@ -2,6 +2,7 @@
 #define MAP_SIZE_WIDTH 40
 #define MAP_SIZE_HEIGHT 30
 #define MAP_GIRD_PIXEL 32
+
 #include "Item.h"
 #include "Wall.h"
 #include "Diamond.h"
@@ -11,6 +12,7 @@
 #include "Pool.h"
 #include "Switch.h"
 #include "Player.h"
+
 namespace game_framework {
 
 	class Map
@@ -42,8 +44,6 @@ namespace game_framework {
 		vector<MovingWall*>	moving_walls;//可活动箱子
 		vector<Pool*>		pools;//水池
 		vector<Switch*>		switchs;//开关
-
-
 
 		void DestroyResources()
 		{

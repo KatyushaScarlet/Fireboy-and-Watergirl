@@ -4,7 +4,9 @@
 #include <ddraw.h>
 #include "audio.h"
 #include "gamelib.h"
+
 #include "Map.h"
+
 
 
 namespace game_framework {
@@ -15,7 +17,6 @@ namespace game_framework {
 	void Map::LoadBitmapMap()//¼ÓÔØÍ¼Æ¬
 	{
 		background.LoadBitmap("RES\\background.bmp");
-		//wall.LoadBitmap("RES\\wall.bmp");
 		for each (Wall * item in walls)
 		{
 			item->LoadItemBitmap();
