@@ -3,6 +3,7 @@
 #define MAP_SIZE_HEIGHT 30
 #define MAP_GIRD_PIXEL 32
 #include "Item.h"
+#include "Wall.h"
 #include "Diamond.h"
 #include "Door.h"
 #include "MovingBox.h"
@@ -29,11 +30,12 @@ namespace game_framework {
 		int now_level;//目前的关卡
 		int	map_array[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH];//地图数据
 		CMovingBitmap	background;//背景
-		CMovingBitmap	wall;//墙面
+		//CMovingBitmap	wall;//墙面
 
 		Player* boy;
 		Player* girl;
 
+		vector<Wall*>		walls;//墙壁
 		vector<Diamond*>	diamonds;//钻石
 		vector<Door*>		doors;//门
 		vector<MovingBox*>	moving_boxs;//可活动箱子
@@ -48,6 +50,10 @@ namespace game_framework {
 			delete boy;
 			delete girl;
 
+			for each (Wall * item in walls)
+			{
+				delete item;
+			}
 			for each (Diamond * item in diamonds)
 			{
 				delete item;

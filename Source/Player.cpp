@@ -45,7 +45,7 @@ namespace game_framework {
 		if (moving_vertical == DIRECTION_UP)
 		{
 			//上升状态
-			TRACE("up\n");
+			//TRACE("up\n");
 			can_move = (map->PlayerCanMove(GetX1(), GetY1() - PLAYER_GIRD_PIXEL, DIRECTION_UP)&& map->PlayerCanMove(GetX2(), GetY1() - PLAYER_GIRD_PIXEL, DIRECTION_UP));//判断上方与右上
 			if (can_move && velocity > 0)//如果上方可通行，垂直速度大于0
 			{
@@ -61,7 +61,7 @@ namespace game_framework {
 		else
 		{
 			//如果非上升状态，始终判断是否下落
-			TRACE("down\n");
+			//TRACE("down\n");
 			can_move = (map->PlayerCanMove(GetX1(), GetY2(), DIRECTION_DOWN) && map->PlayerCanMove(GetX2(), GetY2(), DIRECTION_DOWN));//判断下方与右下
 			if (can_move)//如果下方可通行
 			{
@@ -83,14 +83,14 @@ namespace game_framework {
 		{
 
 		case DIRECTION_LEFT:
-			TRACE("left\n");
+			//TRACE("left\n");
 			can_move = map->PlayerCanMove(GetX1() + MOVE_OFFSET - PLAYER_STEP_PIXEL, GetY1(), DIRECTION_LEFT);
 			if (can_move) {
 				x -= PLAYER_STEP_PIXEL;
 			}
 			break;
 		case DIRECTION_RIGHT: {
-			TRACE("right\n");
+			//TRACE("right\n");
 			can_move = map->PlayerCanMove(GetX2() - MOVE_OFFSET + PLAYER_STEP_PIXEL, GetY1(), DIRECTION_RIGHT);
 			if (can_move) {
 				x += PLAYER_STEP_PIXEL;

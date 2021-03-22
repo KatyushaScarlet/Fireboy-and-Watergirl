@@ -211,6 +211,9 @@
     <ClInclude Include="Source\Player.h">
       <Filter>MyGame\Player</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Wall.h">
+      <Filter>MyGame\Item</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">

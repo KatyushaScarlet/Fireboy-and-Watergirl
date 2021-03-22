@@ -6,6 +6,7 @@
 #include "gamelib.h"
 #include "Map.h"
 
+
 namespace game_framework {
 	Map::Map()
 	{
@@ -14,7 +15,11 @@ namespace game_framework {
 	void Map::LoadBitmapMap()//加载图片
 	{
 		background.LoadBitmap("RES\\background.bmp");
-		wall.LoadBitmap("RES\\wall.bmp");
+		//wall.LoadBitmap("RES\\wall.bmp");
+		for each (Wall * item in walls)
+		{
+			item->LoadItemBitmap();
+		}
 		boy->LoadBitmapPlayer();
 		girl->LoadBitmapPlayer();
 
@@ -25,32 +30,13 @@ namespace game_framework {
 		background.SetTopLeft(0, 0);
 		background.ShowBitmap();
 		//加载墙壁
-		for (size_t i = 0; i < MAP_SIZE_HEIGHT; i++)
+		for each (Wall * item in walls)
 		{
-			for (size_t j = 0; j < MAP_SIZE_WIDTH; j++)
-			{
-				switch (map_array[i][j])
-				{
-				case 0:
-					break;
-				case 1:
-					wall.SetTopLeft(MAP_GIRD_PIXEL * j, MAP_GIRD_PIXEL * i);
-					wall.ShowBitmap();
-				default:
-					break;
-				}
-			}
+			item->OnShow();
 		}
 		//加载玩家
 		boy->OnShow();
 		girl->OnShow();
-		////输出玩家坐标
-		//int* top = new int();
-		//int* left = new int();
-		//Position2ArrayIndex(boy->GetX1(), boy->GetY1(), top, left);
-		//TRACE("boy: top=%d,left=%d\n", *top, *left);
-		//Position2ArrayIndex(girl->GetX1(), girl->GetY1(), top, left);
-		//TRACE("girl: top=%d,left=%d\n", *top, *left);
 	};
 
 	void Map::OnMove()//移动
@@ -98,12 +84,6 @@ namespace game_framework {
 			break;
 		}
 	}
-
-	//void Map::Position2ArrayIndex(int x, int y, int* top, int* left)
-	//{
-	//	*top = (int)y / MAP_GIRD_PIXEL;
-	//	*left = (int)x / MAP_GIRD_PIXEL;
-	//}
 
 	void Map::KeyUp(int key_value, bool is_boy)//松开方向
 	{
@@ -256,14 +236,25 @@ namespace game_framework {
 			{
 				switch (map_array[i][j])
 				{
+				case 1:
+				{
+					Wall* wall = new Wall();
+					wall->SetTopLeft(MAP_GIRD_PIXEL * j, MAP_GIRD_PIXEL * i);
+					walls.push_back(wall);
+					break;
+				}
 				case 100:
+				{
 					boy = new Player(true);
 					boy->SetTopLeft(i * MAP_GIRD_PIXEL, j * MAP_GIRD_PIXEL);
 					break;
+				}
 				case 101:
+				{
 					girl = new Player(false);
 					girl->SetTopLeft(i * MAP_GIRD_PIXEL, j * MAP_GIRD_PIXEL);
 					break;
+				}
 				default:
 					break;
 				}
