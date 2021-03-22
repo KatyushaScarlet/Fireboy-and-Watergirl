@@ -32,49 +32,16 @@ namespace game_framework {
 		int now_level;//目前的关卡
 		int	map_array[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH];//地图数据
 		CMovingBitmap	background;//背景
-		//CMovingBitmap	wall;//墙面
-
 		Player* boy;
 		Player* girl;
-
-		vector<Wall*>		walls;//墙壁
-		vector<Diamond*>	diamonds;//钻石
-		vector<Door*>		doors;//门
-		vector<MovingBox*>	moving_boxs;//可活动箱子
-		vector<MovingWall*>	moving_walls;//可活动箱子
-		vector<Pool*>		pools;//水池
-		vector<Switch*>		switchs;//开关
+		vector<Item*>		items;//各种物体
 
 		void DestroyResources()
 		{
 			delete boy;
 			delete girl;
 
-			for each (Wall * item in walls)
-			{
-				delete item;
-			}
-			for each (Diamond * item in diamonds)
-			{
-				delete item;
-			}
-			for each (Door * item in doors)
-			{
-				delete item;
-			}
-			for each (MovingBox * item in moving_boxs)
-			{
-				delete item;
-			}
-			for each (MovingWall * item in moving_walls)
-			{
-				delete item;
-			}
-			for each (Pool * item in pools)
-			{
-				delete item;
-			}
-			for each (Switch * item in switchs)
+			for each (Item * item in items)
 			{
 				delete item;
 			}

@@ -5,7 +5,9 @@
 #include "audio.h"
 #include "gamelib.h"
 
+
 #include "Map.h"
+
 
 
 
@@ -17,7 +19,7 @@ namespace game_framework {
 	void Map::LoadBitmapMap()//¼ÓÔØÍ¼Æ¬
 	{
 		background.LoadBitmap("RES\\background.bmp");
-		for each (Wall * item in walls)
+		for each (Item * item in items)
 		{
 			item->LoadItemBitmap();
 		}
@@ -30,8 +32,8 @@ namespace game_framework {
 		//¼ÓÔØ±³¾°
 		background.SetTopLeft(0, 0);
 		background.ShowBitmap();
-		//¼ÓÔØÇ½±Ú
-		for each (Wall * item in walls)
+		//ÏÔÊ¾ÎïÌå
+		for each (Wall * item in items)
 		{
 			item->OnShow();
 		}
@@ -241,7 +243,7 @@ namespace game_framework {
 				{
 					Wall* wall = new Wall();
 					wall->SetTopLeft(MAP_GIRD_PIXEL * j, MAP_GIRD_PIXEL * i);
-					walls.push_back(wall);
+					items.push_back(wall);
 					break;
 				}
 				case 100:
