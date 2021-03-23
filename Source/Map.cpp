@@ -129,11 +129,13 @@ namespace game_framework {
 		TRACE("ax1:%d,ay1:%d,ax2:%d,ay2:%d\n", x1, y1, x2, y2);
 		for each (Item * item in items)
 		{
-			//
 			if (item->HitRectangle(x1, y1, x2, y2))
 			{
 				accessible = item->GetAccessible();
-				
+				if (accessible == false)
+				{
+					item->Interact();
+				}
 			}
 		}
 

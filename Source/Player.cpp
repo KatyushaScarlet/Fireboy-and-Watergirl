@@ -40,7 +40,7 @@ namespace game_framework {
 	};
 	void Player::OnMove(Map* map)//移动
 	{
-		bool can_move = true;
+		bool can_move;
 
 		//if (moving_vertical == DIRECTION_UP)
 		//{
@@ -86,8 +86,8 @@ namespace game_framework {
 		case DIRECTION_LEFT:
 
 			//can_move = map->PlayerCanMove(GetX1() + MOVE_OFFSET - PLAYER_STEP_PIXEL, GetY1(), DIRECTION_LEFT);
-			TRACE("%s,left=%d\n", is_boy ? "boy" : "girl", can_move);
 			can_move= map->CanMove(this, DIRECTION_LEFT);
+			TRACE("%s,left=%d\n", is_boy ? "boy" : "girl", can_move);
 			if (can_move) {
 				x -= PLAYER_STEP_PIXEL;
 			}
@@ -95,8 +95,8 @@ namespace game_framework {
 		case DIRECTION_RIGHT: {
 
 			//can_move = map->PlayerCanMove(GetX2() - MOVE_OFFSET + PLAYER_STEP_PIXEL, GetY1(), DIRECTION_RIGHT);
-			TRACE("%s,right=%d\n", is_boy ? "boy" : "girl", can_move);
 			can_move = map->CanMove(this, DIRECTION_RIGHT);
+			TRACE("%s,right=%d\n", is_boy ? "boy" : "girl", can_move);
 			if (can_move) {
 				x += PLAYER_STEP_PIXEL;
 			}

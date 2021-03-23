@@ -10,7 +10,12 @@ namespace game_framework {
 		Wall();
 		void LoadItemBitmap();
 		void OnShow();
+		void OnMove();
+		bool Interact();
 	protected:
 		CMovingBitmap bitmap;
+		//for test
+		CMovingBitmap test_bitmap;
+		bool test_flag;
 	};
 }
