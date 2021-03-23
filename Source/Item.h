@@ -7,7 +7,7 @@ namespace game_framework {
 		virtual void LoadItemBitmap() = 0;	//加载位图
 		virtual void OnShow() = 0;			//显示
 		void OnMove();			//移动
-		void Interact();			//与其他物件交互
+		bool Interact();			//与其他物件交互
 		void SetTopLeft(int top, int left);// 设定左上角坐标
 		int  GetX1();			//左上角 x 坐标
 		int  GetY1();			//左上角 y 坐标
