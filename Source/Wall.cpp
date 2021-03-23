@@ -11,8 +11,8 @@ namespace game_framework
 {
 	Wall::Wall()
 	{
-		width = 1;
-		height = 1;
+		width = 32;
+		height = 32;
 		is_accessible = false;
 	}
 	void Wall::LoadItemBitmap()
@@ -21,7 +21,7 @@ namespace game_framework
 	}
 	void Wall::OnShow()
 	{
-		bitmap.SetTopLeft(y, x);
+		bitmap.SetTopLeft(x,y);
 		bitmap.ShowBitmap();
 	}
 }
