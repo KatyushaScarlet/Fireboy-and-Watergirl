@@ -41,7 +41,7 @@ namespace game_framework {
 		int y2 = GetY2();
 		
 		if (tx2 >= x1 && tx1 <= x2 && ty2 >= y1 && ty1 <= y2) {
-			TRACE("tx1:%d,ty1:%d,tx2:%d,ty2:%d\nx1:%d,y1:%d,x2:%d,y2:%d\n", tx1/32, ty1/32, tx2, ty2,x1/32, y1/32, x2, y2);
+			TRACE("tx1:%d,ty1:%d,tx2:%d,ty2:%d - x1:%d,y1:%d,x2:%d,y2:%d\n", tx1/32, ty1/32, tx2, ty2,x1/32, y1/32, x2, y2);
 		}
 		return (tx2 >= x1 && tx1 <= x2 && ty2 >= y1 && ty1 <= y2);
 	}

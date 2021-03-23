@@ -112,7 +112,7 @@ namespace game_framework {
 
 	void Player::OnShow()//显示
 	{
-		bitmap.SetTopLeft(x, y);
+		bitmap.SetTopLeft(x, y - PLAYER_GIRD_PIXEL);
 		if (is_visible)
 		{
 			bitmap.ShowBitmap();
