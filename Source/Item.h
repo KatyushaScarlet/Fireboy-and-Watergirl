@@ -1,26 +1,26 @@
-#pragma once
+ï»¿#pragma once
 
 namespace game_framework {
 	class Item
 	{
 	public:
-		virtual void LoadItemBitmap() = 0;	//¼ÓÔØÎ»Í¼
-		virtual void OnShow() = 0;			//ÏÔÊ¾
-		void OnMove();			//ÒÆ¶¯
-		bool Interact();			//ÓëÆäËûÎï¼ş½»»¥
-		void SetTopLeft(int top, int left);// Éè¶¨×óÉÏ½Ç×ø±ê
-		int  GetX1();			//×óÉÏ½Ç x ×ø±ê
-		int  GetY1();			//×óÉÏ½Ç y ×ø±ê
-		int  GetX2();			//ÓÒÏÂ½Ç x ×ø±ê
-		int  GetY2();			//ÓÒÏÂ½Ç y ×ø±ê
-		bool GetAccessible();	//ÊÇ·ñ¿ÉÍ¨¹ı
-		bool GetVisibale();		//ÊÇ·ñ¿É¼û
-		bool HitRectangle(int x1, int y1, int x2, int y2);//ÊÇ·ñÏà×²
+		virtual void LoadItemBitmap() = 0;	//åŠ è½½ä½å›¾
+		virtual void OnShow() = 0;			//æ˜¾ç¤º
+		void OnMove();			//ç§»åŠ¨
+		bool Interact();			//ä¸å…¶ä»–ç‰©ä»¶äº¤äº’
+		void SetTopLeft(int top, int left);// è®¾å®šå·¦ä¸Šè§’åæ ‡
+		int  GetX1();			//å·¦ä¸Šè§’ x åæ ‡
+		int  GetY1();			//å·¦ä¸Šè§’ y åæ ‡
+		int  GetX2();			//å³ä¸‹è§’ x åæ ‡
+		int  GetY2();			//å³ä¸‹è§’ y åæ ‡
+		bool GetAccessible();	//æ˜¯å¦å¯é€šè¿‡
+		bool GetVisibale();		//æ˜¯å¦å¯è§
+		bool HitRectangle(int x1, int y1, int x2, int y2);//æ˜¯å¦ç›¸æ’
 	protected:
-		int x, y;				//×óÉÏ½Ç×ø±ê
-		int width;				//¿í
-		int height;				//¸ß
-		bool is_accessible;		//ÊÇ·ñ¿ÉÍ¨¹ı
-		bool is_visibale;		//ÊÇ·ñ¿É¼û
+		int x, y;				//å·¦ä¸Šè§’åæ ‡
+		int width;				//å®½
+		int height;				//é«˜
+		bool is_accessible;		//æ˜¯å¦å¯é€šè¿‡
+		bool is_visibale;		//æ˜¯å¦å¯è§
 	};
 }

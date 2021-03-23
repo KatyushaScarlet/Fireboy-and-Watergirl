@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 
 namespace game_framework {
@@ -8,27 +8,27 @@ namespace game_framework {
 	public:
 		Player(bool boy);
 		~Player();
-		void LoadBitmapPlayer();//ÔØÈëÍ¼ĞÎ
-		void OnMove(Map* m);//ÒÆ¶¯
-		void OnShow();//ÏÔÊ¾
+		void LoadBitmapPlayer();//è½½å…¥å›¾å½¢
+		void OnMove(Map* m);//ç§»åŠ¨
+		void OnShow();//æ˜¾ç¤º
 		int  GetX1();
 		int  GetY1();
 		int  GetX2();
 		int  GetY2();
-		void SetTopLeft(int top, int left);// Éè¶¨×óÉÏ½Ç×ø±ê
-		void SetVerticalState(int state);//Éè¶¨´¹Ö±×´Ì¬
-		void SetHorizontalState(int state);//Éè¶¨Ë®Æ½×´Ì¬
-		int GetVerticalState();//»ñÈ¡´¹Ö±×´Ì¬
-		int GetHorizontalState();//»ñÈ¡Ë®Æ½×´Ì¬
-		bool HitRectangle(int tx1, int ty1, int tx2, int ty2);//Åö×²¼ì²â
+		void SetTopLeft(int top, int left);// è®¾å®šå·¦ä¸Šè§’åæ ‡
+		void SetVerticalState(int state);//è®¾å®šå‚ç›´çŠ¶æ€
+		void SetHorizontalState(int state);//è®¾å®šæ°´å¹³çŠ¶æ€
+		int GetVerticalState();//è·å–å‚ç›´çŠ¶æ€
+		int GetHorizontalState();//è·å–æ°´å¹³çŠ¶æ€
+		bool HitRectangle(int tx1, int ty1, int tx2, int ty2);//ç¢°æ’æ£€æµ‹
 
 	private:
-		int x, y;//×ø±ê
-		int moving_vertical, moving_horizontal;//ÒÆ¶¯µÄ×´Ì¬
-		int  initial_velocity;// ³õÊ¼ËÙ¶È
-		int  velocity;// Ä¿Ç°µÄËÙ¶È(pixel/frame)
-		bool is_boy;// ÊÇ·ñÊÇÄĞº¢£¨»ğ£©
-		bool is_visible;// ÊÇ·ñ¿É¼û
-		CMovingBitmap bitmap;// ¾²Ö¹Í¼Ïñ
+		int x, y;//åæ ‡
+		int moving_vertical, moving_horizontal;//ç§»åŠ¨çš„çŠ¶æ€
+		int  initial_velocity;// åˆå§‹é€Ÿåº¦
+		int  velocity;// ç›®å‰çš„é€Ÿåº¦(pixel/frame)
+		bool is_boy;// æ˜¯å¦æ˜¯ç”·å­©ï¼ˆç«ï¼‰
+		bool is_visible;// æ˜¯å¦å¯è§
+		CMovingBitmap bitmap;// é™æ­¢å›¾åƒ
 	};
 }

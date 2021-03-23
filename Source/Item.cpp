@@ -31,10 +31,15 @@ namespace game_framework {
 	}
 	bool Item::GetVisibale()
 	{
-		return is_accessible;
+		return is_visibale;
 	}
-	bool Item::HitRectangle(int x1, int y1, int x2, int y2)
+	bool Item::HitRectangle(int tx1, int ty1, int tx2, int ty2)
 	{
-		return (GetX2() >= x1 && x <= x2 && GetY2() >= y1 && y <= y2);
+		int x1 = x;
+		int y1 = y;
+		int x2 = GetX2();
+		int y2 = GetY2();
+
+		return (tx2 >= x1 && tx1 <= x2 && ty2 >= y1 && ty1 <= y2);
 	}
 }

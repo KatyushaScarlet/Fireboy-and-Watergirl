@@ -26,6 +26,7 @@ namespace game_framework {
 		void KeyDown(int key_value, bool is_boy);//按下方向
 		void Position2ArrayIndex(int x, int y, int* top, int* left);
 		void KeyUp(int key_value, bool is_boy);//松开方向
+		bool CanMove(Player* player);//判定是否能移动
 		bool PlayerCanMove(int x, int y, int direction);//判定是否能移动
 		void InitMapLevel(int level);//初始化地图数据 0~9
 	private:

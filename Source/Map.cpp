@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -12,7 +12,7 @@ namespace game_framework {
 	{
 		InitMapLevel(0);
 	}
-	void Map::LoadBitmapMap()//¼ÓÔØÍ¼Æ¬
+	void Map::LoadBitmapMap()//åŠ è½½å›¾ç‰‡
 	{
 		background.LoadBitmap("RES\\background.bmp");
 		for each (Item * item in items)
@@ -23,28 +23,28 @@ namespace game_framework {
 		girl->LoadBitmapPlayer();
 
 	};
-	void Map::OnShow()//ÏÔÊ¾
+	void Map::OnShow()//æ˜¾ç¤º
 	{
-		//¼ÓÔØ±³¾°
+		//åŠ è½½èƒŒæ™¯
 		background.SetTopLeft(0, 0);
 		background.ShowBitmap();
-		//ÏÔÊ¾ÎïÌå
+		//æ˜¾ç¤ºç‰©ä½“
 		for each (Wall * item in items)
 		{
 			item->OnShow();
 		}
-		//¼ÓÔØÍæ¼Ò
+		//åŠ è½½ç©å®¶
 		boy->OnShow();
 		girl->OnShow();
 	};
 
-	void Map::OnMove()//ÒÆ¶¯
+	void Map::OnMove()//ç§»åŠ¨
 	{
 		boy->OnMove(this);
 		girl->OnMove(this);
 	}
 
-	void Map::KeyDown(int key_value, bool is_boy)//°´ÏÂ·½Ïò
+	void Map::KeyDown(int key_value, bool is_boy)//æŒ‰ä¸‹æ–¹å‘
 	{
 		Player* player_ptr;
 		if (is_boy)
@@ -84,7 +84,7 @@ namespace game_framework {
 		}
 	}
 
-	void Map::KeyUp(int key_value, bool is_boy)//ËÉ¿ª·½Ïò
+	void Map::KeyUp(int key_value, bool is_boy)//æ¾å¼€æ–¹å‘
 	{
 		Player* player_ptr;
 		if (is_boy)
@@ -118,8 +118,27 @@ namespace game_framework {
 			break;
 		}
 	}
+	bool Map::CanMove(Player *player)//åˆ¤å®šæ˜¯å¦èƒ½ç§»åŠ¨
+	{
+		int x1, y1, x2, y2;
+		bool accessible = true;
+		x1 = player->GetX1() + 2;
+		y1 = player->GetY1() + 2;
+		x2 = player->GetX2() + 2;
+		y2 = player->GetY2() + 2;
 
-	bool  Map::PlayerCanMove(int x, int y, int direction)//ÅĞ¶¨ÊÇ·ñÄÜÒÆ¶¯
+		for each (Item * item in items)
+		{
+			if (item->HitRectangle(x1, y1, x2, y2))
+			{
+				accessible = item->GetAccessible();
+			}
+		}
+
+		return accessible;
+	}
+
+	bool Map::PlayerCanMove(int x, int y, int direction)//åˆ¤å®šæ˜¯å¦èƒ½ç§»åŠ¨
 	{
 		//Position2ArrayIndex(x, y, top, left);
 
@@ -175,7 +194,7 @@ namespace game_framework {
 		Map::DestroyResources();
 	};
 
-	void Map::InitMapLevel(int level)//³õÊ¼»¯µØÍ¼Êı¾İ 0~9
+	void Map::InitMapLevel(int level)//åˆå§‹åŒ–åœ°å›¾æ•°æ® 0~9
 	{
 		now_level = level;
 		//DestroyResources();
@@ -212,7 +231,7 @@ namespace game_framework {
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
 			{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
 		};
-		//µØÍ¼¸³Öµ
+		//åœ°å›¾èµ‹å€¼
 		switch (level)
 		{
 		case 0:
@@ -228,7 +247,7 @@ namespace game_framework {
 			break;
 		}
 
-		//¼ÓÔØÎï¼ş
+		//åŠ è½½ç‰©ä»¶
 		for (size_t i = 0; i < MAP_SIZE_HEIGHT; i++)
 		{
 			for (size_t j = 0; j < MAP_SIZE_WIDTH; j++)
