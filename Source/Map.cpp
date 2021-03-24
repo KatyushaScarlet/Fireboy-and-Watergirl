@@ -7,6 +7,7 @@
 
 #include "Map.h"
 
+
 namespace game_framework {
 	Map::Map()
 	{
@@ -126,7 +127,7 @@ namespace game_framework {
 		y1 = player->GetY1();
 		x2 = player->GetX2();
 		y2 = player->GetY2();
-		TRACE("ax1:%d,ay1:%d,ax2:%d,ay2:%d\n", x1, y1, x2, y2);
+		//TRACE("ax1:%d,ay1:%d,ax2:%d,ay2:%d\n", x1, y1, x2, y2);
 		for each (Item * item in items)
 		{
 			/*if (item->HitRectangle(x1, y1, x2, y2))
@@ -140,7 +141,7 @@ namespace game_framework {
 			switch (direction) 
 			{
 			case DIRECTION_UP:
-				TRACE("Track up.");
+				//TRACE("Track up.");
 					if (item->HitRectangle(x1, y1- player->GetVelocity(), x2, y2- player->GetVelocity()))
 					{
 						accessible = item->GetAccessible();
@@ -176,9 +177,9 @@ namespace game_framework {
 				//{
 				if (item->HitRectangle(x1+player->GetStep(), y1, x2+ player->GetStep(), y2))
 				{
-					TRACE("Track Right.\n");
+					//TRACE("Track Right.\n");
 					accessible = item->GetAccessible();
-					TRACE("accessible:%d.\n",accessible);
+					//TRACE("accessible:%d.\n",accessible);
 					if (accessible == false)
 					{
 						item->Interact();
