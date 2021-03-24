@@ -42,43 +42,45 @@ namespace game_framework {
 	{
 		bool can_move;
 
-		//if (moving_vertical == DIRECTION_UP)
-		//{
-		//	//上升状态
-		//	//TRACE("up\n");
-		//	//can_move = (map->PlayerCanMove(GetX1(), GetY1() - PLAYER_GIRD_PIXEL, DIRECTION_UP)&& map->PlayerCanMove(GetX2(), GetY1() - PLAYER_GIRD_PIXEL, DIRECTION_UP));//判断上方与右上
-		//	if (can_move && velocity > 0)//如果上方可通行，垂直速度大于0
-		//	{
-		//		y -= velocity;
-		//		velocity--;
-		//	}
-		//	else
-		//	{
-		//		moving_vertical = DIRECTION_DOWN;//当速度<=0时，垂直方向变为下降
-		//		velocity = 1;
-		//	}
-		//}
-		//else
-		//{
-		//	//如果非上升状态，始终判断是否下落
-		//	//TRACE("down\n");
-		//	//can_move = (map->PlayerCanMove(GetX1(), GetY2(), DIRECTION_DOWN) && map->PlayerCanMove(GetX2(), GetY2(), DIRECTION_DOWN));//判断下方与右下
+		if (moving_vertical == DIRECTION_UP)
+		{
+			can_move = map->CanMove(this, DIRECTION_UP);
+			//上升状态
+			//TRACE("up\n");
+			// 
+			//can_move = (map->PlayerCanMove(GetX1(), GetY1() - PLAYER_GIRD_PIXEL, DIRECTION_UP)&& map->PlayerCanMove(GetX2(), GetY1() - PLAYER_GIRD_PIXEL, DIRECTION_UP));//判断上方与右上
+			if (can_move && velocity > 0)//如果上方可通行，垂直速度大于0
+			{
+				y -= velocity;
+				velocity--;
+			}
+			else
+			{
+				moving_vertical = DIRECTION_DOWN;//当速度<=0时，垂直方向变为下降
+				velocity = 1;
+			}
+		}
+		else
+		{
+			//如果非上升状态，始终判断是否下落
+			//TRACE("down\n");
+			//can_move = (map->PlayerCanMove(GetX1(), GetY2(), DIRECTION_DOWN) && map->PlayerCanMove(GetX2(), GetY2(), DIRECTION_DOWN));//判断下方与右下
+			can_move = map->CanMove(this, DIRECTION_DOWN);
+			if (can_move)//如果下方可通行
+			{
+				y += velocity;
+				if (velocity < 5)//防止下落速度过大
+				{
+					velocity++;
+				}
 
-		//	if (can_move)//如果下方可通行
-		//	{
-		//		y += velocity;
-		//		if (velocity < 5)//防止下落速度过大
-		//		{
-		//			velocity++;
-		//		}
-
-		//	}
-		//	else
-		//	{
-		//		moving_vertical = DIRECTION_NONE;//当下方不可通行时，垂直方向变成静止
-		//		velocity = initial_velocity;//加速度变为初始值
-		//	}
-		//}
+			}
+			else
+			{
+				moving_vertical = DIRECTION_NONE;//当下方不可通行时，垂直方向变成静止
+				velocity = initial_velocity;//加速度变为初始值
+			}
+		}
 
 		switch (moving_horizontal)//水平移动
 		{
@@ -135,6 +137,14 @@ namespace game_framework {
 	int Player::GetY2()
 	{
 		return y + PLAYER_GIRD_PIXEL;
+	}
+	int Player::GetVelocity()
+	{
+		return velocity;
+	}
+	int Player::GetStep()
+	{
+		return PLAYER_STEP_PIXEL;
 	}
 	void Player::SetTopLeft(int top, int left)// 设定左上角坐标
 	{

@@ -15,7 +15,8 @@ namespace game_framework {
 		int  GetY2();			//右下角 y 坐标
 		bool GetAccessible();	//是否可通过
 		bool GetVisibale();		//是否可见
-		bool HitRectangle(int x1, int y1, int x2, int y2);//是否相撞
+		bool HitRectangle(int x1, int y1, int x2, int y2);
+		//是否相撞
 	protected:
 		int x, y;				//左上角坐标
 		int width;				//宽

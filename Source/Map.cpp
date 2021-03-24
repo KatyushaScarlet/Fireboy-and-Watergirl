@@ -129,13 +129,65 @@ namespace game_framework {
 		TRACE("ax1:%d,ay1:%d,ax2:%d,ay2:%d\n", x1, y1, x2, y2);
 		for each (Item * item in items)
 		{
-			if (item->HitRectangle(x1, y1, x2, y2))
+			/*if (item->HitRectangle(x1, y1, x2, y2))
 			{
 				accessible = item->GetAccessible();
 				if (accessible == false)
 				{
 					item->Interact();
 				}
+			}*/
+			switch (direction) 
+			{
+			case DIRECTION_UP:
+				TRACE("Track up.");
+					if (item->HitRectangle(x1, y1- player->GetVelocity(), x2, y2- player->GetVelocity()))
+					{
+						accessible = item->GetAccessible();
+						if (accessible == false)
+						{
+							item->Interact();
+						}
+					}
+				break;
+			case DIRECTION_DOWN:
+					if (item->HitRectangle(x1, y1+ player->GetVelocity(), x2, y2+ player->GetVelocity()))
+					{
+						accessible = item->GetAccessible();
+						if (accessible == false)
+						{
+							item->Interact();
+						}
+					}
+				break;
+			case DIRECTION_LEFT:
+				
+					if (item->HitRectangle(x1- player->GetStep(), y1, x2- player->GetStep(), y2))
+					{
+						accessible = item->GetAccessible();
+						if (accessible == false)
+						{
+							item->Interact();
+						}
+					}
+				break;
+			case DIRECTION_RIGHT:
+				//if ( item->GetX1()>=x2)
+				//{
+				if (item->HitRectangle(x1+player->GetStep(), y1, x2+ player->GetStep(), y2))
+				{
+					TRACE("Track Right.\n");
+					accessible = item->GetAccessible();
+					TRACE("accessible:%d.\n",accessible);
+					if (accessible == false)
+					{
+						item->Interact();
+					}
+				}
+				//}
+				break;
+			default:
+				break;
 			}
 		}
 
