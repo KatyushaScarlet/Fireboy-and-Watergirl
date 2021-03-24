@@ -15,6 +15,8 @@ namespace game_framework {
 		int  GetY1();
 		int  GetX2();
 		int  GetY2();
+		int GetVelocity();
+		int GetStep();
 		void SetTopLeft(int top, int left);// 设定左上角坐标
 		void SetVerticalState(int state);//设定垂直状态
 		void SetHorizontalState(int state);//设定水平状态
