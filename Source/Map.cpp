@@ -181,6 +181,45 @@ namespace game_framework {
 		return accessible;
 	}
 
+	void Map::AddScore(bool is_boy)//玩家增加分数
+	{
+		if (is_boy)
+		{
+			boy->score++;
+		}
+		else
+		{
+			girl->score++;
+		}
+	}
+
+	void Map::PlayerDie(bool is_boy)//玩家死亡
+	{
+		if (is_boy)
+		{
+			boy->is_die = true;
+		}
+		else
+		{
+			girl->is_die = true;
+		}
+		//todo 游戏结束
+	}
+
+	void Map::PlayerReachExit(bool is_boy)//玩家到达出口
+	{
+		if (is_boy)
+		{
+			boy->reach_exit = true;
+		}
+		else
+		{
+			girl->reach_exit = true;
+		}
+		//todo 到达出口后不可移动
+		//todo 两人均达到出口后，切换关卡
+	}
+
 	Map::~Map()
 	{
 		Map::DestroyResources();

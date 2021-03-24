@@ -22,6 +22,10 @@ namespace game_framework {
 		moving_horizontal = DIRECTION_NONE;
 		velocity = INITIAL_VELOCITY;
 		is_visible = true;
+
+		score = 0;
+		is_die = false;
+		reach_exit = false;
 	};
 	Player::~Player()
 	{

@@ -24,6 +24,10 @@ namespace game_framework {
 		int GetHorizontalState();//获取水平状态
 		bool HitRectangle(int tx1, int ty1, int tx2, int ty2);//碰撞检测
 
+		int score;//玩家分数
+		bool is_die;//是否死亡
+		bool reach_exit;//到达出口
+
 	private:
 		int x, y;//坐标
 		int moving_vertical, moving_horizontal;//移动的状态

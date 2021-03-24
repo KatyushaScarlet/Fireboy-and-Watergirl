@@ -25,8 +25,12 @@ namespace game_framework {
 		void OnMove();//移动
 		void KeyDown(int key_value, bool is_boy);//按下方向
 		void KeyUp(int key_value, bool is_boy);//松开方向
-		bool CanMove(Player* player, int direction);//判定是否能移动
 		void InitMapLevel(int level);//初始化地图数据 0~9
+		//////////////////////////////////////////////////////////
+		bool CanMove(Player* player, int direction);//判定玩家是否能移动
+		void AddScore(bool is_boy);//玩家增加分数
+		void PlayerDie(bool is_boy);//玩家死亡
+		void PlayerReachExit(bool is_boy);//玩家到达出口
 	private:
 		int now_level;//目前的关卡
 		int	map_array[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH];//地图数据
@@ -34,9 +38,6 @@ namespace game_framework {
 		Player* boy;
 		Player* girl;
 		vector<Item*>		items;//各种物体
-
-		int boy_score;	//boy得分
-		int girl_score;	//girl得分
 
 		void DestroyResources()
 		{
