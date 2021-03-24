@@ -162,7 +162,7 @@ namespace game_framework {
 				break;
 			case DIRECTION_LEFT:
 				
-					if (item->HitRectangle(x1-4, y1, x2-4, y2))
+					if (item->HitRectangle(x1- player->GetStep(), y1, x2- player->GetStep(), y2))
 					{
 						accessible = item->GetAccessible();
 						if (accessible == false)
