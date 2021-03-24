@@ -130,24 +130,15 @@ namespace game_framework {
 		//TRACE("ax1:%d,ay1:%d,ax2:%d,ay2:%d\n", x1, y1, x2, y2);
 		for each (Item * item in items)
 		{
-			/*if (item->HitRectangle(x1, y1, x2, y2))
-			{
-				accessible = item->GetAccessible();
-				if (accessible == false)
-				{
-					item->Interact();
-				}
-			}*/
 			switch (direction) 
 			{
 			case DIRECTION_UP:
-				//TRACE("Track up.");
 					if (item->HitRectangle(x1, y1- player->GetVelocity(), x2, y2- player->GetVelocity()))
 					{
 						accessible = item->GetAccessible();
 						if (accessible == false)
 						{
-							item->Interact();
+							item->Interact(this);
 						}
 					}
 				break;
@@ -157,7 +148,7 @@ namespace game_framework {
 						accessible = item->GetAccessible();
 						if (accessible == false)
 						{
-							item->Interact();
+							item->Interact(this);
 						}
 					}
 				break;
@@ -168,24 +159,19 @@ namespace game_framework {
 						accessible = item->GetAccessible();
 						if (accessible == false)
 						{
-							item->Interact();
+							item->Interact(this);
 						}
 					}
 				break;
 			case DIRECTION_RIGHT:
-				//if ( item->GetX1()>=x2)
-				//{
 				if (item->HitRectangle(x1+player->GetStep(), y1, x2+ player->GetStep(), y2))
 				{
-					//TRACE("Track Right.\n");
 					accessible = item->GetAccessible();
-					//TRACE("accessible:%d.\n",accessible);
 					if (accessible == false)
 					{
-						item->Interact();
+						item->Interact(this);
 					}
 				}
-				//}
 				break;
 			default:
 				break;
@@ -193,57 +179,6 @@ namespace game_framework {
 		}
 
 		return accessible;
-	}
-
-	bool Map::PlayerCanMove(int x, int y, int direction)//判定是否能移动
-	{
-		//Position2ArrayIndex(x, y, top, left);
-
-		int top = y / MAP_GIRD_PIXEL;
-		int left = x / MAP_GIRD_PIXEL;
-
-		//TRACE("top=%d,left=%d\n", top, left);
-		if (map_array[top][left] != 1)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-		//switch (direction)
-		//{
-		//case DIRECTION_UP:
-		//	return true;
-		//	break;
-		//case DIRECTION_DOWN:
-		//	return true;
-		//	break;
-		//case DIRECTION_LEFT:
-		//	TRACE("top=%d,left=%d\n", top, left);
-		//	if (map_array[top][left] != 1)
-		//	{
-		//		return true;
-		//	}
-		//	else
-		//	{
-		//		return false;
-		//	}
-		//	break;
-		//case DIRECTION_RIGHT:
-		//	TRACE("top=%d,left=%d\n", top, left);
-		//	if (map_array[top][left] != 1)
-		//	{
-		//		return true;
-		//	}
-		//	else 
-		//	{
-		//		return false;
-		//	}
-		//default:
-		//	
-		//	break;
-		//}
 	}
 
 	Map::~Map()

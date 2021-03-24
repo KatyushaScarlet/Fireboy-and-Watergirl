@@ -9,7 +9,8 @@
 
 #define PLAYER_GIRD_PIXEL 32
 #define PLAYER_STEP_PIXEL 4
-#define MOVE_OFFSET 2
+#define INITIAL_VELOCITY 16
+
 namespace game_framework {
 	class Map;
 	Player::Player(bool boy)
@@ -19,8 +20,7 @@ namespace game_framework {
 		y = 0;
 		moving_vertical = DIRECTION_NONE;
 		moving_horizontal = DIRECTION_NONE;
-		initial_velocity = 16;
-		velocity = initial_velocity;
+		velocity = INITIAL_VELOCITY;
 		is_visible = true;
 	};
 	Player::~Player()
@@ -47,8 +47,6 @@ namespace game_framework {
 			can_move = map->CanMove(this, DIRECTION_UP);
 			//上升状态
 			//TRACE("up\n");
-			// 
-			//can_move = (map->PlayerCanMove(GetX1(), GetY1() - PLAYER_GIRD_PIXEL, DIRECTION_UP)&& map->PlayerCanMove(GetX2(), GetY1() - PLAYER_GIRD_PIXEL, DIRECTION_UP));//判断上方与右上
 			if (can_move && velocity > 0)//如果上方可通行，垂直速度大于0
 			{
 				y -= velocity;
@@ -64,21 +62,24 @@ namespace game_framework {
 		{
 			//如果非上升状态，始终判断是否下落
 			//TRACE("down\n");
-			//can_move = (map->PlayerCanMove(GetX1(), GetY2(), DIRECTION_DOWN) && map->PlayerCanMove(GetX2(), GetY2(), DIRECTION_DOWN));//判断下方与右下
 			can_move = map->CanMove(this, DIRECTION_DOWN);
 			if (can_move)//如果下方可通行
 			{
+				moving_vertical = DIRECTION_DOWN;
 				y += velocity;
 				if (velocity < 5)//防止下落速度过大
 				{
 					velocity++;
 				}
-
+				else
+				{
+					velocity = 4;				//fixbug:当直接掉下时初速度为 INITIAL_VELOCITY （跳起初始速度） 而不是1（掉落初始速度）
+				}
 			}
 			else
 			{
 				moving_vertical = DIRECTION_NONE;//当下方不可通行时，垂直方向变成静止
-				velocity = initial_velocity;//加速度变为初始值
+				velocity = INITIAL_VELOCITY;//加速度变为初始值
 			}
 		}
 
@@ -86,8 +87,6 @@ namespace game_framework {
 		{
 
 		case DIRECTION_LEFT:
-
-			//can_move = map->PlayerCanMove(GetX1() + MOVE_OFFSET - PLAYER_STEP_PIXEL, GetY1(), DIRECTION_LEFT);
 			can_move= map->CanMove(this, DIRECTION_LEFT);
 			//TRACE("%s,left=%d\n", is_boy ? "boy" : "girl", can_move);
 			if (can_move) {
@@ -95,8 +94,6 @@ namespace game_framework {
 			}
 			break;
 		case DIRECTION_RIGHT: {
-
-			//can_move = map->PlayerCanMove(GetX2() - MOVE_OFFSET + PLAYER_STEP_PIXEL, GetY1(), DIRECTION_RIGHT);
 			can_move = map->CanMove(this, DIRECTION_RIGHT);
 			//TRACE("%s,right=%d\n", is_boy ? "boy" : "girl", can_move);
 			if (can_move) {

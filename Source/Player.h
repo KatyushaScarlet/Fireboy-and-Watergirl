@@ -27,7 +27,6 @@ namespace game_framework {
 	private:
 		int x, y;//坐标
 		int moving_vertical, moving_horizontal;//移动的状态
-		int  initial_velocity;// 初始速度
 		int  velocity;// 目前的速度(pixel/frame)
 		bool is_boy;// 是否是男孩（火）
 		bool is_visible;// 是否可见
