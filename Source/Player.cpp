@@ -89,7 +89,7 @@ namespace game_framework {
 
 			//can_move = map->PlayerCanMove(GetX1() + MOVE_OFFSET - PLAYER_STEP_PIXEL, GetY1(), DIRECTION_LEFT);
 			can_move= map->CanMove(this, DIRECTION_LEFT);
-			TRACE("%s,left=%d\n", is_boy ? "boy" : "girl", can_move);
+			//TRACE("%s,left=%d\n", is_boy ? "boy" : "girl", can_move);
 			if (can_move) {
 				x -= PLAYER_STEP_PIXEL;
 			}
@@ -98,7 +98,7 @@ namespace game_framework {
 
 			//can_move = map->PlayerCanMove(GetX2() - MOVE_OFFSET + PLAYER_STEP_PIXEL, GetY1(), DIRECTION_RIGHT);
 			can_move = map->CanMove(this, DIRECTION_RIGHT);
-			TRACE("%s,right=%d\n", is_boy ? "boy" : "girl", can_move);
+			//TRACE("%s,right=%d\n", is_boy ? "boy" : "girl", can_move);
 			if (can_move) {
 				x += PLAYER_STEP_PIXEL;
 			}
