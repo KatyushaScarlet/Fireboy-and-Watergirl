@@ -41,7 +41,7 @@ namespace game_framework
 
 	void Diamond::OnShow()
 	{
-		bitmap.SetTopLeft(x, y);
+		bitmap.SetTopLeft(x, y + 2);//ÂÔÎ¢½µµÍ¸ß¶È
 		bitmap.ShowBitmap();
 	}
 
