@@ -134,46 +134,45 @@ namespace game_framework {
 		//TRACE("ax1:%d,ay1:%d,ax2:%d,ay2:%d\n", x1, y1, x2, y2);
 		for each (Item * item in items)
 		{
-			switch (direction) 
+			switch (direction)
 			{
 			case DIRECTION_UP:
-					if (item->HitRectangle(x1, y1- player->GetVelocity(), x2, y2- player->GetVelocity()))
-					{
-						accessible = item->is_accessible;
-						if (item->is_visibale)
-						{
-							item->Interact(this,is_boy);
-						}
-					}
-				break;
-			case DIRECTION_DOWN:
-					if (item->HitRectangle(x1, y1+ player->GetVelocity(), x2, y2+ player->GetVelocity()))
-					{
-						accessible = item->is_accessible;
-						if (item->is_visibale)
-						{
-							item->Interact(this,is_boy);
-						}
-					}
-				break;
-			case DIRECTION_LEFT:
-				
-					if (item->HitRectangle(x1- player->GetStep(), y1, x2- player->GetStep(), y2))
-					{
-						accessible = item->is_accessible;
-						if (item->is_visibale)
-						{
-							item->Interact(this,is_boy);
-						}
-					}
-				break;
-			case DIRECTION_RIGHT:
-				if (item->HitRectangle(x1+player->GetStep(), y1, x2+ player->GetStep(), y2))
+				if (item->HitRectangle(x1, y1 - player->GetVelocity(), x2, y2 - player->GetVelocity()))
 				{
 					accessible = item->is_accessible;
 					if (item->is_visibale)
 					{
-						item->Interact(this,is_boy);
+						item->Interact(this, is_boy, DIRECTION_UP);
+					}
+				}
+				break;
+			case DIRECTION_DOWN:
+				if (item->HitRectangle(x1, y1 + player->GetVelocity(), x2, y2 + player->GetVelocity()))
+				{
+					accessible = item->is_accessible;
+					if (item->is_visibale)
+					{
+						item->Interact(this, is_boy, DIRECTION_DOWN);
+					}
+				}
+				break;
+			case DIRECTION_LEFT:
+				if (item->HitRectangle(x1 - player->GetStep(), y1, x2 - player->GetStep(), y2))
+				{
+					accessible = item->is_accessible;
+					if (item->is_visibale)
+					{
+						item->Interact(this, is_boy, DIRECTION_LEFT);
+					}
+				}
+				break;
+			case DIRECTION_RIGHT:
+				if (item->HitRectangle(x1 + player->GetStep(), y1, x2 + player->GetStep(), y2))
+				{
+					accessible = item->is_accessible;
+					if (item->is_visibale)
+					{
+						item->Interact(this, is_boy, DIRECTION_RIGHT);
 					}
 				}
 				break;
@@ -203,11 +202,13 @@ namespace game_framework {
 		{
 			boy->is_die = true;
 			boy->is_visible = false;
+			TRACE("boy die\n");
 		}
 		else
 		{
 			girl->is_die = true;
 			girl->is_visible = false;
+			TRACE("girl die\n");
 		}
 		//todo 游戏结束
 	}
@@ -259,13 +260,13 @@ namespace game_framework {
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0},
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
-			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,0},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,6,302,302,302,7,1,1,1,0,0,0,0,1,0},
 			{1,0,101,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,200,0,0,0,0,0,0,0,201,0,0,0,0,0,1,1,1,1,0},
 			{1,0,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0},
-			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
+			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,300,300,300,3,1,1,1,4,301,301,301,5,1,1,1,1,1,1,1,0},
 			{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
 		};
 		//地图赋值
@@ -298,6 +299,48 @@ namespace game_framework {
 					items.push_back(wall);
 					break;
 				}
+				case 2:
+				{
+					Pool* fire_pool = new Pool(2);
+					fire_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					items.push_back(fire_pool);
+					break;
+				}
+				case 3:
+				{
+					Pool* fire_pool = new Pool(3);
+					fire_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					items.push_back(fire_pool);
+					break;
+				}
+				case 4:
+				{
+					Pool* water_pool = new Pool(4);
+					water_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					items.push_back(water_pool);
+					break;
+				}
+				case 5:
+				{
+					Pool* water_pool = new Pool(5);
+					water_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					items.push_back(water_pool);
+					break;
+				}
+				case 6:
+				{
+					Pool* toxic_pool = new Pool(6);
+					toxic_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					items.push_back(toxic_pool);
+					break;
+				}
+				case 7:
+				{
+					Pool* toxic_pool = new Pool(7);
+					toxic_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					items.push_back(toxic_pool);
+					break;
+				}
 				case 100:
 				{
 					boy = new Player(true);
@@ -322,6 +365,27 @@ namespace game_framework {
 					Diamond* water_diamond = new Diamond(201);
 					water_diamond->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
 					items.push_back(water_diamond);
+					break;
+				}
+				case 300:
+				{
+					Pool* fire_pool = new Pool(300);
+					fire_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					items.push_back(fire_pool);
+					break;
+				}
+				case 301:
+				{
+					Pool* water_pool = new Pool(301);
+					water_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					items.push_back(water_pool);
+					break;
+				}
+				case 302:
+				{
+					Pool* toxic_pool = new Pool(302);
+					toxic_pool->SetTopLeft(MAP_GIRD_PIXEL* i, MAP_GIRD_PIXEL* j);
+					items.push_back(toxic_pool);
 					break;
 				}
 				default:

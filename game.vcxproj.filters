@@ -257,5 +257,17 @@
     <Image Include="RES\diamond\water.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\pool\fire0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\FireBox0000.png" />
+    <Image Include="RES\pool\GreenBox0000.png" />
+    <Image Include="RES\pool\toxic0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\WaterBox0000.png" />
   </ItemGroup>
 </Project>

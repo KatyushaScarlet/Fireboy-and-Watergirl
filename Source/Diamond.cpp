@@ -19,27 +19,38 @@ namespace game_framework
 		height = 32 - 1;
 		is_accessible = true;
 	}
+
 	void Diamond::LoadItemBitmap()
 	{
-		if (type == 200)
+		switch (type)
 		{
-			bitmap.LoadBitmapA("RES\\diamond\\fire.bmp",RGB(255,255,255));
+		case 200:
+		{
+			bitmap.LoadBitmapA("RES\\diamond\\fire.bmp", RGB(255, 255, 255));
+			break;
 		}
-		else if (type == 201)
+		case 201:
 		{
 			bitmap.LoadBitmapA("RES\\diamond\\water.bmp", RGB(255, 255, 255));
+			break;
+		}
+		default:
+			break;
 		}
 	}
+
 	void Diamond::OnShow()
 	{
 		bitmap.SetTopLeft(x, y);
 		bitmap.ShowBitmap();
 	}
+
 	void Diamond::OnMove()
 	{
 
 	}
-	void Diamond::Interact(Map* m, bool is_boy)
+
+	void Diamond::Interact(Map* m, bool is_boy, int direction)
 	{
 		if (type == 200 && is_boy)
 		{

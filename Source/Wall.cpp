@@ -30,7 +30,7 @@ namespace game_framework
 	{
 
 	}
-	void Wall::Interact(Map* m, bool is_boy)
+	void Wall::Interact(Map* m, bool is_boy, int direction)
 	{
 
 	}
