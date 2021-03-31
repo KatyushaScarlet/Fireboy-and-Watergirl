@@ -190,14 +190,11 @@ namespace game_framework {
 		if (is_boy)
 		{
 			score_boy++;
-			TRACE("boy score++\n");
 		}
 		else
 		{
 			score_girl++;
-			TRACE("girl score++\n");
 		}
-		TRACE("score=%d,%d\n", score_boy, score_girl);
 	}
 
 	void Map::PlayerDie(bool is_boy)//玩家死亡

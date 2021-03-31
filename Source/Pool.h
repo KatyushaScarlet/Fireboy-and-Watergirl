@@ -1,11 +1,18 @@
 #pragma once
 
-#include "gamelib.h"
+#include "Item.h"
 
 namespace game_framework {
-
-	class Pool
+	class CMovingBitmap;
+	class Pool :public Item
 	{
-
+	public:
+		Pool(int type);
+		void LoadItemBitmap();
+		void OnShow();
+		void OnMove();
+		void Interact(Map* m, bool is_boy);
+	protected:
+		CMovingBitmap bitmap;
 	};
 }
