@@ -205,10 +205,12 @@ namespace game_framework {
 		if (is_boy)
 		{
 			boy->is_die = true;
+			boy->is_visible = false;
 		}
 		else
 		{
 			girl->is_die = true;
+			girl->is_visible = false;
 		}
 		//todo 游戏结束
 	}

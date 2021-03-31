@@ -76,7 +76,7 @@ namespace game_framework {
 				}
 				else
 				{
-					velocity = 4;				//fixbug:当直接掉下时初速度为 INITIAL_VELOCITY （跳起初始速度） 而不是1（掉落初始速度）
+					velocity = 4;//fixbug:当直接掉下时初速度为 INITIAL_VELOCITY （跳起初始速度） 而不是1（掉落初始速度）
 				}
 			}
 			else
@@ -91,14 +91,12 @@ namespace game_framework {
 
 		case DIRECTION_LEFT:
 			can_move= map->CanMove(this, DIRECTION_LEFT);
-			//TRACE("%s,left=%d\n", is_boy ? "boy" : "girl", can_move);
 			if (can_move) {
 				x -= PLAYER_STEP_PIXEL;
 			}
 			break;
 		case DIRECTION_RIGHT: {
 			can_move = map->CanMove(this, DIRECTION_RIGHT);
-			//TRACE("%s,right=%d\n", is_boy ? "boy" : "girl", can_move);
 			if (can_move) {
 				x += PLAYER_STEP_PIXEL;
 			}
@@ -115,6 +113,7 @@ namespace game_framework {
 	void Player::OnShow()//显示
 	{
 		bitmap.SetTopLeft(x, y - PLAYER_GIRD_PIXEL);
+		//bitmap.SetTopLeft(x, y);
 		if (is_visible)
 		{
 			bitmap.ShowBitmap();
@@ -137,6 +136,7 @@ namespace game_framework {
 	int Player::GetY2()
 	{
 		return y + PLAYER_GIRD_PIXEL;
+		//return y + PLAYER_GIRD_PIXEL * 2;
 	}
 	int Player::GetVelocity()
 	{
@@ -167,7 +167,7 @@ namespace game_framework {
 	{
 		return moving_horizontal;
 	}
-	bool Player::HitRectangle(int tx1, int ty1, int tx2, int ty2) {
-		return false;
-	}//碰撞检测
+	//bool Player::HitRectangle(int tx1, int ty1, int tx2, int ty2) {
+	//	return false;
+	//}//碰撞检测
 };

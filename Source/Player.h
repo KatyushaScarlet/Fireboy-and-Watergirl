@@ -22,7 +22,7 @@ namespace game_framework {
 		void SetHorizontalState(int state);//设定水平状态
 		int GetVerticalState();//获取垂直状态
 		int GetHorizontalState();//获取水平状态
-		bool HitRectangle(int tx1, int ty1, int tx2, int ty2);//碰撞检测
+		//bool HitRectangle(int tx1, int ty1, int tx2, int ty2);//碰撞检测
 
 		bool is_boy;// 是否是男孩（火）
 		bool is_visible;// 是否可见

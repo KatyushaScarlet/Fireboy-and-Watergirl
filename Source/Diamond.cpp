@@ -44,11 +44,12 @@ namespace game_framework
 		if (type == 200 && is_boy)
 		{
 			m->AddScore(true);
+			is_visibale = false;
 		}
 		else if (type == 201 && !is_boy)
 		{
 			m->AddScore(false);
+			is_visibale = false;
 		}
-		is_visibale = false;
 	}
 }
