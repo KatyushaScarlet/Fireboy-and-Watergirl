@@ -23,7 +23,6 @@ namespace game_framework {
 		velocity = INITIAL_VELOCITY;
 		is_visible = true;
 
-		score = 0;
 		is_die = false;
 		reach_exit = false;
 	};

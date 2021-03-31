@@ -4,6 +4,11 @@
 
 namespace game_framework {
 
+	int Item::GetType()
+	{
+		return type;
+	}
+
 	void Item::SetTopLeft(int top, int left)
 	{
 		x = left;
@@ -24,14 +29,6 @@ namespace game_framework {
 	int  Item::GetY2()
 	{
 		return y + height;
-	}
-	bool Item::GetAccessible()
-	{
-		return is_accessible;
-	}
-	bool Item::GetVisibale()
-	{
-		return is_visibale;
 	}
 	bool Item::HitRectangle(int tx1, int ty1, int tx2, int ty2)
 	{

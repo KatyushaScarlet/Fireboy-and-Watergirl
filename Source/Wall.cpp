@@ -11,8 +11,10 @@ namespace game_framework
 {
 	Wall::Wall()
 	{
-		width = 32;
-		height = 32;
+		type = 1;
+
+		width = 32 - 1;
+		height = 32 - 1;
 		is_accessible = false;
 	}
 	void Wall::LoadItemBitmap()
@@ -28,7 +30,7 @@ namespace game_framework
 	{
 
 	}
-	void Wall::Interact(Map* m)
+	void Wall::Interact(Map* m, bool is_boy)
 	{
 
 	}

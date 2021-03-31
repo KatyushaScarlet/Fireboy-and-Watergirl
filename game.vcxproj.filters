@@ -152,6 +152,9 @@
     <ClCompile Include="Source\Wall.cpp">
       <Filter>MyGame\Item</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Diamond.cpp">
+      <Filter>MyGame\Item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -243,6 +246,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\player\girl_static.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\diamond\fire.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\diamond\water.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

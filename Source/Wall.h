@@ -11,7 +11,7 @@ namespace game_framework {
 		void LoadItemBitmap();
 		void OnShow();
 		void OnMove();
-		void Interact(Map* m);
+		void Interact(Map* m, bool is_boy);
 	protected:
 		CMovingBitmap bitmap;
 	};

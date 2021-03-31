@@ -32,7 +32,10 @@ namespace game_framework {
 		//显示物体
 		for each (Wall * item in items)
 		{
-			item->OnShow();
+			if (item->is_visibale)
+			{
+				item->OnShow();
+			}
 		}
 		//加载玩家
 		boy->OnShow();
@@ -123,6 +126,7 @@ namespace game_framework {
 	{
 		int x1, y1, x2, y2;
 		bool accessible = true;
+		bool is_boy = player->is_boy;
 		x1 = player->GetX1();
 		y1 = player->GetY1();
 		x2 = player->GetX2();
@@ -135,20 +139,20 @@ namespace game_framework {
 			case DIRECTION_UP:
 					if (item->HitRectangle(x1, y1- player->GetVelocity(), x2, y2- player->GetVelocity()))
 					{
-						accessible = item->GetAccessible();
-						if (accessible == false)
+						accessible = item->is_accessible;
+						if (item->is_visibale)
 						{
-							item->Interact(this);
+							item->Interact(this,is_boy);
 						}
 					}
 				break;
 			case DIRECTION_DOWN:
 					if (item->HitRectangle(x1, y1+ player->GetVelocity(), x2, y2+ player->GetVelocity()))
 					{
-						accessible = item->GetAccessible();
-						if (accessible == false)
+						accessible = item->is_accessible;
+						if (item->is_visibale)
 						{
-							item->Interact(this);
+							item->Interact(this,is_boy);
 						}
 					}
 				break;
@@ -156,20 +160,20 @@ namespace game_framework {
 				
 					if (item->HitRectangle(x1- player->GetStep(), y1, x2- player->GetStep(), y2))
 					{
-						accessible = item->GetAccessible();
-						if (accessible == false)
+						accessible = item->is_accessible;
+						if (item->is_visibale)
 						{
-							item->Interact(this);
+							item->Interact(this,is_boy);
 						}
 					}
 				break;
 			case DIRECTION_RIGHT:
 				if (item->HitRectangle(x1+player->GetStep(), y1, x2+ player->GetStep(), y2))
 				{
-					accessible = item->GetAccessible();
-					if (accessible == false)
+					accessible = item->is_accessible;
+					if (item->is_visibale)
 					{
-						item->Interact(this);
+						item->Interact(this,is_boy);
 					}
 				}
 				break;
@@ -185,12 +189,15 @@ namespace game_framework {
 	{
 		if (is_boy)
 		{
-			boy->score++;
+			score_boy++;
+			TRACE("boy score++\n");
 		}
 		else
 		{
-			girl->score++;
+			score_girl++;
+			TRACE("girl score++\n");
 		}
+		TRACE("score=%d,%d\n", score_boy, score_girl);
 	}
 
 	void Map::PlayerDie(bool is_boy)//玩家死亡
@@ -233,10 +240,10 @@ namespace game_framework {
 		int map_level_0[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH] = {
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
+			{1,0,0,0,0,0,0,0,0,0,0,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
-			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
-			{1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
-			{1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
+			{1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,201,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
+			{1,0,201,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
 			{1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
@@ -244,8 +251,8 @@ namespace game_framework {
 			{1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,1,0},
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,1,0},
-			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
-			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
+			{1,0,0,0,0,0,0,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,201,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0},
@@ -257,7 +264,7 @@ namespace game_framework {
 			{1,0,101,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0},
-			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,200,0,0,0,0,0,0,0,201,0,0,0,0,0,1,1,1,1,0},
 			{1,0,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0},
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
 			{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
@@ -302,6 +309,20 @@ namespace game_framework {
 				{
 					girl = new Player(false);
 					girl->SetTopLeft(i * MAP_GIRD_PIXEL, j * MAP_GIRD_PIXEL);
+					break;
+				}
+				case 200:
+				{
+					Diamond* fire_diamond = new Diamond(200);
+					fire_diamond->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					items.push_back(fire_diamond);
+					break;
+				}
+				case 201:
+				{
+					Diamond* water_diamond = new Diamond(201);
+					water_diamond->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					items.push_back(water_diamond);
 					break;
 				}
 				default:

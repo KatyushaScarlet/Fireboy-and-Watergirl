@@ -34,6 +34,10 @@ namespace game_framework {
 	private:
 		int now_level;//目前的关卡
 		int	map_array[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH];//地图数据
+
+		int score_boy = 0;
+		int score_girl = 0;
+
 		CMovingBitmap	background;//背景
 		Player* boy;
 		Player* girl;

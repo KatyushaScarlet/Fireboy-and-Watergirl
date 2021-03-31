@@ -24,7 +24,8 @@ namespace game_framework {
 		int GetHorizontalState();//获取水平状态
 		bool HitRectangle(int tx1, int ty1, int tx2, int ty2);//碰撞检测
 
-		int score;//玩家分数
+		bool is_boy;// 是否是男孩（火）
+		bool is_visible;// 是否可见
 		bool is_die;//是否死亡
 		bool reach_exit;//到达出口
 
@@ -32,8 +33,6 @@ namespace game_framework {
 		int x, y;//坐标
 		int moving_vertical, moving_horizontal;//移动的状态
 		int  velocity;// 目前的速度(pixel/frame)
-		bool is_boy;// 是否是男孩（火）
-		bool is_visible;// 是否可见
 		CMovingBitmap bitmap;// 静止图像
 	};
 }
