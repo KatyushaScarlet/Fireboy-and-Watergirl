@@ -20,9 +20,6 @@
     <Filter Include="MyGame\Player">
       <UniqueIdentifier>{57911480-9c74-4182-9f49-c5ac93dd9716}</UniqueIdentifier>
     </Filter>
-    <Filter Include="MyGame\Map">
-      <UniqueIdentifier>{79c7f76f-ee42-4d18-a059-2a2cbb67c941}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Res\ball.bmp">
@@ -143,9 +140,6 @@
     <ClCompile Include="Source\Player.cpp">
       <Filter>MyGame\Player</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Map.cpp">
-      <Filter>MyGame\Map</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Item.cpp">
       <Filter>MyGame\Item</Filter>
     </ClCompile>
@@ -216,9 +210,6 @@
     </ClInclude>
     <ClInclude Include="Source\MovingWall.h">
       <Filter>MyGame\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Map.h">
-      <Filter>MyGame\Map</Filter>
     </ClInclude>
     <ClInclude Include="Source\Item.h">
       <Filter>MyGame\Item</Filter>

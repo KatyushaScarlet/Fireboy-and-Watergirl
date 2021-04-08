@@ -1,4 +1,4 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -30,7 +30,7 @@ namespace game_framework
 	{
 
 	}
-	void Wall::Interact(Map* m, bool is_boy, int direction)
+	void Wall::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
 
 	}

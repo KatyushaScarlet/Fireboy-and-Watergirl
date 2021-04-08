@@ -4,7 +4,7 @@
 #include <ddraw.h>
 #include "audio.h"
 #include "gamelib.h"
-#include "Map.h"
+#include "CGameStateRun.h"
 #include "Player.h"
 
 #define PLAYER_GIRD_PIXEL 32
@@ -41,13 +41,13 @@ namespace game_framework {
 			bitmap.LoadBitmapA("RES\\player\\girl_static.bmp", RGB(255, 255, 255));
 		}
 	};
-	void Player::OnMove(Map* map)//移动
+	void Player::OnMove(CGameStateRun* game)//移动
 	{
 		bool can_move;
 
 		if (moving_vertical == DIRECTION_UP)
 		{
-			can_move = map->CanMove(this, DIRECTION_UP);
+			can_move = game->CanMove(this, DIRECTION_UP);
 			//上升状态
 			//TRACE("up\n");
 			if (can_move && velocity > 0)//如果上方可通行，垂直速度大于0
@@ -65,7 +65,7 @@ namespace game_framework {
 		{
 			//如果非上升状态，始终判断是否下落
 			//TRACE("down\n");
-			can_move = map->CanMove(this, DIRECTION_DOWN);
+			can_move = game->CanMove(this, DIRECTION_DOWN);
 			if (can_move)//如果下方可通行
 			{
 				moving_vertical = DIRECTION_DOWN;
@@ -90,13 +90,13 @@ namespace game_framework {
 		{
 
 		case DIRECTION_LEFT:
-			can_move= map->CanMove(this, DIRECTION_LEFT);
+			can_move= game->CanMove(this, DIRECTION_LEFT);
 			if (can_move) {
 				x -= PLAYER_STEP_PIXEL;
 			}
 			break;
 		case DIRECTION_RIGHT: {
-			can_move = map->CanMove(this, DIRECTION_RIGHT);
+			can_move = game->CanMove(this, DIRECTION_RIGHT);
 			if (can_move) {
 				x += PLAYER_STEP_PIXEL;
 			}

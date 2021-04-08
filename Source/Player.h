@@ -9,7 +9,7 @@ namespace game_framework {
 		Player(bool boy);
 		~Player();
 		void LoadBitmapPlayer();//载入图形
-		void OnMove(Map* m);//移动
+		void OnMove(CGameStateRun* game);//移动
 		void OnShow();//显示
 		int  GetX1();
 		int  GetY1();

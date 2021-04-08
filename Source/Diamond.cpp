@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -6,7 +6,7 @@
 #include "gamelib.h"
 
 #include "Diamond.h"
-#include "Map.h"
+#include "CGameStateRun.h"
 
 namespace game_framework
 {
@@ -41,7 +41,7 @@ namespace game_framework
 
 	void Diamond::OnShow()
 	{
-		bitmap.SetTopLeft(x, y + 2);//ÂÔÎ¢½µµÍ¸ß¶È
+		bitmap.SetTopLeft(x, y + 2);
 		bitmap.ShowBitmap();
 	}
 
@@ -50,16 +50,16 @@ namespace game_framework
 
 	}
 
-	void Diamond::Interact(Map* m, bool is_boy, int direction)
+	void Diamond::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
 		if (type == 200 && is_boy)
 		{
-			m->AddScore(true);
+			game->AddScore(true);
 			is_visibale = false;
 		}
 		else if (type == 201 && !is_boy)
 		{
-			m->AddScore(false);
+			game->AddScore(false);
 			is_visibale = false;
 		}
 	}

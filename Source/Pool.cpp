@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -6,7 +6,7 @@
 #include "gamelib.h"
 
 #include "Pool.h"
-#include "Map.h"
+#include "CGameStateRun.h"
 
 namespace game_framework
 {
@@ -80,9 +80,9 @@ namespace game_framework
 
 	void Pool::OnShow()
 	{
-		bitmap_wall.SetTopLeft(x, y);//ÏÈ»­Ç½±Ú±³¾°
+		bitmap_wall.SetTopLeft(x, y);//å…ˆç”»å¢™
 		bitmap_wall.ShowBitmap();
-		bitmap.SetTopLeft(x, y - 16);//Í¼Æ¬¸ß¶ÈÌá¸ß°ë¸ñ
+		bitmap.SetTopLeft(x, y - 16);//æé«˜åŠæ ¼ç”»æ°´æ± 
 		bitmap.ShowBitmap();
 	}
 
@@ -91,23 +91,23 @@ namespace game_framework
 
 	}
 
-	void Pool::Interact(Map* m, bool is_boy, int direction)
+	void Pool::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
-		if (type == 300 || type == 301 || type == 302)//Ö»ÅÐ¶Ï·ÇÐ±Ãæ·½¿é
+		if (type == 300 || type == 301 || type == 302)//Ö»åªæœ‰æ°´æ± ä¸­éƒ¨æœ‰æ•ˆ
 		{
-			if (direction == DIRECTION_DOWN)//Ö»ÅÐ¶ÏÍæ¼ÒÏÂ·½´¥Åö·½¿éÉÏ·½
+			if (direction == DIRECTION_DOWN)//Ö»å¦‚æžœçŽ©å®¶ä¸‹æ–¹æŽ¥è§¦æ°´æ± ä¸Šæ–¹
 			{
 				if (type == 300 && !is_boy)//fire & girl
 				{
-					m->PlayerDie(false);
+					game->PlayerDie(false);
 				}
 				else if (type == 301 && is_boy)//water & boy
 				{
-					m->PlayerDie(true);
+					game->PlayerDie(true);
 				}
 				else if (type == 302)//both
 				{
-					m->PlayerDie(is_boy);
+					game->PlayerDie(is_boy);
 				}
 			}
 		}

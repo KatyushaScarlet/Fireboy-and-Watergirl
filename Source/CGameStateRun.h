@@ -1,5 +1,18 @@
 #pragma once
-#include "Map.h"
+//#include "Map.h"
+#define MAP_SIZE_WIDTH 40
+#define MAP_SIZE_HEIGHT 30
+#define MAP_GIRD_PIXEL 32
+
+#include "Item.h"
+#include "Wall.h"
+#include "Diamond.h"
+#include "Door.h"
+#include "MovingBox.h"
+#include "MovingWall.h"
+#include "Pool.h"
+#include "Switch.h"
+#include "Player.h"
 
 namespace game_framework {
 	class CGameStateRun : public CGameState {
@@ -15,23 +28,25 @@ namespace game_framework {
 		void OnMouseMove(UINT nFlags, CPoint point);	// 處理滑鼠的動作 
 		void OnRButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
 		void OnRButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
+		///////////////////////////////////////////////////////////////
+		void InitMapLevel(int level);//初始化地图数据 0~9
+		bool CanMove(Player* player, int direction);//判定玩家是否能移动
+		void AddScore(bool is_boy);//玩家增加分数
+		void PlayerDie(bool is_boy);//玩家死亡
+		void PlayerReachExit(bool is_boy);//玩家到达出口
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
-		const int		NUMBALLS;	// 球的總數
-		CMovingBitmap	background;	// 背景圖
-		CMovingBitmap	help;		// 說明圖
-		//CBall* ball;		// 球的陣列
-		CMovingBitmap	corner;		// 角落圖
-		//CEraser			eraser;		// 拍子
-		CInteger		hits_left;	// 剩下的撞擊數
-		//CBouncingBall   bball;		// 反覆彈跳的球
-		///////////////////////////////////////////////
-		//int				map_now_level;//游戏目前关卡，0~9
-		//vector<Map*>	maps;		//游戏地图
-		//Player*			player_boy;	//boy
-		//Player*			player_girl;//girl
-		Map* map;//地图逻辑
+		int now_level;//目前的关卡
+		int	map_array[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH];//地图数据
+
+		int score_boy = 0;
+		int score_girl = 0;
+
+		Player* boy;
+		Player* girl;
+		vector<Item*>		items;//各种物体
+		CMovingBitmap	background;//背景
 	};
 }

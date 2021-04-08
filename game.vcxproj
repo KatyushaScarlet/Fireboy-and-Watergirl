@@ -261,7 +261,6 @@
     <ClCompile Include="Source\CGameStateRun.cpp" />
     <ClCompile Include="Source\Diamond.cpp" />
     <ClCompile Include="Source\Item.cpp" />
-    <ClCompile Include="Source\Map.cpp" />
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\audio.cpp" />
     <ClCompile Include="Source\CBall.cpp" />
@@ -323,7 +322,6 @@
     <ClInclude Include="Source\gameView.h" />
     <ClInclude Include="Source\Item.h" />
     <ClInclude Include="Source\MainFrm.h" />
-    <ClInclude Include="Source\Map.h" />
     <ClInclude Include="Source\MovingBox.h" />
     <ClInclude Include="Source\MovingWall.h" />
     <ClInclude Include="Source\Player.h" />
