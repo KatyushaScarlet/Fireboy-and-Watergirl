@@ -269,5 +269,65 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\pool\WaterBox0000.png" />
+    <Image Include="RES\player\boy_down0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_left0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_right0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_up0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_down0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_left0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_right0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_up0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_right_0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\door\fire0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\door\water0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="RES\pool\图片规范.txt" />
   </ItemGroup>
 </Project>
