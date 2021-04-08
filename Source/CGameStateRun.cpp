@@ -35,29 +35,14 @@ namespace game_framework {
 		items.clear();
 	}
 
-	void CGameStateRun::OnBeginState()
+	void CGameStateRun::OnBeginState()//游戏每次重开后载入
 	{
-		//从第一关开始
-		//map_now_level = 0;
-		//InitMapLevel(0);
-		
-		//重启关卡
 		InitMapLevel(0);
 	}
 
-	void CGameStateRun::OnInit()
+	void CGameStateRun::OnInit()//只在第一次启动时载入
 	{
-
-		//background.LoadBitmap("RES\\background.bmp");
-		//for each (Item * item in items)
-		//{
-		//	item->LoadItemBitmap();
-		//}
-		//boy->LoadBitmapPlayer();
-		//girl->LoadBitmapPlayer();
-
 		LoadGameBitmap();
-
 	}
 
 	void CGameStateRun::LoadGameBitmap()//只执行一次
@@ -190,27 +175,27 @@ namespace game_framework {
 
 	void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
 	{
-	//eraser.SetMovingLeft(true);
+		//eraser.SetMovingLeft(true);
 	}
 
 	void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 	{
-	//eraser.SetMovingLeft(false);
+		//eraser.SetMovingLeft(false);
 	}
 
 	void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 	{
-	// 沒事。如果需要處理滑鼠移動的話，寫code在這裡
+		// 沒事。如果需要處理滑鼠移動的話，寫code在這裡
 	}
 
 	void CGameStateRun::OnRButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
 	{
-	//eraser.SetMovingRight(true);
+		//eraser.SetMovingRight(true);
 	}
 
 	void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 	{
-	//eraser.SetMovingRight(false);	
+		//eraser.SetMovingRight(false);	
 	}
 
 	void CGameStateRun::OnShow()//显示
@@ -331,9 +316,9 @@ namespace game_framework {
 			girl->is_visible = false;
 			TRACE("girl die\n");
 		}
-		//todo 游戏结束
+		//暂停游戏逻辑
 		game_loaded = false;
-		//ResetMap();
+		//游戏结束
 		GotoGameState(GAME_STATE_OVER);
 	}
 
@@ -347,7 +332,7 @@ namespace game_framework {
 		{
 			girl->reach_exit = true;
 		}
-		//todo 到达出口后不可移动
+		//todo 到达出口后不可移动？
 		//todo 两人均达到出口后，切换关卡
 	}
 
