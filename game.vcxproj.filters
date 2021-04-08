@@ -158,6 +158,9 @@
     <ClCompile Include="Source\Pool.cpp">
       <Filter>MyGame\Item</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CGameStateRun.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -225,6 +228,9 @@
     </ClInclude>
     <ClInclude Include="Source\Wall.h">
       <Filter>MyGame\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CGameStateRun.h">
+      <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

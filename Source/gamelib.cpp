@@ -125,6 +125,8 @@
 #include "gamelib.h"
 #include "mygame.h"
 
+#include "CGameStateRun.h"
+
 namespace game_framework {
 
 /////////////////////////////////////////////////////////////////////////////

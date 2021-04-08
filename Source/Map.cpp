@@ -13,6 +13,18 @@ namespace game_framework {
 	{
 		InitMapLevel(0);
 	}
+
+	Map::~Map()
+	{
+		delete boy;
+		delete girl;
+
+		for each (Item * item in items)
+		{
+			delete item;
+		}
+	};
+
 	void Map::LoadBitmapMap()//加载图片
 	{
 		background.LoadBitmap("RES\\background.bmp");
@@ -24,6 +36,7 @@ namespace game_framework {
 		girl->LoadBitmapPlayer();
 
 	};
+
 	void Map::OnShow()//显示
 	{
 		//加载背景
@@ -227,15 +240,9 @@ namespace game_framework {
 		//todo 两人均达到出口后，切换关卡
 	}
 
-	Map::~Map()
-	{
-		Map::DestroyResources();
-	};
-
 	void Map::InitMapLevel(int level)//初始化地图数据 0~9
 	{
 		now_level = level;
-		//DestroyResources();
 
 		int map_level_0[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH] = {
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
@@ -269,6 +276,7 @@ namespace game_framework {
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,300,300,300,3,1,1,1,4,301,301,301,5,1,1,1,1,1,1,1,0},
 			{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
 		};
+
 		//地图赋值
 		switch (level)
 		{

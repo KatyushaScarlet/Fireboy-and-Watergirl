@@ -258,6 +258,7 @@
     <None Include="Source\game.aps" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\CGameStateRun.cpp" />
     <ClCompile Include="Source\Diamond.cpp" />
     <ClCompile Include="Source\Item.cpp" />
     <ClCompile Include="Source\Map.cpp" />
@@ -314,6 +315,7 @@
     <ClInclude Include="Source\CBall.h" />
     <ClInclude Include="Source\CBouncingBall.h" />
     <ClInclude Include="Source\CEraser.h" />
+    <ClInclude Include="Source\CGameStateRun.h" />
     <ClInclude Include="Source\Diamond.h" />
     <ClInclude Include="Source\Door.h" />
     <ClInclude Include="Source\game.h" />

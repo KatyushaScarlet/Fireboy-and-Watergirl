@@ -42,16 +42,5 @@ namespace game_framework {
 		Player* boy;
 		Player* girl;
 		vector<Item*>		items;//各种物体
-
-		void DestroyResources()
-		{
-			delete boy;
-			delete girl;
-
-			for each (Item * item in items)
-			{
-				delete item;
-			}
-		};
 	};
 }
