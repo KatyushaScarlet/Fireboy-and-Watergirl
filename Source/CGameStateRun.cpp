@@ -5,43 +5,75 @@
 #include "audio.h"
 #include "gamelib.h"
 
+#include <memory>
+
 #include "CGameStateRun.h"
 
 namespace game_framework {
 	CGameStateRun::CGameStateRun(CGame* g)
 		: CGameState(g)
 	{
-		InitMapLevel(0);
-
+		//InitMapLevel(0);
 	}
 
 	CGameStateRun::~CGameStateRun()
 	{
-		delete boy;
-		delete girl;
+		//Reset();
+		ResetMap();
+	}
+
+	void CGameStateRun::ResetMap()
+	{
+		//game_stop = true;
+			//delete boy;
+			//delete girl;
 
 		for each (Item * item in items)
 		{
 			delete item;
 		}
+		items.clear();
 	}
 
 	void CGameStateRun::OnBeginState()
 	{
 		//从第一关开始
 		//map_now_level = 0;
+		//InitMapLevel(0);
+		
+		//重启关卡
+		InitMapLevel(0);
 	}
 
 	void CGameStateRun::OnInit()
 	{
 
+		//background.LoadBitmap("RES\\background.bmp");
+		//for each (Item * item in items)
+		//{
+		//	item->LoadItemBitmap();
+		//}
+		//boy->LoadBitmapPlayer();
+		//girl->LoadBitmapPlayer();
+
+		LoadGameBitmap();
+
+	}
+
+	void CGameStateRun::LoadGameBitmap()//只执行一次
+	{
 		background.LoadBitmap("RES\\background.bmp");
+	}
+
+	void CGameStateRun::LoadItemBitmap()//更换关卡或重启后执行
+	{
+		boy->LoadBitmapPlayer();
+		girl->LoadBitmapPlayer();
+
 		for each (Item * item in items)
 		{
 			item->LoadItemBitmap();
 		}
-		boy->LoadBitmapPlayer();
-		girl->LoadBitmapPlayer();
 	}
 
 	const char KEY_LEFT = 37;
@@ -55,98 +87,104 @@ namespace game_framework {
 
 	void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
-		switch (nChar)
+		if (game_loaded)
 		{
-		case KEY_UP:
-			if (boy->GetVerticalState() == DIRECTION_NONE)
+			switch (nChar)
 			{
-				boy->SetVerticalState(DIRECTION_UP);
-			}
-			break;
-		//case KEY_DOWN:
+			case KEY_UP:
+				if (boy->GetVerticalState() == DIRECTION_NONE)
+				{
+					boy->SetVerticalState(DIRECTION_UP);
+				}
+				break;
+				//case KEY_DOWN:
 
-		//	break;
-		case KEY_LEFT:
-			if (boy->GetHorizontalState() == DIRECTION_NONE)
-			{
-				boy->SetHorizontalState(DIRECTION_LEFT);
-			}
-			break;
-		case KEY_RIGHT:
-			if (boy->GetHorizontalState() == DIRECTION_NONE)
-			{
-				boy->SetHorizontalState(DIRECTION_RIGHT);
-			}
-			break;
-		/////////////////////////////////////////////////
-		case KEY_W:
-			if (girl->GetVerticalState() == DIRECTION_NONE)
-			{
-				girl->SetVerticalState(DIRECTION_UP);
-			}
-			break;
-		//case KEY_S:
+				//	break;
+			case KEY_LEFT:
+				if (boy->GetHorizontalState() == DIRECTION_NONE)
+				{
+					boy->SetHorizontalState(DIRECTION_LEFT);
+				}
+				break;
+			case KEY_RIGHT:
+				if (boy->GetHorizontalState() == DIRECTION_NONE)
+				{
+					boy->SetHorizontalState(DIRECTION_RIGHT);
+				}
+				break;
+				/////////////////////////////////////////////////
+			case KEY_W:
+				if (girl->GetVerticalState() == DIRECTION_NONE)
+				{
+					girl->SetVerticalState(DIRECTION_UP);
+				}
+				break;
+				//case KEY_S:
 
-		//	break;
-		case KEY_A:
-			if (girl->GetHorizontalState() == DIRECTION_NONE)
-			{
-				girl->SetHorizontalState(DIRECTION_LEFT);
+				//	break;
+			case KEY_A:
+				if (girl->GetHorizontalState() == DIRECTION_NONE)
+				{
+					girl->SetHorizontalState(DIRECTION_LEFT);
+				}
+				break;
+			case KEY_D:
+				if (girl->GetHorizontalState() == DIRECTION_NONE)
+				{
+					girl->SetHorizontalState(DIRECTION_RIGHT);
+				}
+				break;
+			default:
+				break;
 			}
-			break;
-		case KEY_D:
-			if (girl->GetHorizontalState() == DIRECTION_NONE)
-			{
-				girl->SetHorizontalState(DIRECTION_RIGHT);
-			}
-			break;
-		default:
-			break;
 		}
 	}
 
 	void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
-		switch (nChar)
+		if (game_loaded)
 		{
-		//case KEY_UP:
-
-		//	break;
-		//case KEY_DOWN:
-
-		//	break;
-		case KEY_LEFT:
-			if (boy->GetHorizontalState() == DIRECTION_LEFT)
+			switch (nChar)
 			{
-				boy->SetHorizontalState(DIRECTION_NONE);
-			}
-			break;
-		case KEY_RIGHT:
-			if (boy->GetHorizontalState() == DIRECTION_RIGHT)
-			{
-				boy->SetHorizontalState(DIRECTION_NONE);
-			}
-			break;
-		//case KEY_W:
+				//case KEY_UP:
 
-		//	break;
-		//case KEY_S:
+				//	break;
+				//case KEY_DOWN:
 
-		//	break;
-		case  KEY_A :
-			if (girl->GetHorizontalState() == DIRECTION_LEFT)
-			{
-				girl->SetHorizontalState(DIRECTION_NONE);
+				//	break;
+			case KEY_LEFT:
+				if (boy->GetHorizontalState() == DIRECTION_LEFT)
+				{
+					boy->SetHorizontalState(DIRECTION_NONE);
+				}
+				break;
+			case KEY_RIGHT:
+				if (boy->GetHorizontalState() == DIRECTION_RIGHT)
+				{
+					boy->SetHorizontalState(DIRECTION_NONE);
+				}
+				break;
+				//case KEY_W:
+
+				//	break;
+				//case KEY_S:
+
+				//	break;
+			case  KEY_A:
+				if (girl->GetHorizontalState() == DIRECTION_LEFT)
+				{
+					girl->SetHorizontalState(DIRECTION_NONE);
+				}
+				break;
+			case KEY_D:
+				if (girl->GetHorizontalState() == DIRECTION_RIGHT)
+				{
+					girl->SetHorizontalState(DIRECTION_NONE);
+				}
+				break;
+			default:
+				break;
 			}
-			break;
-		case KEY_D:
-			if (girl->GetHorizontalState() == DIRECTION_RIGHT)
-			{
-				girl->SetHorizontalState(DIRECTION_NONE);
-			}
-			break;
-		default:
-			break;
 		}
 	}
 
@@ -177,26 +215,32 @@ namespace game_framework {
 
 	void CGameStateRun::OnShow()//显示
 	{
-		//加载背景
-		background.SetTopLeft(0, 0);
-		background.ShowBitmap();
-		//显示物体
-		for each (Wall * item in items)
+		if (game_loaded)
 		{
-			if (item->is_visibale)
+			//加载背景
+			background.SetTopLeft(0, 0);
+			background.ShowBitmap();
+			//显示物体
+			for each (Wall * item in items)
 			{
-				item->OnShow();
+				if (item->is_visibale)
+				{
+					item->OnShow();
+				}
 			}
+			//加载玩家
+			boy->OnShow();
+			girl->OnShow();
 		}
-		//加载玩家
-		boy->OnShow();
-		girl->OnShow();
 	};
 
 	void CGameStateRun::OnMove()//移动
 	{
-		boy->OnMove(this);
-		girl->OnMove(this);
+		if (game_loaded)
+		{
+			boy->OnMove(this);
+			girl->OnMove(this);
+		}
 	}
 
 	bool CGameStateRun::CanMove(Player* player, int direction)//判定是否能移动
@@ -288,6 +332,9 @@ namespace game_framework {
 			TRACE("girl die\n");
 		}
 		//todo 游戏结束
+		game_loaded = false;
+		//ResetMap();
+		GotoGameState(GAME_STATE_OVER);
 	}
 
 	void CGameStateRun::PlayerReachExit(bool is_boy)//玩家到达出口
@@ -306,6 +353,11 @@ namespace game_framework {
 
 	void CGameStateRun::InitMapLevel(int level)//初始化地图数据 0~9
 	{
+		//停止游戏逻辑
+		game_loaded = false;
+		//清空地图
+		ResetMap();
+		//设置目前关卡
 		now_level = level;
 
 		int map_level_0[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH] = {
@@ -401,6 +453,7 @@ namespace game_framework {
 				{
 					Wall* wall = new Wall();
 					wall->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					//items.insert(wall);
 					items.push_back(wall);
 					break;
 				}
@@ -448,13 +501,13 @@ namespace game_framework {
 				}
 				case 100:
 				{
-					boy = new Player(true);
+					boy = make_unique<Player>(true);
 					boy->SetTopLeft(i * MAP_GIRD_PIXEL, j * MAP_GIRD_PIXEL);
 					break;
 				}
 				case 101:
 				{
-					girl = new Player(false);
+					girl = make_unique<Player>(false);
 					girl->SetTopLeft(i * MAP_GIRD_PIXEL, j * MAP_GIRD_PIXEL);
 					break;
 				}
@@ -498,5 +551,9 @@ namespace game_framework {
 				}
 			}
 		}
+
+		LoadItemBitmap();
+		//继续游戏逻辑
+		game_loaded = true;
 	}
 }

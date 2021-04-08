@@ -14,6 +14,8 @@
 #include "Switch.h"
 #include "Player.h"
 
+#include<memory>
+
 namespace game_framework {
 	class CGameStateRun : public CGameState {
 	public:
@@ -29,6 +31,9 @@ namespace game_framework {
 		void OnRButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
 		void OnRButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
 		///////////////////////////////////////////////////////////////
+		void ResetMap();
+		void LoadGameBitmap();
+		void LoadItemBitmap();
 		void InitMapLevel(int level);//初始化地图数据 0~9
 		bool CanMove(Player* player, int direction);//判定玩家是否能移动
 		void AddScore(bool is_boy);//玩家增加分数
@@ -44,9 +49,12 @@ namespace game_framework {
 		int score_boy = 0;
 		int score_girl = 0;
 
-		Player* boy;
-		Player* girl;
+		unique_ptr<Player> boy;
+		unique_ptr<Player> girl;
+
 		vector<Item*>		items;//各种物体
 		CMovingBitmap	background;//背景
+
+		bool game_loaded = false;
 	};
 }
