@@ -95,6 +95,7 @@ namespace game_framework
 	{
 		if (type == 300 || type == 301 || type == 302)//ֻ只有水池中部有效
 		{
+			//bug
 			if (direction == DIRECTION_DOWN)//ֻ如果玩家下方接触水池上方
 			{
 				if (type == 300 && !is_boy)//fire & girl

@@ -155,6 +155,9 @@
     <ClCompile Include="Source\CGameStateRun.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Door.cpp">
+      <Filter>MyGame\Item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">

@@ -17,6 +17,13 @@
 #include<memory>
 
 namespace game_framework {
+	struct PlayerCoordinate
+	{
+		int x1;
+		int y1;
+		int x2;
+		int y2;
+	};
 	class CGameStateRun : public CGameState {
 	public:
 		CGameStateRun(CGame* g);
@@ -38,7 +45,9 @@ namespace game_framework {
 		bool CanMove(Player* player, int direction);//判定玩家是否能移动
 		void AddScore(bool is_boy);//玩家增加分数
 		void PlayerDie(bool is_boy);//玩家死亡
-		void PlayerReachExit(bool is_boy);//玩家到达出口
+		void PlayerReachExit(bool is_boy,bool value);//玩家到达出口
+
+		PlayerCoordinate GetPlayerCoordinate(bool is_boy);
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
@@ -55,6 +64,7 @@ namespace game_framework {
 		vector<Item*>		items;//各种物体
 		CMovingBitmap	background;//背景
 
-		bool game_loaded = false;
+		bool flag_game_loaded = false;
+		bool flag_change_level = false;
 	};
 }

@@ -260,6 +260,7 @@
   <ItemGroup>
     <ClCompile Include="Source\CGameStateRun.cpp" />
     <ClCompile Include="Source\Diamond.cpp" />
+    <ClCompile Include="Source\Door.cpp" />
     <ClCompile Include="Source\Item.cpp" />
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\audio.cpp" />

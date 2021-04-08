@@ -10,13 +10,12 @@
 
 namespace game_framework
 {
-	class Map;
 	Diamond::Diamond(int type)
 	{
 		this->type = type;
 
 		width = 32 - 1;
-		height = 32 - 1;
+		height = 64 - 1;//钻石高度两格
 		is_accessible = true;
 	}
 
@@ -41,7 +40,7 @@ namespace game_framework
 
 	void Diamond::OnShow()
 	{
-		bitmap.SetTopLeft(x, y + 2);
+		bitmap.SetTopLeft(x, y);
 		bitmap.ShowBitmap();
 	}
 
