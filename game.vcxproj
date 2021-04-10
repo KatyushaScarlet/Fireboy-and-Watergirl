@@ -348,6 +348,8 @@
     <Image Include="RES\door\fire0.bmp" />
     <Image Include="RES\door\water0.bmp" />
     <Image Include="RES\loadingnew.bmp" />
+    <Image Include="RES\platform\horizon.bmp" />
+    <Image Include="RES\platform\vertical.bmp" />
     <Image Include="RES\player\boy_down0.bmp" />
     <Image Include="RES\player\boy_left0.bmp" />
     <Image Include="RES\player\boy_right0.bmp" />
@@ -373,6 +375,11 @@
     <Image Include="RES\pool\water_0.bmp" />
     <Image Include="RES\pool\water_left_0.bmp" />
     <Image Include="RES\pool\water_right_0.bmp" />
+    <Image Include="RES\switch\button_off.bmp" />
+    <Image Include="RES\switch\button_on.bmp" />
+    <Image Include="RES\switch\stick_base.bmp" />
+    <Image Include="RES\switch\stick_left.bmp" />
+    <Image Include="RES\switch\stick_right.bmp" />
     <Image Include="RES\TempleHall.bmp" />
     <Image Include="RES\wall.bmp" />
   </ItemGroup>

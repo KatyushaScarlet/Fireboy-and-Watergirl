@@ -326,6 +326,27 @@
     <Image Include="RES\door\water0.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\platform\horizon.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\platform\vertical.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\switch\button_off.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\switch\button_on.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\switch\stick_base.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\switch\stick_left.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\switch\stick_right.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="RES\pool\图片规范.txt" />
