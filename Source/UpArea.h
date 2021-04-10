@@ -4,7 +4,7 @@
 
 namespace game_framework {
 
-	class MovingBox
+	class UpArea
 	{
 
 	};

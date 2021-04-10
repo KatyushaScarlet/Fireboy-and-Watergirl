@@ -323,8 +323,8 @@
     <ClInclude Include="Source\gameView.h" />
     <ClInclude Include="Source\Item.h" />
     <ClInclude Include="Source\MainFrm.h" />
-    <ClInclude Include="Source\MovingBox.h" />
-    <ClInclude Include="Source\MovingWall.h" />
+    <ClInclude Include="Source\UpArea.h" />
+    <ClInclude Include="Source\Platform.h" />
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\Pool.h" />
     <ClInclude Include="Source\Resource.h" />

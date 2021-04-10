@@ -123,10 +123,10 @@ void CGameStateInit::OnShow()
 	pDC->SetBkColor(RGB(0, 0, 0));
 	pDC->SetTextColor(RGB(255, 255, 0));
 	pDC->TextOut(455, 640, "Please click mouse or press SPACE to begin.");
-	pDC->TextOut(5, 810, "Press Ctrl-F to switch in between window mode and full screen mode.");
-	if (ENABLE_GAME_PAUSE)
-		pDC->TextOut(5, 840, "Press Ctrl-Q to pause the Game.");
-	pDC->TextOut(5, 870, "Press Alt-F4 or ESC to Quit.");
+	//pDC->TextOut(5, 810, "Press Ctrl-F to switch in between window mode and full screen mode.");
+	//if (ENABLE_GAME_PAUSE)
+	//	pDC->TextOut(5, 840, "Press Ctrl-Q to pause the Game.");
+	//pDC->TextOut(5, 870, "Press Alt-F4 or ESC to Quit.");
 	pDC->SelectObject(fp);						// 放掉 font f (千萬不要漏了放掉)
 	CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
 }								

@@ -208,10 +208,10 @@
     <ClInclude Include="Source\Diamond.h">
       <Filter>MyGame\Item</Filter>
     </ClInclude>
-    <ClInclude Include="Source\MovingBox.h">
+    <ClInclude Include="Source\UpArea.h">
       <Filter>MyGame\Item</Filter>
     </ClInclude>
-    <ClInclude Include="Source\MovingWall.h">
+    <ClInclude Include="Source\Platform.h">
       <Filter>MyGame\Item</Filter>
     </ClInclude>
     <ClInclude Include="Source\Item.h">
