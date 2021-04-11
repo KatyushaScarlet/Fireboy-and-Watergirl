@@ -3,6 +3,11 @@
 #include"Item.h"
 
 namespace game_framework {
+	enum SWITCH_STATUS
+	{
+		SWITCH_RELEASE,
+		SWITCH_PRESS
+	};
 	class CMovingBitmap;
 	class Platform;
 	class Switch : public Item
@@ -18,11 +23,12 @@ namespace game_framework {
 		//开关绑定平台
 		void Bind(Platform* platform);
 	protected:
-		CMovingBitmap bitmap;
-		CMovingBitmap bitmap_wall;
+		CMovingBitmap bitmap_switch_on;
+		CMovingBitmap bitmap_switch_off;
 	private:
 		//开关状态
-		bool is_on;
+		int status = 0;
+		bool is_on = false;
 		//开关绑定的平台
 		Platform* bind_platform;
 	};

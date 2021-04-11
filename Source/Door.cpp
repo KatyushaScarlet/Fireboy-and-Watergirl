@@ -43,6 +43,7 @@ namespace game_framework
 	}
 	void Door::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
+		//获取玩家坐标
 		PlayerCoordinate coordinate = game->GetPlayerCoordinate(is_boy);
 		int x1 = coordinate.x1;
 		int x2 = coordinate.x2;

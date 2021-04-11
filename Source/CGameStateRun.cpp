@@ -509,6 +509,11 @@ namespace game_framework {
 					map_array[i][j] = map_level_0[i][j];
 				}
 			}
+			//单独添加机关
+			Switch* button1 = new Switch(500, 10 * MAP_GIRD_PIXEL, /*14*/27 * MAP_GIRD_PIXEL);
+			items.push_back(button1);
+			Switch* stick1 = new Switch(501, 12 * MAP_GIRD_PIXEL, /*14*/27 * MAP_GIRD_PIXEL);
+			items.push_back(stick1);
 			break;
 		}
 		case 1:
@@ -653,6 +658,25 @@ namespace game_framework {
 				}
 			}
 		}
+
+		////单独添加机关
+		//switch (level)
+		//{
+		//case 0:
+		//{
+		//	Switch* button1 = new Switch(500, 10 * MAP_GIRD_PIXEL, /*14*/27 * MAP_GIRD_PIXEL);
+		//	items.push_back(button1);
+		//	Switch* stick1 = new Switch(501, 12 * MAP_GIRD_PIXEL, /*14*/27 * MAP_GIRD_PIXEL);
+		//	items.push_back(stick1);
+		//	break;
+		//}
+		//case 1:
+		//{
+		//	break;
+		//}
+		//default:
+		//	break;
+		//}
 
 		LoadItemBitmap();
 		//继续游戏逻辑
