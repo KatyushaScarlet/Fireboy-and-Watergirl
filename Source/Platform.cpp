@@ -31,7 +31,7 @@ namespace game_framework
 			height = 32;
 			break;
 		}
-		case 504://垂直
+		case 503://垂直
 		{
 			width = 32;
 			height = 32 * 4;
@@ -50,7 +50,7 @@ namespace game_framework
 			bitmap.LoadBitmapA("RES\\platform\\horizon.bmp");
 			break;
 		}
-		case 504://垂直
+		case 503://垂直
 		{
 			bitmap.LoadBitmapA("RES\\platform\\vertical.bmp");
 			break;
