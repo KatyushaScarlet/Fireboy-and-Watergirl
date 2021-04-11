@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -12,8 +12,8 @@ namespace game_framework
 {
 	Switch::Switch(int type, int x, int y)
 	{
-		this->x = x;
-		this->y = y;
+		this->x = x * MAP_GIRD_PIXEL;
+		this->y = y * MAP_GIRD_PIXEL;
 		this->type = type;
 
 		width = 32;
@@ -24,13 +24,13 @@ namespace game_framework
 	{
 		switch (type)
 		{
-		case 500://°´Å¥
+		case 500://æŒ‰é’®
 		{
 			bitmap_switch_on.LoadBitmapA("RES\\switch\\button_on.bmp", RGB(255, 255, 255));
 			bitmap_switch_off.LoadBitmapA("RES\\switch\\button_off.bmp", RGB(255, 255, 255));
 			break;
 		}
-		case 501://À­¸Ë
+		case 501://æ‹‰æ†
 		{
 			bitmap_switch_on.LoadBitmapA("RES\\switch\\stick_on.bmp", RGB(255, 255, 255));
 			bitmap_switch_off.LoadBitmapA("RES\\switch\\stick_off.bmp", RGB(255, 255, 255));
@@ -57,7 +57,7 @@ namespace game_framework
 
 	void Switch::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
-		//»ñÈ¡Íæ¼Ò×ø±ê
+		//èŽ·å–çŽ©å®¶åæ ‡
 		PlayerCoordinate coordinate = game->GetPlayerCoordinate(is_boy);
 		int x1 = coordinate.x1;
 		int x2 = coordinate.x2;
@@ -65,55 +65,52 @@ namespace game_framework
 
 		switch (type)
 		{
-		case 500://°´Å¥
+		case 500://æŒ‰é’®
 		{
-			if ((x1 > this->GetX1() - 16) && (x2 < this->GetX2() + 16) /*&& (y2 > this->GetY1())*/)//À©´óÅÐ¶¨·¶Î§
+			if ((x1 > this->GetX1() - 16) && (x2 < this->GetX2() + 16) /*&& (y2 > this->GetY1())*/)//æ‰©å¤§åˆ¤å®šèŒƒå›´
 			{
-				if (status == SWITCH_RELEASE)//°´Å¥Ö»ÄÜ±»°´ÏÂÒ»´Î
+				if (status == SWITCH_RELEASE)//æŒ‰é’®åªèƒ½è¢«æŒ‰ä¸‹ä¸€æ¬¡
 				{
 					is_on = true;
 					status = SWITCH_PRESS;
-					//TRACE("player press\n");
 				}
 			}
 			else
 			{
-				if (status == SWITCH_PRESS)//Íæ¼ÒÀë¿ªºó°´Å¥±»ËÉ¿ª
+				if (status == SWITCH_PRESS)//çŽ©å®¶ç¦»å¼€åŽæŒ‰é’®è¢«æ¾å¼€
 				{
 					is_on = false;
 					status = SWITCH_RELEASE;
-					//TRACE("player release\n");
 				}
 			}
 			break;
 		}
-		case 501://À­¸Ë
+		case 501://æ‹‰æ†
 		{
-			if ((x1 > this->GetX1() - 16) && (x2 < this->GetX2() + 16) /*&& (y2 > this->GetY1())*/)//À©´óÅÐ¶¨·¶Î§
+			if ((x1 > this->GetX1() - 16) && (x2 < this->GetX2() + 16) /*&& (y2 > this->GetY1())*/)//æ‰©å¤§åˆ¤å®šèŒƒå›´
 			{
-				if (status == SWITCH_RELEASE)//À­¸Ë±»´¥·¢£¬×ª»»×´Ì¬
+				if (status == SWITCH_RELEASE)//æ‹‰æ†è¢«è§¦å‘ï¼Œè½¬æ¢çŠ¶æ€
 				{
 					is_on = !is_on;
 					status = SWITCH_PRESS;
-					//TRACE("player press\n");
 				}
 			}
 			else
 			{
-				if (status == SWITCH_PRESS)//Íæ¼ÒÀë¿ªºó£¬²»ËÉ¿ª
+				if (status == SWITCH_PRESS)//çŽ©å®¶ç¦»å¼€åŽï¼Œä¸æ¾å¼€
 				{
 					status = SWITCH_RELEASE;
-					//TRACE("player release\n");
 				}
 			}
+
 			break;
 		}
 		default:
 			break;
 		}
-		
-		//´¥·¢Æ½Ì¨
-		//bind_platform->Trigger(is_on);
+
+		//è§¦å‘å¹³å°
+		bind_platform->Trigger(is_on);
 	}
 
 	void Switch::Bind(Platform* platform)

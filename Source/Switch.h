@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include"Item.h"
 
@@ -12,24 +12,24 @@ namespace game_framework {
 	class Platform;
 	class Switch : public Item
 	{
-		//Á½ÖÖ¿ª¹Ø£º°´Å¥£¨·Ç³ÖĞø×÷ÓÃ 500 switch_button£©¡¢À­¸Ë£¨³ÖĞø×÷ÓÃ 501 switch_stick£©//
-		//À­¸Ëµ××ùÊÓÎªÇ½±Ú£¬ÔÚÀ­¸ËÏÂ·½Ò»¸ñ
+		//ä¸¤ç§å¼€å…³ï¼šæŒ‰é’®ï¼ˆéæŒç»­ä½œç”¨ 500 switch_buttonï¼‰ã€æ‹‰æ†ï¼ˆæŒç»­ä½œç”¨ 501 switch_stickï¼‰//
+		//æ‹‰æ†åº•åº§è§†ä¸ºå¢™å£ï¼Œåœ¨æ‹‰æ†ä¸‹æ–¹ä¸€æ ¼
 
 	public:
 		Switch(int type, int x, int y);
 		void LoadItemBitmap();
 		void OnShow();
 		void Interact(CGameStateRun* game, bool is_boy, int direction);
-		//¿ª¹Ø°ó¶¨Æ½Ì¨
+		//å¼€å…³ç»‘å®šå¹³å°
 		void Bind(Platform* platform);
 	protected:
 		CMovingBitmap bitmap_switch_on;
 		CMovingBitmap bitmap_switch_off;
 	private:
-		//¿ª¹Ø×´Ì¬
+		//å¼€å…³çŠ¶æ€
 		int status = 0;
 		bool is_on = false;
-		//¿ª¹Ø°ó¶¨µÄÆ½Ì¨
+		//å¼€å…³ç»‘å®šçš„å¹³å°
 		Platform* bind_platform;
 	};
 }

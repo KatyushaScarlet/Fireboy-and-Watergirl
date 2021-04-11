@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include"Item.h"
 
@@ -6,22 +6,22 @@ namespace game_framework {
 	class CMovingBitmap;
 	class Platform : public Item
 	{
-		//Á½ÖÖÆ½Ì¨£ºË®Æ½£¨502 platform_horizon£©¡¢´¹Ö±£¨503 platform_vertical£©
-		//³õÊ¼Î»ÖÃ£ºinit_1_x¡¢init_1_y
-		//¼¤»îÎ»ÖÃ£ºinit_2_x¡¢init_2_y
+		//ä¸¤ç§å¹³å°ï¼šæ°´å¹³ï¼ˆ502 platform_horizonï¼‰ã€å‚ç›´ï¼ˆ503 platform_verticalï¼‰
+		//åˆå§‹ä½ç½®ï¼šinit_1_xã€init_1_y
+		//æ¿€æ´»ä½ç½®ï¼šinit_2_xã€init_2_y
 	public:
 		Platform(int type,int init_1_x,int init_1_y,int init_2_x,int init_2_y);
 		void LoadItemBitmap();
 		void OnShow();
 		void Interact(CGameStateRun* game, bool is_boy, int direction);
-		//Æ½Ì¨±»¿ª¹Ø´¥·¢
+		//å¹³å°è¢«å¼€å…³è§¦å‘
 		void Trigger(bool is_on);
 	protected:
 		CMovingBitmap bitmap;
 	private:
-		//Æ½Ì¨×´Ì¬
+		//å¹³å°çŠ¶æ€
 		int status;			
-		//³õÊ¼Î»ÖÃ
+		//åˆå§‹ä½ç½®
 		int init_1_x;
 		int init_1_y;
 		int init_2_x;
