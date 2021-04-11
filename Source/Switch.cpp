@@ -89,43 +89,23 @@ namespace game_framework
 		}
 		case 501://拉杆
 		{
-			if ((x1 > this->GetX1() - 16) && (x2 < this->GetX2() + 16))//扩大判定范围
+			if ((x1 > this->GetX1() - 16) && (x2 < this->GetX2() + 16) /*&& (y2 > this->GetY1())*/)//扩大判定范围
 			{
-				//if (status == SWITCH_RELEASE)//按钮只能被按下一次
-				//{
-				//	is_on = true;
-				//	status = SWITCH_PRESS;
-				//	//TRACE("player enter\n");
-				//}
-				if (status == SWITCH_RELEASE)
+				if (status == SWITCH_RELEASE)//拉杆被触发，转换状态
 				{
-					is_on = !is_on;//拉杆状态切换
-					status == SWITCH_PRESS;
-					TRACE("player enter\n");
+					is_on = !is_on;
+					status = SWITCH_PRESS;
+					//TRACE("player press\n");
 				}
 			}
 			else
 			{
-
+				if (status == SWITCH_PRESS)//玩家离开后，不松开
+				{
+					status = SWITCH_RELEASE;
+					//TRACE("player release\n");
+				}
 			}
-
-			//else 
-			//{
-			//	if ((x1 > this->GetX2() + 16) || (x2 < this->GetX1() - 16))//完全离开
-			//	{
-			//		if (status == SWITCH_PRESS)
-			//		{
-
-			//			status = SWITCH_RELEASE;
-			//		}
-			//	}
-			//	//if (status == SWITCH_PRESS)//玩家离开后按钮被松开
-			//	//{
-			//	//	is_on = false;
-			//	//	status = SWITCH_RELEASE;
-			//	//	//TRACE("player exit\n");
-			//	//}
-			//}
 			break;
 		}
 		default:
