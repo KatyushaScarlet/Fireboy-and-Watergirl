@@ -7,10 +7,10 @@ namespace game_framework {
 	class Platform : public Item
 	{
 		//两种平台：水平（502 platform_horizon）、垂直（503 platform_vertical）
-		//初始位置：init_x1、init_y1
-		//激活位置：init_x2、init_y2
+		//初始位置：init_1_x、init_1_y
+		//激活位置：init_2_x、init_2_y
 	public:
-		Platform(int type,int init_x1,int init_y1,int init_x2,int init_y2);
+		Platform(int type,int init_1_x,int init_1_y,int init_2_x,int init_2_y);
 		void LoadItemBitmap();
 		void OnShow();
 		void Interact(CGameStateRun* game, bool is_boy, int direction);
@@ -22,9 +22,9 @@ namespace game_framework {
 		//平台状态
 		int status;			
 		//初始位置
-		int init_x1;
-		int init_y1;
-		int init_x2;
-		int init_y2;
+		int init_1_x;
+		int init_1_y;
+		int init_2_x;
+		int init_2_y;
 	};
 }
