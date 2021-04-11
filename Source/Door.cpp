@@ -41,6 +41,9 @@ namespace game_framework
 		bitmap.SetTopLeft(x, y);
 		bitmap.ShowBitmap();
 	}
+	void Door::OnMove()
+	{
+	}
 	void Door::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
 		//获取玩家坐标

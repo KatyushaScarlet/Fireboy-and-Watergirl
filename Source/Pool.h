@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Item.h"
+#include <string>
 
 namespace game_framework {
 	class CMovingBitmap;
@@ -10,9 +11,12 @@ namespace game_framework {
 		Pool(int type);
 		void LoadItemBitmap();
 		void OnShow();
+		void OnMove();
 		void Interact(CGameStateRun* game, bool is_boy, int direction);
 	protected:
-		CMovingBitmap bitmap;
+		CAnimation bitmap;
 		CMovingBitmap bitmap_wall;
+	private:
+		void AddAnimationBitmap(string path);
 	};
 }

@@ -44,6 +44,10 @@ namespace game_framework
 		bitmap.ShowBitmap();
 	}
 
+	void Diamond::OnMove()
+	{
+	}
+
 	void Diamond::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
 		if (type == 200 && is_boy)

@@ -7,7 +7,8 @@
 
 #include "Pool.h"
 #include "CGameStateRun.h"
-
+#include <string>
+using namespace std;
 namespace game_framework
 {
 
@@ -30,47 +31,56 @@ namespace game_framework
 		{
 		case 2:
 		{
-			bitmap.LoadBitmapA("RES\\pool\\fire_left_0.bmp", RGB(255, 255, 255));
+			string path = "RES\\pool\\fire_left_";
+			AddAnimationBitmap(path);
 			break;
 		}
 		case 3:
 		{
-			bitmap.LoadBitmapA("RES\\pool\\fire_right_0.bmp", RGB(255, 255, 255));
+			string path = "RES\\pool\\fire_right_";
+			AddAnimationBitmap(path);
 			break;
 		}
 		case 4:
 		{
-			bitmap.LoadBitmapA("RES\\pool\\water_left_0.bmp", RGB(255, 255, 255));
+			string path = "RES\\pool\\water_left_";
+			AddAnimationBitmap(path);
 			break;
 		}
 		case 5:
 		{
-			bitmap.LoadBitmapA("RES\\pool\\water_right_0.bmp", RGB(255, 255, 255));
+			string path = "RES\\pool\\water_right_";
+			AddAnimationBitmap(path);
 			break;
 		}
 		case 6:
 		{
-			bitmap.LoadBitmapA("RES\\pool\\toxic_left_0.bmp", RGB(255, 255, 255));
+			string path = "RES\\pool\\toxic_left_";
+			AddAnimationBitmap(path);
 			break;
 		}
 		case 7:
 		{
-			bitmap.LoadBitmapA("RES\\pool\\toxic_right_0.bmp", RGB(255, 255, 255));
+			string path = "RES\\pool\\toxic_right_";
+			AddAnimationBitmap(path); 
 			break;
 		}
 		case 300:
 		{
-			bitmap.LoadBitmapA("RES\\pool\\fire_0.bmp", RGB(255, 255, 255));
+			string path = "RES\\pool\\fire_";
+			AddAnimationBitmap(path);
 			break;
 		}
 		case 301:
 		{
-			bitmap.LoadBitmapA("RES\\pool\\water_0.bmp", RGB(255, 255, 255));
+			string path = "RES\\pool\\water_";
+			AddAnimationBitmap(path);
 			break;
 		}
 		case 302:
 		{
-			bitmap.LoadBitmapA("RES\\pool\\toxic_0.bmp", RGB(255, 255, 255));
+			string path = "RES\\pool\\toxic_";
+			AddAnimationBitmap(path);
 			break;
 		}
 		default:
@@ -83,7 +93,13 @@ namespace game_framework
 		bitmap_wall.SetTopLeft(x, y);//先画墙
 		bitmap_wall.ShowBitmap();
 		bitmap.SetTopLeft(x, y - 16);//提高半格画水池
-		bitmap.ShowBitmap();
+		bitmap.OnShow();
+	}
+
+	void Pool::OnMove()
+	{
+		bitmap.SetDelayCount(2); //設定速度
+		bitmap.OnMove();
 	}
 
 
@@ -107,6 +123,15 @@ namespace game_framework
 					game->PlayerDie(is_boy);
 				}
 			}
+		}
+	}
+	void Pool::AddAnimationBitmap(string path)
+	{
+		string extension = ".bmp";
+		for (int i = 0; i <= 14; i++) {
+			string bitmapPath = path + to_string(i) + extension;
+			char* p = (char*)bitmapPath.c_str();
+			bitmap.AddBitmap(p, RGB(255, 255, 255));
 		}
 	}
 }

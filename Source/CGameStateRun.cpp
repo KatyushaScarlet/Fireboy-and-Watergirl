@@ -206,7 +206,7 @@ namespace game_framework {
 			background.SetTopLeft(0, 0);
 			background.ShowBitmap();
 			//显示物体
-			for each (Wall * item in items)
+			for each (Item * item in items)
 			{
 				if (item->is_visibale)
 				{
@@ -225,6 +225,13 @@ namespace game_framework {
 		{
 			boy->OnMove(this);
 			girl->OnMove(this);
+			for each (Item * item in items)
+			{
+				if (item->is_visibale)
+				{
+					item->OnMove();
+				}
+			}
 		}
 	}
 

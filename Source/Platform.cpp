@@ -64,6 +64,9 @@ namespace game_framework
 		bitmap.SetTopLeft(x, y);
 		bitmap.ShowBitmap();
 	}
+	void Platform::OnMove()
+	{
+	}
 	void Platform::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
 

@@ -55,6 +55,10 @@ namespace game_framework
 		}
 	}
 
+	void Switch::OnMove()
+	{
+	}
+
 	void Switch::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
 		//获取玩家坐标

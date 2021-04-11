@@ -19,6 +19,7 @@ namespace game_framework {
 		Switch(int type, int x, int y);
 		void LoadItemBitmap();
 		void OnShow();
+		void OnMove();
 		void Interact(CGameStateRun* game, bool is_boy, int direction);
 		//开关绑定平台
 		void Bind(Platform* platform);
