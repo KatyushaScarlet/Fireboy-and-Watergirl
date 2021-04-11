@@ -111,11 +111,9 @@ namespace game_framework
 		default:
 			break;
 		}
-
-		if (is_on)
-		{
-			bind_platform->Trigger(is_on);
-		}
+		
+		//´¥·¢Æ½Ì¨
+		//bind_platform->Trigger(is_on);
 	}
 
 	void Switch::Bind(Platform* platform)
