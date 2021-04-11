@@ -41,10 +41,6 @@ namespace game_framework
 		bitmap.SetTopLeft(x, y);
 		bitmap.ShowBitmap();
 	}
-	void Door::OnMove()
-	{
-
-	}
 	void Door::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
 		PlayerCoordinate coordinate = game->GetPlayerCoordinate(is_boy);

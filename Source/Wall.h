@@ -10,7 +10,6 @@ namespace game_framework {
 		Wall();
 		void LoadItemBitmap();
 		void OnShow();
-		void OnMove();
 		void Interact(CGameStateRun* game, bool is_boy, int direction);
 	protected:
 		CMovingBitmap bitmap;

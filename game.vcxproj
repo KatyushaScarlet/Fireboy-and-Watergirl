@@ -262,6 +262,7 @@
     <ClCompile Include="Source\Diamond.cpp" />
     <ClCompile Include="Source\Door.cpp" />
     <ClCompile Include="Source\Item.cpp" />
+    <ClCompile Include="Source\Platform.cpp" />
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\audio.cpp" />
     <ClCompile Include="Source\CBall.cpp" />
@@ -308,6 +309,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="Source\Switch.cpp" />
     <ClCompile Include="Source\Wall.cpp" />
   </ItemGroup>
   <ItemGroup>

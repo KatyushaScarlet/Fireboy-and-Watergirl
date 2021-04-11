@@ -158,6 +158,12 @@
     <ClCompile Include="Source\Door.cpp">
       <Filter>MyGame\Item</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Platform.cpp">
+      <Filter>MyGame\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Switch.cpp">
+      <Filter>MyGame\Item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">

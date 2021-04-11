@@ -26,10 +26,6 @@ namespace game_framework
 		bitmap.SetTopLeft(x, y);
 		bitmap.ShowBitmap();
 	}
-	void Wall::OnMove()
-	{
-
-	}
 	void Wall::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
 
