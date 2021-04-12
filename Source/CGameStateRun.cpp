@@ -9,6 +9,10 @@
 
 #include "CGameStateRun.h"
 
+//#define PLAYER_GIRD_PIXEL 32
+//#define PLAYER_STEP_PIXEL 4
+//#define INITIAL_VELOCITY 16
+
 namespace game_framework {
 	CGameStateRun::CGameStateRun(CGame* g)
 		: CGameState(g)
@@ -223,12 +227,83 @@ namespace game_framework {
 	{
 		if (flag_game_loaded)
 		{
-			boy->OnMove(this);
-			girl->OnMove(this);
+			//boy->OnMove(this);
+			//girl->OnMove(this);
+			MovePlayer(boy);
+			MovePlayer(girl);
 		}
 	}
 
-	bool CGameStateRun::CanMove(Player* player, int direction)//判定是否能移动
+	void CGameStateRun::MovePlayer(shared_ptr<Player> player)//移动
+	{
+		bool can_move;
+
+		if (player->moving_vertical == DIRECTION_UP)
+		{
+			can_move = CanMove(player, DIRECTION_UP);
+			//上升状态
+			//TRACE("up\n");
+			if (can_move && player->velocity > 0)//如果上方可通行，垂直速度大于0
+			{
+				player->y -= player->velocity;
+				player->velocity--;
+			}
+			else
+			{
+				player->moving_vertical = DIRECTION_DOWN;//当速度<=0时，垂直方向变为下降
+				player->velocity = 1;
+			}
+		}
+		else
+		{
+			//如果非上升状态，始终判断是否下落
+			//TRACE("down\n");
+			can_move = CanMove(player, DIRECTION_DOWN);
+			if (can_move)//如果下方可通行
+			{
+				player->moving_vertical = DIRECTION_DOWN;
+				player->y += player->velocity;
+				if (player->velocity < 5)//防止下落速度过大
+				{
+					player->velocity++;
+				}
+				else
+				{
+					player->velocity = 4;//fixbug:当直接掉下时初速度为 INITIAL_VELOCITY （跳起初始速度） 而不是1（掉落初始速度）
+				}
+			}
+			else
+			{
+				player->moving_vertical = DIRECTION_NONE;//当下方不可通行时，垂直方向变成静止
+				player->velocity = INITIAL_VELOCITY;//加速度变为初始值
+			}
+		}
+
+		switch (player->moving_horizontal)//水平移动
+		{
+
+		case DIRECTION_LEFT:
+			can_move = CanMove(player, DIRECTION_LEFT);
+			if (can_move) {
+				player->x -= PLAYER_STEP_PIXEL;
+			}
+			break;
+		case DIRECTION_RIGHT: {
+			can_move = CanMove(player, DIRECTION_RIGHT);
+			if (can_move) {
+				player->x += PLAYER_STEP_PIXEL;
+			}
+
+			break;
+		}
+		case DIRECTION_NONE:
+			break;
+		default:
+			break;
+		}
+	}
+
+	bool CGameStateRun::CanMove(shared_ptr<Player> player, int direction)//判定是否能移动
 	{
 		int x1, y1, x2, y2;
 		bool accessible = true;
@@ -340,8 +415,6 @@ namespace game_framework {
 		{
 			girl->reach_exit = value;
 		}
-		//todo 到达出口后不可移动？
-		//todo 两人均达到出口后，切换关卡?
 
 		if (boy->reach_exit && girl->reach_exit)
 		{
@@ -351,7 +424,7 @@ namespace game_framework {
 			flag_game_loaded = false;
 			//准备切换关卡
 			flag_change_level = true;
-			//todo 
+
 			now_level++;
 			InitMapLevel(now_level);
 		}
@@ -525,7 +598,7 @@ namespace game_framework {
 					items.push_back(wall);
 					if (level == 1)
 					{
-						TRACE("wall, x1=%d ,y1=%d ,x2=%d ,y2%d \n", wall->GetX1(), wall->GetY1(), wall->GetX2(), wall->GetY2());
+						//TRACE("wall, x1=%d ,y1=%d ,x2=%d ,y2%d \n", wall->GetX1(), wall->GetY1(), wall->GetX2(), wall->GetY2());
 					}
 					break;
 				}
@@ -637,25 +710,6 @@ namespace game_framework {
 				}
 			}
 		}
-
-		////单独添加机关
-		//switch (level)
-		//{
-		//case 0:
-		//{
-		//	Switch* button1 = new Switch(500, 10 * MAP_GIRD_PIXEL, /*14*/27 * MAP_GIRD_PIXEL);
-		//	items.push_back(button1);
-		//	Switch* stick1 = new Switch(501, 12 * MAP_GIRD_PIXEL, /*14*/27 * MAP_GIRD_PIXEL);
-		//	items.push_back(stick1);
-		//	break;
-		//}
-		//case 1:
-		//{
-		//	break;
-		//}
-		//default:
-		//	break;
-		//}
 
 		LoadItemBitmap();
 		//继续游戏逻辑

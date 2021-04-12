@@ -42,7 +42,8 @@ namespace game_framework {
 		void LoadGameBitmap();
 		void LoadItemBitmap();
 		void InitMapLevel(int level);//初始化地图数据 0~9
-		bool CanMove(Player* player, int direction);//判定玩家是否能移动
+		void MovePlayer(shared_ptr<Player> player);//移动玩家
+		bool CanMove(shared_ptr<Player> player, int direction);//判定玩家是否能移动
 		void AddScore(bool is_boy);//玩家增加分数
 		void PlayerDie(bool is_boy);//玩家死亡
 		void PlayerReachExit(bool is_boy,bool value);//玩家到达出口
@@ -58,8 +59,8 @@ namespace game_framework {
 		int score_boy = 0;
 		int score_girl = 0;
 
-		unique_ptr<Player> boy;
-		unique_ptr<Player> girl;
+		shared_ptr<Player> boy;
+		shared_ptr<Player> girl;
 
 		vector<Item*>		items;//各种物体
 		CMovingBitmap	background;//背景

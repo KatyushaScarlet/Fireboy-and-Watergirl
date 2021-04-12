@@ -1,5 +1,8 @@
 ﻿#pragma once
 
+#define PLAYER_GIRD_PIXEL 32
+#define PLAYER_STEP_PIXEL 4
+#define INITIAL_VELOCITY 16
 
 namespace game_framework {
 	class Map;
@@ -9,7 +12,8 @@ namespace game_framework {
 		Player(bool boy);
 		~Player();
 		void LoadBitmapPlayer();//载入图形
-		void OnMove(CGameStateRun* game);//移动
+		void OnMove();
+		//void OnMove(CGameStateRun* game);//移动
 		void OnShow();//显示
 		int  GetX1();
 		int  GetY1();
@@ -29,10 +33,13 @@ namespace game_framework {
 		bool is_die;//是否死亡
 		bool reach_exit;//到达出口
 
-	private:
 		int x, y;//坐标
 		int moving_vertical, moving_horizontal;//移动的状态
 		int  velocity;// 目前的速度(pixel/frame)
+	private:
+		//int x, y;//坐标
+		//int moving_vertical, moving_horizontal;//移动的状态
+		//int  velocity;// 目前的速度(pixel/frame)
 		CMovingBitmap bitmap;// 静止图像
 	};
 }
