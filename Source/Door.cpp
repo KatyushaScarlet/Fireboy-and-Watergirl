@@ -27,12 +27,14 @@ namespace game_framework
 		{
 			string path = "RES\\door\\FinishBoy";
 			AddAnimationBitmap(path);
+
 			break;
 		}
 		case 401:
 		{
 			string path = "RES\\door\\FinishGirl";
 			AddAnimationBitmap(path);
+			
 			break;
 		}
 		default:
@@ -54,12 +56,14 @@ namespace game_framework
 	void Door::AddAnimationBitmap(string path)
 	{
 		string extension = ".bmp";
-		for (int i = 0; i <= 14; i++) {
+		for (int i = 0; i <= 21; i++) {
 			string bitmapPath = path + to_string(i) + extension;
 			char* p = (char*)bitmapPath.c_str();
 			bitmap.AddBitmap(p, RGB(255, 255, 255));
 		}
 	}
+
+
 
 	void Door::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
@@ -74,14 +78,20 @@ namespace game_framework
 			{
 				game->PlayerReachExit(true, true);
 				bitmap.SetDelayCount(2); //設定速度
-				bitmap.OnMove();
+				if (!bitmap.IsFinalBitmap()) 
+				{
+					bitmap.OnMove();
+				}
 				//TRACE("boy reach exit\n");
 			}
 			else if (type == 401 && !is_boy)
 			{
 				game->PlayerReachExit(false, true);
 				bitmap.SetDelayCount(2); //設定速度
-				bitmap.OnMove();
+				if (!bitmap.IsFinalBitmap())
+				{
+					bitmap.OnMove();
+				}
 				//TRACE("girl reach exit\n");
 			}
 		}
@@ -90,13 +100,13 @@ namespace game_framework
 			if (type == 400 && is_boy)
 			{
 				game->PlayerReachExit(true, false);
+				bitmap.Reset();
 				
-				//TRACE("boy leave exit\n");
 			}
 			else if (type == 401 && !is_boy)
 			{
 				game->PlayerReachExit(false, false);
-				//TRACE("girl leave exit\n");
+				bitmap.Reset();
 			}
 		}
 	}
