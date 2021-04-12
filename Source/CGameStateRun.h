@@ -1,5 +1,4 @@
 ﻿#pragma once
-//#include "Map.h"
 #define MAP_SIZE_WIDTH 40
 #define MAP_SIZE_HEIGHT 30
 #define MAP_GIRD_PIXEL 32

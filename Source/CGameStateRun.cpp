@@ -558,7 +558,7 @@ namespace game_framework {
 			//添加机关
 
 			//platform1
-			Platform* platform1 = new Platform(503, 19, 16, 19, 10);
+			Platform* platform1 = new Platform(503, 50, 50, 19, 10);
 			items.push_back(platform1);
 			Switch* platform1_button1 = new Switch(500, 5, 19);
 			Switch* platform1_button2 = new Switch(500, 33, 19);
@@ -568,7 +568,7 @@ namespace game_framework {
 			items.push_back(platform1_button2);
 
 			//platform2
-			Platform* platform2 = new Platform(502, 50, 50, 17, 5);
+			Platform* platform2 = new Platform(502, 17, 1, 17, 5);
 			items.push_back(platform2);
 			Switch* platform2_button1 = new Switch(500, 12, 4);
 			Switch* platform2_button2 = new Switch(500, 26, 4);
