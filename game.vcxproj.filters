@@ -353,6 +353,384 @@
     <Image Include="RES\switch\stick_right.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\pool\water_right_14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_right_13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_right_11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_right_12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_right_10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_right_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_right_9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_right_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_right_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_right_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_right_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_right_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_right_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_right_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_left_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\water_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_right_13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\toxic_left_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_right_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pool\fire_left_14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="RES\pool\图片规范.txt" />

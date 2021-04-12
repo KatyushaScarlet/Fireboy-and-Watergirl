@@ -20,6 +20,7 @@ namespace game_framework
 		height = 32;
 		is_accessible = true;
 	}
+
 	void Switch::LoadItemBitmap()
 	{
 		switch (type)
@@ -53,6 +54,11 @@ namespace game_framework
 			bitmap_switch_off.SetTopLeft(x, y);
 			bitmap_switch_off.ShowBitmap();
 		}
+	}
+
+	void Switch::OnMove()
+	{
+
 	}
 
 	void Switch::Interact(CGameStateRun* game, bool is_boy, int direction)

@@ -86,6 +86,10 @@ namespace game_framework
 		bitmap.ShowBitmap();
 	}
 
+	void Pool::OnMove()
+	{
+
+	}
 
 	void Pool::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{

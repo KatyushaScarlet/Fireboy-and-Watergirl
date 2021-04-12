@@ -59,15 +59,23 @@ namespace game_framework
 			break;
 		}
 	}
+
 	void Platform::OnShow()
 	{
 		bitmap.SetTopLeft(x, y);
 		bitmap.ShowBitmap();
 	}
+
+	void Platform::OnMove()
+	{
+
+	}
+
 	void Platform::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
 
 	}
+
 	void Platform::Trigger(bool is_on)
 	{
 		if (!is_on)//off为默认状态

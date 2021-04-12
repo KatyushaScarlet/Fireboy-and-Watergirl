@@ -18,6 +18,7 @@ namespace game_framework
 		height = 96 - 1;
 		is_accessible = true;
 	}
+
 	void Door::LoadItemBitmap()
 	{
 		switch (type)
@@ -36,11 +37,18 @@ namespace game_framework
 			break;
 		}
 	}
+
 	void Door::OnShow()
 	{
 		bitmap.SetTopLeft(x, y);
 		bitmap.ShowBitmap();
 	}
+
+	void Door::OnMove()
+	{
+
+	}
+
 	void Door::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
 		//获取玩家坐标

@@ -17,15 +17,23 @@ namespace game_framework
 		height = 32 - 1;
 		is_accessible = false;
 	}
+
 	void Wall::LoadItemBitmap()
 	{
 		bitmap.LoadBitmapA("RES\\wall.bmp");
 	}
+
 	void Wall::OnShow()
 	{
 		bitmap.SetTopLeft(x, y);
 		bitmap.ShowBitmap();
 	}
+
+	void Wall::OnMove()
+	{
+
+	}
+
 	void Wall::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
 

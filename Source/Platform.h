@@ -13,6 +13,7 @@ namespace game_framework {
 		Platform(int type,int init_1_x,int init_1_y,int init_2_x,int init_2_y);
 		void LoadItemBitmap();
 		void OnShow();
+		void OnMove();
 		void Interact(CGameStateRun* game, bool is_boy, int direction);
 		//平台被开关触发
 		void Trigger(bool is_on);
