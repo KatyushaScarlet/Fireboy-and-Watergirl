@@ -13,6 +13,7 @@ namespace game_framework {
 		void OnMove();
 		void Interact(CGameStateRun* game, bool is_boy, int direction);
 	protected:
-		CMovingBitmap bitmap;
+		CAnimation bitmap;
+		void AddAnimationBitmap(string path);
 	};
 }

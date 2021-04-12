@@ -19,6 +19,7 @@ namespace game_framework {
 
 		bool is_accessible;		//是否可通过
 		bool is_visibale;		//是否可见
+
 	protected:
 		int type;				//类别
 		int x, y;				//左上角坐标
