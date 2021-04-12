@@ -41,5 +41,7 @@ namespace game_framework {
 		//int moving_vertical, moving_horizontal;//移动的状态
 		//int  velocity;// 目前的速度(pixel/frame)
 		CMovingBitmap bitmap;// 静止图像
+
+		CAnimation animation;
 	};
 }

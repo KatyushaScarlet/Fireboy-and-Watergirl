@@ -61,7 +61,8 @@ namespace game_framework {
 		shared_ptr<Player> boy;
 		shared_ptr<Player> girl;
 
-		vector<Item*>		items;//各种物体
+		//vector<Item*>		items;//各种物体
+		vector<shared_ptr<Item>>		item_ptrs;//各种物体
 		CMovingBitmap	background;//背景
 
 		bool flag_game_loaded = false;
