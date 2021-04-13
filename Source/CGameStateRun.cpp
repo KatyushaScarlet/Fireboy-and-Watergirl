@@ -249,6 +249,7 @@ namespace game_framework {
 			//TRACE("up\n");
 			if (can_move && player->velocity > 0)//如果上方可通行，垂直速度大于0
 			{
+				player->SetAni(player->GetUp());
 				player->y -= player->velocity;
 				player->velocity--;
 			}
@@ -256,6 +257,7 @@ namespace game_framework {
 			{
 				player->moving_vertical = DIRECTION_DOWN;//当速度<=0时，垂直方向变为下降
 				player->velocity = 1;
+				player->SetAni(player->GetDown());
 			}
 		}
 		else
@@ -267,6 +269,7 @@ namespace game_framework {
 			{
 				player->moving_vertical = DIRECTION_DOWN;
 				player->y += player->velocity;
+				player->SetAni(player->GetDown());
 				if (player->velocity < 5)//防止下落速度过大
 				{
 					player->velocity++;
@@ -280,6 +283,7 @@ namespace game_framework {
 			{
 				player->moving_vertical = DIRECTION_NONE;//当下方不可通行时，垂直方向变成静止
 				player->velocity = INITIAL_VELOCITY;//加速度变为初始值
+				player->SetAni(player->GetStatic());
 			}
 		}
 
@@ -290,12 +294,14 @@ namespace game_framework {
 			can_move = CanMove(player, DIRECTION_LEFT);
 			if (can_move) {
 				player->x -= PLAYER_STEP_PIXEL;
+				player->SetAni(player->GetLeft());
 			}
 			break;
 		case DIRECTION_RIGHT: {
 			can_move = CanMove(player, DIRECTION_RIGHT);
 			if (can_move) {
 				player->x += PLAYER_STEP_PIXEL;
+				player->SetAni(player->GetRight());
 			}
 
 			break;

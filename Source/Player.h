@@ -9,6 +9,7 @@ namespace game_framework {
 	class Player
 	{
 	public:
+		
 		Player(bool boy);
 		~Player();
 		void LoadBitmapPlayer();//载入图形
@@ -36,12 +37,24 @@ namespace game_framework {
 		int x, y;//坐标
 		int moving_vertical, moving_horizontal;//移动的状态
 		int  velocity;// 目前的速度(pixel/frame)
+		
+		CAnimation & GetStatic();
+		CAnimation & GetLeft();
+		CAnimation & GetRight();
+		CAnimation & GetUp();
+		CAnimation & GetDown();
+		void SetAni(CAnimation& address);
 	private:
 		//int x, y;//坐标
 		//int moving_vertical, moving_horizontal;//移动的状态
 		//int  velocity;// 目前的速度(pixel/frame)
-		CMovingBitmap bitmap;// 静止图像
-
-		CAnimation animation;
+		//CMovingBitmap bitmap;// 静止图像
+		CAnimation animation_static;
+		CAnimation animation_left;
+		CAnimation animation_right;
+		CAnimation animation_up;
+		CAnimation animation_down;
+		CAnimation* charactor_ani;
+		
 	};
 }
