@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include"Item.h"
-
+#include<memory>
 namespace game_framework {
 	enum SWITCH_STATUS
 	{
@@ -22,7 +22,7 @@ namespace game_framework {
 		void OnMove();
 		void Interact(CGameStateRun* game, bool is_boy, int direction);
 		//开关绑定平台
-		void Bind(Platform* platform);
+		void Bind(shared_ptr<Platform> platform);
 	protected:
 		CMovingBitmap bitmap_switch_on;
 		CMovingBitmap bitmap_switch_off;
@@ -31,6 +31,6 @@ namespace game_framework {
 		int status = 0;
 		bool is_on = false;
 		//开关绑定的平台
-		Platform* bind_platform;
+		shared_ptr<Platform> bind_platform;
 	};
 }

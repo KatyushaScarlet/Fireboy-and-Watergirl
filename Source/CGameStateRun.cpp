@@ -249,6 +249,7 @@ namespace game_framework {
 			//TRACE("up\n");
 			if (can_move && player->velocity > 0)//如果上方可通行，垂直速度大于0
 			{
+				player->SetAni(player->GetUp());
 				player->y -= player->velocity;
 				player->velocity--;
 			}
@@ -256,6 +257,7 @@ namespace game_framework {
 			{
 				player->moving_vertical = DIRECTION_DOWN;//当速度<=0时，垂直方向变为下降
 				player->velocity = 1;
+				player->SetAni(player->GetDown());
 			}
 		}
 		else
@@ -267,6 +269,7 @@ namespace game_framework {
 			{
 				player->moving_vertical = DIRECTION_DOWN;
 				player->y += player->velocity;
+				player->SetAni(player->GetDown());
 				if (player->velocity < 5)//防止下落速度过大
 				{
 					player->velocity++;
@@ -280,6 +283,7 @@ namespace game_framework {
 			{
 				player->moving_vertical = DIRECTION_NONE;//当下方不可通行时，垂直方向变成静止
 				player->velocity = INITIAL_VELOCITY;//加速度变为初始值
+				player->SetAni(player->GetStatic());
 			}
 		}
 
@@ -290,12 +294,14 @@ namespace game_framework {
 			can_move = CanMove(player, DIRECTION_LEFT);
 			if (can_move) {
 				player->x -= PLAYER_STEP_PIXEL;
+				player->SetAni(player->GetLeft());
 			}
 			break;
 		case DIRECTION_RIGHT: {
 			can_move = CanMove(player, DIRECTION_RIGHT);
 			if (can_move) {
 				player->x += PLAYER_STEP_PIXEL;
+				player->SetAni(player->GetRight());
 			}
 
 			break;
@@ -523,29 +529,29 @@ namespace game_framework {
 
 			//添加机关
 			
-			////platform1
-			//Platform* platform1 = new Platform(502, 1, 15, 1, 18);
-			//items.push_back(platform1);
-			//Switch* platform1_stick = new Switch(501, 9, 19);
-			//platform1_stick->Bind(platform1);//绑定平台
-			//items.push_back(platform1_stick);
+			//platform1
+			shared_ptr<Platform> platform1 = make_shared<Platform>(502, 1, 15, 1, 18);
+			item_ptrs.push_back(platform1);
+			shared_ptr<Switch> platform1_stick = make_shared<Switch>(501, 9, 19);
+			platform1_stick->Bind(platform1);//绑定平台
+			item_ptrs.push_back(platform1_stick);
 
-			////platform2
-			//Platform* platform2 = new Platform(502, 34, 12, 34, 15);
-			//items.push_back(platform2);
-			//Switch* platform2_button1 = new Switch(500, 10, 14);
-			//Switch* platform2_button2 = new Switch(500, 30, 10);
-			//platform2_button1->Bind(platform2);//绑定平台
-			//platform2_button2->Bind(platform2);//绑定平台
-			//items.push_back(platform2_button1);
-			//items.push_back(platform2_button2);
+			//platform2
+			shared_ptr<Platform> platform2 = make_shared<Platform>(502, 34, 12, 34, 15);
+			item_ptrs.push_back(platform2);
+			shared_ptr<Switch> platform2_button1 = make_shared<Switch>(500, 10, 14);
+			shared_ptr<Switch> platform2_button2 = make_shared<Switch>(500, 30, 10);
+			platform2_button1->Bind(platform2);//绑定平台
+			platform2_button2->Bind(platform2);//绑定平台
+			item_ptrs.push_back(platform2_button1);
+			item_ptrs.push_back(platform2_button2);
 
-			////platform3
-			//Platform* platform3 = new Platform(502, 50, 50, 6, 7);
-			//items.push_back(platform3);
-			//Switch* platform3_stick = new Switch(501, 1, 6);
-			//platform3_stick->Bind(platform3);//绑定平台
-			//items.push_back(platform3_stick);
+			//platform3
+			shared_ptr<Platform> platform3 = make_shared<Platform>(502, 50, 50, 6, 7);
+			item_ptrs.push_back(platform3);
+			shared_ptr<Switch> platform3_stick = make_shared<Switch>(501, 1, 6);
+			platform3_stick->Bind(platform3);//绑定平台
+			item_ptrs.push_back(platform3_stick);
 
 			break;
 		}
@@ -561,25 +567,25 @@ namespace game_framework {
 
 			//添加机关
 
-			////platform1
-			//Platform* platform1 = new Platform(503, 50, 50, 19, 10);
-			//items.push_back(platform1);
-			//Switch* platform1_button1 = new Switch(500, 5, 19);
-			//Switch* platform1_button2 = new Switch(500, 33, 19);
-			//platform1_button1->Bind(platform1);//绑定平台
-			//platform1_button2->Bind(platform1);//绑定平台
-			//items.push_back(platform1_button1);
-			//items.push_back(platform1_button2);
+			//platform1
+			shared_ptr<Platform> platform1 = make_shared<Platform>(503, 50, 50, 19, 10);
+			item_ptrs.push_back(platform1);
+			shared_ptr<Switch> platform1_button1 = make_shared<Switch>(500, 5, 19);
+			shared_ptr<Switch> platform1_button2 = make_shared<Switch>(500, 33, 19);
+			platform1_button1->Bind(platform1);//绑定平台
+			platform1_button2->Bind(platform1);//绑定平台
+			item_ptrs.push_back(platform1_button1);
+			item_ptrs.push_back(platform1_button2);
 
-			////platform2
-			//Platform* platform2 = new Platform(502, 17, 1, 17, 5);
-			//items.push_back(platform2);
-			//Switch* platform2_button1 = new Switch(500, 12, 4);
-			//Switch* platform2_button2 = new Switch(500, 26, 4);
-			//platform2_button1->Bind(platform2);//绑定平台
-			//platform2_button2->Bind(platform2);//绑定平台
-			//items.push_back(platform2_button1);
-			//items.push_back(platform2_button2);
+			//platform2
+			shared_ptr<Platform> platform2 = make_shared<Platform>(502, 17, 1, 17, 5);
+			item_ptrs.push_back(platform2);
+			shared_ptr<Switch> platform2_button1 = make_shared<Switch>(500, 12, 4);
+			shared_ptr<Switch> platform2_button2 = make_shared<Switch>(500, 26, 4);
+			platform2_button1->Bind(platform2);//绑定平台
+			platform2_button2->Bind(platform2);//绑定平台
+			item_ptrs.push_back(platform2_button1);
+			item_ptrs.push_back(platform2_button2);
 
 			break;
 		}
@@ -603,48 +609,48 @@ namespace game_framework {
 					item_ptrs.push_back(wall);
 					break;
 				}
-				//case 2:
-				//{
-				//	Pool* fire_pool = new Pool(2);
-				//	fire_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
-				//	items.push_back(fire_pool);
-				//	break;
-				//}
-				//case 3:
-				//{
-				//	Pool* fire_pool = new Pool(3);
-				//	fire_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
-				//	items.push_back(fire_pool);
-				//	break;
-				//}
-				//case 4:
-				//{
-				//	Pool* water_pool = new Pool(4);
-				//	water_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
-				//	items.push_back(water_pool);
-				//	break;
-				//}
-				//case 5:
-				//{
-				//	Pool* water_pool = new Pool(5);
-				//	water_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
-				//	items.push_back(water_pool);
-				//	break;
-				//}
-				//case 6:
-				//{
-				//	Pool* toxic_pool = new Pool(6);
-				//	toxic_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
-				//	items.push_back(toxic_pool);
-				//	break;
-				//}
-				//case 7:
-				//{
-				//	Pool* toxic_pool = new Pool(7);
-				//	toxic_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
-				//	items.push_back(toxic_pool);
-				//	break;
-				//}
+				case 2:
+				{
+					shared_ptr<Item> fire_pool = make_shared<Pool>(2);
+					fire_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					item_ptrs.push_back(fire_pool);
+					break;
+				}
+				case 3:
+				{
+					shared_ptr<Item> fire_pool = make_shared<Pool>(3);
+					fire_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					item_ptrs.push_back(fire_pool);
+					break;
+				}
+				case 4:
+				{
+					shared_ptr<Item>  water_pool = make_shared<Pool>(4);
+					water_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					item_ptrs.push_back(water_pool);
+					break;
+				}
+				case 5:
+				{
+					shared_ptr<Item> water_pool = make_shared<Pool>(5);
+					water_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					item_ptrs.push_back(water_pool);
+					break;
+				}
+				case 6:
+				{
+					shared_ptr<Item> toxic_pool = make_shared<Pool>(6);
+					toxic_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					item_ptrs.push_back(toxic_pool);
+					break;
+				}
+				case 7:
+				{
+					shared_ptr<Item> toxic_pool = make_shared<Pool>(7);
+					toxic_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					item_ptrs.push_back(toxic_pool);
+					break;
+				}
 				case 100:
 				{
 					boy = make_unique<Player>(true);
@@ -657,23 +663,23 @@ namespace game_framework {
 					girl->SetTopLeft(i * MAP_GIRD_PIXEL, j * MAP_GIRD_PIXEL);
 					break;
 				}
-				//case 200:
-				//{
-				//	Diamond* fire_diamond = new Diamond(200);
-				//	fire_diamond->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
-				//	items.push_back(fire_diamond);
-				//	break;
-				//}
-				//case 201:
-				//{
-				//	Diamond* water_diamond = new Diamond(201);
-				//	water_diamond->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
-				//	items.push_back(water_diamond);
-				//	break;
-				//}
+				case 200:
+				{
+					shared_ptr<Item> fire_diamond = make_shared<Diamond>(200);
+					fire_diamond->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					item_ptrs.push_back(fire_diamond);
+					break;
+				}
+				case 201:
+				{
+					shared_ptr<Item>  water_diamond = make_shared<Diamond>(201);
+					water_diamond->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					item_ptrs.push_back(water_diamond);
+					break;
+				}
 				case 300:
 				{
-					//Pool* fire_pool = new Pool(300);
+					//shared_ptr<Item> fire_pool = make_shared<Pool>(300);
 					shared_ptr<Item> fire_pool = make_shared<Pool>(300);
 					fire_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
 					item_ptrs.push_back(fire_pool);
@@ -681,7 +687,7 @@ namespace game_framework {
 				}
 				case 301:
 				{
-					//Pool* water_pool = new Pool(301);
+					//shared_ptr<Item> water_pool = make_shared<Pool>(301);
 					shared_ptr<Item> water_pool = make_shared<Pool>(301);
 					water_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
 					item_ptrs.push_back(water_pool);
@@ -689,26 +695,26 @@ namespace game_framework {
 				}
 				case 302:
 				{
-					//Pool* toxic_pool = new Pool(302);
+					//shared_ptr<Item> toxic_pool = make_shared<Pool>(302);
 					shared_ptr<Item> toxic_pool = make_shared<Pool>(302);
 					toxic_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
 					item_ptrs.push_back(toxic_pool);
 					break;
 				}
-				//case 400:
-				//{
-				//	Door* fire_door = new Door(400);
-				//	fire_door->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
-				//	items.push_back(fire_door);
-				//	break;
-				//}
-				//case 401:
-				//{
-				//	Door* water_door = new Door(401);
-				//	water_door->SetTopLeft(MAP_GIRD_PIXEL* i, MAP_GIRD_PIXEL* j);
-				//	items.push_back(water_door);
-				//	break;
-				//}
+				case 400:
+				{
+					shared_ptr<Item> fire_door = make_shared<Door>(400);
+					fire_door->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
+					item_ptrs.push_back(fire_door);
+					break;
+				}
+				case 401:
+				{
+					shared_ptr<Item> water_door = make_shared<Door>(401);
+					water_door->SetTopLeft(MAP_GIRD_PIXEL* i, MAP_GIRD_PIXEL* j);
+					item_ptrs.push_back(water_door);
+					break;
+				}
 				default:
 					break;
 				}

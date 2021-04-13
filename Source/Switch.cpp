@@ -119,7 +119,7 @@ namespace game_framework
 		bind_platform->Trigger(is_on);
 	}
 
-	void Switch::Bind(Platform* platform)
+	void Switch::Bind(shared_ptr<Platform> platform)
 	{
 		this->bind_platform = platform;
 	}

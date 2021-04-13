@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -25,12 +25,16 @@ namespace game_framework
 		{
 		case 400:
 		{
-			bitmap.LoadBitmapA("RES\\door\\fire0.bmp", RGB(255, 255, 255));
+			string path = "RES\\door\\FinishBoy";
+			AddAnimationBitmap(path);
+
 			break;
 		}
 		case 401:
 		{
-			bitmap.LoadBitmapA("RES\\door\\water0.bmp", RGB(255, 255, 255));
+			string path = "RES\\door\\FinishGirl";
+			AddAnimationBitmap(path);
+			
 			break;
 		}
 		default:
@@ -41,31 +45,53 @@ namespace game_framework
 	void Door::OnShow()
 	{
 		bitmap.SetTopLeft(x, y);
-		bitmap.ShowBitmap();
+		bitmap.OnShow();
 	}
 
 	void Door::OnMove()
 	{
-
+		
 	}
+
+	void Door::AddAnimationBitmap(string path)
+	{
+		string extension = ".bmp";
+		for (int i = 0; i <= 21; i++) {
+			string bitmapPath = path + to_string(i) + extension;
+			char* p = (char*)bitmapPath.c_str();
+			bitmap.AddBitmap(p, RGB(255, 255, 255));
+		}
+	}
+
+
 
 	void Door::Interact(CGameStateRun* game, bool is_boy, int direction)
 	{
-		//»ñÈ¡Íæ¼Ò×ø±ê
+		//èŽ·å–çŽ©å®¶åæ ‡
 		PlayerCoordinate coordinate = game->GetPlayerCoordinate(is_boy);
 		int x1 = coordinate.x1;
 		int x2 = coordinate.x2;
 
-		if ((x1 > this->GetX1()) && (x2 < this->GetX2()))//Íæ¼ÒÍêÈ«½øÈëÃÅÄÚ
+		if ((x1 > this->GetX1()) && (x2 < this->GetX2()))//çŽ©å®¶å®Œå…¨è¿›å…¥é—¨å†…
 		{
 			if (type == 400 && is_boy)
 			{
 				game->PlayerReachExit(true, true);
+				bitmap.SetDelayCount(2); //è¨­å®šé€Ÿåº¦
+				if (!bitmap.IsFinalBitmap()) 
+				{
+					bitmap.OnMove();
+				}
 				//TRACE("boy reach exit\n");
 			}
 			else if (type == 401 && !is_boy)
 			{
 				game->PlayerReachExit(false, true);
+				bitmap.SetDelayCount(2); //è¨­å®šé€Ÿåº¦
+				if (!bitmap.IsFinalBitmap())
+				{
+					bitmap.OnMove();
+				}
 				//TRACE("girl reach exit\n");
 			}
 		}
@@ -74,12 +100,13 @@ namespace game_framework
 			if (type == 400 && is_boy)
 			{
 				game->PlayerReachExit(true, false);
-				//TRACE("boy leave exit\n");
+				bitmap.Reset();
+				
 			}
 			else if (type == 401 && !is_boy)
 			{
 				game->PlayerReachExit(false, false);
-				//TRACE("girl leave exit\n");
+				bitmap.Reset();
 			}
 		}
 	}

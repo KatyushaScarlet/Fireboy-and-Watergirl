@@ -30,11 +30,23 @@ namespace game_framework {
 	{
 		if (is_boy)
 		{
-			bitmap.LoadBitmapA("RES\\player\\boy_static.bmp", RGB(255, 255, 255));
+			//bitmap.LoadBitmapA("RES\\player\\boy_static.bmp", RGB(255, 255, 255));
+			animation_static.AddBitmap("RES\\player\\boy_static.bmp", RGB(255, 255, 255));
+			animation_left.AddBitmap("RES\\player\\boy_left0.bmp", RGB(255, 255, 255));
+			animation_right.AddBitmap("RES\\player\\boy_right0.bmp", RGB(255, 255, 255));
+			animation_up.AddBitmap("RES\\player\\boy_up0.bmp", RGB(255, 255, 255));
+			animation_down.AddBitmap("RES\\player\\boy_down0.bmp", RGB(255, 255, 255));
+			charactor_ani = &animation_static;
 		}
 		else
 		{
-			bitmap.LoadBitmapA("RES\\player\\girl_static.bmp", RGB(255, 255, 255));
+			//bitmap.LoadBitmapA("RES\\player\\girl_static.bmp", RGB(255, 255, 255));
+			animation_static.AddBitmap("RES\\player\\girl_static.bmp", RGB(255, 255, 255));
+			animation_left.AddBitmap("RES\\player\\girl_left0.bmp", RGB(255, 255, 255));
+			animation_right.AddBitmap("RES\\player\\girl_right0.bmp", RGB(255, 255, 255));
+			animation_up.AddBitmap("RES\\player\\girl_up0.bmp", RGB(255, 255, 255));
+			animation_down.AddBitmap("RES\\player\\girl_down0.bmp", RGB(255, 255, 255));
+			charactor_ani = &animation_static;
 		}
 	};
 
@@ -114,13 +126,16 @@ namespace game_framework {
 
 	void Player::OnShow()//显示
 	{
-		bitmap.SetTopLeft(x, y - PLAYER_GIRD_PIXEL);
+		animation_static.SetTopLeft(x, y - PLAYER_GIRD_PIXEL);
+		animation_down.SetTopLeft(x, y - PLAYER_GIRD_PIXEL*2);
+		animation_up.SetTopLeft(x, y - PLAYER_GIRD_PIXEL);
+		animation_left.SetTopLeft(x , y - PLAYER_GIRD_PIXEL);
+		animation_right.SetTopLeft(x - PLAYER_GIRD_PIXEL, y - PLAYER_GIRD_PIXEL);
 		//bitmap.SetTopLeft(x, y);
 		if (is_visible)
 		{
-			bitmap.ShowBitmap();
+			charactor_ani->OnShow();
 		}
-
 	};
 
 	int  Player::GetX1()
@@ -168,6 +183,30 @@ namespace game_framework {
 	int Player::GetHorizontalState()//获取水平状态
 	{
 		return moving_horizontal;
+	}
+	CAnimation& Player::GetStatic()
+	{
+		return animation_static;
+	}
+	CAnimation& Player::GetLeft()
+	{
+		return animation_left;
+	}
+	CAnimation& Player::GetRight()
+	{
+		return animation_right;
+	}
+	CAnimation& Player::GetUp()
+	{
+		return animation_up;
+	}
+	CAnimation& Player::GetDown()
+	{
+		return animation_down;
+	}
+	void Player::SetAni(CAnimation& ani)
+	{
+		charactor_ani = &ani;
 	}
 	//bool Player::HitRectangle(int tx1, int ty1, int tx2, int ty2) {
 	//	return false;
