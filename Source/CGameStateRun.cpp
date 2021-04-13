@@ -472,11 +472,11 @@ namespace game_framework {
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,6,302,302,302,7,1,1,1,0,0,0,0,1,0},
-			{1,0,101/*0*/,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
+			{1,0,/*101*/0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,200,0,0,0,0,0,0,0,201,0,0,0,0,0,1,1,1,1,0},
-			{1,0,100/*0*/,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0},
+			{1,0,/*100*/0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0},
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,300,300,300,3,1,1,1,4,301,301,301,5,1,1,1,1,1,1,1,0},
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 		};
@@ -568,7 +568,7 @@ namespace game_framework {
 			//添加机关
 
 			//platform1
-			shared_ptr<Platform> platform1 = make_shared<Platform>(503, 50, 50, 19, 10);
+			shared_ptr<Platform> platform1 = make_shared<Platform>(503, 19, 16, 19, 10);
 			item_ptrs.push_back(platform1);
 			shared_ptr<Switch> platform1_button1 = make_shared<Switch>(500, 5, 19);
 			shared_ptr<Switch> platform1_button2 = make_shared<Switch>(500, 33, 19);
@@ -602,8 +602,6 @@ namespace game_framework {
 				{
 				case 1:
 				{
-
-					//Wall* wall = new Wall();
 					shared_ptr<Item> wall = make_shared<Wall>();
 					wall->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
 					item_ptrs.push_back(wall);
@@ -679,7 +677,6 @@ namespace game_framework {
 				}
 				case 300:
 				{
-					//shared_ptr<Item> fire_pool = make_shared<Pool>(300);
 					shared_ptr<Item> fire_pool = make_shared<Pool>(300);
 					fire_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
 					item_ptrs.push_back(fire_pool);
@@ -687,7 +684,6 @@ namespace game_framework {
 				}
 				case 301:
 				{
-					//shared_ptr<Item> water_pool = make_shared<Pool>(301);
 					shared_ptr<Item> water_pool = make_shared<Pool>(301);
 					water_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
 					item_ptrs.push_back(water_pool);
@@ -695,7 +691,6 @@ namespace game_framework {
 				}
 				case 302:
 				{
-					//shared_ptr<Item> toxic_pool = make_shared<Pool>(302);
 					shared_ptr<Item> toxic_pool = make_shared<Pool>(302);
 					toxic_pool->SetTopLeft(MAP_GIRD_PIXEL * i, MAP_GIRD_PIXEL * j);
 					item_ptrs.push_back(toxic_pool);
