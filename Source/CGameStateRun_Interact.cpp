@@ -11,5 +11,8 @@
 
 namespace game_framework
 {
+	void CGameStateRun::ItemInteract(shared_ptr<Item> item, shared_ptr<Player> player, int direction)
+	{
 
+	}
 }

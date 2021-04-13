@@ -47,6 +47,8 @@ namespace game_framework {
 		void PlayerDie(bool is_boy);//玩家死亡
 		void PlayerReachExit(bool is_boy,bool value);//玩家到达出口
 
+		void ItemInteract(shared_ptr<Item> item, shared_ptr<Player> player, int direction);
+
 		PlayerCoordinate GetPlayerCoordinate(bool is_boy);
 	protected:
 		void OnMove();									// 移動遊戲元素
