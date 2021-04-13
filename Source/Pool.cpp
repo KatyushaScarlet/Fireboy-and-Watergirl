@@ -22,62 +22,6 @@ namespace game_framework
 		is_accessible = false;
 	}
 
-	/*void Pool::LoadItemBitmap()
-	{
-		bitmap_wall.LoadBitmapA("RES\\wall.bmp");
-
-		switch (type)
-		{
-		case 2:
-		{
-			bitmap.LoadBitmapA("RES\\pool\\fire_left_0.bmp", RGB(255, 255, 255));
-			break;
-		}
-		case 3:
-		{
-			bitmap.LoadBitmapA("RES\\pool\\fire_right_0.bmp", RGB(255, 255, 255));
-			break;
-		}
-		case 4:
-		{
-			bitmap.LoadBitmapA("RES\\pool\\water_left_0.bmp", RGB(255, 255, 255));
-			break;
-		}
-		case 5:
-		{
-			bitmap.LoadBitmapA("RES\\pool\\water_right_0.bmp", RGB(255, 255, 255));
-			break;
-		}
-		case 6:
-		{
-			bitmap.LoadBitmapA("RES\\pool\\toxic_left_0.bmp", RGB(255, 255, 255));
-			break;
-		}
-		case 7:
-		{
-			bitmap.LoadBitmapA("RES\\pool\\toxic_right_0.bmp", RGB(255, 255, 255));
-			break;
-		}
-		case 300:
-		{
-			bitmap.LoadBitmapA("RES\\pool\\fire_0.bmp", RGB(255, 255, 255));
-			break;
-		}
-		case 301:
-		{
-			bitmap.LoadBitmapA("RES\\pool\\water_0.bmp", RGB(255, 255, 255));
-			break;
-		}
-		case 302:
-		{
-			bitmap.LoadBitmapA("RES\\pool\\toxic_0.bmp", RGB(255, 255, 255));
-			break;
-		}
-		default:
-			break;
-		}
-	}*/
-
 	void Pool::LoadItemBitmap()
 	{
 		bitmap_wall.LoadBitmapA("RES\\wall.bmp");
@@ -142,19 +86,6 @@ namespace game_framework
 			break;
 		}
 	}
-
-	//void Pool::OnShow()
-	//{
-	//	bitmap_wall.SetTopLeft(x, y);//先画墙
-	//	bitmap_wall.ShowBitmap();
-	//	bitmap.SetTopLeft(x, y - 16);//提高半格画水池
-	//	bitmap.ShowBitmap();
-	//}
-
-	//void Pool::OnMove()
-	//{
-
-	//}
 
 	void Pool::OnShow()
 	{

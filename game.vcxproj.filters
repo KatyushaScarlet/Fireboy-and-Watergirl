@@ -20,6 +20,9 @@
     <Filter Include="MyGame\Player">
       <UniqueIdentifier>{57911480-9c74-4182-9f49-c5ac93dd9716}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MyGame\CGameStateRun">
+      <UniqueIdentifier>{91c3a2f3-1d75-4ae0-95cd-34e6ecd5f1b0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Res\ball.bmp">
@@ -152,9 +155,6 @@
     <ClCompile Include="Source\Pool.cpp">
       <Filter>MyGame\Item</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CGameStateRun.cpp">
-      <Filter>MyGame</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Door.cpp">
       <Filter>MyGame\Item</Filter>
     </ClCompile>
@@ -163,6 +163,15 @@
     </ClCompile>
     <ClCompile Include="Source\Switch.cpp">
       <Filter>MyGame\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CGameStateRun.cpp">
+      <Filter>MyGame\CGameStateRun</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CGameStateRun_Interact.cpp">
+      <Filter>MyGame\CGameStateRun</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CGameStateRun_InitMapLevel.cpp">
+      <Filter>MyGame\CGameStateRun</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -230,7 +239,7 @@
       <Filter>MyGame\Item</Filter>
     </ClInclude>
     <ClInclude Include="Source\CGameStateRun.h">
-      <Filter>MyGame</Filter>
+      <Filter>MyGame\CGameStateRun</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

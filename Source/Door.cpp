@@ -82,7 +82,6 @@ namespace game_framework
 				{
 					bitmap.OnMove();
 				}
-				//TRACE("boy reach exit\n");
 			}
 			else if (type == 401 && !is_boy)
 			{
@@ -92,7 +91,6 @@ namespace game_framework
 				{
 					bitmap.OnMove();
 				}
-				//TRACE("girl reach exit\n");
 			}
 		}
 		else
