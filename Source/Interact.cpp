@@ -8,3 +8,8 @@
 #include <memory>
 
 #include "CGameStateRun.h"
+
+namespace game_framework
+{
+
+}

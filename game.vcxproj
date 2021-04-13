@@ -261,11 +261,12 @@
     <None Include="Source\game.aps" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\CGameStateRun.cpp" />
-    <ClCompile Include="Source\CGameStateRun_Interact.cpp" />
+    <ClCompile Include="Source\KeyInput.cpp" />
+    <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\Interact.cpp" />
     <ClCompile Include="Source\Diamond.cpp" />
     <ClCompile Include="Source\Door.cpp" />
-    <ClCompile Include="Source\CGameStateRun_InitMapLevel.cpp" />
+    <ClCompile Include="Source\InitMap.cpp" />
     <ClCompile Include="Source\Item.cpp" />
     <ClCompile Include="Source\Platform.cpp" />
     <ClCompile Include="Source\Player.cpp" />

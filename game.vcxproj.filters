@@ -164,13 +164,16 @@
     <ClCompile Include="Source\Switch.cpp">
       <Filter>MyGame\Item</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CGameStateRun.cpp">
+    <ClCompile Include="Source\Main.cpp">
       <Filter>MyGame\CGameStateRun</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CGameStateRun_Interact.cpp">
+    <ClCompile Include="Source\Interact.cpp">
       <Filter>MyGame\CGameStateRun</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CGameStateRun_InitMapLevel.cpp">
+    <ClCompile Include="Source\InitMap.cpp">
+      <Filter>MyGame\CGameStateRun</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\KeyInput.cpp">
       <Filter>MyGame\CGameStateRun</Filter>
     </ClCompile>
   </ItemGroup>
