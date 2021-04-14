@@ -32,27 +32,72 @@ namespace game_framework {
 		if (is_boy)
 		{
 			//bitmap.LoadBitmapA("RES\\player\\boy_static.bmp", RGB(255, 255, 255));
-			animation_static.AddBitmap("RES\\player\\boy_static.bmp", RGB(255, 255, 255));
-			animation_left.AddBitmap("RES\\player\\boy_left0.bmp", RGB(255, 255, 255));
-			animation_right.AddBitmap("RES\\player\\boy_right0.bmp", RGB(255, 255, 255));
-			animation_up.AddBitmap("RES\\player\\boy_up0.bmp", RGB(255, 255, 255));
-			animation_down.AddBitmap("RES\\player\\boy_down0.bmp", RGB(255, 255, 255));
+			animation_static.AddBitmap("RES\\player\\boy_static0.bmp", RGB(0, 0, 0));
+			animation_static.AddBitmap("RES\\player\\boy_static1.bmp", RGB(0, 0, 0));
+			animation_static.AddBitmap("RES\\player\\boy_static2.bmp", RGB(0, 0, 0));
+			animation_static.AddBitmap("RES\\player\\boy_static3.bmp", RGB(0, 0, 0));
+			animation_static.AddBitmap("RES\\player\\boy_static4.bmp", RGB(0, 0, 0));
+			animation_left.AddBitmap("RES\\player\\boy_left0.bmp", RGB(0, 0, 0));
+			animation_left.AddBitmap("RES\\player\\boy_left1.bmp", RGB(0, 0, 0));
+			animation_left.AddBitmap("RES\\player\\boy_left2.bmp", RGB(0, 0, 0));
+			animation_left.AddBitmap("RES\\player\\boy_left3.bmp", RGB(0, 0, 0));
+			animation_left.AddBitmap("RES\\player\\boy_left4.bmp", RGB(0, 0, 0));
+			animation_right.AddBitmap("RES\\player\\boy_right0.bmp", RGB(0, 0, 0));
+			animation_right.AddBitmap("RES\\player\\boy_right1.bmp", RGB(0, 0, 0));
+			animation_right.AddBitmap("RES\\player\\boy_right2.bmp", RGB(0, 0, 0));
+			animation_right.AddBitmap("RES\\player\\boy_right3.bmp", RGB(0, 0, 0));
+			animation_right.AddBitmap("RES\\player\\boy_right4.bmp", RGB(0, 0, 0));
+			animation_up.AddBitmap("RES\\player\\boy_up0.bmp", RGB(0, 0, 0));
+			animation_up.AddBitmap("RES\\player\\boy_up1.bmp", RGB(0, 0, 0));
+			animation_up.AddBitmap("RES\\player\\boy_up2.bmp", RGB(0, 0, 0));
+			animation_down.AddBitmap("RES\\player\\boy_down0.bmp", RGB(0, 0, 0));
+			animation_down.AddBitmap("RES\\player\\boy_down1.bmp", RGB(0, 0, 0));
+			animation_down.AddBitmap("RES\\player\\boy_down2.bmp", RGB(0, 0, 0));
+			animation_down.AddBitmap("RES\\player\\boy_down3.bmp", RGB(0, 0, 0));
+			animation_down.AddBitmap("RES\\player\\boy_down4.bmp", RGB(0, 0, 0));
 			charactor_ani = &animation_static;
+			charactor_ani->SetDelayCount(3);
 		}
 		else
 		{
 			//bitmap.LoadBitmapA("RES\\player\\girl_static.bmp", RGB(255, 255, 255));
-			animation_static.AddBitmap("RES\\player\\girl_static.bmp", RGB(255, 255, 255));
-			animation_left.AddBitmap("RES\\player\\girl_left0.bmp", RGB(255, 255, 255));
-			animation_right.AddBitmap("RES\\player\\girl_right0.bmp", RGB(255, 255, 255));
-			animation_up.AddBitmap("RES\\player\\girl_up0.bmp", RGB(255, 255, 255));
-			animation_down.AddBitmap("RES\\player\\girl_down0.bmp", RGB(255, 255, 255));
+			animation_static.AddBitmap("RES\\player\\girl_static0.bmp", RGB(0, 0, 0));
+			animation_static.AddBitmap("RES\\player\\girl_static1.bmp", RGB(0, 0, 0));
+			animation_static.AddBitmap("RES\\player\\girl_static2.bmp", RGB(0, 0, 0));
+			animation_static.AddBitmap("RES\\player\\girl_static3.bmp", RGB(0, 0, 0));
+			animation_static.AddBitmap("RES\\player\\girl_static4.bmp", RGB(0, 0, 0));
+			animation_left.AddBitmap("RES\\player\\girl_left0.bmp", RGB(0, 0, 0));
+			animation_left.AddBitmap("RES\\player\\girl_left1.bmp", RGB(0, 0, 0));
+			animation_left.AddBitmap("RES\\player\\girl_left2.bmp", RGB(0, 0, 0));
+			animation_left.AddBitmap("RES\\player\\girl_left3.bmp", RGB(0, 0, 0));
+			animation_left.AddBitmap("RES\\player\\girl_left4.bmp", RGB(0, 0, 0));
+			animation_right.AddBitmap("RES\\player\\girl_right0.bmp", RGB(0, 0, 0));
+			animation_right.AddBitmap("RES\\player\\girl_right1.bmp", RGB(0, 0, 0));
+			animation_right.AddBitmap("RES\\player\\girl_right2.bmp", RGB(0, 0, 0));
+			animation_right.AddBitmap("RES\\player\\girl_right3.bmp", RGB(0, 0, 0));
+			animation_right.AddBitmap("RES\\player\\girl_right4.bmp", RGB(0, 0, 0));
+			animation_up.AddBitmap("RES\\player\\girl_up0.bmp", RGB(0, 0, 0));
+			animation_up.AddBitmap("RES\\player\\girl_up1.bmp", RGB(0, 0, 0));
+			animation_up.AddBitmap("RES\\player\\girl_up2.bmp", RGB(0, 0, 0));
+			animation_up.AddBitmap("RES\\player\\girl_up3.bmp", RGB(0, 0, 0));
+			animation_up.AddBitmap("RES\\player\\girl_up4.bmp", RGB(0, 0, 0));
+			animation_down.AddBitmap("RES\\player\\girl_down0.bmp", RGB(0, 0, 0));
+			animation_down.AddBitmap("RES\\player\\girl_down1.bmp", RGB(0, 0, 0));
+			animation_down.AddBitmap("RES\\player\\girl_down2.bmp", RGB(0, 0, 0));
+			animation_down.AddBitmap("RES\\player\\girl_down3.bmp", RGB(0, 0, 0));
+			animation_down.AddBitmap("RES\\player\\girl_down4.bmp", RGB(0, 0, 0));
 			charactor_ani = &animation_static;
+			charactor_ani->SetDelayCount(3);
 		}
 	};
 
 	void Player::OnMove()
 	{
+		animation_static.OnMove();
+		animation_left.OnMove();
+		animation_right.OnMove();
+		animation_down.OnMove();
+		animation_up.OnMove();
 
 	}
 
@@ -128,7 +173,7 @@ namespace game_framework {
 	void Player::OnShow()//显示
 	{
 		animation_static.SetTopLeft(x, y - PLAYER_GIRD_PIXEL);
-		animation_down.SetTopLeft(x, y - PLAYER_GIRD_PIXEL*2);
+		animation_down.SetTopLeft(x, y - PLAYER_GIRD_PIXEL);
 		animation_up.SetTopLeft(x, y - PLAYER_GIRD_PIXEL);
 		animation_left.SetTopLeft(x , y - PLAYER_GIRD_PIXEL);
 		animation_right.SetTopLeft(x - PLAYER_GIRD_PIXEL, y - PLAYER_GIRD_PIXEL);
