@@ -102,7 +102,7 @@ namespace game_framework
 		}
 		else if (type == 400 && player->is_boy)
 		{
-			//指针转到switch类
+			//指针转到door类
 			shared_ptr<Door> door_ptr = std::static_pointer_cast<Door>(item);
 
 			if ((x1 > door_ptr->GetX1()) && (x2 < door_ptr->GetX2()))//玩家完全进入门内
@@ -118,7 +118,7 @@ namespace game_framework
 		}
 		else if (type == 401 && !player->is_boy)
 		{
-			//指针转到switch类
+			//指针转到door类
 			shared_ptr<Door> door_ptr = std::static_pointer_cast<Door>(item);
 
 			if ((x1 > door_ptr->GetX1()) && (x2 < door_ptr->GetX2()))//玩家完全进入门内

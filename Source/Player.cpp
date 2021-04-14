@@ -101,75 +101,6 @@ namespace game_framework {
 
 	}
 
-	//void Player::OnMove(CGameStateRun* game)//移动
-	//{
-	//	bool can_move;
-
-	//	if (moving_vertical == DIRECTION_UP)
-	//	{
-	//		can_move = game->CanMove(this, DIRECTION_UP);
-	//		//上升状态
-	//		//TRACE("up\n");
-	//		if (can_move && velocity > 0)//如果上方可通行，垂直速度大于0
-	//		{
-	//			y -= velocity;
-	//			velocity--;
-	//		}
-	//		else
-	//		{
-	//			moving_vertical = DIRECTION_DOWN;//当速度<=0时，垂直方向变为下降
-	//			velocity = 1;
-	//		}
-	//	}
-	//	else
-	//	{
-	//		//如果非上升状态，始终判断是否下落
-	//		//TRACE("down\n");
-	//		can_move = game->CanMove(this, DIRECTION_DOWN);
-	//		if (can_move)//如果下方可通行
-	//		{
-	//			moving_vertical = DIRECTION_DOWN;
-	//			y += velocity;
-	//			if (velocity < 5)//防止下落速度过大
-	//			{
-	//				velocity++;
-	//			}
-	//			else
-	//			{
-	//				velocity = 4;//fixbug:当直接掉下时初速度为 INITIAL_VELOCITY （跳起初始速度） 而不是1（掉落初始速度）
-	//			}
-	//		}
-	//		else
-	//		{
-	//			moving_vertical = DIRECTION_NONE;//当下方不可通行时，垂直方向变成静止
-	//			velocity = INITIAL_VELOCITY;//加速度变为初始值
-	//		}
-	//	}
-
-	//	switch (moving_horizontal)//水平移动
-	//	{
-
-	//	case DIRECTION_LEFT:
-	//		can_move= game->CanMove(this, DIRECTION_LEFT);
-	//		if (can_move) {
-	//			x -= PLAYER_STEP_PIXEL;
-	//		}
-	//		break;
-	//	case DIRECTION_RIGHT: {
-	//		can_move = game->CanMove(this, DIRECTION_RIGHT);
-	//		if (can_move) {
-	//			x += PLAYER_STEP_PIXEL;
-	//		}
-
-	//		break;
-	//	}
-	//	case DIRECTION_NONE:
-	//		break;
-	//	default:
-	//		break;
-	//	}
-	//}
-
 	void Player::OnShow()//显示
 	{
 		animation_static.SetTopLeft(x, y - PLAYER_GIRD_PIXEL);
@@ -177,7 +108,7 @@ namespace game_framework {
 		animation_up.SetTopLeft(x, y - PLAYER_GIRD_PIXEL);
 		animation_left.SetTopLeft(x , y - PLAYER_GIRD_PIXEL);
 		animation_right.SetTopLeft(x - PLAYER_GIRD_PIXEL, y - PLAYER_GIRD_PIXEL);
-		//bitmap.SetTopLeft(x, y);
+
 		if (is_visible)
 		{
 			charactor_ani->OnShow();
@@ -199,7 +130,6 @@ namespace game_framework {
 	int Player::GetY2()
 	{
 		return y + PLAYER_GIRD_PIXEL;
-		//return y + PLAYER_GIRD_PIXEL * 2;
 	}
 	int Player::GetVelocity()
 	{
@@ -254,7 +184,4 @@ namespace game_framework {
 	{
 		charactor_ani = &ani;
 	}
-	//bool Player::HitRectangle(int tx1, int ty1, int tx2, int ty2) {
-	//	return false;
-	//}//碰撞检测
 };
