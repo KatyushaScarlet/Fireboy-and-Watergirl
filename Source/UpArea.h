@@ -6,6 +6,6 @@ namespace game_framework {
 
 	class UpArea
 	{
-
+		//todo
 	};
 }

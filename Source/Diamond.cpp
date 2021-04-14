@@ -48,18 +48,4 @@ namespace game_framework
 	{
 
 	}
-
-	void Diamond::Interact(CGameStateRun* game, bool is_boy, int direction)
-	{
-		if (type == 200 && is_boy)
-		{
-			game->AddScore(true);
-			is_visibale = false;
-		}
-		else if (type == 201 && !is_boy)
-		{
-			game->AddScore(false);
-			is_visibale = false;
-		}
-	}
 }

@@ -63,49 +63,16 @@ namespace game_framework
 		}
 	}
 
-
-
-	void Door::Interact(CGameStateRun* game, bool is_boy, int direction)
+	void Door::AnimationStart()
 	{
-		//获取玩家坐标
-		PlayerCoordinate coordinate = game->GetPlayerCoordinate(is_boy);
-		int x1 = coordinate.x1;
-		int x2 = coordinate.x2;
-
-		if ((x1 > this->GetX1()) && (x2 < this->GetX2()))//玩家完全进入门内
+		bitmap.SetDelayCount(2); //設定速度
+		if (!bitmap.IsFinalBitmap()) 
 		{
-			if (type == 400 && is_boy)
-			{
-				game->PlayerReachExit(true, true);
-				bitmap.SetDelayCount(2); //設定速度
-				if (!bitmap.IsFinalBitmap()) 
-				{
-					bitmap.OnMove();
-				}
-			}
-			else if (type == 401 && !is_boy)
-			{
-				game->PlayerReachExit(false, true);
-				bitmap.SetDelayCount(2); //設定速度
-				if (!bitmap.IsFinalBitmap())
-				{
-					bitmap.OnMove();
-				}
-			}
+			bitmap.OnMove();
 		}
-		else
-		{
-			if (type == 400 && is_boy)
-			{
-				game->PlayerReachExit(true, false);
-				bitmap.Reset();
-				
-			}
-			else if (type == 401 && !is_boy)
-			{
-				game->PlayerReachExit(false, false);
-				bitmap.Reset();
-			}
-		}
+	}
+	void Door::AnimationReset()
+	{
+		bitmap.Reset();
 	}
 }

@@ -43,13 +43,13 @@ namespace game_framework {
 		void InitMapLevel(int level);//初始化地图数据 0~9
 		void MovePlayer(shared_ptr<Player> player);//移动玩家
 		bool CanMove(shared_ptr<Player> player, int direction);//判定玩家是否能移动
-		void AddScore(bool is_boy);//玩家增加分数
-		void PlayerDie(bool is_boy);//玩家死亡
-		void PlayerReachExit(bool is_boy,bool value);//玩家到达出口
+		void PlayerDie(shared_ptr<Player> player);//玩家死亡
+		void PlayerReachExit(shared_ptr<Player> player,bool is_arrive);//玩家到达出口
 
-		void ItemInteract(shared_ptr<Item> item, shared_ptr<Player> player, int direction);
+		void ItemInteract(shared_ptr<Item> item, shared_ptr<Player> player, PlayerCoordinate coordinate, int direction);
 
-		PlayerCoordinate GetPlayerCoordinate(bool is_boy);
+		PlayerCoordinate GetPlayerCoordinate(shared_ptr<Player> player);
+
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面

@@ -20,16 +20,17 @@ namespace game_framework {
 		void LoadItemBitmap();
 		void OnShow();
 		void OnMove();
-		void Interact(CGameStateRun* game, bool is_boy, int direction);
 		//开关绑定平台
 		void Bind(shared_ptr<Platform> platform);
+		void Trigger();
+
+		//开关状态
+		int status = 0;
+		bool is_on = false;
 	protected:
 		CMovingBitmap bitmap_switch_on;
 		CMovingBitmap bitmap_switch_off;
 	private:
-		//开关状态
-		int status = 0;
-		bool is_on = false;
 		//开关绑定的平台
 		shared_ptr<Platform> bind_platform;
 	};

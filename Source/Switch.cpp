@@ -61,66 +61,14 @@ namespace game_framework
 
 	}
 
-	void Switch::Interact(CGameStateRun* game, bool is_boy, int direction)
-	{
-		//获取玩家坐标
-		PlayerCoordinate coordinate = game->GetPlayerCoordinate(is_boy);
-		int x1 = coordinate.x1;
-		int x2 = coordinate.x2;
-		int y2 = coordinate.y2;
-
-		switch (type)
-		{
-		case 500://按钮
-		{
-			if ((x1 > this->GetX1() - 16) && (x2 < this->GetX2() + 16) /*&& (y2 > this->GetY1())*/)//扩大判定范围
-			{
-				if (status == SWITCH_RELEASE)//按钮只能被按下一次
-				{
-					is_on = true;
-					status = SWITCH_PRESS;
-				}
-			}
-			else
-			{
-				if (status == SWITCH_PRESS)//玩家离开后按钮被松开
-				{
-					is_on = false;
-					status = SWITCH_RELEASE;
-				}
-			}
-			break;
-		}
-		case 501://拉杆
-		{
-			if ((x1 > this->GetX1() - 16) && (x2 < this->GetX2() + 16) /*&& (y2 > this->GetY1())*/)//扩大判定范围
-			{
-				if (status == SWITCH_RELEASE)//拉杆被触发，转换状态
-				{
-					is_on = !is_on;
-					status = SWITCH_PRESS;
-				}
-			}
-			else
-			{
-				if (status == SWITCH_PRESS)//玩家离开后，不松开
-				{
-					status = SWITCH_RELEASE;
-				}
-			}
-
-			break;
-		}
-		default:
-			break;
-		}
-
-		//触发平台
-		bind_platform->Trigger(is_on);
-	}
-
 	void Switch::Bind(shared_ptr<Platform> platform)
 	{
 		this->bind_platform = platform;
+	}
+
+	void Switch::Trigger()
+	{
+		//触发平台
+		bind_platform->Trigger(is_on);
 	}
 }

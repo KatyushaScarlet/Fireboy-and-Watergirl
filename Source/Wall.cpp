@@ -33,9 +33,4 @@ namespace game_framework
 	{
 
 	}
-
-	void Wall::Interact(CGameStateRun* game, bool is_boy, int direction)
-	{
-
-	}
 }

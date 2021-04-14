@@ -9,7 +9,6 @@ namespace game_framework {
 		virtual void LoadItemBitmap() = 0;	//加载位图
 		virtual void OnShow() = 0;			//显示
 		virtual void OnMove() = 0;			//移动
-		virtual void Interact(CGameStateRun* game,bool is_boy,int direction) = 0;			//与其他物件交互
 		void SetTopLeft(int top, int left);// 设定左上角坐标
 		int  GetX1();			//左上角 x 坐标
 		int  GetY1();			//左上角 y 坐标

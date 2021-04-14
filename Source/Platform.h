@@ -14,7 +14,6 @@ namespace game_framework {
 		void LoadItemBitmap();
 		void OnShow();
 		void OnMove();
-		void Interact(CGameStateRun* game, bool is_boy, int direction);
 		//平台被开关触发
 		void Trigger(bool is_on);
 	protected:

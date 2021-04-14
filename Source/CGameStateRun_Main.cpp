@@ -9,10 +9,6 @@
 
 #include "CGameStateRun.h"
 
-//#define PLAYER_GIRD_PIXEL 32
-//#define PLAYER_STEP_PIXEL 4
-//#define INITIAL_VELOCITY 16
-
 namespace game_framework {
 	CGameStateRun::CGameStateRun(CGame* g)
 		: CGameState(g)
@@ -27,11 +23,6 @@ namespace game_framework {
 
 	void CGameStateRun::ResetMap()
 	{
-		//for each (Item * item in items)
-		//{
-		//	delete item;
-		//}
-		//items.clear();
 		item_ptrs.clear();
 	}
 
@@ -140,7 +131,7 @@ namespace game_framework {
 				}
 				else
 				{
-					player->velocity = 4;//fixbug:当直接掉下时初速度为 INITIAL_VELOCITY （跳起初始速度） 而不是1（掉落初始速度）
+					player->velocity = 4;//当直接掉下时初速度为 INITIAL_VELOCITY （跳起初始速度） 而不是1（掉落初始速度）
 				}
 			}
 			else
@@ -179,13 +170,15 @@ namespace game_framework {
 
 	bool CGameStateRun::CanMove(shared_ptr<Player> player, int direction)//判定是否能移动
 	{
-		int x1, y1, x2, y2;
 		bool accessible = true;
-		bool is_boy = player->is_boy;
-		x1 = player->GetX1();
-		y1 = player->GetY1();
-		x2 = player->GetX2();
-		y2 = player->GetY2();
+
+		//获取玩家坐标
+		PlayerCoordinate coordinate = GetPlayerCoordinate(player);
+		const int x1 = coordinate.x1;
+		const int y1 = coordinate.y1;
+		const int x2 = coordinate.x2;
+		const int y2 = coordinate.y2;
+
 		//TRACE("ax1:%d,ay1:%d,ax2:%d,ay2:%d\n", x1, y1, x2, y2);
 		for each (shared_ptr<Item> item in item_ptrs)
 		{
@@ -197,7 +190,7 @@ namespace game_framework {
 					accessible = item->is_accessible;
 					if (item->is_visibale)
 					{
-						item->Interact(this, is_boy, DIRECTION_UP);
+						ItemInteract(item, player, coordinate, DIRECTION_UP);//与item交互
 					}
 				}
 				break;
@@ -207,7 +200,7 @@ namespace game_framework {
 					accessible = item->is_accessible;
 					if (item->is_visibale)
 					{
-						item->Interact(this, is_boy, DIRECTION_DOWN);
+						ItemInteract(item, player, coordinate, DIRECTION_DOWN);//与item交互
 					}
 				}
 				break;
@@ -217,7 +210,7 @@ namespace game_framework {
 					accessible = item->is_accessible;
 					if (item->is_visibale)
 					{
-						item->Interact(this, is_boy, DIRECTION_LEFT);
+						ItemInteract(item, player, coordinate, DIRECTION_LEFT);//与item交互
 					}
 				}
 				break;
@@ -227,7 +220,7 @@ namespace game_framework {
 					accessible = item->is_accessible;
 					if (item->is_visibale)
 					{
-						item->Interact(this, is_boy, DIRECTION_RIGHT);
+						ItemInteract(item, player, coordinate, DIRECTION_RIGHT);//与item交互
 					}
 				}
 				break;
@@ -235,8 +228,8 @@ namespace game_framework {
 				break;
 			}
 
-			//jump out
-			if (flag_change_level)
+			//todo 改进
+			if (flag_change_level)//jump out
 			{
 				flag_change_level = false;
 				accessible = false;
@@ -247,48 +240,33 @@ namespace game_framework {
 		return accessible;
 	}
 
-	void CGameStateRun::AddScore(bool is_boy)//玩家增加分数
+	void CGameStateRun::PlayerDie(shared_ptr<Player> player)//玩家死亡
 	{
-		if (is_boy)
+		if (player->is_boy)
 		{
-			score_boy++;
-		}
-		else
-		{
-			score_girl++;
-		}
-	}
-
-	void CGameStateRun::PlayerDie(bool is_boy)//玩家死亡
-	{
-		if (is_boy)
-		{
-			boy->is_die = true;
-			boy->is_visible = false;
 			TRACE("boy die\n");
 		}
 		else
 		{
-			girl->is_die = true;
-			girl->is_visible = false;
 			TRACE("girl die\n");
 		}
+
+		player->is_die = true;
+		player->is_visible = false;
+
 		//暂停游戏逻辑
 		flag_game_loaded = false;
+		//分数清零
+		score_boy = 0;
+		score_girl = 0;
 		//游戏结束
 		GotoGameState(GAME_STATE_OVER);
+		//todo: game over画面显示玩家总分，需要在此处再累加一次
 	}
 
-	void CGameStateRun::PlayerReachExit(bool is_boy, bool value)//玩家到达出口
+	void CGameStateRun::PlayerReachExit(shared_ptr<Player> player, bool is_arrive)//玩家到达出口
 	{
-		if (is_boy)
-		{
-			boy->reach_exit = value;
-		}
-		else
-		{
-			girl->reach_exit = value;
-		}
+		player->reach_exit = is_arrive;
 
 		if (boy->reach_exit && girl->reach_exit)
 		{
@@ -296,6 +274,9 @@ namespace game_framework {
 			girl->reach_exit = false;
 			//暂停游戏逻辑
 			flag_game_loaded = false;
+			//玩家分数累加到总分
+			score_boy += boy->score;
+			score_girl += girl->score;
 			//准备切换关卡
 			flag_change_level = true;
 			//切换关卡
@@ -304,23 +285,14 @@ namespace game_framework {
 		}
 	}
 
-	PlayerCoordinate CGameStateRun::GetPlayerCoordinate(bool is_boy)
+	PlayerCoordinate CGameStateRun::GetPlayerCoordinate(shared_ptr<Player> player)//获取玩家座标
 	{
 		PlayerCoordinate coordinate;
-		if (is_boy)
-		{
-			coordinate.x1 = boy->GetX1();
-			coordinate.y1 = boy->GetY1();
-			coordinate.x2 = boy->GetX2();
-			coordinate.y2 = boy->GetY2();
-		}
-		else
-		{
-			coordinate.x1 = girl->GetX1();
-			coordinate.y1 = girl->GetY1();
-			coordinate.x2 = girl->GetX2();
-			coordinate.y2 = girl->GetY2();
-		}
+
+		coordinate.x1 = player->GetX1();
+		coordinate.y1 = player->GetY1();
+		coordinate.x2 = player->GetX2();
+		coordinate.y2 = player->GetY2();
 
 		return coordinate;
 	}

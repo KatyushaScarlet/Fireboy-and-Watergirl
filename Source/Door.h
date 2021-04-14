@@ -11,7 +11,9 @@ namespace game_framework {
 		void LoadItemBitmap();
 		void OnShow();
 		void OnMove();
-		void Interact(CGameStateRun* game, bool is_boy, int direction);
+
+		void AnimationStart();
+		void AnimationReset();
 	protected:
 		CAnimation bitmap;
 		void AddAnimationBitmap(string path);

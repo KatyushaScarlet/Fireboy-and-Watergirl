@@ -71,11 +71,6 @@ namespace game_framework
 
 	}
 
-	void Platform::Interact(CGameStateRun* game, bool is_boy, int direction)
-	{
-
-	}
-
 	void Platform::Trigger(bool is_on)
 	{
 		if (!is_on)//off为默认状态

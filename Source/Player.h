@@ -37,6 +37,7 @@ namespace game_framework {
 		int x, y;//坐标
 		int moving_vertical, moving_horizontal;//移动的状态
 		int  velocity;// 目前的速度(pixel/frame)
+		int score;//分数
 		
 		CAnimation & GetStatic();
 		CAnimation & GetLeft();
@@ -45,10 +46,6 @@ namespace game_framework {
 		CAnimation & GetDown();
 		void SetAni(CAnimation& address);
 	private:
-		//int x, y;//坐标
-		//int moving_vertical, moving_horizontal;//移动的状态
-		//int  velocity;// 目前的速度(pixel/frame)
-		//CMovingBitmap bitmap;// 静止图像
 		CAnimation animation_static;
 		CAnimation animation_left;
 		CAnimation animation_right;

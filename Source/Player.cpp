@@ -11,6 +11,7 @@ namespace game_framework {
 	class Map;
 	Player::Player(bool boy)
 	{
+		score = 0;
 		is_boy = boy;
 		x = 0;
 		y = 0;
