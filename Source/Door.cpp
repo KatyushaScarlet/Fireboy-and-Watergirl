@@ -47,9 +47,6 @@ namespace game_framework
 
 	void Door::OnShow()
 	{
-		//bitmap.SetTopLeft(x, y);
-		//bitmap.OnShow();
-
 		bitmap_ptr->SetTopLeft(x, y);
 		bitmap_ptr->OnShow();
 	}
@@ -91,13 +88,6 @@ namespace game_framework
 
 	void Door::AddAnimationBitmap(string path)
 	{
-		//string extension = ".bmp";
-		//for (int i = 0; i <= 21; i++) {
-		//	string bitmapPath = path + to_string(i) + extension;
-		//	char* p = (char*)bitmapPath.c_str();
-		//	bitmap.AddBitmap(p, RGB(255, 255, 255));
-		//}
-
 		string extension = ".bmp";
 		string bitmapPath = "";
 
@@ -112,21 +102,9 @@ namespace game_framework
 		}
 	}
 
-	//void Door::AnimationStart()
-	//{
-	//	bitmap.SetDelayCount(2); //設定速度
-	//	if (!bitmap.IsFinalBitmap()) 
-	//	{
-	//		bitmap.OnMove();
-	//	}
-	//}
-	//void Door::AnimationReset()
-	//{
-	//	bitmap.Reset();
-	//}
-
 	void Door::AnimationOpenDoor()
 	{
+		//仅被触发一次
 		TRACE("door open\n");
 		if (!anime_play)//如果动画未开始播放
 		{
@@ -137,6 +115,7 @@ namespace game_framework
 
 	void Door::AnimationCloseDoor()
 	{
+		//仅被触发一次
 		TRACE("door close\n");
 		if (!anime_play)//如果动画未开始播放
 		{
