@@ -444,7 +444,7 @@ void CGameState::ShowInitProgress(int percent)
 
 	CDDraw::BltBackColor(DEFAULT_BG_COLOR);		// 將 Back Plain 塗上預設的顏色
 	CMovingBitmap loading;						// 貼上loading圖示
-	loading.LoadBitmap(IDB_LOADINGNEW, RGB(0,0,0));
+	loading.LoadBitmap("RES\\loadingnew.bmp", RGB(0,0,0));
 	loading.SetTopLeft(0,-200);
 	loading.ShowBitmap();
 	//
