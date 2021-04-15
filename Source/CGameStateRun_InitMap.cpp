@@ -1,5 +1,4 @@
-
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -12,13 +11,13 @@
 
 namespace game_framework
 {
-	void CGameStateRun::InitMapLevel(int level)//³õÊ¼»¯µØÍ¼Êı¾İ 0~9
+	void CGameStateRun::InitMapLevel(int level)//åˆå§‹åŒ–åœ°å›¾æ•°æ® 0~9
 	{
-		//Í£Ö¹ÓÎÏ·Âß¼­
+		//åœæ­¢æ¸¸æˆé€»è¾‘
 		flag_game_loaded = false;
-		//Çå¿ÕµØÍ¼
+		//æ¸…ç©ºåœ°å›¾
 		ResetMap();
-		//ÉèÖÃÄ¿Ç°¹Ø¿¨
+		//è®¾ç½®ç›®å‰å…³å¡
 		now_level = level;
 		int map_level_0[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH] = {
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
@@ -86,7 +85,7 @@ namespace game_framework
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 		};
 
-		//µØÍ¼¸³Öµ
+		//åœ°å›¾èµ‹å€¼
 		switch (level)
 		{
 		case 0:
@@ -99,13 +98,13 @@ namespace game_framework
 				}
 			}
 
-			//Ìí¼Ó»ú¹Ø
+			//æ·»åŠ æœºå…³
 
 			//platform1
 			shared_ptr<Platform> platform1 = make_shared<Platform>(502, 1, 15, 1, 18);
 			item_ptrs.push_back(platform1);
 			shared_ptr<Switch> platform1_stick = make_shared<Switch>(501, 9, 19);
-			platform1_stick->Bind(platform1);//°ó¶¨Æ½Ì¨
+			platform1_stick->Bind(platform1);//ç»‘å®šå¹³å°
 			item_ptrs.push_back(platform1_stick);
 
 			//platform2
@@ -113,8 +112,8 @@ namespace game_framework
 			item_ptrs.push_back(platform2);
 			shared_ptr<Switch> platform2_button1 = make_shared<Switch>(500, 10, 14);
 			shared_ptr<Switch> platform2_button2 = make_shared<Switch>(500, 30, 10);
-			platform2_button1->Bind(platform2);//°ó¶¨Æ½Ì¨
-			platform2_button2->Bind(platform2);//°ó¶¨Æ½Ì¨
+			platform2_button1->Bind(platform2);//ç»‘å®šå¹³å°
+			platform2_button2->Bind(platform2);//ç»‘å®šå¹³å°
 			item_ptrs.push_back(platform2_button1);
 			item_ptrs.push_back(platform2_button2);
 
@@ -122,7 +121,7 @@ namespace game_framework
 			shared_ptr<Platform> platform3 = make_shared<Platform>(502, 50, 50, 6, 7);
 			item_ptrs.push_back(platform3);
 			shared_ptr<Switch> platform3_stick = make_shared<Switch>(501, 1, 6);
-			platform3_stick->Bind(platform3);//°ó¶¨Æ½Ì¨
+			platform3_stick->Bind(platform3);//ç»‘å®šå¹³å°
 			item_ptrs.push_back(platform3_stick);
 
 			break;
@@ -137,15 +136,15 @@ namespace game_framework
 				}
 			}
 
-			//Ìí¼Ó»ú¹Ø
+			//æ·»åŠ æœºå…³
 
 			//platform1
 			shared_ptr<Platform> platform1 = make_shared<Platform>(503, 19, 16, 19, 10);
 			item_ptrs.push_back(platform1);
 			shared_ptr<Switch> platform1_button1 = make_shared<Switch>(500, 5, 19);
 			shared_ptr<Switch> platform1_button2 = make_shared<Switch>(500, 33, 19);
-			platform1_button1->Bind(platform1);//°ó¶¨Æ½Ì¨
-			platform1_button2->Bind(platform1);//°ó¶¨Æ½Ì¨
+			platform1_button1->Bind(platform1);//ç»‘å®šå¹³å°
+			platform1_button2->Bind(platform1);//ç»‘å®šå¹³å°
 			item_ptrs.push_back(platform1_button1);
 			item_ptrs.push_back(platform1_button2);
 
@@ -154,8 +153,8 @@ namespace game_framework
 			item_ptrs.push_back(platform2);
 			shared_ptr<Switch> platform2_button1 = make_shared<Switch>(500, 12, 4);
 			shared_ptr<Switch> platform2_button2 = make_shared<Switch>(500, 26, 4);
-			platform2_button1->Bind(platform2);//°ó¶¨Æ½Ì¨
-			platform2_button2->Bind(platform2);//°ó¶¨Æ½Ì¨
+			platform2_button1->Bind(platform2);//ç»‘å®šå¹³å°
+			platform2_button2->Bind(platform2);//ç»‘å®šå¹³å°
 			item_ptrs.push_back(platform2_button1);
 			item_ptrs.push_back(platform2_button2);
 
@@ -165,7 +164,7 @@ namespace game_framework
 			break;
 		}
 
-		//¼ÓÔØÎï¼ş
+		//åŠ è½½ç‰©ä»¶
 		for (size_t i = 0; i < MAP_SIZE_HEIGHT; i++)
 		{
 			for (size_t j = 0; j < MAP_SIZE_WIDTH; j++)
@@ -289,7 +288,7 @@ namespace game_framework
 		}
 
 		LoadItemBitmap();
-		//¼ÌĞøÓÎÏ·Âß¼­
+		//ç»§ç»­æ¸¸æˆé€»è¾‘
 		flag_game_loaded = true;
 	}
 }

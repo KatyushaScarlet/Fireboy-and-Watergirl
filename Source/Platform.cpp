@@ -47,12 +47,12 @@ namespace game_framework
 		{
 		case 502://水平
 		{
-			bitmap.LoadBitmapA("RES\\platform\\horizon.bmp", RGB(255, 255, 255));
+			bitmap.LoadBitmapA("RES\\platform\\horizon.bmp", RGB(0, 0, 0));
 			break;
 		}
 		case 503:////垂直
 		{
-			bitmap.LoadBitmapA("RES\\platform\\vertical.bmp", RGB(255, 255, 255));
+			bitmap.LoadBitmapA("RES\\platform\\vertical.bmp", RGB(0, 0, 0));
 			break;
 		}
 		default:

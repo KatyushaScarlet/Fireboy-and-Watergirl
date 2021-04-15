@@ -81,6 +81,19 @@ void CGameStateInit::OnInit()
 	//
 	logo.LoadBitmap(IDB_BACKGROUND);
 	background.LoadBitmap(IDB_STARTB);
+	//start_text.LoadBitmapA("RES\\STARTTEXT.bmp", RGB(255, 255, 255));
+	animation_static_boy.AddBitmap("RES\\player\\boy_static0.bmp", RGB(0, 0, 0));
+	animation_static_boy.AddBitmap("RES\\player\\boy_static1.bmp", RGB(0, 0, 0));
+	animation_static_boy.AddBitmap("RES\\player\\boy_static2.bmp", RGB(0, 0, 0));
+	animation_static_boy.AddBitmap("RES\\player\\boy_static3.bmp", RGB(0, 0, 0));
+	animation_static_boy.AddBitmap("RES\\player\\boy_static4.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\player\\girl_static0.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\player\\girl_static1.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\player\\girl_static2.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\player\\girl_static3.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\player\\girl_static4.bmp", RGB(0, 0, 0));
+	animation_static_boy.SetDelayCount(2);
+	animation_static_girl.SetDelayCount(2);
 	Sleep(300);				// 放慢，以便看清楚進度，實際遊戲請刪除此Sleep
 	//
 	// 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
@@ -113,6 +126,12 @@ void CGameStateInit::OnShow()
 	//
 	background.SetTopLeft(0, 0);
 	background.ShowBitmap();
+	animation_static_boy.SetTopLeft(400, 810);
+	animation_static_boy.OnShow();
+	animation_static_boy.OnMove();
+	animation_static_girl.SetTopLeft(848, 810);
+	animation_static_girl.OnShow();
+	animation_static_girl.OnMove();
 	//
 	// Demo螢幕字型的使用，不過開發時請盡量避免直接使用字型，改用CMovingBitmap比較好
 	//
@@ -122,7 +141,8 @@ void CGameStateInit::OnShow()
 	fp = pDC->SelectObject(&f);					// 選用 font f
 	pDC->SetBkColor(RGB(0, 0, 0));
 	pDC->SetTextColor(RGB(255, 255, 0));
-	pDC->TextOut(455, 640, "Please click mouse or press SPACE to begin.");
+
+	//pDC->TextOut(455, 640, "Please click mouse or press SPACE to begin.");
 	//pDC->TextOut(5, 810, "Press Ctrl-F to switch in between window mode and full screen mode.");
 	//if (ENABLE_GAME_PAUSE)
 	//	pDC->TextOut(5, 840, "Press Ctrl-Q to pause the Game.");
