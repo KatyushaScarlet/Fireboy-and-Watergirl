@@ -6,6 +6,7 @@
 #include "gamelib.h"
 
 #include <memory>
+#include <windows.h>
 
 #include "CGameStateRun.h"
 
@@ -274,11 +275,11 @@ namespace game_framework {
 			girl->reach_exit = false;
 			//暂停游戏逻辑
 			flag_game_loaded = false;
+			//准备切换关卡
+			flag_change_level = true;
 			//玩家分数累加到总分
 			score_boy += boy->score;
 			score_girl += girl->score;
-			//准备切换关卡
-			flag_change_level = true;
 			//切换关卡
 			now_level++;
 			InitMapLevel(now_level);
