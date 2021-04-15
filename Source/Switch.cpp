@@ -27,14 +27,14 @@ namespace game_framework
 		{
 		case 500://按钮
 		{
-			bitmap_switch_on.LoadBitmapA("RES\\switch\\button_on.bmp", RGB(255, 255, 255));
-			bitmap_switch_off.LoadBitmapA("RES\\switch\\button_off.bmp", RGB(255, 255, 255));
+			bitmap_switch_on.LoadBitmapA("RES\\switch\\button_on.bmp", RGB(0, 0, 0));
+			bitmap_switch_off.LoadBitmapA("RES\\switch\\button_off.bmp", RGB(0, 0, 0));
 			break;
 		}
 		case 501://拉杆
 		{
-			bitmap_switch_on.LoadBitmapA("RES\\switch\\stick_on.bmp", RGB(255, 255, 255));
-			bitmap_switch_off.LoadBitmapA("RES\\switch\\stick_off.bmp", RGB(255, 255, 255));
+			bitmap_switch_on.LoadBitmapA("RES\\switch\\stick_on.bmp", RGB(0, 0, 0));
+			bitmap_switch_off.LoadBitmapA("RES\\switch\\stick_off.bmp", RGB(0, 0, 0));
 			break;
 		}
 		default:

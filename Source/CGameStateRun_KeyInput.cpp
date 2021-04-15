@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -123,27 +123,27 @@ namespace game_framework
 		}
 	}
 
-	void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // ÌÀí»¬ÊóµÄ„Ó×÷
+	void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // è™•ç†æ»‘é¼ çš„å‹•ä½œ
 	{
 		//eraser.SetMovingLeft(true);
 	}
 
-	void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point)	// ÌÀí»¬ÊóµÄ„Ó×÷
+	void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point)	// è™•ç†æ»‘é¼ çš„å‹•ä½œ
 	{
 		//eraser.SetMovingLeft(false);
 	}
 
-	void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point)	// ÌÀí»¬ÊóµÄ„Ó×÷
+	void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point)	// è™•ç†æ»‘é¼ çš„å‹•ä½œ
 	{
-		// ›]ÊÂ¡£Èç¹ûĞèÒªÌÀí»¬ÊóÒÆ„ÓµÄÔ’£¬Œ‘codeÔÚß@Ñe
+		// æ²’äº‹ã€‚å¦‚æœéœ€è¦è™•ç†æ»‘é¼ ç§»å‹•çš„è©±ï¼Œå¯«codeåœ¨é€™è£¡
 	}
 
-	void CGameStateRun::OnRButtonDown(UINT nFlags, CPoint point)  // ÌÀí»¬ÊóµÄ„Ó×÷
+	void CGameStateRun::OnRButtonDown(UINT nFlags, CPoint point)  // è™•ç†æ»‘é¼ çš„å‹•ä½œ
 	{
 		//eraser.SetMovingRight(true);
 	}
 
-	void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// ÌÀí»¬ÊóµÄ„Ó×÷
+	void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// è™•ç†æ»‘é¼ çš„å‹•ä½œ
 	{
 		//eraser.SetMovingRight(false);	
 	}

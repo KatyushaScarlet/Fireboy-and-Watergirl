@@ -91,7 +91,7 @@ namespace game_framework
 	{
 		bitmap_wall.SetTopLeft(x, y);//先画墙
 		bitmap_wall.ShowBitmap();
-		animation_pool.SetTopLeft(x, y - 16);//提高半格画水池
+		animation_pool.SetTopLeft(x, y - 21);//提高半格画水池
 		animation_pool.OnShow();
 	}
 
@@ -107,7 +107,7 @@ namespace game_framework
 		for (int i = 0; i <= 14; i++) {
 			string bitmapPath = path + to_string(i) + extension;
 			char* p = (char*)bitmapPath.c_str();
-			animation_pool.AddBitmap(p, RGB(255, 255, 255));
+			animation_pool.AddBitmap(p, RGB(0, 0, 0));
 		}
 	}
 }
