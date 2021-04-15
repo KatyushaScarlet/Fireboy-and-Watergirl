@@ -107,13 +107,23 @@ namespace game_framework
 
 			if ((x1 > door_ptr->GetX1()) && (x2 < door_ptr->GetX2()))//玩家完全进入门内
 			{
-				PlayerReachExit(player, true);
-				door_ptr->AnimationStart();
+				if (door_ptr->status == DOOR_LEAVE)
+				{
+					door_ptr->status = DOOR_ENTER;
+
+					PlayerReachExit(player, true);
+					door_ptr->AnimationOpenDoor();//触发开门动画
+				}
 			}
 			else//玩家离开门
 			{
-				PlayerReachExit(player, false);
-				door_ptr->AnimationReset();
+				if (door_ptr->status == DOOR_ENTER)
+				{
+					door_ptr->status = DOOR_LEAVE;
+
+					PlayerReachExit(player, false);
+					door_ptr->AnimationCloseDoor();//触发关门动画
+				}
 			}
 		}
 		else if (type == 401 && !player->is_boy)
@@ -123,13 +133,23 @@ namespace game_framework
 
 			if ((x1 > door_ptr->GetX1()) && (x2 < door_ptr->GetX2()))//玩家完全进入门内
 			{
-				PlayerReachExit(player, true);
-				door_ptr->AnimationStart();
+				if (door_ptr->status == DOOR_LEAVE)
+				{
+					door_ptr->status = DOOR_ENTER;
+
+					PlayerReachExit(player, true);
+					door_ptr->AnimationOpenDoor();//触发开门动画
+				}
 			}
 			else//玩家离开门
 			{
-				PlayerReachExit(player, false);
-				door_ptr->AnimationReset();
+				if (door_ptr->status == DOOR_ENTER)
+				{
+					door_ptr->status = DOOR_LEAVE;
+
+					PlayerReachExit(player, false);
+					door_ptr->AnimationCloseDoor();//触发关门动画
+				}
 			}
 		}
 		else
