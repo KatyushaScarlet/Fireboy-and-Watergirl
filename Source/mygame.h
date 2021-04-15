@@ -71,7 +71,6 @@ namespace game_framework {
 	private:
 		CMovingBitmap logo;								// csie的logo
 		CMovingBitmap background;						// 冰火人開始背景
-		//CMovingBitmap start_text;
 		CAnimation animation_static_boy;
 		CAnimation animation_static_girl;
 		
