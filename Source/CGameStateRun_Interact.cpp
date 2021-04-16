@@ -9,6 +9,8 @@
 
 #include "CGameStateRun.h"
 
+#include <algorithm>
+
 namespace game_framework
 {
 	void CGameStateRun::ItemInteract(shared_ptr<Item> item, shared_ptr<Player> player,PlayerCoordinate coordinate, int direction)
@@ -26,14 +28,14 @@ namespace game_framework
 		{
 			player->score++;
 			item->is_visibale = false;
-			DeleteItem(item->GetId());
+			//DeleteItem(item);
 			TRACE("boy score=%d, total=%d\n", player->score, score_boy);
 		}
 		else if (type == 201 && !player->is_boy)//water diamond
 		{
 			player->score++;
 			item->is_visibale = false;
-			DeleteItem(item->GetId());
+			//DeleteItem(item);
 			TRACE("girl score=%d, total=%d\n", player->score, score_boy);
 		}
 		//todo fix: 当水池正下方一格有钻石时，玩家会顶穿水池下方
@@ -160,21 +162,35 @@ namespace game_framework
 		}
 	}
 
-	void CGameStateRun::DeleteItem(int id)
-	{
-		TRACE("delete id=%d\n", id);
+	//void CGameStateRun::DeleteItem(shared_ptr<Item> item)
+	//{
+	//	TRACE("delete id=%d\n", item->GetId());
 
-		//size_t n = item_ptrs.size();
-		//int temp = 0;
+	//	//size_t n = item_ptrs.size();
+	//	//int temp = 0;
 
-		//for (size_t i = 0; i < n; i++)
-		//{
-		//	temp = item_ptrs[i]->GetId();
-		//	if (temp == id);
-		//	{
-		//		item_ptrs.erase()
+	//	//for (size_t i = 0; i < n; i++)
+	//	//{
+	//	//	temp = item_ptrs[i]->GetId();
+	//	//	if (temp == id);
+	//	//	{
+	//	//		item_ptrs.erase()
 
-		//	}
-		//}
-	}
+	//	//	}
+	//	//}
+
+	//	vector<shared_ptr<Item>>::iterator item_ptrs_iterator = find(item_ptrs.begin(), item_ptrs.end(), item);
+	//	if (item_ptrs_iterator == item_ptrs.end())
+	//	{
+	//		TRACE("delete not find");
+	//	}
+	//	else
+	//	{
+	//		TRACE("delete find id=%d\n", item_ptrs_iterator->get()->GetId());
+	//		//item_ptrs_iterator = item_ptrs.erase(item_ptrs_iterator);
+	//		// 
+	//		//item_ptrs.resize(item_ptrs.size() - 1);
+	//		//item_ptrs.shrink_to_fit();
+	//	}
+	//}
 }
