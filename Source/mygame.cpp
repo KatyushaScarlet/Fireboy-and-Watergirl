@@ -82,16 +82,16 @@ void CGameStateInit::OnInit()
 	logo.LoadBitmap(IDB_BACKGROUND);
 	background.LoadBitmap(IDB_STARTB);
 	//start_text.LoadBitmapA("RES\\STARTTEXT.bmp", RGB(255, 255, 255));
-	animation_static_boy.AddBitmap("RES\\player\\boy_static0.bmp", RGB(0, 0, 0));
-	animation_static_boy.AddBitmap("RES\\player\\boy_static1.bmp", RGB(0, 0, 0));
-	animation_static_boy.AddBitmap("RES\\player\\boy_static2.bmp", RGB(0, 0, 0));
-	animation_static_boy.AddBitmap("RES\\player\\boy_static3.bmp", RGB(0, 0, 0));
-	animation_static_boy.AddBitmap("RES\\player\\boy_static4.bmp", RGB(0, 0, 0));
-	animation_static_girl.AddBitmap("RES\\player\\girl_static0.bmp", RGB(0, 0, 0));
-	animation_static_girl.AddBitmap("RES\\player\\girl_static1.bmp", RGB(0, 0, 0));
-	animation_static_girl.AddBitmap("RES\\player\\girl_static2.bmp", RGB(0, 0, 0));
-	animation_static_girl.AddBitmap("RES\\player\\girl_static3.bmp", RGB(0, 0, 0));
-	animation_static_girl.AddBitmap("RES\\player\\girl_static4.bmp", RGB(0, 0, 0));
+	animation_static_boy.AddBitmap("RES\\boy_static0.bmp", RGB(0, 0, 0));
+	animation_static_boy.AddBitmap("RES\\boy_static1.bmp", RGB(0, 0, 0));
+	animation_static_boy.AddBitmap("RES\\boy_static2.bmp", RGB(0, 0, 0));
+	animation_static_boy.AddBitmap("RES\\boy_static3.bmp", RGB(0, 0, 0));
+	animation_static_boy.AddBitmap("RES\\boy_static4.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\girl_static0.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\girl_static1.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\girl_static2.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\girl_static3.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\girl_static4.bmp", RGB(0, 0, 0));
 	animation_static_boy.SetDelayCount(2);
 	animation_static_girl.SetDelayCount(2);
 	Sleep(300);				// 放慢，以便看清楚進度，實際遊戲請刪除此Sleep
@@ -126,10 +126,10 @@ void CGameStateInit::OnShow()
 	//
 	background.SetTopLeft(0, 0);
 	background.ShowBitmap();
-	animation_static_boy.SetTopLeft(400, 810);
+	animation_static_boy.SetTopLeft(400, 740);
 	animation_static_boy.OnShow();
 	animation_static_boy.OnMove();
-	animation_static_girl.SetTopLeft(848, 810);
+	animation_static_girl.SetTopLeft(848, 740);
 	animation_static_girl.OnShow();
 	animation_static_girl.OnMove();
 	//
