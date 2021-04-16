@@ -26,12 +26,14 @@ namespace game_framework
 		{
 			player->score++;
 			item->is_visibale = false;
+			DeleteItem(item->GetId());
 			TRACE("boy score=%d, total=%d\n", player->score, score_boy);
 		}
 		else if (type == 201 && !player->is_boy)//water diamond
 		{
 			player->score++;
 			item->is_visibale = false;
+			DeleteItem(item->GetId());
 			TRACE("girl score=%d, total=%d\n", player->score, score_boy);
 		}
 		//todo fix: 当水池正下方一格有钻石时，玩家会顶穿水池下方
@@ -156,5 +158,23 @@ namespace game_framework
 		{
 			//none
 		}
+	}
+
+	void CGameStateRun::DeleteItem(int id)
+	{
+		TRACE("delete id=%d\n", id);
+
+		//size_t n = item_ptrs.size();
+		//int temp = 0;
+
+		//for (size_t i = 0; i < n; i++)
+		//{
+		//	temp = item_ptrs[i]->GetId();
+		//	if (temp == id);
+		//	{
+		//		item_ptrs.erase()
+
+		//	}
+		//}
 	}
 }

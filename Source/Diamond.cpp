@@ -14,8 +14,8 @@ namespace game_framework
 	{
 		this->type = type;
 
-		width = 32 - 1;
-		height = 64 - 1;//钻石高度两格
+		width = 32 ;
+		height = 96 ;//钻石高度增加
 		is_accessible = true;
 	}
 

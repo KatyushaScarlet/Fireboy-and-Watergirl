@@ -2,11 +2,24 @@
 
 #include "Item.h"
 
-namespace game_framework {
+namespace game_framework 
+{
+	int global_id;//全局id 
+
+	Item::Item()
+	{
+		id = global_id++;
+		//TRACE("item id=%d\n", id);
+	}
 
 	int Item::GetType()
 	{
 		return type;
+	}
+
+	int Item::GetId()
+	{
+		return id;
 	}
 
 	void Item::SetTopLeft(int top, int left)

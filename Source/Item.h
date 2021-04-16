@@ -5,7 +5,9 @@ namespace game_framework {
 	class Item
 	{
 	public:
+		Item();
 		int GetType();			//获取类型
+		int GetId();			//获取id
 		virtual void LoadItemBitmap() = 0;	//加载位图
 		virtual void OnShow() = 0;			//显示
 		virtual void OnMove() = 0;			//移动
@@ -19,8 +21,10 @@ namespace game_framework {
 		bool is_accessible;		//是否可通过
 		bool is_visibale;		//是否可见
 
+
 	protected:
 		int type;				//类别
+		int id;					//id
 		int x, y;				//左上角坐标
 		int width;				//宽
 		int height;				//高

@@ -47,8 +47,8 @@ namespace game_framework {
 		void PlayerReachExit(shared_ptr<Player> player,bool is_arrive);//玩家到达出口
 
 		void ItemInteract(shared_ptr<Item> item, shared_ptr<Player> player, PlayerCoordinate coordinate, int direction);
-
-		PlayerCoordinate GetPlayerCoordinate(shared_ptr<Player> player);
+		void DeleteItem(int id);//删除元素
+		PlayerCoordinate GetPlayerCoordinate(shared_ptr<Player> player);//获取玩家座标
 
 	protected:
 		void OnMove();									// 移動遊戲元素
