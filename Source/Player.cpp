@@ -56,7 +56,7 @@ namespace game_framework {
 			animation_down.AddBitmap("RES\\player\\boy_down3.bmp", RGB(0, 0, 0));
 			animation_down.AddBitmap("RES\\player\\boy_down4.bmp", RGB(0, 0, 0));
 			charactor_ani = &animation_static;
-			charactor_ani->SetDelayCount(3);
+			charactor_ani->SetDelayCount(2);
 		}
 		else
 		{
@@ -87,7 +87,7 @@ namespace game_framework {
 			animation_down.AddBitmap("RES\\player\\girl_down3.bmp", RGB(0, 0, 0));
 			animation_down.AddBitmap("RES\\player\\girl_down4.bmp", RGB(0, 0, 0));
 			charactor_ani = &animation_static;
-			charactor_ani->SetDelayCount(3);
+			charactor_ani->SetDelayCount(2);
 		}
 	};
 
@@ -111,6 +111,7 @@ namespace game_framework {
 
 		if (is_visible)
 		{
+			charactor_ani->SetDelayCount(2);
 			charactor_ani->OnShow();
 		}
 	};

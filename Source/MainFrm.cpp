@@ -138,7 +138,7 @@ BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 	//	cs.style = WS_OVERLAPPED | WS_CAPTION | FWS_ADDTOTITLE
 	//		| WS_THICKFRAME | WS_SYSMENU | WS_MINIMIZEBOX;
 
-	cs.cx = 640; cs.cy = 480;
+	cs.cx = 1282; cs.cy = 1080;
 	cs.style = WS_BORDER | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX;
     cs.x = (::GetSystemMetrics(SM_CXSCREEN) - cs.cx) / 2; 
 	cs.y = (::GetSystemMetrics(SM_CYSCREEN) - cs.cy) / 2; 
