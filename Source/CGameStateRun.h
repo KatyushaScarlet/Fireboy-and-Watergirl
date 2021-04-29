@@ -23,6 +23,16 @@ namespace game_framework {
 		int x2;
 		int y2;
 	};
+
+	enum AUDIO_ID {
+		AUDIO_DIE,				// 0
+		AUDIO_ADV,				// 1
+		AUDIO_DIAMOND,				// 2
+		AUDIO_GIRLJUMP,				// 2
+		AUDIO_BOYJUMP,	// 2
+		AUDIO_LAKE
+	};
+
 	class CGameStateRun : public CGameState {
 	public:
 		CGameStateRun(CGame* g);

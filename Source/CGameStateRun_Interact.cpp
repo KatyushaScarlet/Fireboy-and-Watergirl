@@ -26,16 +26,21 @@ namespace game_framework
 
 		if (type == 200 && player->is_boy)//fire diamond
 		{
+			CAudio::Instance()->Play(AUDIO_DIAMOND, true);
 			player->score++;
 			item->is_visibale = false;
 			//DeleteItem(item);
+			CAudio::Instance()->Play(AUDIO_DIAMOND, false);
+
 			TRACE("boy score=%d, total=%d\n", player->score, score_boy);
 		}
 		else if (type == 201 && !player->is_boy)//water diamond
 		{
+			CAudio::Instance()->Play(AUDIO_DIAMOND, true);
 			player->score++;
 			item->is_visibale = false;
 			//DeleteItem(item);
+			CAudio::Instance()->Play(AUDIO_DIAMOND, false);
 			TRACE("girl score=%d, total=%d\n", player->score, score_boy);
 		}
 		//todo fix: 当水池正下方一格有钻石时，玩家会顶穿水池下方
@@ -43,18 +48,26 @@ namespace game_framework
 		{
 			if (direction == DIRECTION_DOWN)//ֻ如果玩家下方接触水池上方
 			{
+				CAudio::Instance()->Play(AUDIO_LAKE, true);
 				if (type == 300 && !player->is_boy)//fire & girl
 				{
+					//CAudio::Instance()->Play(AUDIO_DIE, true);
 					PlayerDie(player);
+					//CAudio::Instance()->Stop(AUDIO_DIE);
 				}
 				else if (type == 301 && player->is_boy)//water & boy
 				{
+					//CAudio::Instance()->Play(AUDIO_DIE, true);
 					PlayerDie(player);
+					//CAudio::Instance()->Stop(AUDIO_DIE);
 				}
 				else if (type == 302)//toxic && both
 				{
+					//CAudio::Instance()->Play(AUDIO_DIE, true);
 					PlayerDie(player);
+					//CAudio::Instance()->Stop(AUDIO_DIE);
 				}
+				
 			}
 		}
 		else if (type == 500)//按钮
@@ -158,7 +171,7 @@ namespace game_framework
 		}
 		else
 		{
-			//none
+		
 		}
 	}
 
