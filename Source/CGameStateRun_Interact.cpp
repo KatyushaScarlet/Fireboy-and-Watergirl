@@ -184,36 +184,4 @@ namespace game_framework
 		
 		}
 	}
-
-	//void CGameStateRun::DeleteItem(shared_ptr<Item> item)
-	//{
-	//	TRACE("delete id=%d\n", item->GetId());
-
-	//	//size_t n = item_ptrs.size();
-	//	//int temp = 0;
-
-	//	//for (size_t i = 0; i < n; i++)
-	//	//{
-	//	//	temp = item_ptrs[i]->GetId();
-	//	//	if (temp == id);
-	//	//	{
-	//	//		item_ptrs.erase()
-
-	//	//	}
-	//	//}
-
-	//	vector<shared_ptr<Item>>::iterator item_ptrs_iterator = find(item_ptrs.begin(), item_ptrs.end(), item);
-	//	if (item_ptrs_iterator == item_ptrs.end())
-	//	{
-	//		TRACE("delete not find");
-	//	}
-	//	else
-	//	{
-	//		TRACE("delete find id=%d\n", item_ptrs_iterator->get()->GetId());
-	//		//item_ptrs_iterator = item_ptrs.erase(item_ptrs_iterator);
-	//		// 
-	//		//item_ptrs.resize(item_ptrs.size() - 1);
-	//		//item_ptrs.shrink_to_fit();
-	//	}
-	//}
 }

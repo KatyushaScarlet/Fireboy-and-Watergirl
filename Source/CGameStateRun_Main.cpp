@@ -106,6 +106,10 @@ namespace game_framework {
 			}
 		}
 	}
+	void CGameStateRun::MovePlatform(shared_ptr<Player> platform, shared_ptr<Player> player1, shared_ptr<Player> player2)
+	{
+
+	}
 
 	void CGameStateRun::MovePlayer(shared_ptr<Player> player)//移动
 	{

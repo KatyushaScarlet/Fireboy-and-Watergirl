@@ -53,6 +53,7 @@ namespace game_framework {
 		void LoadItemBitmap();
 		void InitMapLevel(int level);//初始化地图数据 0~9
 		void MovePlayer(shared_ptr<Player> player);//移动玩家
+		void MovePlatform(shared_ptr<Player> platform, shared_ptr<Player> player1, shared_ptr<Player> player2);//移动平台
 		bool CanMove(shared_ptr<Player> player, int direction);//判定玩家是否能移动
 		void PlayerDie(shared_ptr<Player> player);//玩家死亡
 		void PlayerReachExit(shared_ptr<Player> player,bool is_arrive);//玩家到达出口
