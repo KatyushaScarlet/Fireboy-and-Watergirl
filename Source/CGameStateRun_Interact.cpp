@@ -48,7 +48,7 @@ namespace game_framework
 		{
 			if (direction == DIRECTION_DOWN)//ֻ如果玩家下方接触水池上方
 			{
-				CAudio::Instance()->Play(AUDIO_LAKE, true);
+				//CAudio::Instance()->Play(AUDIO_LAKE, true);
 				if (type == 300 && !player->is_boy)//fire & girl
 				{
 					//CAudio::Instance()->Play(AUDIO_DIE, true);
