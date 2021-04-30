@@ -30,7 +30,8 @@ namespace game_framework {
 		AUDIO_DIAMOND,				// 2
 		AUDIO_GIRLJUMP,				// 2
 		AUDIO_BOYJUMP,	// 2
-		AUDIO_LAKE
+		AUDIO_LAKE,
+		AUDIO_DOOR
 	};
 
 	class CGameStateRun : public CGameState {

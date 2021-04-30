@@ -47,6 +47,7 @@ namespace game_framework {
 		CAudio::Instance()->Load(AUDIO_GIRLJUMP, "sounds\\904_Jump1_Sound.wav");
 		CAudio::Instance()->Load(AUDIO_BOYJUMP, "sounds\\901_Jump2_Sound.wav");
 		CAudio::Instance()->Load(AUDIO_LAKE, "sounds\\WaterSteps.mp3");
+		CAudio::Instance()->Load(AUDIO_DOOR, "sounds\\906_Door_Sound.wav");
 	}
 
 	void CGameStateRun::LoadGameBitmap()//只执行一次

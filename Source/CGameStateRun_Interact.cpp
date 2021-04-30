@@ -130,6 +130,9 @@ namespace game_framework
 
 					PlayerReachExit(player, true);
 					door_ptr->AnimationOpenDoor();//触发开门动画
+					CAudio::Instance()->Play(AUDIO_DOOR, true);
+					CAudio::Instance()->Play(AUDIO_DOOR, false);
+
 				}
 			}
 			else//玩家离开门
