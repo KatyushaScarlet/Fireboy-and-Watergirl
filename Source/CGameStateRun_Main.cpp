@@ -15,26 +15,39 @@ namespace game_framework {
 		: CGameState(g)
 	{
 		//InitMapLevel(0);
+
 	}
 
 	CGameStateRun::~CGameStateRun()
 	{
 		ResetMap();
+		
 	}
 
 	void CGameStateRun::ResetMap()
 	{
 		item_ptrs.clear();
+		//CAudio::Instance()->Stop(AUDIO_ADV);
+		CAudio::Instance()->Stop(AUDIO_DIE);
+		CAudio::Instance()->Stop(AUDIO_DIAMOND);
 	}
 
 	void CGameStateRun::OnBeginState()//游戏每次重开后载入
 	{
+		
 		InitMapLevel(0);
 	}
 
 	void CGameStateRun::OnInit()//只在第一次启动时载入
 	{
 		LoadGameBitmap();
+		CAudio::Instance()->Load(AUDIO_ADV, "sounds\\adv_sound.mp3");
+		CAudio::Instance()->Load(AUDIO_DIE, "sounds\\die.mp3");
+		CAudio::Instance()->Load(AUDIO_DIAMOND, "sounds\\911_Diamond_Sound.mp3");
+		CAudio::Instance()->Load(AUDIO_GIRLJUMP, "sounds\\904_Jump1_Sound.wav");
+		CAudio::Instance()->Load(AUDIO_BOYJUMP, "sounds\\901_Jump2_Sound.wav");
+		CAudio::Instance()->Load(AUDIO_LAKE, "sounds\\WaterSteps.mp3");
+		CAudio::Instance()->Load(AUDIO_DOOR, "sounds\\906_Door_Sound.wav");
 	}
 
 	void CGameStateRun::LoadGameBitmap()//只执行一次
@@ -105,12 +118,28 @@ namespace game_framework {
 			//TRACE("up\n");
 			if (can_move && player->velocity > 0)//如果上方可通行，垂直速度大于0
 			{
+				if (player->is_boy)
+				{
+					CAudio::Instance()->Play(AUDIO_BOYJUMP, true);
+				}
+				else
+				{
+					CAudio::Instance()->Play(AUDIO_GIRLJUMP, true);
+				}
 				player->SetAni(player->GetUp());
 				player->y -= player->velocity;
 				player->velocity--;
 			}
 			else
 			{
+				if (player->is_boy)
+				{
+					CAudio::Instance()->Play(AUDIO_BOYJUMP, false);
+				}
+				else
+				{
+					CAudio::Instance()->Play(AUDIO_GIRLJUMP, false);
+				}
 				player->moving_vertical = DIRECTION_DOWN;//当速度<=0时，垂直方向变为下降
 				player->velocity = 1;
 				player->SetAni(player->GetDown());
@@ -251,7 +280,7 @@ namespace game_framework {
 		{
 			TRACE("girl die\n");
 		}
-
+		CAudio::Instance()->Play(AUDIO_DIE, true);
 		player->is_die = true;
 		player->is_visible = false;
 
@@ -261,7 +290,9 @@ namespace game_framework {
 		score_boy = 0;
 		score_girl = 0;
 		//游戏结束
+		CAudio::Instance()->Play(AUDIO_DIE, false);
 		GotoGameState(GAME_STATE_OVER);
+		//CAudio::Instance()->Stop(AUDIO_DIE);
 		//todo: game over画面显示玩家总分，需要在此处再累加一次
 	}
 
@@ -282,6 +313,7 @@ namespace game_framework {
 			score_girl += girl->score;
 			//切换关卡
 			now_level++;
+			
 			InitMapLevel(now_level);
 		}
 	}

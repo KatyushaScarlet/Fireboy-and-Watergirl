@@ -72,7 +72,7 @@
 #define OPEN_AS_FULLSCREEN	 false		// 是否以全螢幕方式開啟遊戲
 #define SHOW_LOAD_PROGRESS   true		// 是否顯示loading(OnInit)的進度
 #define DEFAULT_BG_COLOR	 RGB(0,0,0)	// 遊戲畫面預設的背景顏色(黑色)
-#define GAME_CYCLE_TIME		 16	    // 每33ms跑一次Move及Show(每秒30次)
+#define GAME_CYCLE_TIME		 33    // 每33ms跑一次Move及Show(每秒30次)
 #define SHOW_GAME_CYCLE_TIME false		// 是否在debug mode顯示cycle time
 #define ENABLE_GAME_PAUSE	 false		// 是否允許以 Ctrl-Q 暫停遊戲
 #define ENABLE_AUDIO		 true		// 啟動音效介面

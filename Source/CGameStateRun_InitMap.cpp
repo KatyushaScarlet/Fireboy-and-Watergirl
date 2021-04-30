@@ -15,6 +15,7 @@ namespace game_framework
 
 	void CGameStateRun::InitMapLevel(int level)//初始化地图数据 0~9
 	{
+		CAudio::Instance()->Play(AUDIO_ADV, true);
 		//停止游戏逻辑
 		flag_game_loaded = false;
 		//清空地图
