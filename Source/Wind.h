@@ -4,14 +4,15 @@
 
 namespace game_framework {
 	class CMovingBitmap;
-	class Wall : public Item
+	class Wind : public Item
 	{
 	public:
-		Wall();
+		Wind();
 		void LoadItemBitmap();
 		void OnShow();
 		void OnMove();
 	protected:
 		CMovingBitmap bitmap;
+		CMovingBitmap bitmap_wall;
 	};
 }

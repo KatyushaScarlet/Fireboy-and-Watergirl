@@ -176,6 +176,9 @@
     <ClCompile Include="Source\CGameStateRun_KeyInput.cpp">
       <Filter>MyGame\CGameStateRun</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Wind.cpp">
+      <Filter>MyGame\Item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -226,7 +229,7 @@
     <ClInclude Include="Source\Diamond.h">
       <Filter>MyGame\Item</Filter>
     </ClInclude>
-    <ClInclude Include="Source\UpArea.h">
+    <ClInclude Include="Source\Wind.h">
       <Filter>MyGame\Item</Filter>
     </ClInclude>
     <ClInclude Include="Source\Platform.h">
@@ -741,6 +744,18 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\pool\fire_left_14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\wind\wind_base0000.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\wind\wind_base0001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\wind\wind_base0002.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\wind\wind_base0003.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -11,6 +11,7 @@
 #include "Platform.h"
 #include "Pool.h"
 #include "Switch.h"
+#include "Wind.h"
 #include "Player.h"
 
 #include<memory>

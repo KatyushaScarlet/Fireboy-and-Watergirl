@@ -43,8 +43,7 @@ namespace game_framework
 			CAudio::Instance()->Play(AUDIO_DIAMOND, false);
 			TRACE("girl score=%d, total=%d\n", player->score, score_boy);
 		}
-		//todo fix: 当水池正下方一格有钻石时，玩家会顶穿水池下方
-		else if (type == 300 || type == 301 || type == 302)//ֻ只有水池中部有效
+		else if (type == 300 || type == 301 || type == 302)//只有水池中部有效
 		{
 			if (direction == DIRECTION_DOWN)//ֻ如果玩家下方接触水池上方
 			{
@@ -118,7 +117,7 @@ namespace game_framework
 			//触发开关
 			switch_ptr->Trigger();
 		}
-		else if (type == 400 && player->is_boy)
+		else if (type == 400 && player->is_boy)//门
 		{
 			//指针转到door类
 			shared_ptr<Door> door_ptr = std::static_pointer_cast<Door>(item);
@@ -149,7 +148,7 @@ namespace game_framework
 				}
 			}
 		}
-		else if (type == 401 && !player->is_boy)
+		else if (type == 401 && !player->is_boy)//门
 		{
 			//指针转到door类
 			shared_ptr<Door> door_ptr = std::static_pointer_cast<Door>(item);
@@ -176,6 +175,17 @@ namespace game_framework
 					door_ptr->AnimationCloseDoor();//触发关门动画
 					CAudio::Instance()->Play(AUDIO_DOOR, true);
 					CAudio::Instance()->Play(AUDIO_DOOR, false);
+				}
+			}
+		}
+		else if (type == 600)//风扇
+		{
+			if (direction == DIRECTION_DOWN)//ֻ如果玩家下方接触风扇上方
+			{
+				if (player->GetVerticalState() == DIRECTION_NONE)
+				{
+					player->velocity = INITIAL_VELOCITY;
+					player->SetVerticalState(DIRECTION_UP);
 				}
 			}
 		}

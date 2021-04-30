@@ -317,6 +317,7 @@
     </ClCompile>
     <ClCompile Include="Source\Switch.cpp" />
     <ClCompile Include="Source\Wall.cpp" />
+    <ClCompile Include="Source\Wind.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h" />
@@ -331,7 +332,7 @@
     <ClInclude Include="Source\gameView.h" />
     <ClInclude Include="Source\Item.h" />
     <ClInclude Include="Source\MainFrm.h" />
-    <ClInclude Include="Source\UpArea.h" />
+    <ClInclude Include="Source\Wind.h" />
     <ClInclude Include="Source\Platform.h" />
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\Pool.h" />
@@ -516,6 +517,10 @@
     <Image Include="RES\switch\stick_right.bmp" />
     <Image Include="RES\TempleHall.bmp" />
     <Image Include="RES\wall.bmp" />
+    <Image Include="RES\wind\wind_base0000.bmp" />
+    <Image Include="RES\wind\wind_base0001.bmp" />
+    <Image Include="RES\wind\wind_base0002.bmp" />
+    <Image Include="RES\wind\wind_base0003.bmp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="RES\pool\图片规范.txt" />

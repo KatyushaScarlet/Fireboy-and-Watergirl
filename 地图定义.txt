@@ -1,0 +1,39 @@
+29格 * 39格
+30 x 40
+
+
+素材
+256x256px
+8x8
+
+1024x768
+
+0 空白
+1 墙面
+2 fire pool \
+3 fire pool /
+4 water pool \
+5 water pool /
+6 toxic pool \
+7 toxic pool /
+
+100 fire boy
+101 water girl
+
+200 fire diamond
+201 water diamond
+
+300 fire pool
+301 water pool
+302 toxic pool
+
+400 fire door 3x3
+401 water door 3x3
+
+500 switch_button
+501 switch_stick
+
+502 platform_horizon
+503 platform_vertical
+
+600 wind
