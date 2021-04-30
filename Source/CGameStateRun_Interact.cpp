@@ -48,7 +48,8 @@ namespace game_framework
 		{
 			if (direction == DIRECTION_DOWN)//ֻ如果玩家下方接触水池上方
 			{
-				//CAudio::Instance()->Play(AUDIO_LAKE, true);
+				CAudio::Instance()->Play(AUDIO_LAKE, true);
+				CAudio::Instance()->Play(AUDIO_LAKE, false);
 				if (type == 300 && !player->is_boy)//fire & girl
 				{
 					//CAudio::Instance()->Play(AUDIO_DIE, true);
@@ -127,7 +128,7 @@ namespace game_framework
 				if (door_ptr->status == DOOR_LEAVE)
 				{
 					door_ptr->status = DOOR_ENTER;
-
+					
 					PlayerReachExit(player, true);
 					door_ptr->AnimationOpenDoor();//触发开门动画
 					CAudio::Instance()->Play(AUDIO_DOOR, true);
@@ -143,6 +144,8 @@ namespace game_framework
 
 					PlayerReachExit(player, false);
 					door_ptr->AnimationCloseDoor();//触发关门动画
+					CAudio::Instance()->Play(AUDIO_DOOR, true);
+					CAudio::Instance()->Play(AUDIO_DOOR, false);
 				}
 			}
 		}
@@ -159,6 +162,8 @@ namespace game_framework
 
 					PlayerReachExit(player, true);
 					door_ptr->AnimationOpenDoor();//触发开门动画
+					CAudio::Instance()->Play(AUDIO_DOOR, true);
+					CAudio::Instance()->Play(AUDIO_DOOR, false);
 				}
 			}
 			else//玩家离开门
@@ -169,6 +174,8 @@ namespace game_framework
 
 					PlayerReachExit(player, false);
 					door_ptr->AnimationCloseDoor();//触发关门动画
+					CAudio::Instance()->Play(AUDIO_DOOR, true);
+					CAudio::Instance()->Play(AUDIO_DOOR, false);
 				}
 			}
 		}
