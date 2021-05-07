@@ -21,7 +21,10 @@ namespace game_framework
 	void Wind::LoadItemBitmap()
 	{
 		bitmap_wall.LoadBitmapA("RES\\wall.bmp");
-		bitmap.LoadBitmapA("RES\\wind\\0.bmp",RGB(255,255,255));
+		bitmap.AddBitmap("RES\\wind\\0.bmp",RGB(255,255,255));
+		bitmap.AddBitmap("RES\\wind\\1.bmp", RGB(255, 255, 255));
+		bitmap.AddBitmap("RES\\wind\\2.bmp", RGB(255, 255, 255));
+		bitmap.AddBitmap("RES\\wind\\3.bmp", RGB(255, 255, 255));
 	}
 
 	void Wind::OnShow()
@@ -33,11 +36,12 @@ namespace game_framework
 		bitmap_wall.SetTopLeft(x + 64, y);//œ»ª≠«Ω
 		bitmap_wall.ShowBitmap();
 		bitmap.SetTopLeft(x, y);
-		bitmap.ShowBitmap();
+		bitmap.OnShow();
+		bitmap.SetDelayCount(1);
 	}
 
 	void Wind::OnMove()
 	{
-
+		bitmap.OnMove();
 	}
 }
