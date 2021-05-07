@@ -12,7 +12,7 @@ namespace game_framework {
 		void OnShow();
 		void OnMove();
 	protected:
-		CMovingBitmap bitmap;
+		CAnimation bitmap;
 		CMovingBitmap bitmap_wall;
 	};
 }
