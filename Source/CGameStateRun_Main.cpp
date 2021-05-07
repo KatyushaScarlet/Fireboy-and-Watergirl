@@ -10,7 +10,8 @@
 
 #include "CGameStateRun.h"
 
-namespace game_framework {
+namespace game_framework
+{
 	CGameStateRun::CGameStateRun(CGame* g)
 		: CGameState(g)
 	{
@@ -147,6 +148,9 @@ namespace game_framework {
 				player->moving_vertical = DIRECTION_DOWN;//当速度<=0时，垂直方向变为下降
 				player->velocity = 1;
 				player->SetAni(player->GetDown());
+
+				//上方不可通行，将flag_fan恢复
+				flag_fan = false;
 			}
 		}
 		else
@@ -171,7 +175,17 @@ namespace game_framework {
 			else
 			{
 				player->moving_vertical = DIRECTION_NONE;//当下方不可通行时，垂直方向变成静止
-				player->velocity = INITIAL_VELOCITY;//加速度变为初始值
+				
+				//在风扇上
+				if (flag_fan)
+				{
+					player->velocity = INITIAL_VELOCITY * 2;//在风扇上
+				}
+				else
+				{
+					player->velocity = INITIAL_VELOCITY;//加速度变为初始值
+				}
+				
 				player->SetAni(player->GetStatic());
 			}
 		}
@@ -262,7 +276,6 @@ namespace game_framework {
 				break;
 			}
 
-			//todo 改进
 			if (flag_change_level)//jump out
 			{
 				flag_change_level = false;
