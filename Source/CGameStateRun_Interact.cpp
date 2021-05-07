@@ -75,7 +75,7 @@ namespace game_framework
 			//指针转到switch类
 			shared_ptr<Switch> switch_ptr = std::static_pointer_cast<Switch>(item);
 
-			if ((x1 > switch_ptr->GetX1() - 16) && (x2 < switch_ptr->GetX2() + 16) /*&& (y2 > this->GetY1())*/)//扩大判定范围？
+			if ((x1 > switch_ptr->GetX1() - 16) && (x2 < switch_ptr->GetX2() + 16))//扩大判定范围？
 			{
 				if (switch_ptr->status == SWITCH_RELEASE)//按钮只能被按下一次
 				{
@@ -99,7 +99,7 @@ namespace game_framework
 			//指针转到switch类
 			shared_ptr<Switch> switch_ptr = std::static_pointer_cast<Switch>(item);
 
-			if ((x1 > switch_ptr->GetX1() - 16) && (x2 < switch_ptr->GetX2() + 16) /*&& (y2 > this->GetY1())*/)//扩大判定范围？
+			if ((x1 > switch_ptr->GetX1() - 16) && (x2 < switch_ptr->GetX2() + 16))//扩大判定范围？
 			{
 				if (switch_ptr->status == SWITCH_RELEASE)//拉杆被触发，转换状态
 				{
@@ -180,13 +180,30 @@ namespace game_framework
 		}
 		else if (type == 600)//风扇
 		{
-			if (direction == DIRECTION_DOWN)//ֻ如果玩家下方接触风扇上方
+			//if (direction == DIRECTION_DOWN)//ֻ如果玩家下方接触风扇上方
+			//{
+			//	if (player->GetVerticalState() == DIRECTION_NONE)
+			//	{
+			//		flag_fan = true;
+			//	}
+			//}
+			shared_ptr<Wind> wind_ptr = std::static_pointer_cast<Wind>(item);
+
+			if ((x1 > wind_ptr->GetX1() - 16) && (x2 < wind_ptr->GetX2() + 16))//玩家进入
 			{
-				if (player->GetVerticalState() == DIRECTION_NONE)
+				if (direction == DIRECTION_DOWN)//ֻ如果玩家下方接触风扇上方
 				{
-					player->velocity = INITIAL_VELOCITY;
-					player->SetVerticalState(DIRECTION_UP);
+					if (player->GetVerticalState() == DIRECTION_NONE)
+					{
+						//TRACE("in\n");
+						flag_fan = true;
+					}
 				}
+			}
+			else//玩家离开
+			{
+				//TRACE("out\n");
+				flag_fan = false;
 			}
 		}
 		else
