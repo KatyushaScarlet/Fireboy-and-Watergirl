@@ -36,7 +36,7 @@ namespace game_framework
 	void CGameStateRun::OnBeginState()//游戏每次重开后载入
 	{
 		//InitMapLevel(0);
-		InitMapLevel(2);//测试关卡
+		InitMapLevel(0);//测试关卡
 	}
 
 	void CGameStateRun::OnInit()//只在第一次启动时载入
@@ -137,6 +137,9 @@ namespace game_framework
 			}
 			else
 			{
+				//上方不可通行，将flag_fan恢复
+				flag_fan = false;
+
 				if (player->is_boy)
 				{
 					CAudio::Instance()->Play(AUDIO_BOYJUMP, false);
@@ -149,8 +152,8 @@ namespace game_framework
 				player->velocity = 1;
 				player->SetAni(player->GetDown());
 
-				//上方不可通行，将flag_fan恢复
-				flag_fan = false;
+				////上方不可通行，将flag_fan恢复
+				//flag_fan = false;
 			}
 		}
 		else
@@ -179,7 +182,7 @@ namespace game_framework
 				//在风扇上
 				if (flag_fan)
 				{
-					player->velocity = INITIAL_VELOCITY * 2;//在风扇上
+					player->velocity = INITIAL_VELOCITY * 3;//在风扇上
 				}
 				else
 				{

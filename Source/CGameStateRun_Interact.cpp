@@ -180,13 +180,6 @@ namespace game_framework
 		}
 		else if (type == 600)//风扇
 		{
-			//if (direction == DIRECTION_DOWN)//ֻ如果玩家下方接触风扇上方
-			//{
-			//	if (player->GetVerticalState() == DIRECTION_NONE)
-			//	{
-			//		flag_fan = true;
-			//	}
-			//}
 			shared_ptr<Wind> wind_ptr = std::static_pointer_cast<Wind>(item);
 
 			if ((x1 > wind_ptr->GetX1() - 16) && (x2 < wind_ptr->GetX2() + 16))//玩家进入
