@@ -189,14 +189,30 @@ namespace game_framework
 					if (player->GetVerticalState() == DIRECTION_NONE)
 					{
 						//TRACE("in\n");
-						flag_fan = true;
+
+						if (player->is_boy)
+						{
+							flag_fan_boy = true;
+						}
+						else
+						{
+							flag_fan_girl = true;
+						}
 					}
 				}
 			}
 			else//玩家离开
 			{
 				//TRACE("out\n");
-				flag_fan = false;
+
+				if (player->is_boy)
+				{
+					flag_fan_boy = false;
+				}
+				else
+				{
+					flag_fan_girl = false;
+				}
 			}
 		}
 		else

@@ -35,8 +35,7 @@ namespace game_framework
 
 	void CGameStateRun::OnBeginState()//游戏每次重开后载入
 	{
-		//InitMapLevel(0);
-		InitMapLevel(0);//测试关卡
+		InitMapLevel(0);//测试
 	}
 
 	void CGameStateRun::OnInit()//只在第一次启动时载入
@@ -138,7 +137,16 @@ namespace game_framework
 			else
 			{
 				//上方不可通行，将flag_fan恢复
-				flag_fan = false;
+
+				//flag_fan = false;
+				if (player->is_boy)
+				{
+					flag_fan_boy = false;
+				}
+				else
+				{
+					flag_fan_girl = false;
+				}
 
 				if (player->is_boy)
 				{
@@ -180,7 +188,7 @@ namespace game_framework
 				player->moving_vertical = DIRECTION_NONE;//当下方不可通行时，垂直方向变成静止
 				
 				//在风扇上
-				if (flag_fan)
+				if (flag_fan_boy&&player->is_boy || flag_fan_girl && !player->is_boy)
 				{
 					player->velocity = INITIAL_VELOCITY * 3;//在风扇上
 				}

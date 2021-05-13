@@ -83,6 +83,7 @@ namespace game_framework {
 		bool flag_game_loaded = false;
 		bool flag_change_level = false;
 
-		bool flag_fan = false;
+		bool flag_fan_boy = false;
+		bool flag_fan_girl = false;
 	};
 }

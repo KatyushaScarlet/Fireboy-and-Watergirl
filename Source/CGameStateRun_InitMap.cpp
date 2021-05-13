@@ -432,6 +432,8 @@ namespace game_framework
 					map_array[i][j] = map_level_2[i][j];
 				}
 			}
+
+			break;
 		}
 		case 3:
 		{
@@ -458,6 +460,8 @@ namespace game_framework
 			shared_ptr<Switch> platform2_stick1 = make_shared<Switch>(501, 4, 3);
 			platform2_stick1->Bind(platform2);//绑定平台
 			item_ptrs.push_back(platform2_stick1);
+
+			break;
 		}
 		case 4:
 		{
@@ -491,6 +495,8 @@ namespace game_framework
 			shared_ptr<Switch> platform3_stick1 = make_shared<Switch>(501, 13, 9);
 			platform3_stick1->Bind(platform3);//绑定平台
 			item_ptrs.push_back(platform3_stick1);
+
+			break;
 		}
 		case 5:
 		{
@@ -501,6 +507,8 @@ namespace game_framework
 					map_array[i][j] = map_level_5[i][j];
 				}
 			}
+
+			break;
 		}
 		case 6:
 		{
@@ -537,6 +545,8 @@ namespace game_framework
 			platform3_button2->Bind(platform3);//绑定平台
 			item_ptrs.push_back(platform3_button1);
 			item_ptrs.push_back(platform3_button2);
+
+			break;
 		}
 		case 7:
 		{
@@ -547,6 +557,8 @@ namespace game_framework
 					map_array[i][j] = map_level_7[i][j];
 				}
 			}
+
+			break;
 		}
 		case 8:
 		{
@@ -571,6 +583,8 @@ namespace game_framework
 			shared_ptr<Switch> platform2_stick1 = make_shared<Switch>(501, 10, 11);
 			platform2_stick1->Bind(platform2);//绑定平台
 			item_ptrs.push_back(platform2_stick1);
+
+			break;
 		}
 		case 9:
 		{
@@ -602,6 +616,8 @@ namespace game_framework
 			shared_ptr<Switch> platform3_button1 = make_shared<Switch>(500, 17, 17);
 			platform3_button1->Bind(platform3);//绑定平台
 			item_ptrs.push_back(platform3_button1);
+
+			break;
 		}
 		default:
 			break;
