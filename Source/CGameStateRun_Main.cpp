@@ -35,7 +35,7 @@ namespace game_framework
 
 	void CGameStateRun::OnBeginState()//游戏每次重开后载入
 	{
-		InitMapLevel(0);//测试
+		InitMapLevel(2);//测试
 	}
 
 	void CGameStateRun::OnInit()//只在第一次启动时载入
