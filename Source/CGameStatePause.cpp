@@ -79,7 +79,7 @@ namespace game_framework
 		// 沒事。如果需要處理滑鼠移動的話，寫code在這裡
 		mouse_x = point.x;
 		mouse_y = point.y;
-		TRACE("x=%d,y=%d\n", mouse_x, mouse_y);
+		//TRACE("x=%d,y=%d\n", mouse_x, mouse_y);
 	}
 
 	void CGameStatePause::OnRButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
