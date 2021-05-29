@@ -23,6 +23,9 @@
     <Filter Include="MyGame\CGameStateRun">
       <UniqueIdentifier>{91c3a2f3-1d75-4ae0-95cd-34e6ecd5f1b0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MyGame\Other">
+      <UniqueIdentifier>{f9fd5bbc-c366-46ec-b60d-dc80f43511a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Res\ball.bmp">
@@ -179,6 +182,9 @@
     <ClCompile Include="Source\Wind.cpp">
       <Filter>MyGame\Item</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Menu.cpp">
+      <Filter>MyGame\Other</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -246,6 +252,9 @@
     </ClInclude>
     <ClInclude Include="Source\CGameStateRun.h">
       <Filter>MyGame\CGameStateRun</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Menu.h">
+      <Filter>MyGame\Other</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -756,6 +765,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\wind\wind_base0003.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\menu\over.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\menu\pause.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

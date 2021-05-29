@@ -268,6 +268,7 @@
     <ClCompile Include="Source\Door.cpp" />
     <ClCompile Include="Source\CGameStateRun_InitMap.cpp" />
     <ClCompile Include="Source\Item.cpp" />
+    <ClCompile Include="Source\Menu.cpp" />
     <ClCompile Include="Source\Platform.cpp" />
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\audio.cpp" />
@@ -332,6 +333,7 @@
     <ClInclude Include="Source\gameView.h" />
     <ClInclude Include="Source\Item.h" />
     <ClInclude Include="Source\MainFrm.h" />
+    <ClInclude Include="Source\Menu.h" />
     <ClInclude Include="Source\Wind.h" />
     <ClInclude Include="Source\Platform.h" />
     <ClInclude Include="Source\Player.h" />
@@ -357,6 +359,8 @@
     <Image Include="RES\door\fire0.bmp" />
     <Image Include="RES\door\water0.bmp" />
     <Image Include="RES\loadingnew.bmp" />
+    <Image Include="RES\menu\over.bmp" />
+    <Image Include="RES\menu\pause.bmp" />
     <Image Include="RES\platform\horizon.bmp" />
     <Image Include="RES\platform\vertical.bmp" />
     <Image Include="RES\player\boy_down0.bmp" />

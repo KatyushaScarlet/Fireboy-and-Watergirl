@@ -13,6 +13,7 @@
 #include "Switch.h"
 #include "Wind.h"
 #include "Player.h"
+#include "Menu.h"
 
 #include<memory>
 
@@ -69,6 +70,7 @@ namespace game_framework {
 	private:
 		int now_level;//目前的关卡
 		int	map_array[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH];//地图数据
+		int show_menu;//是否显示菜单，0：不显示，1：显示过关，2：显示死亡
 
 		int score_boy = 0;
 		int score_girl = 0;

@@ -20,6 +20,9 @@ namespace game_framework
 	const char KEY_S = 83;
 	const char KEY_D = 68;
 
+	bool flag_pause;
+	bool flag_gameover;
+
 	void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
 		if (flag_game_loaded)
