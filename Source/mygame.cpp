@@ -171,6 +171,9 @@ void CGameStateOver::OnMove()
 void CGameStateOver::OnBeginState()
 {
 	counter = 30 * 5; // 5 seconds
+
+	final_score_boy = score_boy;
+	filal_score_girl = score_girl;
 }
 
 void CGameStateOver::OnInit()
@@ -201,6 +204,14 @@ void CGameStateOver::OnShow()
 	char str[80];								// Demo 數字對字串的轉換
 	sprintf(str, "Game Over ! (%d)", counter / 30);
 	pDC->TextOut(570,420,str);
+
+	//todo: fixbug 分数第二次显示被清零
+	sprintf(str, "Boy Score: %d", final_score_boy);
+	pDC->TextOut(590, 450, str);
+
+	sprintf(str, "Girl Score: %d", filal_score_girl);
+	pDC->TextOut(590, 480, str);
+
 	pDC->SelectObject(fp);						// 放掉 font f (千萬不要漏了放掉)
 	CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
 }

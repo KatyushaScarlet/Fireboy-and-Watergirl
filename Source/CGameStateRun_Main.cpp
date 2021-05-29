@@ -323,9 +323,9 @@ namespace game_framework
 
 		//暂停游戏逻辑
 		flag_game_loaded = false;
-		//分数清零
-		score_boy = 0;
-		score_girl = 0;
+		//玩家分数累加到总分
+		score_boy += boy->score;
+		score_girl += girl->score;
 		//游戏结束
 		CAudio::Instance()->Play(AUDIO_DIE, false);
 		//显示死亡菜单

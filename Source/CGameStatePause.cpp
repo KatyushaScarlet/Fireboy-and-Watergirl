@@ -57,6 +57,9 @@ namespace game_framework
 				GotoGameState(GAME_STATE_OVER);
 				//关卡清零
 				flag_now_level = 0;
+				//分数清零
+				score_boy = 0;
+				score_girl = 0;
 			}
 			else
 			{
