@@ -126,6 +126,7 @@
 #include "mygame.h"
 
 #include "CGameStateRun.h"
+#include "CGameStatePause.h"
 
 namespace game_framework {
 
@@ -415,6 +416,12 @@ int CMovingBitmap::Width()
 // 這個class為遊戲的各種狀態之Base class(是一個abstract class)
 /////////////////////////////////////////////////////////////////////////////
 
+//重新定义static变量
+int CGameState::score_boy = 0;
+int CGameState::score_girl = 0;
+int CGameState::flag_game_menu_type = 0;
+int CGameState::flag_now_level = 0;
+
 CGameState::CGameState(CGame *g)
 {
 	game = g; 	// 設定game的pointer
@@ -495,13 +502,16 @@ void CGameState::OnCycle() // Template Method
 CGame CGame::instance;
 
 CGame::CGame()
-: NUM_GAME_STATES(3)
+: NUM_GAME_STATES(4)//add gamestate
 {
 	running = true;
 	suspended = false;
 	gameStateTable[GAME_STATE_INIT] = new CGameStateInit(this);
 	gameStateTable[GAME_STATE_RUN]  = new CGameStateRun(this);
 	gameStateTable[GAME_STATE_OVER] = new CGameStateOver(this);
+	//add
+	gameStateTable[GAME_STATE_PAUSE] = new CGameStatePause(this);
+
 	gameState = NULL;
 }
 

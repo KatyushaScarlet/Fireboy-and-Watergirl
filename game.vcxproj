@@ -261,6 +261,7 @@
     <None Include="Source\game.aps" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\CGameStatePause.cpp" />
     <ClCompile Include="Source\CGameStateRun_KeyInput.cpp" />
     <ClCompile Include="Source\CGameStateRun_Main.cpp" />
     <ClCompile Include="Source\CGameStateRun_Interact.cpp" />
@@ -325,6 +326,7 @@
     <ClInclude Include="Source\CBall.h" />
     <ClInclude Include="Source\CBouncingBall.h" />
     <ClInclude Include="Source\CEraser.h" />
+    <ClInclude Include="Source\CGameStatePause.h" />
     <ClInclude Include="Source\CGameStateRun.h" />
     <ClInclude Include="Source\Diamond.h" />
     <ClInclude Include="Source\Door.h" />

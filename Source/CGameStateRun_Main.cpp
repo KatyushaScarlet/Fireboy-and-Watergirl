@@ -16,13 +16,11 @@ namespace game_framework
 		: CGameState(g)
 	{
 		//InitMapLevel(0);
-
 	}
 
 	CGameStateRun::~CGameStateRun()
 	{
 		ResetMap();
-		
 	}
 
 	void CGameStateRun::ResetMap()
@@ -35,7 +33,7 @@ namespace game_framework
 
 	void CGameStateRun::OnBeginState()//游戏每次重开后载入
 	{
-		InitMapLevel(2);//测试
+		InitMapLevel(flag_now_level);//继续之前的关卡
 	}
 
 	void CGameStateRun::OnInit()//只在第一次启动时载入
@@ -48,11 +46,17 @@ namespace game_framework
 		CAudio::Instance()->Load(AUDIO_BOYJUMP, "sounds\\901_Jump2_Sound.wav");
 		CAudio::Instance()->Load(AUDIO_LAKE, "sounds\\WaterSteps.mp3");
 		CAudio::Instance()->Load(AUDIO_DOOR, "sounds\\906_Door_Sound.wav");
+
+		score_boy = 0;
+		score_girl = 0;
 	}
 
 	void CGameStateRun::LoadGameBitmap()//只执行一次
 	{
 		background.LoadBitmap("RES\\background.bmp");
+		////初始化菜单
+		//game_menu = make_shared<Menu>();
+		//game_menu->LoadItemBitmap();
 	}
 
 	void CGameStateRun::LoadItemBitmap()//更换关卡或重启后执行
@@ -86,6 +90,11 @@ namespace game_framework
 			boy->OnShow();
 			girl->OnShow();
 		}
+
+		//if (flag_game_menu!=0)
+		//{
+		//	game_menu->OnShow(flag_game_menu);
+		//}
 	};
 
 	void CGameStateRun::OnMove()//移动
@@ -319,7 +328,11 @@ namespace game_framework
 		score_girl = 0;
 		//游戏结束
 		CAudio::Instance()->Play(AUDIO_DIE, false);
-		GotoGameState(GAME_STATE_OVER);
+		//显示死亡菜单
+		flag_game_menu_type = 2;//over menu
+		//GotoGameState(GAME_STATE_OVER);
+		GotoGameState(GAME_STATE_PAUSE);
+
 		//CAudio::Instance()->Stop(AUDIO_DIE);
 		//todo: game over画面显示玩家总分，需要在此处再累加一次
 	}
@@ -339,10 +352,14 @@ namespace game_framework
 			//玩家分数累加到总分
 			score_boy += boy->score;
 			score_girl += girl->score;
+			//显示暂停菜单
 			//切换关卡
-			now_level++;
-			
-			InitMapLevel(now_level);
+			flag_now_level++;
+			InitMapLevel(flag_now_level);
+
+			//显示暂停菜单
+			flag_game_menu_type = 1;//pause menu
+			GotoGameState(GAME_STATE_PAUSE);
 		}
 	}
 
@@ -357,4 +374,19 @@ namespace game_framework
 
 		return coordinate;
 	}
+
+	//void CGameStateRun::ShowPauseMenu()
+	//{
+	//	TRACE("wait for mouse click\n");
+	//	//等待鼠标点击
+	//	while (true)
+	//	{
+	//		if (mouse_click == 1)
+	//		{
+	//			mouse_click = 0;
+	//			break;
+	//		}
+	//	}
+	//	TRACE("mouse click\n");
+	//}
 }

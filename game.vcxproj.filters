@@ -26,6 +26,9 @@
     <Filter Include="MyGame\Other">
       <UniqueIdentifier>{f9fd5bbc-c366-46ec-b60d-dc80f43511a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MyGame\CGameStatePause">
+      <UniqueIdentifier>{93b3d835-0830-43d6-b6dc-f139182ea1a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Res\ball.bmp">
@@ -185,6 +188,9 @@
     <ClCompile Include="Source\Menu.cpp">
       <Filter>MyGame\Other</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CGameStatePause.cpp">
+      <Filter>MyGame\CGameStatePause</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -255,6 +261,9 @@
     </ClInclude>
     <ClInclude Include="Source\Menu.h">
       <Filter>MyGame\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CGameStatePause.h">
+      <Filter>MyGame\CGameStatePause</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

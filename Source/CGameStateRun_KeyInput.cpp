@@ -129,6 +129,8 @@ namespace game_framework
 	void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
 	{
 		//eraser.SetMovingLeft(true);
+		//mouse_click = 1;
+		//TRACE("mouse click\n");
 	}
 
 	void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
@@ -139,6 +141,9 @@ namespace game_framework
 	void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 	{
 		// 沒事。如果需要處理滑鼠移動的話，寫code在這裡
+		//mouse_x = point.x;
+		//mouse_y = point.y;
+		//TRACE("x=%d,y=%d\n", mouse_x, mouse_y);
 	}
 
 	void CGameStateRun::OnRButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作

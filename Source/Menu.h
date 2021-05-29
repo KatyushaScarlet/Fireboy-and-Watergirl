@@ -13,7 +13,7 @@ namespace game_framework {
 		CMovingBitmap bitmap_pause;
 		CMovingBitmap bitmap_over;
 
-		int top = 159;
-		int left = 99;
+		int top = 0;
+		int left = 0;
 	};
 }

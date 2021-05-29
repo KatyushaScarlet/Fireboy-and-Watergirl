@@ -64,16 +64,20 @@ namespace game_framework {
 		//void DeleteItem(shared_ptr<Item> item);//删除元素
 		PlayerCoordinate GetPlayerCoordinate(shared_ptr<Player> player);//获取玩家座标
 
+		//void ShowPauseMenu();//显示暂停菜单
+		//void ShowOverMenu();//显示结束菜单
+
+
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
-		int now_level;//目前的关卡
+		//int now_level = 0;//目前的关卡
 		int	map_array[MAP_SIZE_HEIGHT][MAP_SIZE_WIDTH];//地图数据
 		int show_menu;//是否显示菜单，0：不显示，1：显示过关，2：显示死亡
 
-		int score_boy = 0;
-		int score_girl = 0;
+		//int score_boy = 0;
+		//int score_girl = 0;
 
 		shared_ptr<Player> boy;
 		shared_ptr<Player> girl;
@@ -87,5 +91,15 @@ namespace game_framework {
 
 		bool flag_fan_boy = false;
 		bool flag_fan_girl = false;
+
+		//----------------------------------------------
+		//shared_ptr<Menu> game_menu;
+
+		//int flag_game_menu = 0;
+
+		//int mouse_click = 0;
+		//int mouse_x = 0;
+		//int mouse_y = 0;
+		//----------------------------------------------
 	};
 }
