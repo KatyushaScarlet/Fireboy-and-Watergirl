@@ -368,6 +368,8 @@ void CMovingBitmap::LoadBitmap(char *filename, COLORREF color)
 	location.bottom = ny+bitmapSize.bmHeight;
 	SurfaceID = CDDraw::RegisterBitmap(filename, color);
 	isBitmapLoaded = true;
+	//fixbug
+	bmp->DeleteObject();
 }
 
 void CMovingBitmap::SetTopLeft(int x, int y)
