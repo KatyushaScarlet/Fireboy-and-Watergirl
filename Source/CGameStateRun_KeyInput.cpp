@@ -20,6 +20,8 @@ namespace game_framework
 	const char KEY_S = 83;
 	const char KEY_D = 68;
 
+	const char KEY_PLUS = 107;
+
 	bool flag_pause;
 	bool flag_gameover;
 
@@ -27,6 +29,7 @@ namespace game_framework
 	{
 		if (flag_game_loaded)
 		{
+			TRACE("KEY VALUE=%d\n", nChar);
 			switch (nChar)
 			{
 			case KEY_UP:
@@ -72,6 +75,24 @@ namespace game_framework
 					girl->SetHorizontalState(DIRECTION_RIGHT);
 				}
 				break;
+			case KEY_PLUS:
+				//cheat
+
+				//暂停游戏逻辑
+				flag_game_loaded = false;
+				//准备切换关卡
+				flag_change_level = true;
+				//玩家分数累加到总分
+				score_boy += boy->score;
+				score_girl += girl->score;
+				//显示暂停菜单
+				//切换关卡
+				flag_now_level++;
+				InitMapLevel(flag_now_level);
+
+				//显示暂停菜单
+				flag_game_menu_type = 1;//pause menu
+				GotoGameState(GAME_STATE_PAUSE);
 			default:
 				break;
 			}
