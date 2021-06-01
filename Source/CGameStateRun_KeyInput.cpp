@@ -77,7 +77,9 @@ namespace game_framework
 				break;
 			case KEY_PLUS:
 				//cheat
-
+				//reset flag
+				boy->reach_exit = false;
+				girl->reach_exit = false;
 				//暂停游戏逻辑
 				flag_game_loaded = false;
 				//准备切换关卡

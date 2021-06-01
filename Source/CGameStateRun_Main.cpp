@@ -343,6 +343,7 @@ namespace game_framework
 
 		if (boy->reach_exit && girl->reach_exit)
 		{
+			//reset flag
 			boy->reach_exit = false;
 			girl->reach_exit = false;
 			//暂停游戏逻辑
