@@ -191,6 +191,9 @@
     <ClCompile Include="Source\CGameStatePause.cpp">
       <Filter>MyGame\CGameStatePause</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Box.cpp">
+      <Filter>MyGame\Item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -264,6 +267,9 @@
     </ClInclude>
     <ClInclude Include="Source\CGameStatePause.h">
       <Filter>MyGame\CGameStatePause</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Box.h">
+      <Filter>MyGame\Item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -780,6 +786,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\menu\pause.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\box\box.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

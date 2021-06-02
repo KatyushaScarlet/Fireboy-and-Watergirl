@@ -261,6 +261,7 @@
     <None Include="Source\game.aps" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Box.cpp" />
     <ClCompile Include="Source\CGameStatePause.cpp" />
     <ClCompile Include="Source\CGameStateRun_KeyInput.cpp" />
     <ClCompile Include="Source\CGameStateRun_Main.cpp" />
@@ -323,6 +324,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h" />
+    <ClInclude Include="Source\Box.h" />
     <ClInclude Include="Source\CBall.h" />
     <ClInclude Include="Source\CBouncingBall.h" />
     <ClInclude Include="Source\CEraser.h" />
@@ -356,6 +358,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="RES\background.bmp" />
+    <Image Include="RES\box\box.bmp" />
     <Image Include="RES\diamond\fire.bmp" />
     <Image Include="RES\diamond\water.bmp" />
     <Image Include="RES\door\fire0.bmp" />

@@ -12,6 +12,7 @@
 #include "Pool.h"
 #include "Switch.h"
 #include "Wind.h"
+#include "Box.h"
 #include "Player.h"
 #include "Menu.h"
 
