@@ -9,6 +9,8 @@
 #include "CGameStatePause.h"
 #include "Menu.h"
 
+#define MAXLEVEL 10
+
 
 namespace game_framework
 {
@@ -47,13 +49,32 @@ namespace game_framework
 		{
 		case 1:
 			//pause
-			GotoGameState(GAME_STATE_RUN);
+			if (flag_now_level== MAXLEVEL)
+			{
+				//完成最后一关
+				//you win
+				flag_win = true;
+				//展示分数
+				GotoGameState(GAME_STATE_OVER);
+				//关卡清零
+				flag_now_level = 0;
+				//分数清零
+				score_boy = 0;
+				score_girl = 0;
+			}
+			else 
+			{
+				GotoGameState(GAME_STATE_RUN);
+			}
+
 			break;
 		case 2:
 			//over
 			if (mouse_x<640)
 			{
-				//menu
+				//you lose 
+				flag_win = false;
+				//展示分数
 				GotoGameState(GAME_STATE_OVER);
 				//关卡清零
 				flag_now_level = 0;

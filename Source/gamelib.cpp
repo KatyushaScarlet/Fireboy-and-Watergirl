@@ -423,6 +423,7 @@ int CGameState::score_boy = 0;
 int CGameState::score_girl = 0;
 int CGameState::flag_game_menu_type = 0;
 int CGameState::flag_now_level = 0;
+bool CGameState::flag_win = false;
 
 CGameState::CGameState(CGame *g)
 {

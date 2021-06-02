@@ -306,6 +306,7 @@ public:
 	static int score_girl;
 	static int flag_game_menu_type;//0 none,1 pause,2 gameover
 	static int flag_now_level;//当前关卡
+	static bool flag_win;//是否胜利
 
 protected:
 	void GotoGameState(int state);							// 跳躍至指定的state

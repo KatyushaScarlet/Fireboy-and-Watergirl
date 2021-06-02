@@ -202,15 +202,23 @@ void CGameStateOver::OnShow()
 	pDC->SetBkColor(RGB(0,0,0));
 	pDC->SetTextColor(RGB(255,255,0));
 	char str[80];								// Demo 數字對字串的轉換
-	sprintf(str, "Game Over ! (%d)", counter / 30);
-	pDC->TextOut(570,420,str);
+
+	if (flag_win)
+	{
+		sprintf(str, "You Win ! (%d)", counter / 30);
+	}
+	else 
+	{
+		sprintf(str, "You Lose ! (%d)", counter / 30);
+	}
+	pDC->TextOut(570, 420, str);
 
 	//todo: fixbug 分数第二次显示被清零
 	sprintf(str, "Boy Score: %d", final_score_boy);
-	pDC->TextOut(590, 450, str);
+	pDC->TextOut(580, 450, str);
 
 	sprintf(str, "Girl Score: %d", filal_score_girl);
-	pDC->TextOut(590, 480, str);
+	pDC->TextOut(580, 480, str);
 
 	pDC->SelectObject(fp);						// 放掉 font f (千萬不要漏了放掉)
 	CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
