@@ -47,8 +47,30 @@ namespace game_framework
 
 		switch (flag_game_menu_type)
 		{
+		case 0:
+			//pause
+			//score=0
+			if (flag_now_level == MAXLEVEL)
+			{
+				//完成最后一关
+				//you win
+				flag_win = true;
+				//展示分数
+				GotoGameState(GAME_STATE_OVER);
+				//关卡清零
+				flag_now_level = 0;
+				//分数清零
+				score_boy = 0;
+				score_girl = 0;
+			}
+			else
+			{
+				GotoGameState(GAME_STATE_RUN);
+			}
+			break;
 		case 1:
 			//pause
+			//score!=0
 			if (flag_now_level== MAXLEVEL)
 			{
 				//完成最后一关
@@ -66,7 +88,6 @@ namespace game_framework
 			{
 				GotoGameState(GAME_STATE_RUN);
 			}
-
 			break;
 		case 2:
 			//over

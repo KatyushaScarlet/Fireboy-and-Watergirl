@@ -16,7 +16,8 @@ namespace game_framework
 
 	void Menu::LoadItemBitmap()
 	{
-		bitmap_pause.LoadBitmapA("RES\\menu\\pause.bmp");
+		bitmap_pause0.LoadBitmapA("RES\\menu\\pause0.bmp");
+		bitmap_pause1.LoadBitmapA("RES\\menu\\pause1.bmp");
 		bitmap_over.LoadBitmapA("RES\\menu\\over.bmp");
 	}
 
@@ -24,9 +25,13 @@ namespace game_framework
 	{
 		switch (menuType)
 		{
+		case 0:
+			bitmap_pause0.SetTopLeft(left, top);
+			bitmap_pause0.ShowBitmap();
+			break;
 		case 1:
-			bitmap_pause.SetTopLeft(left,top);
-			bitmap_pause.ShowBitmap();
+			bitmap_pause1.SetTopLeft(left,top);
+			bitmap_pause1.ShowBitmap();
 			break;
 		case 2:
 			bitmap_over.SetTopLeft(left, top);

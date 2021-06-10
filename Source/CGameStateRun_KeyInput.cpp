@@ -93,7 +93,14 @@ namespace game_framework
 				InitMapLevel(flag_now_level);
 
 				//显示暂停菜单
-				flag_game_menu_type = 1;//pause menu
+				if (score_boy == 0 && score_girl == 0)
+				{
+					flag_game_menu_type = 0;//pause menu, score=0
+				}
+				else
+				{
+					flag_game_menu_type = 1;//pause menu, score!=0
+				}
 				GotoGameState(GAME_STATE_PAUSE);
 			default:
 				break;
