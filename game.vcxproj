@@ -366,6 +366,8 @@
     <Image Include="RES\loadingnew.bmp" />
     <Image Include="RES\menu\over.bmp" />
     <Image Include="RES\menu\pause.bmp" />
+    <Image Include="RES\menu\pause0.bmp" />
+    <Image Include="RES\menu\pause1.bmp" />
     <Image Include="RES\platform\horizon.bmp" />
     <Image Include="RES\platform\vertical.bmp" />
     <Image Include="RES\player\boy_down0.bmp" />
