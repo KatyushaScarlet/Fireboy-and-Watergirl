@@ -59,6 +59,8 @@
 #include "gamelib.h"
 #include "mygame.h"
 
+#include <windows.h>
+
 namespace game_framework {
 /////////////////////////////////////////////////////////////////////////////
 // 這個class為遊戲的遊戲開頭畫面物件
@@ -76,12 +78,13 @@ void CGameStateInit::OnInit()
 	// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
 	//     等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
 	//
-	ShowInitProgress(0);	// 一開始的loading進度為0%
+	//ShowInitProgress(0);	// 一開始的loading進度為0%
 	//
 	// 開始載入資料
 	//
 	logo.LoadBitmap(IDB_BACKGROUND);
-	background.LoadBitmap(IDB_STARTB);
+	background_title.LoadBitmap("RES\\title\\title.bmp");
+	background_about.LoadBitmap("RES\\title\\about.bmp");
 	//start_text.LoadBitmapA("RES\\STARTTEXT.bmp", RGB(255, 255, 255));
 	animation_static_boy.AddBitmap("RES\\boy_static0.bmp", RGB(0, 0, 0));
 	animation_static_boy.AddBitmap("RES\\boy_static1.bmp", RGB(0, 0, 0));
@@ -117,7 +120,53 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point)
 {
-	GotoGameState(GAME_STATE_RUN);		// 切換至GAME_STATE_RUN
+	//GotoGameState(GAME_STATE_RUN);		// 切換至GAME_STATE_RUN
+
+	/*
+	about: x=530~750, y=830~930
+	open origin game: x=350~730, y=490~580
+	back to title: x=430~840, y=670~750
+	*/
+	int x = point.x;
+	int y = point.y;
+	switch (flag_background_type)
+	{
+	case 0:
+	{
+		if (x >= 530 && x <= 750 && y >= 830 && y <= 930)
+		{
+			//about
+			flag_background_type = 1;
+		}
+		else 
+		{
+			GotoGameState(GAME_STATE_RUN);		// 切換至GAME_STATE_RUN
+		}
+	}
+		break;
+	case 1:
+	{
+		if (x >= 350 && x <= 730 && y >= 490 && y <= 580)
+		{
+			//open original game
+			char* linkChar = "https://html5.gamedistribution.com/a55c9cc9c21e4fc683c8c6857f3d0c75/";
+			ShellExecute(NULL, NULL, linkChar, NULL, NULL, SW_SHOWNORMAL);
+		}
+		else if (x >= 430 && x <= 840 && y >= 670 && y <= 750)
+		{
+			//back to game title
+			flag_background_type = 0;
+		}
+	}
+		break;
+	default:
+		break;
+	}
+}
+
+void CGameStateInit::OnMouseMove(UINT nFlags, CPoint point)
+{
+	//TRACE("x=%d,y=%d\n", point.x, point.y);
 }
 
 void CGameStateInit::OnShow()
@@ -125,8 +174,20 @@ void CGameStateInit::OnShow()
 	//
 	// 貼上logo
 	//
-	background.SetTopLeft(0, 0);
-	background.ShowBitmap();
+	switch (flag_background_type)
+	{
+	case 0:
+		background_title.SetTopLeft(0, 0);
+		background_title.ShowBitmap();
+		break;
+	case 1:
+		background_about.SetTopLeft(0, 0);
+		background_about.ShowBitmap();
+		break;
+	default:
+		break;
+	}
+
 	animation_static_boy.SetTopLeft(400, 740);
 	animation_static_boy.OnShow();
 	animation_static_boy.OnMove();
@@ -136,20 +197,20 @@ void CGameStateInit::OnShow()
 	//
 	// Demo螢幕字型的使用，不過開發時請盡量避免直接使用字型，改用CMovingBitmap比較好
 	//
-	CDC* pDC = CDDraw::GetBackCDC();			// 取得 Back Plain 的 CDC 
-	CFont f, * fp;
-	f.CreatePointFont(160, "Times New Roman");	// 產生 font f; 160表示16 point的字
-	fp = pDC->SelectObject(&f);					// 選用 font f
-	pDC->SetBkColor(RGB(0, 0, 0));
-	pDC->SetTextColor(RGB(255, 255, 0));
+	//CDC* pDC = CDDraw::GetBackCDC();			// 取得 Back Plain 的 CDC 
+	//CFont f, * fp;
+	//f.CreatePointFont(160, "Times New Roman");	// 產生 font f; 160表示16 point的字
+	//fp = pDC->SelectObject(&f);					// 選用 font f
+	//pDC->SetBkColor(RGB(0, 0, 0));
+	//pDC->SetTextColor(RGB(255, 255, 0));
 
 	//pDC->TextOut(455, 640, "Please click mouse or press SPACE to begin.");
 	//pDC->TextOut(5, 810, "Press Ctrl-F to switch in between window mode and full screen mode.");
 	//if (ENABLE_GAME_PAUSE)
 	//	pDC->TextOut(5, 840, "Press Ctrl-Q to pause the Game.");
 	//pDC->TextOut(5, 870, "Press Alt-F4 or ESC to Quit.");
-	pDC->SelectObject(fp);						// 放掉 font f (千萬不要漏了放掉)
-	CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
+	//pDC->SelectObject(fp);						// 放掉 font f (千萬不要漏了放掉)
+	//CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
 }								
 
 /////////////////////////////////////////////////////////////////////////////
@@ -190,7 +251,7 @@ void CGameStateOver::OnInit()
 	////
 	//// 最終進度為100%
 	////
-	ShowInitProgress(100);
+	//ShowInitProgress(100);
 }
 
 void CGameStateOver::OnShow()

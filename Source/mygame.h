@@ -60,14 +60,17 @@ namespace game_framework {
 		void OnBeginState();							// 設定每次重玩所需的變數
 		void OnKeyUp(UINT, UINT, UINT); 				// 處理鍵盤Up的動作
 		void OnLButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
+		void OnMouseMove(UINT nFlags, CPoint point);	// 處理滑鼠的動作
 	protected:
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
 		CMovingBitmap logo;								// csie的logo
-		CMovingBitmap background;						// 冰火人開始背景
+		CMovingBitmap background_title;						// 冰火人開始背景
+		CMovingBitmap background_about;						// 冰火人關於背景
 		CAnimation animation_static_boy;
 		CAnimation animation_static_girl;
-		
+
+		int flag_background_type = 0;						//0: title, 1:about
 	};
 
 	///////////////////////////////////////////////////////////////////////////////

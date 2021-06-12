@@ -217,7 +217,7 @@ namespace game_framework
 		}
 		else if (type == 601)//箱子
 		{
-		
+			
 		}
 	}
 }

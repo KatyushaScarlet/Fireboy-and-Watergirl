@@ -797,6 +797,12 @@
     <Image Include="RES\menu\pause1.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\title\about.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\title\title.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="RES\pool\图片规范.txt" />

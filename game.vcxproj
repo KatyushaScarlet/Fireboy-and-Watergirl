@@ -527,6 +527,8 @@
     <Image Include="RES\switch\stick_left.bmp" />
     <Image Include="RES\switch\stick_right.bmp" />
     <Image Include="RES\TempleHall.bmp" />
+    <Image Include="RES\title\about.bmp" />
+    <Image Include="RES\title\title.bmp" />
     <Image Include="RES\wall.bmp" />
     <Image Include="RES\wind\wind_base0000.bmp" />
     <Image Include="RES\wind\wind_base0001.bmp" />
