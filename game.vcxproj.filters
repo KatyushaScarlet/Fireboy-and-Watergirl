@@ -194,6 +194,9 @@
     <ClCompile Include="Source\Box.cpp">
       <Filter>MyGame\Item</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Tips.cpp">
+      <Filter>MyGame\Other</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -270,6 +273,9 @@
     </ClInclude>
     <ClInclude Include="Source\Box.h">
       <Filter>MyGame\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tips.h">
+      <Filter>MyGame\Other</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -801,6 +807,48 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\title\title.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tips\box.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tips\button.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tips\door.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tips\diamond.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tips\fire-and-water.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tips\green-goo.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tips\jump-level.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tips\lever.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tips\move-fire.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tips\move-water.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\tips\cheat.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon\16x16.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon\32x32.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\icon\512x512.jpg">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

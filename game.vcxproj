@@ -319,6 +319,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="Source\Switch.cpp" />
+    <ClCompile Include="Source\Tips.cpp" />
     <ClCompile Include="Source\Wall.cpp" />
     <ClCompile Include="Source\Wind.cpp" />
   </ItemGroup>
@@ -338,6 +339,7 @@
     <ClInclude Include="Source\Item.h" />
     <ClInclude Include="Source\MainFrm.h" />
     <ClInclude Include="Source\Menu.h" />
+    <ClInclude Include="Source\Tips.h" />
     <ClInclude Include="Source\Wind.h" />
     <ClInclude Include="Source\Platform.h" />
     <ClInclude Include="Source\Player.h" />
@@ -363,6 +365,9 @@
     <Image Include="RES\diamond\water.bmp" />
     <Image Include="RES\door\fire0.bmp" />
     <Image Include="RES\door\water0.bmp" />
+    <Image Include="RES\icon\16x16.ico" />
+    <Image Include="RES\icon\32x32.ico" />
+    <Image Include="RES\icon\512x512.jpg" />
     <Image Include="RES\loadingnew.bmp" />
     <Image Include="RES\menu\over.bmp" />
     <Image Include="RES\menu\pause.bmp" />
@@ -527,6 +532,17 @@
     <Image Include="RES\switch\stick_left.bmp" />
     <Image Include="RES\switch\stick_right.bmp" />
     <Image Include="RES\TempleHall.bmp" />
+    <Image Include="RES\tips\box.bmp" />
+    <Image Include="RES\tips\button.bmp" />
+    <Image Include="RES\tips\cheat.bmp" />
+    <Image Include="RES\tips\diamond.bmp" />
+    <Image Include="RES\tips\door.bmp" />
+    <Image Include="RES\tips\fire-and-water.bmp" />
+    <Image Include="RES\tips\green-goo.bmp" />
+    <Image Include="RES\tips\jump-level.bmp" />
+    <Image Include="RES\tips\lever.bmp" />
+    <Image Include="RES\tips\move-fire.bmp" />
+    <Image Include="RES\tips\move-water.bmp" />
     <Image Include="RES\title\about.bmp" />
     <Image Include="RES\title\title.bmp" />
     <Image Include="RES\wall.bmp" />

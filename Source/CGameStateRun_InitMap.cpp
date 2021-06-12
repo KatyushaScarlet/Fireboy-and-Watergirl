@@ -368,6 +368,48 @@ namespace game_framework
 				}
 			}
 
+			//添加tips
+			//move-water
+			shared_ptr<Tips> tips_move_water = make_shared<Tips>("move-water", 3, 22);
+			item_ptrs.push_back(tips_move_water);
+
+			//move-fire
+			shared_ptr<Tips> tips_move_fire = make_shared<Tips>("move-fire", 2, 26);
+			item_ptrs.push_back(tips_move_fire);
+
+			//fire-and-water
+			shared_ptr<Tips> tips_fire_and_water = make_shared<Tips>("fire-and-water", 19, 24);
+			item_ptrs.push_back(tips_fire_and_water);
+
+			//green-goo
+			shared_ptr<Tips> tips_green_goo = make_shared<Tips>("green-goo", 19, 20);
+			item_ptrs.push_back(tips_green_goo);
+
+			//lever
+			shared_ptr<Tips> tips_lever = make_shared<Tips>("lever", 2, 17);
+			item_ptrs.push_back(tips_lever);
+
+			//button
+			shared_ptr<Tips> tips_button = make_shared<Tips>("button", 10, 13);
+			item_ptrs.push_back(tips_button);
+
+			//box
+			//shared_ptr<Tips> tips_box = make_shared<Tips>("box", 23, 7);
+			//item_ptrs.push_back(tips_box);
+
+			//cheat
+			shared_ptr<Tips> tips_cheat = make_shared<Tips>("cheat", 20, 7);
+			item_ptrs.push_back(tips_cheat);
+
+			//diamond
+			shared_ptr<Tips> tips_diamond = make_shared<Tips>("diamond", 1, 1);
+			item_ptrs.push_back(tips_diamond);
+
+			//door
+			shared_ptr<Tips> tips_door = make_shared<Tips>("door", 15, 1);
+			item_ptrs.push_back(tips_door);
+
+
 			//添加机关
 
 			//platform1
@@ -386,7 +428,6 @@ namespace game_framework
 			platform2_stick2->Bind(platform2);//绑定平台
 			item_ptrs.push_back(platform2_stick1);
 			item_ptrs.push_back(platform2_stick2);
-
 			break;
 		}
 		case 1:

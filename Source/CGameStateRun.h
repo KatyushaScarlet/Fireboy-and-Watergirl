@@ -15,8 +15,9 @@
 #include "Box.h"
 #include "Player.h"
 #include "Menu.h"
+#include "Tips.h"
 
-#include<memory>
+#include <memory>
 
 namespace game_framework {
 	struct PlayerCoordinate
