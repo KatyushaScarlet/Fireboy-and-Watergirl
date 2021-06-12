@@ -111,6 +111,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Source\game.aps" />
+    <None Include="RES\GAME.ICO.bak" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\audio.cpp">
@@ -851,8 +852,165 @@
     <Image Include="RES\icon\512x512.jpg">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\player\title\boy_static0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\title\boy_static1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\title\boy_static2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\title\boy_static3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\title\girl_static0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\title\girl_static2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\title\girl_static4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\title\girl_static3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\title\girl_static1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\title\boy_static4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_down1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_down2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_down3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_down4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_left1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_left2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_left3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_left4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_right1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_right2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_right3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_right4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_static1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_static2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_static3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_static4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_static0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_up4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_up2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_up3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_up1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_static4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_static3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_static2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_static1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_static0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_right4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_right3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_right2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_right1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_left4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_left2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_left1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_left3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_down4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_down2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_down1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\girl_down3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_up2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\player\boy_up1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\STARTTEXT.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\32x32.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="RES\pool\图片规范.txt" />
+    <Text Include="地图定义.txt" />
   </ItemGroup>
 </Project>

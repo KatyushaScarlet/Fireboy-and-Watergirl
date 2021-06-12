@@ -1,9 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "game", "game.vcxproj", "{DDD280D7-4B85-4B03-BBC4-C46CA9BECCCB}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "gameSetup.vdproj", "{984E2E2A-0DB0-4F9D-9E5C-A3C536609A39}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup Wizard", "Setup Wizard\Setup Wizard.vdproj", "{A481CC1B-BE27-4637-889C-62BC0C62DC92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,8 +22,13 @@ Global
 		{984E2E2A-0DB0-4F9D-9E5C-A3C536609A39}.Debug|Win32.ActiveCfg = Debug
 		{984E2E2A-0DB0-4F9D-9E5C-A3C536609A39}.Release|Win32.ActiveCfg = Release
 		{984E2E2A-0DB0-4F9D-9E5C-A3C536609A39}.Release|Win32.Build.0 = Release
+		{A481CC1B-BE27-4637-889C-62BC0C62DC92}.Debug|Win32.ActiveCfg = Debug
+		{A481CC1B-BE27-4637-889C-62BC0C62DC92}.Release|Win32.ActiveCfg = Debug
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76AAFE87-E7A4-4F4E-A56D-A4D4E1CE9441}
 	EndGlobalSection
 EndGlobal

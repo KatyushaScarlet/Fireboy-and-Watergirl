@@ -86,16 +86,16 @@ void CGameStateInit::OnInit()
 	background_title.LoadBitmap("RES\\title\\title.bmp");
 	background_about.LoadBitmap("RES\\title\\about.bmp");
 	//start_text.LoadBitmapA("RES\\STARTTEXT.bmp", RGB(255, 255, 255));
-	animation_static_boy.AddBitmap("RES\\boy_static0.bmp", RGB(0, 0, 0));
-	animation_static_boy.AddBitmap("RES\\boy_static1.bmp", RGB(0, 0, 0));
-	animation_static_boy.AddBitmap("RES\\boy_static2.bmp", RGB(0, 0, 0));
-	animation_static_boy.AddBitmap("RES\\boy_static3.bmp", RGB(0, 0, 0));
-	animation_static_boy.AddBitmap("RES\\boy_static4.bmp", RGB(0, 0, 0));
-	animation_static_girl.AddBitmap("RES\\girl_static0.bmp", RGB(0, 0, 0));
-	animation_static_girl.AddBitmap("RES\\girl_static1.bmp", RGB(0, 0, 0));
-	animation_static_girl.AddBitmap("RES\\girl_static2.bmp", RGB(0, 0, 0));
-	animation_static_girl.AddBitmap("RES\\girl_static3.bmp", RGB(0, 0, 0));
-	animation_static_girl.AddBitmap("RES\\girl_static4.bmp", RGB(0, 0, 0));
+	animation_static_boy.AddBitmap("RES\\player\\title\\boy_static0.bmp", RGB(0, 0, 0));
+	animation_static_boy.AddBitmap("RES\\player\\title\\boy_static1.bmp", RGB(0, 0, 0));
+	animation_static_boy.AddBitmap("RES\\player\\title\\boy_static2.bmp", RGB(0, 0, 0));
+	animation_static_boy.AddBitmap("RES\\player\\title\\boy_static3.bmp", RGB(0, 0, 0));
+	animation_static_boy.AddBitmap("RES\\player\\title\\boy_static4.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\player\\title\\girl_static0.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\player\\title\\girl_static1.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\player\\title\\girl_static2.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\player\\title\\girl_static3.bmp", RGB(0, 0, 0));
+	animation_static_girl.AddBitmap("RES\\player\\title\\girl_static4.bmp", RGB(0, 0, 0));
 	animation_static_boy.SetDelayCount(2);
 	animation_static_girl.SetDelayCount(2);
 	Sleep(300);				// 放慢，以便看清楚進度，實際遊戲請刪除此Sleep
