@@ -32,7 +32,7 @@ namespace game_framework
 			//DeleteItem(item);
 			CAudio::Instance()->Play(AUDIO_DIAMOND, false);
 
-			TRACE("boy score=%d, total=%d\n", player->score, score_boy);
+			//TRACE("boy score=%d, total=%d\n", player->score, score_boy);
 		}
 		else if (type == 201 && !player->is_boy)//water diamond
 		{
@@ -41,7 +41,7 @@ namespace game_framework
 			item->is_visibale = false;
 			//DeleteItem(item);
 			CAudio::Instance()->Play(AUDIO_DIAMOND, false);
-			TRACE("girl score=%d, total=%d\n", player->score, score_boy);
+			//TRACE("girl score=%d, total=%d\n", player->score, score_boy);
 		}
 		else if (type == 300 || type == 301 || type == 302)//只有水池中部有效
 		{

@@ -115,10 +115,10 @@ namespace game_framework
 			}
 		}
 	}
-	void CGameStateRun::MovePlatform(shared_ptr<Player> platform, shared_ptr<Player> player1, shared_ptr<Player> player2)
-	{
+	//void CGameStateRun::MovePlatform(shared_ptr<Player> platform, shared_ptr<Player> player1, shared_ptr<Player> player2)
+	//{
 
-	}
+	//}
 
 	void CGameStateRun::MovePlayer(shared_ptr<Player> player)//移动
 	{
@@ -311,11 +311,11 @@ namespace game_framework
 	{
 		if (player->is_boy)
 		{
-			TRACE("boy die\n");
+			//TRACE("boy die\n");
 		}
 		else
 		{
-			TRACE("girl die\n");
+			//TRACE("girl die\n");
 		}
 		CAudio::Instance()->Play(AUDIO_DIE, true);
 		player->is_die = true;

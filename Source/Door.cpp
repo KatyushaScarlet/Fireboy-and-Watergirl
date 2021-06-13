@@ -105,7 +105,7 @@ namespace game_framework
 	void Door::AnimationOpenDoor()
 	{
 		//仅被触发一次
-		TRACE("door open\n");
+		//TRACE("door open\n");
 		if (!anime_play)//如果动画未开始播放
 		{
 			anime_open = true;//切换到开门动画
@@ -116,7 +116,7 @@ namespace game_framework
 	void Door::AnimationCloseDoor()
 	{
 		//仅被触发一次
-		TRACE("door close\n");
+		//TRACE("door close\n");
 		if (!anime_play)//如果动画未开始播放
 		{
 			anime_open = false;//切换到关门动画

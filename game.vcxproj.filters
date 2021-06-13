@@ -196,7 +196,7 @@
       <Filter>MyGame\Item</Filter>
     </ClCompile>
     <ClCompile Include="Source\Tips.cpp">
-      <Filter>MyGame\Other</Filter>
+      <Filter>MyGame\Item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -276,7 +276,7 @@
       <Filter>MyGame\Item</Filter>
     </ClInclude>
     <ClInclude Include="Source\Tips.h">
-      <Filter>MyGame\Other</Filter>
+      <Filter>MyGame\Item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

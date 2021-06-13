@@ -23,10 +23,10 @@ namespace game_framework {
 		void OnMove();									// ÒÆ„Óß[‘òÔªËØ
 		void OnShow();
 
-		int mouse_x;
-		int mouse_y;
-
 	private:
 		shared_ptr<Menu> game_menu;
+
+		int mouse_x;
+		int mouse_y;
 	};
 }

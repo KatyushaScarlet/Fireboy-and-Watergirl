@@ -29,7 +29,7 @@ namespace game_framework
 	{
 		if (flag_game_loaded)
 		{
-			TRACE("KEY VALUE=%d\n", nChar);
+			//TRACE("KEY VALUE=%d\n", nChar);
 			switch (nChar)
 			{
 			case KEY_UP:
