@@ -11,7 +11,7 @@ namespace game_framework {
 		void LoadItemBitmap();
 		void OnShow();
 		void OnMove();
-	protected:
+	private:
 		CAnimation bitmap;
 		CAnimation bitmap_wind;
 		CMovingBitmap bitmap_wall;

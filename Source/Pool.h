@@ -12,10 +12,10 @@ namespace game_framework {
 		void LoadItemBitmap();
 		void OnShow();
 		void OnMove();
-	protected:
+	private:
 		CAnimation animation_pool;
 		CMovingBitmap bitmap_wall;
-	private:
+
 		void AddAnimationBitmap(string path);
 	};
 }

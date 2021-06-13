@@ -16,9 +16,9 @@ namespace game_framework {
 		void OnMove();
 		//平台被开关触发
 		void Trigger(bool is_on);
-	protected:
-		CMovingBitmap bitmap;
 	private:
+		CMovingBitmap bitmap;
+
 		//平台状态
 		int status;			
 		//初始位置

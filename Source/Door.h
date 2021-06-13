@@ -28,7 +28,7 @@ namespace game_framework {
 		void AnimationCloseDoor();
 
 		int status = DOOR_LEAVE;
-	protected:
+	private:
 		//CAnimation bitmap;
 		void AddAnimationBitmap(string path);
 

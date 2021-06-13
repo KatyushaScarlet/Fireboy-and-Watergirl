@@ -27,10 +27,10 @@ namespace game_framework {
 		//开关状态
 		int status = 0;
 		bool is_on = false;
-	protected:
+	private:
 		CMovingBitmap bitmap_switch_on;
 		CMovingBitmap bitmap_switch_off;
-	private:
+
 		//开关绑定的平台
 		shared_ptr<Platform> bind_platform;
 	};

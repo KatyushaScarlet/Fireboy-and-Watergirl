@@ -52,6 +52,5 @@ namespace game_framework {
 		CAnimation animation_up;
 		CAnimation animation_down;
 		CAnimation* charactor_ani;
-		
 	};
 }
