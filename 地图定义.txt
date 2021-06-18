@@ -37,3 +37,6 @@
 503 platform_vertical
 
 600 wind
+601 box
+
+1000 tips
